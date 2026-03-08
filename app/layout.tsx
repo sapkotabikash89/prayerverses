@@ -88,31 +88,6 @@ export default async function RootLayout({
           `}
         </Script>
 
-        {/* Mediavine Grow — ads loader */}
-        <Script
-          src="//scripts.scriptwrapper.com/tags/1ea9a248-74ed-44aa-821d-989e148cc551.js"
-          strategy="lazyOnload"
-          data-noptimize="1"
-          data-cfasync="false"
-        />
-
-        {/* Mediavine Grow — initializer */}
-        <Script id="grow-initializer" strategy="lazyOnload">
-          {`
-            !(function(){
-              window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),
-              (window.growMe._=[]));
-              var e=document.createElement("script");
-              e.type="text/javascript";
-              e.src="https://faves.grow.me/main.js";
-              e.defer=true;
-              e.setAttribute("data-grow-faves-site-id","U2l0ZToxZWE5YTI0OC03NGVkLTQ0YWEtODIxZC05ODllMTQ4Y2M1NTE=");
-              var t=document.getElementsByTagName("script")[0];
-              t.parentNode.insertBefore(e,t);
-            })();
-          `}
-        </Script>
-
         {/* Google AdSense */}
         <Script
           async
