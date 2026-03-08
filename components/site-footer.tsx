@@ -8,7 +8,6 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
       { href: "/verse-of-the-day/", label: "Daily Verses" },
       { href: "/random-verse/", label: "Random Verse" },
       { href: "/books-of-the-bible/", label: "Books of the Bible" },
-      { href: "/read-bible/", label: "Read the Bible" },
       { href: "/search/", label: "Search" },
     ],
     Categories: categories.slice(0, 6).map(cat => ({

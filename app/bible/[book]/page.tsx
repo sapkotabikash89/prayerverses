@@ -116,7 +116,7 @@ export default async function BibleBookPage({
         ]}
       />
       <Link
-        href="/read-bible/"
+        href="/books-of-the-bible/"
         className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-6"
       >
         <ChevronLeft className="h-4 w-4" />

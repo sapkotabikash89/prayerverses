@@ -185,13 +185,6 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
             ))}
           </div>
 
-          <Link
-            href="/read-bible/"
-            onClick={() => setMobileOpen(false)}
-            className="block py-3 text-sm font-medium text-secondary-foreground border-t border-border/50"
-          >
-            Read the Bible
-          </Link>
         </nav>
       )}
     </header>

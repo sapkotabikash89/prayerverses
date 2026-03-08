@@ -44,14 +44,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   })
 
-  // ─── Read Bible landing ───────────────────────────────────────────────────
-  entries.push({
-    url: `${BASE}/read-bible/`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.7,
-  })
-
   // ─── Legal / informational static pages ──────────────────────────────────
   const legalPages = [
     { path: "/about/", priority: 0.5 },
