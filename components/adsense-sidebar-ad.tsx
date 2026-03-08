@@ -7,12 +7,16 @@ export function AdsenseSidebarAd() {
     const pathname = usePathname()
 
     useEffect(() => {
-        try {
-            // @ts-ignore
-            ; (window.adsbygoogle = window.adsbygoogle || []).push({})
-        } catch (err) {
-            console.error("AdSense error:", err)
-        }
+        const timeoutId = setTimeout(() => {
+            try {
+                // @ts-ignore
+                ; (window.adsbygoogle = window.adsbygoogle || []).push({})
+            } catch (err) {
+                console.error("AdSense error:", err)
+            }
+        }, 300)
+
+        return () => clearTimeout(timeoutId)
     }, [pathname])
 
     return (

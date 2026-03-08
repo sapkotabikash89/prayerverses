@@ -266,10 +266,9 @@ h2[id],
 h3[id] {
   scroll-margin-top: 5rem;
 }
+
 /* Fix AdSense Auto Ads Overlapping Content */
 ins.adsbygoogle {
   display: block !important;
   clear: both !important;
-  position: relative !important;
-  z-index: 10 !important;
 }
