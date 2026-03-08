@@ -1,6 +1,4 @@
 import type { MetadataRoute } from "next"
-import { bibleBooks } from "@/data/bible"
-import versesData from "@/data/verses.json"
 
 const BASE = "https://prayerverses.com"
 
@@ -30,17 +28,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   })
 
-  // ─── Daily verse date pages ───────────────────────────────────────────────
-  const verses = versesData as Record<string, { text: string; ref: string }>
-  for (const date of Object.keys(verses)) {
-    entries.push({
-      url: `${BASE}/verse-of-the-day/${date}/`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    })
-  }
-
   // ─── Random verse page ────────────────────────────────────────────────────
   entries.push({
     url: `${BASE}/random-verse/`,
@@ -64,24 +51,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "monthly",
     priority: 0.7,
   })
-
-  // ─── Individual Bible book & chapter pages ────────────────────────────────
-  for (const book of bibleBooks) {
-    entries.push({
-      url: `${BASE}/bible/${book.slug}/`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    })
-    for (let ch = 1; ch <= book.chapters; ch++) {
-      entries.push({
-        url: `${BASE}/bible/${book.slug}/${ch}/`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.5,
-      })
-    }
-  }
 
   // ─── Legal / informational static pages ──────────────────────────────────
   const legalPages = [
