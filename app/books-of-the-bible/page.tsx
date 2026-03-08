@@ -5,6 +5,7 @@ import { bibleBooks } from "@/data/bible"
 import { Breadcrumb } from "@/components/breadcrumb"
 import { TableOfContents, type Heading } from "@/components/table-of-contents"
 import { BibleLinkifiedText } from "@/components/bible-linkified-text"
+import { AdsenseInArticleAd } from "@/components/adsense-in-article-ad"
 
 export const metadata: Metadata = {
   title: "Complete List of 66 Books of the Bible - Old & New Testament",
@@ -131,6 +132,7 @@ export default function BooksOfTheBiblePage() {
         </p>
 
         <h2 id="chronological-order-list">Books of the Bible List in Chronological Order</h2>
+        <AdsenseInArticleAd />
         <p>
           Here is a simplified list of Bible books arranged chronologically (based on the time events happened or were written). This helps in understanding the timeline of biblical history:
         </p>
@@ -642,6 +644,8 @@ export default function BooksOfTheBiblePage() {
           ))}
         </div>
 
+        <AdsenseInArticleAd />
+
         <h2 id="how-many-books-in-nt">How Many Books in the New Testament?</h2>
         <p>
           The New Testament has 27 books, written after the birth, death, and resurrection of Jesus Christ. These books were completed in the 1st century A.D., by Jesus&apos; disciples and other early Christian leaders. They are the foundation of Christian faith and practice.
@@ -683,6 +687,8 @@ export default function BooksOfTheBiblePage() {
             </Link>
           ))}
         </div>
+
+        <AdsenseInArticleAd />
 
         <h2 id="why-are-these-books-important">Why Are These Books Important?</h2>
         <p>

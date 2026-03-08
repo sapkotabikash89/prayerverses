@@ -8,6 +8,7 @@ import { linkifyBibleVerses } from '@/lib/bible-links';
 import { PostNavigation } from '@/components/post-navigation';
 import { SocialShare } from '@/components/social-share';
 import { HelpfulPoll } from '@/components/helpful-poll';
+import { AdsenseInArticleAd } from '@/components/adsense-in-article-ad';
 import { BlogImageActions } from '@/components/blog-image-actions';
 import { TableOfContents } from '@/components/table-of-contents';
 import { processContentForTOC } from '@/lib/toc-utils';
@@ -177,11 +178,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </>
             )}
 
+            <AdsenseInArticleAd />
+
             <div className="prose prose-lg prose-serif max-w-none text-muted-foreground leading-relaxed content-area">
                 <div dangerouslySetInnerHTML={{ __html: contentBeforeH2 }} />
                 {headings.length > 0 && <TableOfContents headings={headings} />}
                 <div dangerouslySetInnerHTML={{ __html: contentAfterH2 }} />
             </div>
+
+            <AdsenseInArticleAd />
 
             <div className="mt-16">
                 <PostNavigation

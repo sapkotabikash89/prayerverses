@@ -8,6 +8,7 @@ import versesData from "@/data/verses.json"
 import { VerseOfTheDayClient } from "@/components/verse-of-the-day-client"
 import { VerseDateSelector } from "@/components/verse-date-selector"
 import { Breadcrumb } from "@/components/breadcrumb"
+import { AdsenseInArticleAd } from "@/components/adsense-in-article-ad"
 import { linkifyBibleVerses } from "@/lib/bible-links"
 import {
   Accordion,
@@ -236,6 +237,8 @@ export default async function VerseOfTheDayPage({
             </div>
           </section>
 
+          <AdsenseInArticleAd />
+
           {/* In-Context Section */}
           {contextVerses.length > 0 && (
             <section>
@@ -428,6 +431,8 @@ export default async function VerseOfTheDayPage({
               </div>
             </div>
           </section>
+
+          <AdsenseInArticleAd />
 
           {/* Random Bible Scripture Grid */}
           <section>
