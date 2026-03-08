@@ -1,0 +1,268 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #FDFAF6;
+  --foreground: #1C1917;
+  --card: #FFFFFF;
+  --card-foreground: #1C1917;
+  --popover: #FFFFFF;
+  --popover-foreground: #1C1917;
+  --primary: #8B5E3C;
+  --primary-foreground: #FDFAF6;
+  --secondary: #F5EDE4;
+  --secondary-foreground: #44403C;
+  --muted: #F5F0EB;
+  --muted-foreground: #78716C;
+  --accent: #D4A574;
+  --accent-foreground: #1C1917;
+  --destructive: #DC2626;
+  --destructive-foreground: #FDFAF6;
+  --border: #E7DDD1;
+  --input: #E7DDD1;
+  --ring: #8B5E3C;
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --font-serif: 'Lora', 'Lora Fallback', Georgia, serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-size: 1.25rem;
+    /* 20px Base */
+    line-height: 1.75;
+  }
+
+  h1 {
+    @apply font-serif font-bold text-card-foreground leading-tight mb-6;
+    font-size: 3rem;
+  }
+
+  h2 {
+    @apply font-serif font-bold text-card-foreground leading-snug mt-12 mb-6;
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    @apply font-serif font-bold text-card-foreground leading-snug mt-10 mb-5;
+    font-size: 2rem;
+  }
+
+  h4 {
+    @apply font-serif font-bold text-card-foreground leading-snug mt-8 mb-4;
+    font-size: 1.75rem;
+  }
+
+  h5 {
+    @apply font-serif font-bold text-card-foreground leading-snug mt-6 mb-3;
+    font-size: 1.5rem;
+  }
+
+  h6 {
+    @apply font-serif font-bold text-card-foreground leading-snug mt-4 mb-2;
+    font-size: 1.25rem;
+  }
+
+  p {
+    @apply mb-6;
+  }
+
+  a {
+    @apply transition-colors;
+    color: #1e3a8a;
+    /* Dark Blue */
+    text-decoration: none;
+  }
+
+  a:hover {
+    @apply text-primary;
+  }
+
+  /* Centered Media in prose */
+  .prose img,
+  .prose video,
+  .prose .wp-block-image,
+  .prose .wp-block-video {
+    @apply mx-auto block rounded-2xl shadow-sm my-10;
+  }
+
+  /* Responsive YouTube Embeds */
+  .prose iframe,
+  .prose .wp-block-embed-youtube {
+    @apply mx-auto block rounded-2xl overflow-hidden max-w-full my-10;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Custom prose overrides for WordPress content */
+.prose {
+  font-size: 1.25rem !important;
+  color: var(--foreground) !important;
+  max-width: none !important;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: var(--card-foreground) !important;
+  font-family: var(--font-serif), serif !important;
+  font-weight: 700 !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.prose p {
+  margin-bottom: 2rem !important;
+  line-height: 1.8 !important;
+}
+
+/* Lists and Numbering - Precision Alignment */
+.prose ul,
+.prose ul.wp-block-list {
+  list-style-type: disc !important;
+  padding-left: 1.1rem !important;
+  margin-bottom: 2.5rem !important;
+  display: block !important;
+}
+
+.prose ol,
+.prose ol.wp-block-list {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+  margin-bottom: 2.5rem !important;
+  display: block !important;
+}
+
+.prose li {
+  margin-bottom: 0.75rem !important;
+  display: list-item !important;
+}
+
+/* Ensure markers have the primary color */
+.prose ul li::marker,
+.prose ol li::marker {
+  color: var(--primary) !important;
+  font-weight: bold !important;
+}
+
+/* Blockquotes */
+.prose blockquote,
+.prose .wp-block-quote {
+  @apply border-l-4 border-primary bg-secondary/30 p-8 rounded-r-2xl italic my-10 relative overflow-hidden;
+  font-size: 1.35rem;
+  color: var(--card-foreground);
+}
+
+.prose blockquote p,
+.prose .wp-block-quote p {
+  @apply m-0 leading-relaxed;
+}
+
+.prose blockquote cite,
+.prose .wp-block-quote cite {
+  @apply block mt-4 text-sm font-semibold not-italic text-primary;
+}
+
+/* WordPress Background and Text Colors */
+.prose .has-background {
+  @apply p-8 rounded-2xl my-8;
+}
+
+.prose [class*="has-"].has-background {
+  @apply p-8 rounded-2xl my-8;
+}
+
+.prose .has-primary-color {
+  color: var(--primary) !important;
+}
+
+.prose .has-primary-background-color {
+  background-color: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+}
+
+.prose .has-secondary-color {
+  color: var(--secondary-foreground) !important;
+}
+
+.prose .has-secondary-background-color {
+  background-color: var(--secondary) !important;
+}
+
+.prose .has-white-color {
+  color: #ffffff !important;
+}
+
+.prose .has-white-background-color {
+  background-color: #ffffff !important;
+}
+
+.prose .has-black-color {
+  color: #000000 !important;
+}
+
+.prose .has-black-background-color {
+  background-color: #000000 !important;
+}
+
+/* Table Support */
+.prose table {
+  @apply w-full border-collapse my-8 rounded-xl overflow-hidden border border-border;
+}
+
+.prose th,
+.prose td {
+  @apply border border-border p-4 text-left font-sans;
+}
+
+.prose th {
+  @apply bg-secondary/50 font-bold;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h2[id],
+h3[id] {
+  scroll-margin-top: 5rem;
+}

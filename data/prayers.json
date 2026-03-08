@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "morning-prayer",
+    "title": "Morning Prayer",
+    "description": "Start your day with gratitude and surrender to God's plan.",
+    "content": "Heavenly Father, thank You for this new day. I surrender my plans, my worries, and my desires to You. Fill me with Your peace and guide my steps today. Help me to be a light to everyone I meet. Let Your will be done in my life. Give me strength to face whatever challenges come my way, and help me to trust in Your perfect timing. In Jesus' name, Amen.",
+    "verse": { "text": "This is the day that the Lord has made; let us rejoice and be glad in it.", "ref": "Psalm 118:24" }
+  },
+  {
+    "slug": "evening-prayer",
+    "title": "Evening Prayer",
+    "description": "End your day with reflection and thankfulness.",
+    "content": "Lord, as this day comes to an end, I thank You for Your faithfulness. Forgive me for the moments I fell short, and help me to release any burdens I am carrying. Watch over me and my loved ones as we sleep. Restore our bodies and minds, and prepare our hearts for a new day. I trust in Your protection through the night. In Jesus' name, Amen.",
+    "verse": { "text": "In peace I will lie down and sleep, for you alone, Lord, make me dwell in safety.", "ref": "Psalm 4:8" }
+  },
+  {
+    "slug": "prayer-for-strength",
+    "title": "Prayer for Strength",
+    "description": "A prayer for when you need God's strength to carry on.",
+    "content": "Almighty God, I come before You feeling weak and weary. I need Your strength to carry me through this season. Remind me that Your power is made perfect in my weakness. Help me to lean on You and not my own understanding. Renew my spirit and fill me with courage. I know that with You, all things are possible. In Jesus' name, Amen.",
+    "verse": { "text": "I can do all this through him who gives me strength.", "ref": "Philippians 4:13" }
+  },
+  {
+    "slug": "prayer-for-healing",
+    "title": "Prayer for Healing",
+    "description": "Lift up your health and wholeness to the Great Physician.",
+    "content": "Gracious Father, You are the Great Physician. I bring my body, mind, and spirit before You and ask for Your healing touch. Restore what is broken, mend what is hurt, and renew what is tired. I believe in Your power to heal. Give wisdom to those who care for me, and grant me patience as I wait on Your perfect timing. In Jesus' name, Amen.",
+    "verse": { "text": "He heals the brokenhearted and binds up their wounds.", "ref": "Psalm 147:3" }
+  },
+  {
+    "slug": "prayer-for-peace",
+    "title": "Prayer for Peace",
+    "description": "Find calm in the storm through this prayer for inner peace.",
+    "content": "Prince of Peace, my heart is troubled and my mind is anxious. I lay every worry and fear at Your feet. Replace my anxiety with Your perfect peace that surpasses all understanding. Help me to fix my eyes on You and not on my circumstances. Calm the storms within me and around me. I choose to trust You. In Jesus' name, Amen.",
+    "verse": { "text": "Peace I leave with you; my peace I give you.", "ref": "John 14:27" }
+  },
+  {
+    "slug": "prayer-for-guidance",
+    "title": "Prayer for Guidance",
+    "description": "Seek God's direction for decisions and life's path.",
+    "content": "Lord, I stand at a crossroads and I need Your guidance. Open my eyes to see the path You have prepared for me. Close the doors that are not from You and open wide the ones that are. Give me discernment to hear Your voice above the noise. I trust that You will direct my steps and lead me in the way everlasting. In Jesus' name, Amen.",
+    "verse": { "text": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.", "ref": "Proverbs 3:5-6" }
+  },
+  {
+    "slug": "prayer-for-family",
+    "title": "Prayer for Family",
+    "description": "Pray for protection, unity, and love within your family.",
+    "content": "Dear God, I lift my family up to You. Surround each member with Your love and protection. Strengthen the bonds between us and help us to communicate with grace and patience. Heal any brokenness and restore any relationships that need mending. Let our home be a place of peace, joy, and worship. Guide us to love one another as You love us. In Jesus' name, Amen.",
+    "verse": { "text": "As for me and my household, we will serve the Lord.", "ref": "Joshua 24:15" }
+  },
+  {
+    "slug": "prayer-of-gratitude",
+    "title": "Prayer of Gratitude",
+    "description": "Express thanks for all of God's blessings in your life.",
+    "content": "Gracious God, I come before You with a heart full of gratitude. Thank You for every blessing, both big and small. Thank You for the breath in my lungs, for the people in my life, and for Your unending love. Help me to never take Your goodness for granted. Open my eyes to see Your hand at work in every moment of my day. In Jesus' name, Amen.",
+    "verse": { "text": "Give thanks to the Lord, for he is good; his love endures forever.", "ref": "Psalm 107:1" }
+  }
+]

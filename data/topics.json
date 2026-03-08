@@ -1,0 +1,158 @@
+[
+  {
+    "slug": "love",
+    "title": "Love",
+    "icon": "Heart",
+    "description": "Bible verses about God's love, loving others, and the power of love in our lives.",
+    "verses": [
+      { "text": "Love is patient, love is kind. It does not envy, it does not boast, it is not proud.", "ref": "1 Corinthians 13:4" },
+      { "text": "Dear friends, let us love one another, for love comes from God. Everyone who loves has been born of God and knows God.", "ref": "1 John 4:7" },
+      { "text": "Above all, love each other deeply, because love covers over a multitude of sins.", "ref": "1 Peter 4:8" },
+      { "text": "And now these three remain: faith, hope and love. But the greatest of these is love.", "ref": "1 Corinthians 13:13" },
+      { "text": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.", "ref": "John 3:16" }
+    ]
+  },
+  {
+    "slug": "faith",
+    "title": "Faith",
+    "icon": "Flame",
+    "description": "Scriptures about trusting God, walking by faith, and strengthening your belief.",
+    "verses": [
+      { "text": "Now faith is confidence in what we hope for and assurance about what we do not see.", "ref": "Hebrews 11:1" },
+      { "text": "For we live by faith, not by sight.", "ref": "2 Corinthians 5:7" },
+      { "text": "Trust in the Lord with all your heart and lean not on your own understanding.", "ref": "Proverbs 3:5" },
+      { "text": "And without faith it is impossible to please God, because anyone who comes to him must believe that he exists.", "ref": "Hebrews 11:6" },
+      { "text": "I have fought the good fight, I have finished the race, I have kept the faith.", "ref": "2 Timothy 4:7" }
+    ]
+  },
+  {
+    "slug": "hope",
+    "title": "Hope",
+    "icon": "Sun",
+    "description": "Verses about hope in God, finding strength in His promises, and looking forward with confidence.",
+    "verses": [
+      { "text": "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.", "ref": "Jeremiah 29:11" },
+      { "text": "But those who hope in the Lord will renew their strength. They will soar on wings like eagles.", "ref": "Isaiah 40:31" },
+      { "text": "May the God of hope fill you with all joy and peace as you trust in him.", "ref": "Romans 15:13" },
+      { "text": "Be joyful in hope, patient in affliction, faithful in prayer.", "ref": "Romans 12:12" },
+      { "text": "We have this hope as an anchor for the soul, firm and secure.", "ref": "Hebrews 6:19" }
+    ]
+  },
+  {
+    "slug": "strength",
+    "title": "Strength",
+    "icon": "Shield",
+    "description": "Bible verses about God's strength, being courageous, and finding power in Him.",
+    "verses": [
+      { "text": "I can do all this through him who gives me strength.", "ref": "Philippians 4:13" },
+      { "text": "The Lord is my strength and my shield; my heart trusts in him, and he helps me.", "ref": "Psalm 28:7" },
+      { "text": "Be strong and courageous. Do not be afraid; do not be discouraged.", "ref": "Joshua 1:9" },
+      { "text": "God is our refuge and strength, an ever-present help in trouble.", "ref": "Psalm 46:1" },
+      { "text": "The Lord is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge.", "ref": "Psalm 18:2" }
+    ]
+  },
+  {
+    "slug": "peace",
+    "title": "Peace",
+    "icon": "Leaf",
+    "description": "Scriptures about finding peace in God, calming anxiety, and resting in His presence.",
+    "verses": [
+      { "text": "Peace I leave with you; my peace I give you. I do not give to you as the world gives.", "ref": "John 14:27" },
+      { "text": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.", "ref": "Philippians 4:6" },
+      { "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you.", "ref": "Isaiah 26:3" },
+      { "text": "The Lord gives strength to his people; the Lord blesses his people with peace.", "ref": "Psalm 29:11" },
+      { "text": "Cast all your anxiety on him because he cares for you.", "ref": "1 Peter 5:7" }
+    ]
+  },
+  {
+    "slug": "prayer",
+    "title": "Prayer",
+    "icon": "HandMetal",
+    "description": "Verses about the power of prayer, how to pray, and God's response to our prayers.",
+    "verses": [
+      { "text": "The Lord is near to all who call on him, to all who call on him in truth.", "ref": "Psalm 145:18" },
+      { "text": "If my people, who are called by my name, will humble themselves and pray and seek my face, I will hear from heaven.", "ref": "2 Chronicles 7:14" },
+      { "text": "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.", "ref": "Matthew 7:7" },
+      { "text": "Rejoice always, pray continually, give thanks in all circumstances.", "ref": "1 Thessalonians 5:16-18" },
+      { "text": "The prayer of a righteous person is powerful and effective.", "ref": "James 5:16" }
+    ]
+  },
+  {
+    "slug": "forgiveness",
+    "title": "Forgiveness",
+    "icon": "HeartHandshake",
+    "description": "Bible verses about God's forgiveness, forgiving others, and the freedom of mercy.",
+    "verses": [
+      { "text": "If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.", "ref": "1 John 1:9" },
+      { "text": "Bear with each other and forgive one another if any of you has a grievance against someone. Forgive as the Lord forgave you.", "ref": "Colossians 3:13" },
+      { "text": "As far as the east is from the west, so far has he removed our transgressions from us.", "ref": "Psalm 103:12" },
+      { "text": "Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you.", "ref": "Ephesians 4:32" },
+      { "text": "For if you forgive other people when they sin against you, your heavenly Father will also forgive you.", "ref": "Matthew 6:14" }
+    ]
+  },
+  {
+    "slug": "gratitude",
+    "title": "Gratitude",
+    "icon": "Gift",
+    "description": "Scriptures about being thankful, praising God, and cultivating a heart of gratitude.",
+    "verses": [
+      { "text": "Give thanks to the Lord, for he is good; his love endures forever.", "ref": "Psalm 107:1" },
+      { "text": "Rejoice always, pray continually, give thanks in all circumstances; for this is God's will for you in Christ Jesus.", "ref": "1 Thessalonians 5:16-18" },
+      { "text": "Enter his gates with thanksgiving and his courts with praise; give thanks to him and praise his name.", "ref": "Psalm 100:4" },
+      { "text": "Every good and perfect gift is from above, coming down from the Father of the heavenly lights.", "ref": "James 1:17" },
+      { "text": "Let the peace of Christ rule in your hearts, since as members of one body you were called to peace. And be thankful.", "ref": "Colossians 3:15" }
+    ]
+  },
+  {
+    "slug": "wisdom",
+    "title": "Wisdom",
+    "icon": "BookOpen",
+    "description": "Verses about seeking God's wisdom, understanding, and discernment for daily life.",
+    "verses": [
+      { "text": "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault.", "ref": "James 1:5" },
+      { "text": "The fear of the Lord is the beginning of wisdom, and knowledge of the Holy One is understanding.", "ref": "Proverbs 9:10" },
+      { "text": "For the Lord gives wisdom; from his mouth come knowledge and understanding.", "ref": "Proverbs 2:6" },
+      { "text": "Trust in the Lord with all your heart and lean not on your own understanding.", "ref": "Proverbs 3:5" },
+      { "text": "The wisdom that comes from heaven is first of all pure; then peace-loving, considerate, submissive.", "ref": "James 3:17" }
+    ]
+  },
+  {
+    "slug": "healing",
+    "title": "Healing",
+    "icon": "Cross",
+    "description": "Bible verses about God's healing power, restoration, and comfort in times of illness.",
+    "verses": [
+      { "text": "He heals the brokenhearted and binds up their wounds.", "ref": "Psalm 147:3" },
+      { "text": "By his wounds we are healed.", "ref": "Isaiah 53:5" },
+      { "text": "The Lord sustains them on their sickbed and restores them from their bed of illness.", "ref": "Psalm 41:3" },
+      { "text": "Is anyone among you sick? Let them call the elders of the church to pray over them.", "ref": "James 5:14" },
+      { "text": "Dear friend, I pray that you may enjoy good health and that all may go well with you.", "ref": "3 John 1:2" }
+    ]
+  },
+  {
+    "slug": "comfort",
+    "title": "Comfort",
+    "icon": "CloudSun",
+    "description": "Scriptures about God's comfort during grief, loss, and difficult seasons of life.",
+    "verses": [
+      { "text": "The Lord is close to the brokenhearted and saves those who are crushed in spirit.", "ref": "Psalm 34:18" },
+      { "text": "Blessed are those who mourn, for they will be comforted.", "ref": "Matthew 5:4" },
+      { "text": "He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain.", "ref": "Revelation 21:4" },
+      { "text": "Come to me, all you who are weary and burdened, and I will give you rest.", "ref": "Matthew 11:28" },
+      { "text": "God is our refuge and strength, an ever-present help in trouble.", "ref": "Psalm 46:1" }
+    ]
+  },
+  {
+    "slug": "joy",
+    "title": "Joy",
+    "icon": "Sparkles",
+    "description": "Verses about finding joy in the Lord, celebrating His goodness, and living with gladness.",
+    "verses": [
+      { "text": "The joy of the Lord is your strength.", "ref": "Nehemiah 8:10" },
+      { "text": "Rejoice in the Lord always. I will say it again: Rejoice!", "ref": "Philippians 4:4" },
+      { "text": "You make known to me the path of life; you will fill me with joy in your presence.", "ref": "Psalm 16:11" },
+      { "text": "This is the day that the Lord has made; let us rejoice and be glad in it.", "ref": "Psalm 118:24" },
+      { "text": "May the God of hope fill you with all joy and peace as you trust in him.", "ref": "Romans 15:13" }
+    ]
+  }
+]

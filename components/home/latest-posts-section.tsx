@@ -1,0 +1,45 @@
+import { getNewestPosts } from "@/lib/wordpress"
+import { BlogPostCard } from "@/components/blog-post-card"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+
+export async function LatestPostsSection() {
+    const { nodes: posts } = await getNewestPosts(3)
+
+    if (!posts || posts.length === 0) return null
+
+    return (
+        <section className="py-12">
+            <div className="flex items-center justify-between mb-8">
+                <div>
+                    <h2 className="text-2xl font-serif font-bold text-card-foreground lg:text-3xl">
+                        Latest Spiritual Insights
+                    </h2>
+                    <p className="text-sm text-muted-foreground mt-1">
+                        Read our latest blog posts and grow in your spiritual journey.
+                    </p>
+                </div>
+                <Link href="/blog/" className="hidden sm:block">
+                    <Button variant="ghost" className="text-primary font-bold hover:text-primary/80">
+                        View All Posts <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {posts.map((post) => (
+                    <BlogPostCard key={post.id} post={post} />
+                ))}
+            </div>
+
+            <div className="mt-8 text-center sm:hidden">
+                <Link href="/blog/">
+                    <Button variant="outline" className="w-full border-primary text-primary font-bold">
+                        View All Posts
+                    </Button>
+                </Link>
+            </div>
+        </section>
+    )
+}

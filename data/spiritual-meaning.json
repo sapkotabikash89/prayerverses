@@ -1,0 +1,57 @@
+[
+  {
+    "slug": "grace",
+    "title": "The Spiritual Meaning of Grace",
+    "description": "Explore what grace means in the Bible and how God's unmerited favor transforms our lives.",
+    "content": "Grace is one of the most profound concepts in Christianity. It refers to God's unmerited favor — the love and mercy given to us by God because He desires us to have it, not necessarily because of anything we have done to earn it. The Apostle Paul wrote extensively about grace, declaring in Ephesians 2:8-9 that we are saved by grace through faith, and this is not from ourselves — it is the gift of God.\n\nGrace is not just about salvation. It permeates every aspect of the Christian life. It is the power that sustains us in times of trial, the compassion that covers our failures, and the strength that enables us to live according to God's purposes. Understanding grace means understanding that we are loved unconditionally, and that nothing can separate us from the love of God.",
+    "keyVerses": [
+      { "text": "For it is by grace you have been saved, through faith — and this is not from yourselves, it is the gift of God.", "ref": "Ephesians 2:8" },
+      { "text": "But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.'", "ref": "2 Corinthians 12:9" },
+      { "text": "From his fullness we have all received, grace upon grace.", "ref": "John 1:16" }
+    ]
+  },
+  {
+    "slug": "redemption",
+    "title": "The Spiritual Meaning of Redemption",
+    "description": "Understand the biblical concept of redemption and how Christ redeems us from sin.",
+    "content": "Redemption in the Bible refers to God buying back what was lost through sin. The concept has its roots in the Old Testament practice of paying a price to set someone free — such as freeing a slave or recovering lost property. In the New Testament, redemption takes on its fullest meaning through Jesus Christ, who paid the ultimate price on the cross.\n\nThrough His sacrifice, Jesus redeemed humanity from the bondage of sin and death. Redemption is not merely a transaction — it is a transformation. When we are redeemed, we are made new. Our past sins are forgiven, our present is filled with purpose, and our future is secured in God's eternal promise.",
+    "keyVerses": [
+      { "text": "In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God's grace.", "ref": "Ephesians 1:7" },
+      { "text": "For you know that it was not with perishable things such as silver or gold that you were redeemed, but with the precious blood of Christ.", "ref": "1 Peter 1:18-19" },
+      { "text": "Christ redeemed us from the curse of the law by becoming a curse for us.", "ref": "Galatians 3:13" }
+    ]
+  },
+  {
+    "slug": "faith",
+    "title": "The Spiritual Meaning of Faith",
+    "description": "Discover what faith truly means in Scripture and how to grow in your walk with God.",
+    "content": "Faith is the foundation of the Christian life. The book of Hebrews defines it beautifully: 'Now faith is confidence in what we hope for and assurance about what we do not see' (Hebrews 11:1). Faith is not blind belief — it is a deep trust in the character and promises of God, even when circumstances are uncertain.\n\nThroughout the Bible, we see examples of extraordinary faith: Abraham leaving his homeland, Moses leading the Israelites, David facing Goliath. Each of these individuals trusted God's plan over their own understanding. Faith grows as we spend time in God's Word, in prayer, and in community with other believers.",
+    "keyVerses": [
+      { "text": "Now faith is confidence in what we hope for and assurance about what we do not see.", "ref": "Hebrews 11:1" },
+      { "text": "For we live by faith, not by sight.", "ref": "2 Corinthians 5:7" },
+      { "text": "And without faith it is impossible to please God.", "ref": "Hebrews 11:6" }
+    ]
+  },
+  {
+    "slug": "salvation",
+    "title": "The Spiritual Meaning of Salvation",
+    "description": "Learn about God's plan of salvation and the eternal life He offers through Jesus Christ.",
+    "content": "Salvation is the central message of the entire Bible. It is God's rescue plan for humanity, made possible through the life, death, and resurrection of Jesus Christ. The Bible teaches that all have sinned and fall short of the glory of God (Romans 3:23), but through faith in Christ, we receive the gift of eternal life.\n\nSalvation is not something we earn — it is a gift of grace. When we place our faith in Jesus, we are saved from the penalty of sin, delivered from its power, and one day will be freed from its very presence. Salvation brings reconciliation with God, a new identity in Christ, and the hope of eternal glory.",
+    "keyVerses": [
+      { "text": "For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord.", "ref": "Romans 6:23" },
+      { "text": "If you declare with your mouth, 'Jesus is Lord,' and believe in your heart that God raised him from the dead, you will be saved.", "ref": "Romans 10:9" },
+      { "text": "Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved.", "ref": "Acts 4:12" }
+    ]
+  },
+  {
+    "slug": "covenant",
+    "title": "The Spiritual Meaning of Covenant",
+    "description": "Explore the significance of God's covenants and His faithful promises to His people.",
+    "content": "A covenant in the Bible is a solemn, binding agreement between God and His people. Unlike a contract, which is conditional, God's covenants are rooted in His faithfulness and love. Throughout Scripture, God established several key covenants — with Noah, Abraham, Moses, David, and ultimately the New Covenant through Jesus Christ.\n\nThe New Covenant, established through Christ's sacrifice, offers forgiveness of sins and a restored relationship with God to all who believe. This covenant is not written on tablets of stone, but on our hearts through the Holy Spirit. Understanding covenant helps us grasp the depth of God's commitment to us — He will never break His promises.",
+    "keyVerses": [
+      { "text": "This is the covenant I will make with the people of Israel after that time, declares the Lord. I will put my law in their minds and write it on their hearts.", "ref": "Jeremiah 31:33" },
+      { "text": "This cup is the new covenant in my blood, which is poured out for you.", "ref": "Luke 22:20" },
+      { "text": "Know therefore that the Lord your God is God; he is the faithful God, keeping his covenant of love.", "ref": "Deuteronomy 7:9" }
+    ]
+  }
+]
