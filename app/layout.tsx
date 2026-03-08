@@ -54,6 +54,7 @@ export const viewport: Viewport = {
 
 import { getCategories } from "@/lib/wordpress"
 import { SidebarWrapper } from "@/components/sidebar-wrapper"
+import { AdsenseInArticleAd } from "@/components/adsense-in-article-ad"
 
 export default async function RootLayout({
   children,
@@ -76,6 +77,9 @@ export default async function RootLayout({
       <body className={`${inter.variable} ${lora.variable} font-sans antialiased min-h-screen flex flex-col`}>
         <SiteHeader categories={categories} />
         <main className="flex-1">
+          <div className="max-w-7xl mx-auto px-4 mt-8 lg:px-8">
+            <AdsenseInArticleAd />
+          </div>
           <SidebarWrapper>
             {children}
           </SidebarWrapper>

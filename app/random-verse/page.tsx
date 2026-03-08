@@ -93,6 +93,10 @@ export default async function RandomVersePage() {
           </p>
 
           <RandomVerseClient initialVerse={initialVerse} allVerses={allVerses} />
+
+          <div className="mt-8 max-w-3xl mx-auto">
+            <AdsenseInArticleAd />
+          </div>
         </div>
       </div>
 
