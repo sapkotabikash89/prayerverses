@@ -28,8 +28,8 @@ export function rewriteVerseLinks(html: string): string {
         return match // Fallback to original if parsing fails
     })
 
-    // 3. Rewrite blog.prayerverses.com links to prayerverses.com
-    updatedHtml = updatedHtml.replace(/https?:\/\/blog\.prayerverses\.com\//g, 'https://prayerverses.com/')
+    // 3. Rewrite blog.prayerverses.com links to prayerverses.com, excluding wp-content/wp-includes
+    updatedHtml = updatedHtml.replace(/https?:\/\/blog\.prayerverses\.com\/(?!wp-content|wp-includes)/g, 'https://prayerverses.com/')
 
     return updatedHtml
 }
