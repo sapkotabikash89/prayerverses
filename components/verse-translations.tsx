@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { ExternalLink } from "lucide-react"
 
 interface VerseTranslationsProps {
@@ -39,15 +38,15 @@ export function VerseTranslations({ reference, bookName, chapter, verse, kjvText
                 <span className="text-sm font-bold text-primary uppercase tracking-wider">{t.id}</span>
                 <span className="text-xs text-muted-foreground">{t.name}</span>
               </div>
-              <Link 
-                href={t.url} 
-                target="_blank" 
+              <a
+                href={t.url}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-none bg-secondary/50 text-muted-foreground hover:text-primary transition-colors"
                 title={`Read ${t.id} on Bible Gateway`}
               >
                 <ExternalLink className="h-4 w-4" />
-              </Link>
+              </a>
             </div>
             <div className="prose prose-sm prose-stone max-w-none">
               {t.text ? (

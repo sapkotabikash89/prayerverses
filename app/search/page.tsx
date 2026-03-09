@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useMemo, useEffect } from "react"
-import Link from "next/link"
 import { Search as SearchIcon, Loader2 } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -185,7 +184,7 @@ export default function SearchPage() {
                 </h2>
                 <div className="flex flex-col gap-3">
                   {visibleItems.map((result, i) => (
-                    <Link
+                    <a
                       key={`${type}-${i}`}
                       href={result.href}
                       className="group rounded-none border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm"
@@ -201,7 +200,7 @@ export default function SearchPage() {
                       <p className="text-sm text-muted-foreground line-clamp-2">
                         <HighlightText text={result.text} query={query} matchType={result.matchType} />
                       </p>
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>

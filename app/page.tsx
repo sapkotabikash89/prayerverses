@@ -3,7 +3,6 @@ import { QuickAccessGrid } from "@/components/home/quick-access-grid"
 import { LatestPostsSection } from "@/components/home/latest-posts-section"
 import { TopicGrid } from "@/components/home/topic-grid"
 import { BibleBooksSection } from "@/components/home/bible-books-section"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { getCategories } from "@/lib/wordpress"
 import type { Metadata } from "next"
@@ -43,11 +42,11 @@ export default async function HomePage() {
           <p className="text-muted-foreground mb-6 max-w-2xl">
             Access all 66 books of the Bible from Genesis to Revelation. Discover the wisdom and hope contained in every chapter.
           </p>
-          <Link href="/books-of-the-bible/">
+          <a href="/books-of-the-bible/">
             <Button size="lg" className="font-bold px-8">
               View All Bible Books
             </Button>
-          </Link>
+          </a>
         </section>
       </div>
     </article>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import Image from "next/image"
 import { bibleBooks } from "@/data/bible"
 import { Breadcrumb } from "@/components/breadcrumb"
@@ -626,7 +625,7 @@ export default function BooksOfTheBiblePage() {
 
         <div className="not-prose grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-12">
           {ot.map((book, i) => (
-            <Link
+            <a
               key={book.slug}
               href={`/bible/${book.slug}/`}
               className="flex items-center gap-3 rounded-none border border-border bg-card px-4 py-3 hover:border-primary/30 hover:shadow-sm transition-all"
@@ -638,7 +637,7 @@ export default function BooksOfTheBiblePage() {
                 <p className="text-sm font-medium text-card-foreground truncate">{book.name}</p>
                 <p className="text-xs text-muted-foreground">{book.chapters} {book.chapters === 1 ? "chapter" : "chapters"}</p>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
 
@@ -669,7 +668,7 @@ export default function BooksOfTheBiblePage() {
 
         <div className="not-prose grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-12">
           {nt.map((book, i) => (
-            <Link
+            <a
               key={book.slug}
               href={`/bible/${book.slug}/`}
               className="flex items-center gap-3 rounded-none border border-border bg-card px-4 py-3 hover:border-primary/30 hover:shadow-sm transition-all"
@@ -681,7 +680,7 @@ export default function BooksOfTheBiblePage() {
                 <p className="text-sm font-medium text-card-foreground truncate">{book.name}</p>
                 <p className="text-xs text-muted-foreground">{book.chapters} {book.chapters === 1 ? "chapter" : "chapters"}</p>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
 

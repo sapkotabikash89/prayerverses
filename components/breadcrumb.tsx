@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { ChevronRight, Home } from "lucide-react"
 
 interface BreadcrumbItem {
@@ -42,13 +41,13 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
                   {item.label}
                 </span>
               ) : (
-                <Link
+                <a
                   href={item.href}
                   className="hover:text-primary transition-colors flex items-center gap-1"
                 >
                   {index === 0 && <Home className="h-3.5 w-3.5" />}
                   {item.label}
-                </Link>
+                </a>
               )}
             </li>
           ))}

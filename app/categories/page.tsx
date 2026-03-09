@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { getCategories } from "@/lib/wordpress"
 import { Breadcrumb } from "@/components/breadcrumb"
 import { TopicIcon } from "@/components/topic-icon"
@@ -29,7 +28,7 @@ export default async function CategoriesPage() {
 
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {categories.map((topic) => (
-                        <Link
+                        <a
                             key={topic.slug}
                             href={`/category/${topic.slug}/`}
                             className="group rounded-none border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md"
@@ -53,7 +52,7 @@ export default async function CategoriesPage() {
                                     </p>
                                 </div>
                             </div>
-                        </Link>
+                        </a>
                     ))}
                 </div>
             </div>

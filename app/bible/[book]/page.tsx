@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import { bibleBooks, getBookBySlug } from "@/data/bible"
 import { notFound } from "next/navigation"
@@ -116,13 +115,13 @@ export default async function BibleBookPage({
             { label: b.name, href: `/bible/${b.slug}/` }
           ]}
         />
-        <Link
+        <a
           href="/books-of-the-bible/"
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-6"
         >
           <ChevronLeft className="h-4 w-4" />
           All Books
-        </Link>
+        </a>
 
         <h1 className="text-3xl font-serif font-bold text-card-foreground mb-2 lg:text-4xl">
           {b.name}
@@ -136,13 +135,13 @@ export default async function BibleBookPage({
         <section>
           <div className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10">
             {chapters.map((ch) => (
-              <Link
+              <a
                 key={ch}
                 href={`/bible/${b.slug}/${ch}/`}
                 className="flex items-center justify-center rounded-none border border-border bg-card py-3 text-sm font-medium text-card-foreground hover:border-primary/30 hover:bg-secondary hover:shadow-sm transition-all"
               >
                 {ch}
-              </Link>
+              </a>
             ))}
           </div>
         </section>

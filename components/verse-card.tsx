@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { useState } from "react"
 import { Copy, Share2, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -43,9 +42,9 @@ export function VerseCard({ text, reference, className = "" }: VerseCardProps) {
       <p className="text-sm font-semibold text-primary mb-4">
         &mdash;{" "}
         {verseHref ? (
-          <Link href={verseHref} className="">
+          <a href={verseHref} className="">
             {reference}
-          </Link>
+          </a>
         ) : (
           reference
         )}

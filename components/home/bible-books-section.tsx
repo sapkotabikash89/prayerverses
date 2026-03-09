@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { bibleBooks } from "@/data/bible"
 
 export function BibleBooksSection() {
@@ -23,13 +22,13 @@ export function BibleBooksSection() {
           </h3>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {ot.map((book) => (
-              <Link
+              <a
                 key={book.slug}
                 href={`/bible/${book.slug}/`}
                 className="rounded-none border border-border bg-card px-4 py-3 text-center text-sm font-medium text-card-foreground hover:border-primary/30 hover:shadow-md transition-all flex items-center justify-center min-h-[50px]"
               >
                 {book.name}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -40,24 +39,24 @@ export function BibleBooksSection() {
           </h3>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {nt.map((book) => (
-              <Link
+              <a
                 key={book.slug}
                 href={`/bible/${book.slug}/`}
                 className="rounded-none border border-border bg-card px-4 py-3 text-center text-sm font-medium text-card-foreground hover:border-primary/30 hover:shadow-md transition-all flex items-center justify-center min-h-[50px]"
               >
                 {book.name}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
 
         <div className="text-center mt-8">
-          <Link
+          <a
             href="/books-of-the-bible/"
             className="text-sm font-medium text-primary"
           >
             Explore all books
-          </Link>
+          </a>
         </div>
       </div>
     </section>

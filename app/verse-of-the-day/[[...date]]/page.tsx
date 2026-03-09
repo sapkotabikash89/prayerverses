@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ChevronRight } from "lucide-react"
 import { getVersesForReference, getChapterVerses } from "@/lib/bible-text"
@@ -269,9 +268,9 @@ export default async function VerseOfTheDayPage({
                   ))}
                   <div className="mt-6 pt-6 border-t border-border flex justify-between items-center">
                     <p className="text-xs text-muted-foreground">Showing {contextVerses.length} verses from the same chapter.</p>
-                    <Link href={`/bible/${verseId?.split("-").slice(0, -2).join("-")}/${verseId?.split("-")[verseId?.split("-").length - 2]}/`} className="text-sm font-bold text-primary flex items-center gap-1">
+                    <a href={`/bible/${verseId?.split("-").slice(0, -2).join("-")}/${verseId?.split("-")[verseId?.split("-").length - 2]}/`} className="text-sm font-bold text-primary flex items-center gap-1">
                       Read Full Chapter <ChevronRight className="h-4 w-4" />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </section>

@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { TopicIcon } from "@/components/topic-icon"
 import { Category } from "@/lib/wordpress"
 
@@ -18,7 +17,7 @@ export function TopicGrid({ categories = [] }: { categories?: Category[] }) {
 
         <div className="flex flex-wrap justify-center gap-4">
           {categories.map((category) => (
-            <Link
+            <a
               key={category.id}
               href={`/category/${category.slug}/`}
               className="group flex flex-col items-center gap-2 rounded-none border border-border bg-card p-5 text-center transition-all hover:border-primary/30 hover:shadow-md min-w-[140px]"
@@ -29,7 +28,7 @@ export function TopicGrid({ categories = [] }: { categories?: Category[] }) {
               <span className="text-sm font-medium text-card-foreground">
                 {category.name}
               </span>
-            </Link>
+            </a>
           ))}
         </div>
       </div>

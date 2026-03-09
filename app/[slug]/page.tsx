@@ -13,7 +13,6 @@ import { TableOfContents } from '@/components/table-of-contents';
 import { processContentForTOC } from '@/lib/toc-utils';
 import { RelatedPosts } from '@/components/related-posts';
 import { getReadingTime, cn } from '@/lib/utils';
-import Link from 'next/link';
 import { rewriteVerseLinks } from '@/lib/link-utils';
 
 interface BlogPostPageProps {
@@ -149,12 +148,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <span className="text-muted-foreground/30 px-1">/</span>
                     {primaryCategory && (
                         <>
-                            <Link
+                            <a
                                 href={`/category/${primaryCategory.slug}/`}
                                 className="text-[#1e3a8a] font-bold hover:underline"
                             >
                                 {primaryCategory.name}
-                            </Link>
+                            </a>
                             <span className="text-muted-foreground/30 px-1">/</span>
                         </>
                     )}

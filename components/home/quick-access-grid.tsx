@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { Calendar, Shuffle, Book, LayoutGrid, Newspaper } from "lucide-react"
 
 const ACTIONS = [
@@ -41,7 +40,7 @@ export function QuickAccessGrid() {
         <section className="mb-16">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {ACTIONS.map((action) => (
-                    <Link
+                    <a
                         key={action.title}
                         href={action.href}
                         className={`group block p-6 rounded-none border border-border bg-card transition-all hover:shadow-md hover:-translate-y-1`}
@@ -59,7 +58,7 @@ export function QuickAccessGrid() {
                                 </p>
                             </div>
                         </div>
-                    </Link>
+                    </a>
                 ))}
             </div>
         </section>

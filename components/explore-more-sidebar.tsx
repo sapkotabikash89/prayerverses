@@ -1,7 +1,6 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import Link from "next/link"
 import { cloneElement } from "react"
 import { ArrowRight, BookOpen, Shuffle, Calendar } from "lucide-react"
 
@@ -50,7 +49,7 @@ export function ExploreMoreSidebar() {
 
                 <div className="space-y-3">
                     {filteredItems.map((item) => (
-                        <Link
+                        <a
                             key={item.href}
                             href={item.href}
                             className="group block p-3.5 rounded-none border border-border hover:border-primary/30 hover:shadow-md transition-all bg-background relative overflow-hidden"
@@ -72,7 +71,7 @@ export function ExploreMoreSidebar() {
 
                             {/* Subtle hover background effect */}
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </Link>
+                        </a>
                     ))}
                 </div>
             </section>

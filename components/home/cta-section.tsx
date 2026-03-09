@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export function CtaSection() {
@@ -13,7 +12,7 @@ export function CtaSection() {
           your understanding of God&apos;s Word.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/verse-of-the-day/">
+          <a href="/verse-of-the-day/">
             <Button
               variant="secondary"
               size="lg"
@@ -21,8 +20,8 @@ export function CtaSection() {
             >
               {"Today's Verse"}
             </Button>
-          </Link>
-          <Link href="/categories/">
+          </a>
+          <a href="/categories/">
             <Button
               variant="outline"
               size="lg"
@@ -30,7 +29,7 @@ export function CtaSection() {
             >
               Browse Categories
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

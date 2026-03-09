@@ -22,7 +22,7 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
 
                 {/* Desktop Sidebar */}
                 <aside className="hidden lg:block w-[300px] flex-shrink-0 sidebar">
-                    <div className="sticky top-24 space-y-8">
+                    <div className="space-y-8">
                         <ExploreMoreSidebar />
                     </div>
                 </aside>

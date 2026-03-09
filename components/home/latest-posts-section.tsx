@@ -1,7 +1,6 @@
 import { getNewestPosts } from "@/lib/wordpress"
 import { BlogPostCard } from "@/components/blog-post-card"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 export async function LatestPostsSection() {
@@ -20,11 +19,11 @@ export async function LatestPostsSection() {
                         Read our latest blog posts and grow in your spiritual journey.
                     </p>
                 </div>
-                <Link href="/blog/" className="hidden sm:block">
+                <a href="/blog/" className="hidden sm:block">
                     <Button variant="ghost" className="text-primary font-bold hover:text-primary/80">
                         View All Posts <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
-                </Link>
+                </a>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -34,11 +33,11 @@ export async function LatestPostsSection() {
             </div>
 
             <div className="mt-8 text-center sm:hidden">
-                <Link href="/blog/">
+                <a href="/blog/">
                     <Button variant="outline" className="w-full border-primary text-primary font-bold">
                         View All Posts
                     </Button>
-                </Link>
+                </a>
             </div>
         </section>
     )

@@ -1,12 +1,9 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
 import { Calendar as CalendarIcon, ChevronLeft, ChevronRight } from 'lucide-react'
-import { format } from 'date-fns'
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
 import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover'
-import Link from 'next/link'
 
 interface VerseDateSelectorProps {
   currentDate: string
@@ -14,7 +11,6 @@ interface VerseDateSelectorProps {
 }
 
 export function VerseDateSelector({ currentDate, allDates }: VerseDateSelectorProps) {
-  const router = useRouter()
   const todayIdx = allDates.indexOf(currentDate)
   const prevDate = todayIdx > 0 ? allDates[todayIdx - 1] : null
   const nextDate = todayIdx < allDates.length - 1 ? allDates[todayIdx + 1] : null
@@ -26,22 +22,22 @@ export function VerseDateSelector({ currentDate, allDates }: VerseDateSelectorPr
       const month = String(date.getMonth() + 1).padStart(2, "0")
       const day = String(date.getDate()).padStart(2, "0")
       const iso = `${year}-${month}-${day}`
-      router.push(`/verse-of-the-day/${iso}/`)
+      window.location.href = `/verse-of-the-day/${iso}/`
     }
   }
 
   return (
     <div className="flex items-center gap-4">
       {prevDate && (
-        <Link 
-          href={`/verse-of-the-day/${prevDate}/`} 
+        <a
+          href={`/verse-of-the-day/${prevDate}/`}
           className="p-2 rounded-none hover:bg-secondary transition-colors"
           title="Previous Day"
         >
           <ChevronLeft className="h-6 w-6" />
-        </Link>
+        </a>
       )}
-      
+
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="outline" className="flex items-center gap-2 px-6 h-11 rounded-none shadow-sm hover:shadow-md transition-all">
@@ -61,13 +57,13 @@ export function VerseDateSelector({ currentDate, allDates }: VerseDateSelectorPr
       </Popover>
 
       {nextDate && (
-        <Link 
-          href={`/verse-of-the-day/${nextDate}/`} 
+        <a
+          href={`/verse-of-the-day/${nextDate}/`}
           className="p-2 rounded-none hover:bg-secondary transition-colors"
           title="Next Day"
         >
           <ChevronRight className="h-6 w-6" />
-        </Link>
+        </a>
       )}
     </div>
   )

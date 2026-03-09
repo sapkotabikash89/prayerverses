@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { BookOpen, Sparkles } from "lucide-react"
 
@@ -33,17 +32,17 @@ export function HomeHero() {
                 </p>
 
                 <div className="flex flex-wrap items-center justify-center gap-4">
-                    <Link href="/verse-of-the-day/">
+                    <a href="/verse-of-the-day/">
                         <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 rounded-none shadow-lg transition-all hover:scale-105">
                             Read Today&apos;s Verse
                         </Button>
-                    </Link>
-                    <Link href="/books-of-the-bible/">
+                    </a>
+                    <a href="/books-of-the-bible/">
                         <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-md font-bold px-8 rounded-none shadow-lg transition-all hover:scale-105">
                             <BookOpen className="mr-2 h-5 w-5" />
                             Explore the Bible
                         </Button>
-                    </Link>
+                    </a>
                 </div>
             </div>
         </section>

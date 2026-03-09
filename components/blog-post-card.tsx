@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { format } from 'date-fns';
 import { Post } from '@/lib/wordpress';
@@ -14,7 +13,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
     const featuredImage = post.featuredImage?.node;
 
     return (
-        <Link
+        <a
             href={`/${post.slug}/`}
             className="group flex flex-col overflow-hidden rounded-none border border-border bg-card transition-all hover:border-primary/30 hover:shadow-md"
         >
@@ -70,6 +69,6 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
                     Read More &rarr;
                 </div>
             </div>
-        </Link>
+        </a>
     );
 }

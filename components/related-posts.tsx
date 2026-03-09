@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { Post } from '@/lib/wordpress';
 import { ArrowRight } from 'lucide-react';
@@ -21,7 +20,7 @@ export function RelatedPosts({ posts, categorySlug }: RelatedPostsProps) {
                 {posts.map((post) => {
                     const featuredImage = post.featuredImage?.node;
                     return (
-                        <Link
+                        <a
                             key={post.id}
                             href={`/${post.slug}/`}
                             className="group flex flex-col overflow-hidden rounded-none border border-border bg-card transition-all hover:border-primary/30 hover:shadow-md"
@@ -48,20 +47,20 @@ export function RelatedPosts({ posts, categorySlug }: RelatedPostsProps) {
                                     {post.title}
                                 </h3>
                             </div>
-                        </Link>
+                        </a>
                     );
                 })}
             </div>
 
             {categorySlug && (
                 <div className="flex justify-center">
-                    <Link
+                    <a
                         href={`/category/${categorySlug}/`}
                         className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-none font-bold transition-all shadow-md hover:shadow-lg active:scale-95"
                     >
                         More Posts
                         <ArrowRight className="w-4 h-4" />
-                    </Link>
+                    </a>
                 </div>
             )}
         </section>

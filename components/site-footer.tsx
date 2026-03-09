@@ -1,4 +1,3 @@
-import Link from "next/link"
 import Image from "next/image"
 import { Category } from "@/lib/wordpress"
 
@@ -29,7 +28,7 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link href="/" className="group flex items-center gap-2 mb-4 transition-colors hover:text-black">
+            <a href="/" className="group flex items-center gap-2 mb-4 transition-colors hover:text-black">
               <Image
                 src="/prayer-verses-logo.webp"
                 alt="PrayerVerses Logo"
@@ -38,7 +37,7 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
                 className="h-8 w-8 object-contain transition-all"
               />
               <span className="text-xl font-serif font-bold transition-colors">PrayerVerses</span>
-            </Link>
+            </a>
             <p className="text-xs text-primary-foreground/80 leading-snug">
               Your daily source of inspiration and spiritual guidance through God&apos;s Word. Discover, share, and reflect on beautiful Bible verses, and prayers every day.
             </p>
@@ -56,12 +55,12 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
               <ul className="flex flex-col gap-1">
                 {links.map((link) => (
                   <li key={link.href}>
-                    <Link
+                    <a
                       href={link.href}
                       className="text-xs text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                     >
                       {link.label}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>

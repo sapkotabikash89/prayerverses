@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useMemo, useEffect } from "react"
-import Link from "next/link"
 import { ChevronLeft, ChevronRight, Calendar as CalendarIcon } from "lucide-react"
 import { VerseCard } from "@/components/verse-card"
 import { Button } from "@/components/ui/button"
@@ -200,8 +199,8 @@ export function DailyVerseHero() {
                       aria-label={bg.label}
                       aria-pressed={backgroundId === bg.id}
                       className={`h-7 w-7 rounded-none border border-border/60 ring-offset-2 transition hover:scale-105 ${bg.previewClass} ${backgroundId === bg.id
-                          ? "ring-2 ring-primary"
-                          : "ring-0"
+                        ? "ring-2 ring-primary"
+                        : "ring-0"
                         }`}
                     />
                   ))}
@@ -218,14 +217,14 @@ export function DailyVerseHero() {
         )}
 
         <div className="mt-8">
-          <Link href="/verse-of-the-day/">
+          <a href="/verse-of-the-day/">
             <Button
               variant="default"
               className="bg-primary text-primary-foreground hover:bg-primary/90"
             >
               View All Daily Verses
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

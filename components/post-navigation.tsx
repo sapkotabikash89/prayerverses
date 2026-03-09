@@ -1,7 +1,3 @@
-'use client'
-
-import Link from 'next/link'
-
 interface PostNav {
     title: string
     slug: string
@@ -23,12 +19,12 @@ export function PostNavigation({ previous, next }: PostNavigationProps) {
                         <span className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                             ← Previous Post
                         </span>
-                        <Link
+                        <a
                             href={`/${previous.slug}/`}
                             className="text-lg font-serif font-bold text-primary hover:text-primary/80 transition-colors"
                         >
                             {previous.title}
-                        </Link>
+                        </a>
                     </>
                 )}
             </div>
@@ -38,12 +34,12 @@ export function PostNavigation({ previous, next }: PostNavigationProps) {
                         <span className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                             Next Post →
                         </span>
-                        <Link
+                        <a
                             href={`/${next.slug}/`}
                             className="text-lg font-serif font-bold text-primary hover:text-primary/80 transition-colors"
                         >
                             {next.title}
-                        </Link>
+                        </a>
                     </>
                 )}
             </div>

@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { parseBibleReferences } from "@/lib/bible-parser"
 
 interface BibleLinkifiedTextProps {
@@ -14,13 +13,13 @@ export function BibleLinkifiedText({ text, className }: BibleLinkifiedTextProps)
             {parts.map((part, index) => {
                 if (part.type === "reference" && part.href) {
                     return (
-                        <Link
+                        <a
                             key={index}
                             href={part.href}
                             className="font-medium hover:underline bible-verse-link"
                         >
                             {part.content}
-                        </Link>
+                        </a>
                     )
                 }
                 return <span key={index}>{part.content}</span>
