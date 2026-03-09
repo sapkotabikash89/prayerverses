@@ -37,7 +37,7 @@ export function TopicVerseList({ initialVerses, pageSize = 20 }: TopicVerseListP
           <Button 
             variant="outline" 
             onClick={loadMore}
-            className="px-8 h-11 rounded-full border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all"
+            className="px-8 h-11 rounded-none border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all"
           >
             Load More Verses
           </Button>

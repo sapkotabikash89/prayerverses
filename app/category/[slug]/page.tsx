@@ -90,7 +90,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     categorySlug={slug}
                 />
             ) : (
-                <div className="text-center py-20 bg-secondary/20 rounded-2xl border border-dashed border-border">
+                <div className="text-center py-20 bg-secondary/20 rounded-none border border-dashed border-border">
                     <p className="text-muted-foreground">No posts found in this category.</p>
                 </div>
             )}

@@ -56,10 +56,25 @@ export default function SearchPage() {
   useEffect(() => {
     async function loadIndex() {
       try {
-        const data = await buildSearchIndex()
-        setIndex(data)
+        // Try to fetch pre-generated index first
+        const response = await fetch('/search-index.json')
+        if (response.ok) {
+          const data = await response.json()
+          setIndex(data)
+        } else {
+          // Fallback to building it on the fly (slow but functional)
+          const data = await buildSearchIndex()
+          setIndex(data)
+        }
       } catch (error) {
-        console.error("Failed to build search index:", error)
+        console.error("Failed to load search index:", error)
+        // Secondary fallback
+        try {
+          const data = await buildSearchIndex()
+          setIndex(data)
+        } catch (innerError) {
+          console.error("Deep fallback failed:", innerError)
+        }
       } finally {
         setLoading(false)
       }
@@ -172,7 +187,7 @@ export default function SearchPage() {
                   <Link
                     key={`${type}-${i}`}
                     href={result.href}
-                    className="group rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm"
+                    className="group rounded-none border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm"
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <Badge variant="secondary" className="text-xs">

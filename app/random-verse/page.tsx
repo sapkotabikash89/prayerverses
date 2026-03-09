@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description: "Get a random Bible verse to inspire your day and strengthen your faith.",
   robots: { index: true, follow: true },
   keywords: ["random bible verse", "bible verse generator", "random scripture", "bible passage", "spontaneous bible quotes", "spiritual guidance", "bible verses for inspiration", "daily scripture", "bible study tool", "christian meditation"],
+  alternates: {
+    canonical: "/random-verse/",
+  },
   openGraph: {
     title: "Random Bible Verse",
     description: "Get a random Bible verse to inspire your day and strengthen your faith.",
@@ -102,7 +105,7 @@ export default async function RandomVersePage() {
         <div className="flex flex-col gap-16">
           {/* Introduction Section */}
           <section className="prose prose-stone max-w-none dark:prose-invert">
-            <div className="rounded-3xl bg-card border border-border p-8 lg:p-12 shadow-sm">
+            <div className="rounded-none bg-card border border-border p-8 lg:p-12 shadow-sm">
               <p className="text-lg leading-relaxed text-muted-foreground mb-6">
                 Are you seeking daily inspiration, a word of encouragement, or just want to feel spiritually connected anytime during your day? Our Random Bible Verse Generator is the perfect tool to draw you closer to God—one verse at a time.
               </p>
@@ -129,12 +132,12 @@ export default async function RandomVersePage() {
                   "Think of it as a spiritual companion that surprises you with the right message at the right time."
                 </p>
               </div>
-              <div className="bg-secondary/30 rounded-2xl p-6 border border-border">
+              <div className="bg-secondary/30 rounded-none p-6 border border-border">
                 <h4 className="font-bold text-card-foreground mb-4">It’s especially helpful for people who:</h4>
                 <ul className="space-y-3">
                   {["Don’t know where to begin reading the Bible", "Need guidance or comfort in the moment", "Want to make Bible reading more engaging and dynamic"].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[10px] font-bold">✓</span>
+                      <span className="flex-shrink-0 w-5 h-5 rounded-none bg-primary/10 text-primary flex items-center justify-center text-[10px] font-bold">✓</span>
                       {item}
                     </li>
                   ))}
@@ -183,7 +186,7 @@ export default async function RandomVersePage() {
                   text: "A perfect starting point for personal prayer, journaling, or quiet meditation. These spontaneous verses often feel like divine appointments."
                 }
               ].map((benefit, i) => (
-                <div key={i} className="p-6 rounded-2xl border border-border bg-card shadow-sm hover:shadow-md transition-shadow">
+                <div key={i} className="p-6 rounded-none border border-border bg-card shadow-sm hover:shadow-md transition-shadow">
                   <h3 className="text-lg font-bold text-primary mb-3">{benefit.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{benefit.text}</p>
                 </div>
@@ -195,7 +198,7 @@ export default async function RandomVersePage() {
           </section>
 
           {/* How to Use Section */}
-          <section className="bg-secondary/20 rounded-3xl p-8 lg:p-12 border border-border">
+          <section className="bg-secondary/20 rounded-none p-8 lg:p-12 border border-border">
             <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 text-center">
               How to Use Our Random Bible Verse Generator [Step-by-Step Guide]
             </h2>
@@ -253,8 +256,8 @@ export default async function RandomVersePage() {
                   points: ["You release the stress and burdens of the day", "You find comfort in God's promises", "You quiet your mind with His truth, rather than anxious thoughts"]
                 }
               ].map((habit, i) => (
-                <div key={i} className="flex flex-col lg:flex-row gap-8 items-start p-8 rounded-3xl bg-card border border-border shadow-sm">
-                  <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-2xl bg-secondary text-3xl">
+                <div key={i} className="flex flex-col lg:flex-row gap-8 items-start p-8 rounded-none bg-card border border-border shadow-sm">
+                  <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-none bg-secondary text-3xl">
                     {habit.icon}
                   </div>
                   <div className="flex-1">
@@ -264,7 +267,7 @@ export default async function RandomVersePage() {
                     <ul className="grid gap-2 sm:grid-cols-2">
                       {habit.points.map((point, j) => (
                         <li key={j} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+                          <span className="w-1.5 h-1.5 rounded-none bg-primary/40" />
                           {point}
                         </li>
                       ))}
@@ -277,7 +280,7 @@ export default async function RandomVersePage() {
 
 
           {/* Transformation Section */}
-          <section className="text-center bg-primary/5 rounded-3xl p-8 lg:p-12 border border-primary/10">
+          <section className="text-center bg-primary/5 rounded-none p-8 lg:p-12 border border-primary/10">
             <h2 className="text-2xl font-serif font-bold text-card-foreground mb-6 flex items-center justify-center gap-3">
               <span className="text-3xl">📖</span> Daily Bible Verses, Daily Transformation
             </h2>
@@ -315,8 +318,8 @@ export default async function RandomVersePage() {
                 { title: "Deep Dive Into Scripture", text: "Click “View Full” to explore verse meanings and explanations." },
                 { title: "No App Needed", text: "Accessible right on your browser. Lightweight, fast, and responsive on all devices." }
               ].map((feature, i) => (
-                <div key={i} className="flex gap-4 p-5 rounded-2xl bg-card border border-border">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xs font-bold">✓</span>
+                <div key={i} className="flex gap-4 p-5 rounded-none bg-card border border-border">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-none bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xs font-bold">✓</span>
                   <div>
                     <h4 className="font-bold text-card-foreground mb-1">{feature.title}</h4>
                     <p className="text-sm text-muted-foreground">{feature.text}</p>
@@ -350,7 +353,7 @@ export default async function RandomVersePage() {
                   <AccordionItem
                     key={i}
                     value={`item-${i}`}
-                    className="border border-border rounded-2xl px-6 bg-card shadow-sm overflow-hidden"
+                    className="border border-border rounded-none px-6 bg-card shadow-sm overflow-hidden"
                   >
                     <AccordionTrigger className="text-left font-semibold text-card-foreground hover:text-primary transition-colors py-4">
                       {faq.question}

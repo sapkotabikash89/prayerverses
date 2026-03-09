@@ -32,7 +32,7 @@ export default function ContactPage() {
           Whether you have a question, suggestion, or simply want to share how Prayer Verses has helped you, feel free to reach out. We&apos;re always open to feedback, new ideas, or ways to improve the experience for our readers.
         </p>
 
-        <div className="rounded-2xl border border-border bg-card p-6 lg:p-8">
+        <div className="rounded-none border border-border bg-card p-6 lg:p-8">
           <p className="text-base font-semibold text-card-foreground mb-4">You can contact us anytime by email:</p>
           <div className="flex items-center gap-4 text-primary font-bold">
             <span className="text-2xl">📧</span>
@@ -54,7 +54,7 @@ export default function ContactPage() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-4 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-sm transition-all group"
+                className="flex items-center gap-3 p-4 rounded-none border border-border bg-card hover:border-primary/30 hover:shadow-sm transition-all group"
               >
                 <span className="text-xl">{social.icon}</span>
                 <span className="font-semibold text-card-foreground group-hover:text-primary transition-colors">{social.name}</span>
@@ -63,7 +63,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <p className="text-base leading-relaxed text-muted-foreground bg-secondary/30 p-6 rounded-2xl border border-border italic">
+        <p className="text-base leading-relaxed text-muted-foreground bg-secondary/30 p-6 rounded-none border border-border italic">
           We do our best to respond within 48 hours on weekdays. If it&apos;s about something urgent or important, kindly mention it in the subject line so we can prioritize your message.
         </p>
 

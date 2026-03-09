@@ -33,7 +33,7 @@ export function VerseTranslations({ reference, bookName, chapter, verse, kjvText
       </h2>
       <div className="grid gap-6 md:grid-cols-2">
         {translations.map((t) => (
-          <div key={t.id} className="group rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md">
+          <div key={t.id} className="group rounded-none border border-border bg-card p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md">
             <div className="flex items-center justify-between mb-4">
               <div className="flex flex-col">
                 <span className="text-sm font-bold text-primary uppercase tracking-wider">{t.id}</span>
@@ -43,7 +43,7 @@ export function VerseTranslations({ reference, bookName, chapter, verse, kjvText
                 href={t.url} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-secondary/50 text-muted-foreground hover:text-primary transition-colors"
+                className="p-2 rounded-none bg-secondary/50 text-muted-foreground hover:text-primary transition-colors"
                 title={`Read ${t.id} on Bible Gateway`}
               >
                 <ExternalLink className="h-4 w-4" />
@@ -55,7 +55,7 @@ export function VerseTranslations({ reference, bookName, chapter, verse, kjvText
                   {t.text}
                 </p>
               ) : (
-                <p className="text-sm italic text-muted-foreground bg-secondary/20 p-3 rounded-lg border border-border/50">
+                <p className="text-sm italic text-muted-foreground bg-secondary/20 p-3 rounded-none border border-border/50">
                   Read the {t.id} translation of {reference} on Bible Gateway.
                 </p>
               )}

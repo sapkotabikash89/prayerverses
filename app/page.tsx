@@ -35,7 +35,7 @@ export default async function HomePage() {
 
       <LatestPostsSection />
 
-      <section className="bg-secondary/20 rounded-3xl p-8 border border-border">
+      <section className="bg-secondary/20 rounded-none p-8 border border-border">
         <BibleBooksSection />
       </section>
     </div>

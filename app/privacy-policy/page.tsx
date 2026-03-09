@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
         Privacy Policy
       </h1>
       <div className="flex flex-col gap-8 text-base leading-relaxed text-card-foreground">
-        <div className="space-y-1 text-sm text-muted-foreground bg-secondary/30 p-4 rounded-xl border border-border">
+        <div className="space-y-1 text-sm text-muted-foreground bg-secondary/30 p-4 rounded-none border border-border">
           <p>Effective Date: March 8, 2026</p>
           <p>Website: https://prayerverses.com</p>
           <p>Contact Email: info@prayerverses.com</p>

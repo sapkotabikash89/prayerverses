@@ -35,7 +35,7 @@ export function VerseDateSelector({ currentDate, allDates }: VerseDateSelectorPr
       {prevDate && (
         <Link 
           href={`/verse-of-the-day/${prevDate}/`} 
-          className="p-2 rounded-full hover:bg-secondary transition-colors"
+          className="p-2 rounded-none hover:bg-secondary transition-colors"
           title="Previous Day"
         >
           <ChevronLeft className="h-6 w-6" />
@@ -44,7 +44,7 @@ export function VerseDateSelector({ currentDate, allDates }: VerseDateSelectorPr
       
       <Popover>
         <PopoverTrigger asChild>
-          <Button variant="outline" className="flex items-center gap-2 px-6 h-11 rounded-full shadow-sm hover:shadow-md transition-all">
+          <Button variant="outline" className="flex items-center gap-2 px-6 h-11 rounded-none shadow-sm hover:shadow-md transition-all">
             <CalendarIcon className="h-4 w-4 text-primary" />
             <span className="font-medium">{currentDate}</span>
           </Button>
@@ -63,7 +63,7 @@ export function VerseDateSelector({ currentDate, allDates }: VerseDateSelectorPr
       {nextDate && (
         <Link 
           href={`/verse-of-the-day/${nextDate}/`} 
-          className="p-2 rounded-full hover:bg-secondary transition-colors"
+          className="p-2 rounded-none hover:bg-secondary transition-colors"
           title="Next Day"
         >
           <ChevronRight className="h-6 w-6" />

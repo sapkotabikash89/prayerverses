@@ -15,7 +15,7 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
     }
 
     return (
-        <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
+        <div className="mx-auto max-w-[1200px] px-4 py-8 lg:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 <div className="lg:col-span-8">
                     {children}
@@ -27,7 +27,7 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
             </div>
 
             {/* Mobile-only sidebar: appears below content */}
-            <aside className="lg:hidden mt-16 border-t border-border pt-12 space-y-12">
+            <aside className="lg:hidden mt-12 border-t border-border pt-8 space-y-8">
                 <ExploreMoreSidebar />
                 <AdsenseSidebarAd />
             </aside>

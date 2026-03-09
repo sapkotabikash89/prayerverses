@@ -16,7 +16,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
     return (
         <Link
             href={`/${post.slug}/`}
-            className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:border-primary/30 hover:shadow-md"
+            className="group flex flex-col overflow-hidden rounded-none border border-border bg-card transition-all hover:border-primary/30 hover:shadow-md"
         >
             {featuredImage ? (
                 <div className="relative aspect-video w-full overflow-hidden">

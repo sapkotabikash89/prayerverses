@@ -21,8 +21,8 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
   const [categoriesDropdown, setCategoriesDropdown] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
-      <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-3 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 lg:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -43,7 +43,7 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
             <Link
               key={link.href}
               href={link.href}
-              className="px-3 py-2 text-sm font-medium text-secondary-foreground rounded-md hover:bg-secondary transition-colors"
+              className="px-3 py-2 text-sm font-medium text-secondary-foreground rounded-none hover:bg-secondary transition-colors"
             >
               {link.label}
             </Link>
@@ -58,7 +58,7 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
                 setCategoriesDropdown(!categoriesDropdown);
               }}
               onBlur={() => setTimeout(() => setCategoriesDropdown(false), 200)}
-              className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-secondary-foreground rounded-md hover:bg-secondary transition-colors"
+              className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-secondary-foreground rounded-none hover:bg-secondary transition-colors"
               aria-expanded={categoriesDropdown}
               aria-haspopup="true"
             >
@@ -66,13 +66,13 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
               <ChevronDown className="h-3.5 w-3.5" />
             </Link>
             {categoriesDropdown && (
-              <div className="absolute left-0 top-full mt-1 w-56 bg-card border border-border rounded-lg shadow-lg p-2 z-50">
+              <div className="absolute left-0 top-full mt-1 w-56 bg-card border border-border rounded-none shadow-lg p-2 z-50">
                 {categories.length > 0 ? (
                   categories.map((cat) => (
                     <Link
                       key={cat.id}
                       href={`/category/${cat.slug}/`}
-                      className="block px-3 py-2 text-sm text-secondary-foreground rounded-md hover:bg-secondary transition-colors"
+                      className="block px-3 py-2 text-sm text-secondary-foreground rounded-none hover:bg-secondary transition-colors"
                     >
                       {cat.name}
                     </Link>
@@ -93,7 +93,7 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
                 setBibleDropdown(!bibleDropdown);
               }}
               onBlur={() => setTimeout(() => setBibleDropdown(false), 200)}
-              className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-secondary-foreground rounded-md hover:bg-secondary transition-colors"
+              className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-secondary-foreground rounded-none hover:bg-secondary transition-colors"
               aria-expanded={bibleDropdown}
               aria-haspopup="true"
             >
@@ -101,7 +101,7 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
               <ChevronDown className="h-3.5 w-3.5" />
             </Link>
             {bibleDropdown && (
-              <div className="absolute right-0 top-full mt-1 w-[540px] bg-card border border-border rounded-lg shadow-lg p-4 grid grid-cols-3 gap-1 max-h-[70vh] overflow-y-auto z-50">
+              <div className="absolute right-0 top-full mt-1 w-[540px] bg-card border border-border rounded-none shadow-lg p-4 grid grid-cols-3 gap-1 max-h-[70vh] overflow-y-auto z-50">
                 <p className="col-span-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1 px-2">
                   Old Testament
                 </p>

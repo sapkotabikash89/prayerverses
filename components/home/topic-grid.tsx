@@ -21,9 +21,9 @@ export function TopicGrid({ categories = [] }: { categories?: Category[] }) {
             <Link
               key={category.id}
               href={`/category/${category.slug}/`}
-              className="group flex flex-col items-center gap-2 rounded-xl border border-border bg-card p-5 text-center transition-all hover:border-primary/30 hover:shadow-md min-w-[140px]"
+              className="group flex flex-col items-center gap-2 rounded-none border border-border bg-card p-5 text-center transition-all hover:border-primary/30 hover:shadow-md min-w-[140px]"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+              <span className="flex h-10 w-10 items-center justify-center rounded-none bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                 <TopicIcon name="BookOpen" className="h-5 w-5" />
               </span>
               <span className="text-sm font-medium text-card-foreground">

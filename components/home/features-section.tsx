@@ -45,9 +45,9 @@ export function FeaturesSection() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="flex flex-col items-center text-center rounded-xl border border-border bg-card p-6"
+              className="flex flex-col items-center text-center rounded-none border border-border bg-card p-6"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-4">
+              <span className="flex h-12 w-12 items-center justify-center rounded-none bg-primary/10 text-primary mb-4">
                 <feature.icon className="h-6 w-6" />
               </span>
               <h3 className="text-base font-semibold text-card-foreground mb-2">

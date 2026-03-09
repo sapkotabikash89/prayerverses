@@ -32,8 +32,8 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <nav aria-label="Breadcrumb" className="mb-6 flex items-center overflow-x-auto whitespace-nowrap text-xs text-muted-foreground lg:text-sm no-scrollbar">
-        <ol className="flex items-center gap-1.5">
+      <nav aria-label="Breadcrumb" className="mb-6 flex items-center flex-wrap text-xs text-muted-foreground lg:text-sm">
+        <ol className="flex items-center flex-wrap gap-1.5">
           {allItems.map((item, index) => (
             <li key={item.href} className="flex items-center gap-1.5">
               {index > 0 && <ChevronRight className="h-3.5 w-3.5 opacity-50" />}

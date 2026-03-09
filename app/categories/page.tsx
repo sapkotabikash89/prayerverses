@@ -31,10 +31,10 @@ export default async function CategoriesPage() {
                     <Link
                         key={topic.slug}
                         href={`/category/${topic.slug}/`}
-                        className="group rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md"
+                        className="group rounded-none border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md"
                     >
                         <div className="flex items-start gap-4">
-                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-none bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                                 <TopicIcon name="BookOpen" className="h-5 w-5" />
                             </span>
                             <div>

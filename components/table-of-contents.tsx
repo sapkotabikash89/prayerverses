@@ -13,7 +13,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
     if (headings.length === 0) return null
 
     return (
-        <div className="my-10 p-6 rounded-2xl border border-border bg-secondary/30">
+        <div className="my-10 p-6 rounded-none border border-border bg-secondary/30">
             <h2 className="text-lg font-serif font-bold text-card-foreground mb-4">Table of Contents</h2>
             <nav aria-label="Table of Contents">
                 <ol className="space-y-3 list-decimal list-inside">

@@ -230,8 +230,8 @@ export default async function VerseOfTheDayPage({
                 const translations = (v as any).translations || {}
                 const translationText = translations[version] || displayVerse.text
                 return (
-                  <div key={version} className="flex gap-4 p-4 rounded-xl border border-border bg-card/50">
-                    <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary font-bold text-sm">
+                  <div key={version} className="flex gap-4 p-4 rounded-none border border-border bg-card/50">
+                    <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-none bg-primary/10 text-primary font-bold text-sm">
                       {i + 1}
                     </div>
                     <div>
@@ -254,14 +254,14 @@ export default async function VerseOfTheDayPage({
               <h2 className="text-2xl font-serif font-bold text-card-foreground mb-6 border-b border-border pb-4">
                 Today's Bible Verse ({displayVerse.ref}) In-Context
               </h2>
-              <div className="space-y-4 bg-card border border-border rounded-2xl p-6 lg:p-8">
+              <div className="space-y-4 bg-card border border-border rounded-none p-6 lg:p-8">
                 {contextVerses.map((cv) => (
-                  <div key={cv.verse} className={`flex gap-3 ${cv.reference === displayVerse.ref ? "bg-primary/5 rounded-lg p-3 ring-1 ring-primary/20" : ""}`}>
+                  <div key={cv.verse} className={`flex gap-3 ${cv.reference === displayVerse.ref ? "bg-primary/5 rounded-none p-3 ring-1 ring-primary/20" : ""}`}>
                     <span className="text-xs font-bold text-primary mt-1 w-6">{cv.verse}</span>
                     <p className={`text-base leading-relaxed ${cv.reference === displayVerse.ref ? "text-card-foreground font-medium" : "text-muted-foreground"}`}>
                       {cv.text}
                       {cv.reference === displayVerse.ref && (
-                        <span className="ml-2 inline-flex items-center rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary uppercase">Today's Verse</span>
+                        <span className="ml-2 inline-flex items-center rounded-none bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary uppercase">Today's Verse</span>
                       )}
                     </p>
                   </div>
@@ -400,7 +400,7 @@ export default async function VerseOfTheDayPage({
               Prayers of the Day
             </h2>
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="p-8 rounded-3xl bg-primary/5 border border-primary/10 shadow-sm">
+              <div className="p-8 rounded-none bg-primary/5 border border-primary/10 shadow-sm">
                 <div className="flex items-center gap-3 mb-4 text-primary">
                   <span className="text-2xl">🙏</span>
                   <h3 className="font-serif font-bold text-xl">Morning Prayer</h3>
@@ -419,7 +419,7 @@ export default async function VerseOfTheDayPage({
                   </p>
                 )}
               </div>
-              <div className="p-8 rounded-3xl bg-secondary/30 border border-border shadow-sm">
+              <div className="p-8 rounded-none bg-secondary/30 border border-border shadow-sm">
                 <div className="flex items-center gap-3 mb-4 text-card-foreground">
                   <span className="text-2xl">🙏</span>
                   <h3 className="font-serif font-bold text-xl">Evening Prayer</h3>
@@ -447,7 +447,7 @@ export default async function VerseOfTheDayPage({
             <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 border-b border-border pb-4">
               Random Bible Scripture of the Day
             </h2>
-            <div className="rounded-2xl border border-border overflow-hidden bg-card shadow-sm">
+            <div className="rounded-none border border-border overflow-hidden bg-card shadow-sm">
               <Table>
                 <TableHeader>
                   <TableRow className="bg-secondary/50">
@@ -522,7 +522,7 @@ export default async function VerseOfTheDayPage({
           </section>
 
           {/* Final Thought Section */}
-          <section className="text-center py-12 bg-secondary/20 rounded-3xl border border-border">
+          <section className="text-center py-12 bg-secondary/20 rounded-none border border-border">
             <h2 className="text-2xl font-serif font-bold text-card-foreground mb-6">
               Final Thought
             </h2>
@@ -547,7 +547,7 @@ export default async function VerseOfTheDayPage({
                   <AccordionItem
                     key={i}
                     value={`item-${i}`}
-                    className="border border-border rounded-2xl px-6 bg-card shadow-sm overflow-hidden"
+                    className="border border-border rounded-none px-6 bg-card shadow-sm overflow-hidden"
                   >
                     <AccordionTrigger className="text-left font-semibold text-card-foreground hover:text-primary transition-colors py-4">
                       {faq.question}

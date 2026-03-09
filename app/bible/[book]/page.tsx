@@ -138,7 +138,7 @@ export default async function BibleBookPage({
             <Link
               key={ch}
               href={`/bible/${b.slug}/${ch}/`}
-              className="flex items-center justify-center rounded-lg border border-border bg-card py-3 text-sm font-medium text-card-foreground hover:border-primary/30 hover:bg-secondary hover:shadow-sm transition-all"
+              className="flex items-center justify-center rounded-none border border-border bg-card py-3 text-sm font-medium text-card-foreground hover:border-primary/30 hover:bg-secondary hover:shadow-sm transition-all"
             >
               {ch}
             </Link>
@@ -158,7 +158,7 @@ export default async function BibleBookPage({
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="border border-border rounded-2xl px-6 bg-card shadow-sm overflow-hidden"
+                className="border border-border rounded-none px-6 bg-card shadow-sm overflow-hidden"
               >
                 <AccordionTrigger className="text-left font-semibold text-card-foreground hover:text-primary transition-colors py-4">
                   {faq.question}

@@ -20,7 +20,7 @@ export function AdsenseSidebarAd() {
     }, [pathname])
 
     return (
-        <div className="sticky top-24 mt-12 w-full overflow-hidden bg-card/50 rounded-xl border border-border p-4 text-center relative z-10 clear-both">
+        <div className="sticky top-24 mt-12 w-full overflow-hidden bg-card/50 rounded-none border border-border p-4 text-center relative z-10 clear-both">
             <span className="text-[10px] uppercase text-muted-foreground block mb-2 tracking-widest">Advertisement</span>
             {/* New Vertical */}
             <ins

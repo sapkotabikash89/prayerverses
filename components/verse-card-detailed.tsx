@@ -103,7 +103,7 @@ export function VerseCardDetailed({ verse }: VerseCardDetailedProps) {
       {/* Verse Card */}
       <div 
         ref={cardRef}
-        className={`relative w-full max-w-3xl overflow-hidden rounded-2xl border border-border/60 p-8 shadow-xl transition-all duration-500 lg:p-12 ${selectedBackground.wrapperClass}`}
+        className={`relative w-full max-w-3xl overflow-hidden rounded-none border border-border/60 p-8 shadow-xl transition-all duration-500 lg:p-12 ${selectedBackground.wrapperClass}`}
       >
         <div className="flex flex-col items-center text-center">
           <blockquote className={`text-2xl font-serif leading-relaxed lg:text-3xl mb-6 ${selectedBackground.textClass}`}>
@@ -120,23 +120,23 @@ export function VerseCardDetailed({ verse }: VerseCardDetailedProps) {
 
       {/* Social Sharing & Actions */}
       <div className="mt-8 flex flex-wrap justify-center gap-4">
-        <Button variant="outline" size="icon" className="rounded-full" onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank')}>
+        <Button variant="outline" size="icon" className="rounded-none" onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank')}>
           <Facebook className="h-5 w-5" />
         </Button>
-        <Button variant="outline" size="icon" className="rounded-full" onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`, '_blank')}>
+        <Button variant="outline" size="icon" className="rounded-none" onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`, '_blank')}>
           <Twitter className="h-5 w-5" />
         </Button>
-        <Button variant="outline" size="icon" className="rounded-full" onClick={() => window.open(`mailto:?subject=Bible Verse&body=${encodeURIComponent(shareText + '\n' + shareUrl)}`, '_blank')}>
+        <Button variant="outline" size="icon" className="rounded-none" onClick={() => window.open(`mailto:?subject=Bible Verse&body=${encodeURIComponent(shareText + '\n' + shareUrl)}`, '_blank')}>
           <Mail className="h-5 w-5" />
         </Button>
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="icon" className="rounded-full" onClick={copyToClipboard} title="Copy Verse Text">
+          <Button variant="outline" size="icon" className="rounded-none" onClick={copyToClipboard} title="Copy Verse Text">
             <LinkIcon className="h-5 w-5" />
           </Button>
           <Button 
             variant="outline" 
             size="icon" 
-            className="rounded-full" 
+            className="rounded-none" 
             onClick={downloadImage} 
             disabled={isDownloading}
             title="Download as Image"
@@ -154,7 +154,7 @@ export function VerseCardDetailed({ verse }: VerseCardDetailedProps) {
             <button
               key={bg.id}
               onClick={() => setBackgroundId(bg.id)}
-              className={`group relative h-10 w-10 rounded-full border-2 transition-all ${
+              className={`group relative h-10 w-10 rounded-none border-2 transition-all ${
                 backgroundId === bg.id ? 'border-primary ring-2 ring-primary/20 scale-110' : 'border-transparent hover:scale-105'
               } ${bg.previewClass}`}
               title={bg.label}

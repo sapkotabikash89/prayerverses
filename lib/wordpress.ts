@@ -49,6 +49,10 @@ export interface Post {
     node: {
       sourceUrl: string;
       altText?: string;
+      mediaDetails?: {
+        width: number;
+        height: number;
+      };
     };
   };
   categories?: {
@@ -292,6 +296,10 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
           node {
             sourceUrl
             altText
+            mediaDetails {
+              width
+              height
+            }
           }
         }
         author {

@@ -173,7 +173,7 @@ export default async function BibleChapterPage({
       </h1>
 
 
-      <div className="rounded-xl border border-border bg-card p-6 lg:p-8">
+      <div className="rounded-none border border-border bg-card p-6 lg:p-8">
         <div className="flex flex-col gap-4">
           {verses.map((v) => (
             <p
@@ -227,7 +227,7 @@ export default async function BibleChapterPage({
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="border border-border rounded-2xl px-6 bg-card shadow-sm overflow-hidden"
+                className="border border-border rounded-none px-6 bg-card shadow-sm overflow-hidden"
               >
                 <AccordionTrigger className="text-left font-semibold text-card-foreground hover:text-primary transition-colors py-4">
                   {faq.question}

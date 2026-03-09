@@ -40,9 +40,9 @@ export function ExploreMoreSidebar() {
 
     return (
         <div className="space-y-6">
-            <section className="bg-card border border-border rounded-[2rem] p-6 shadow-sm overflow-hidden">
+            <section className="bg-card border border-border rounded-none p-6 shadow-sm overflow-hidden">
                 <h2 className="text-lg font-serif font-bold text-card-foreground mb-4 flex items-center gap-3">
-                    <span className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-none bg-primary/10 flex items-center justify-center">
                         <BookOpen className="w-3.5 h-3.5 text-primary" />
                     </span>
                     Explore More
@@ -53,10 +53,10 @@ export function ExploreMoreSidebar() {
                         <Link
                             key={item.href}
                             href={item.href}
-                            className="group block p-3.5 rounded-2xl border border-border hover:border-primary/30 hover:shadow-md transition-all bg-background relative overflow-hidden"
+                            className="group block p-3.5 rounded-none border border-border hover:border-primary/30 hover:shadow-md transition-all bg-background relative overflow-hidden"
                         >
                             <div className="flex items-start gap-3 relative z-10">
-                                <div className={`p-2 rounded-xl border ${item.color} group-hover:scale-105 transition-transform duration-300`}>
+                                <div className={`p-2 rounded-none border ${item.color} group-hover:scale-105 transition-transform duration-300`}>
                                     {cloneElement(item.icon as React.ReactElement<any>, { className: "w-4 h-4" })}
                                 </div>
                                 <div className="flex-1 min-w-0">

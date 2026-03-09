@@ -44,10 +44,10 @@ export function QuickAccessGrid() {
                     <Link
                         key={action.title}
                         href={action.href}
-                        className={`group block p-6 rounded-2xl border border-border bg-card transition-all hover:shadow-md hover:-translate-y-1`}
+                        className={`group block p-6 rounded-none border border-border bg-card transition-all hover:shadow-md hover:-translate-y-1`}
                     >
                         <div className="flex items-start gap-4">
-                            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${action.iconBg} ${action.color.split(' ')[1]} transition-colors group-hover:bg-primary group-hover:text-primary-foreground`}>
+                            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-none ${action.iconBg} ${action.color.split(' ')[1]} transition-colors group-hover:bg-primary group-hover:text-primary-foreground`}>
                                 <action.icon className="h-6 w-6" />
                             </div>
                             <div>

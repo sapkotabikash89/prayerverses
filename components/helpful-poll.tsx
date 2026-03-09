@@ -29,7 +29,7 @@ export function HelpfulPoll() {
             <div className="flex items-center gap-4">
                 <Button
                     variant="outline"
-                    className="flex items-center gap-2 px-6 h-11 rounded-md bg-card hover:bg-secondary transition-all"
+                    className="flex items-center gap-2 px-6 h-11 rounded-none bg-card hover:bg-secondary transition-all"
                     onClick={() => handleVote(true)}
                 >
                     <ThumbsUp className="h-4 w-4" />
@@ -37,7 +37,7 @@ export function HelpfulPoll() {
                 </Button>
                 <Button
                     variant="outline"
-                    className="flex items-center gap-2 px-6 h-11 rounded-md bg-card hover:bg-secondary transition-all"
+                    className="flex items-center gap-2 px-6 h-11 rounded-none bg-card hover:bg-secondary transition-all"
                     onClick={() => handleVote(false)}
                 >
                     <ThumbsDown className="h-4 w-4" />

@@ -164,12 +164,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             {featuredImage && (
                 <>
-                    <div className="relative aspect-video w-full rounded-2xl overflow-hidden mb-4 shadow-sm">
+                    <div className="w-full mb-6">
                         <Image
                             src={featuredImage.sourceUrl}
                             alt={featuredImage.altText || post.title}
-                            fill
-                            className="object-cover"
+                            width={featuredImage.mediaDetails?.width || 1200}
+                            height={featuredImage.mediaDetails?.height || 675}
+                            className="w-full h-auto rounded-none shadow-sm"
                             priority
                         />
                     </div>

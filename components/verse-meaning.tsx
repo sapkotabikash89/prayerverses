@@ -106,7 +106,7 @@ export function VerseMeaning({
       </div>
 
       {/* Context Summary */}
-      <div className="mb-10 p-8 rounded-3xl bg-secondary/20 border border-border shadow-sm">
+      <div className="mb-10 p-8 rounded-none bg-secondary/20 border border-border shadow-sm">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-xl font-serif font-bold text-card-foreground">
             Context Summary
@@ -139,7 +139,7 @@ export function VerseMeaning({
       </div>
 
       {/* Chapter Context */}
-      <div className="p-8 rounded-3xl bg-primary/5 border border-primary/10 shadow-sm">
+      <div className="p-8 rounded-none bg-primary/5 border border-primary/10 shadow-sm">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-xl font-serif font-bold text-card-foreground">
             Chapter Context

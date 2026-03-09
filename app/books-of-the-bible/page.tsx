@@ -47,7 +47,7 @@ export default function BooksOfTheBiblePage() {
     <>
       <Breadcrumb items={[{ label: "Books of the Bible", href: "/books-of-the-bible/" }]} />
 
-      <article className="prose prose-stone max-w-none prose-img:rounded-2xl prose-headings:font-serif">
+      <article className="prose prose-stone max-w-none prose-img:rounded-none prose-headings:font-serif">
         <h1 className="text-3xl lg:text-5xl font-serif font-bold text-card-foreground mb-6">
           Complete List of 66 Books of the Bible
         </h1>
@@ -57,7 +57,7 @@ export default function BooksOfTheBiblePage() {
           alt="List of Books of the Bible Illustration"
           width={1200}
           height={630}
-          className="w-full h-auto rounded-2xl shadow-md mb-8"
+          className="w-full h-auto rounded-none shadow-md mb-8"
           priority
         />
 
@@ -610,7 +610,7 @@ export default function BooksOfTheBiblePage() {
           alt="The 39 Bible Books of the Old Testament"
           width={1024}
           height={576}
-          className="w-full h-auto rounded-xl shadow-sm my-8"
+          className="w-full h-auto rounded-none shadow-sm my-8"
         />
 
         <p>The books are traditionally grouped into four major sections:</p>
@@ -629,9 +629,9 @@ export default function BooksOfTheBiblePage() {
             <Link
               key={book.slug}
               href={`/bible/${book.slug}/`}
-              className="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 hover:border-primary/30 hover:shadow-sm transition-all"
+              className="flex items-center gap-3 rounded-none border border-border bg-card px-4 py-3 hover:border-primary/30 hover:shadow-sm transition-all"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary text-xs font-bold text-primary">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-none bg-secondary text-xs font-bold text-primary">
                 {i + 1}
               </span>
               <div className="flex-1 min-w-0">
@@ -653,7 +653,7 @@ export default function BooksOfTheBiblePage() {
           alt="The 27 Bible Books of the New Testament"
           width={1024}
           height={576}
-          className="w-full h-auto rounded-xl shadow-sm my-8"
+          className="w-full h-auto rounded-none shadow-sm my-8"
         />
 
         <p>The New Testament is organized into four key sections:</p>
@@ -672,9 +672,9 @@ export default function BooksOfTheBiblePage() {
             <Link
               key={book.slug}
               href={`/bible/${book.slug}/`}
-              className="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 hover:border-primary/30 hover:shadow-sm transition-all"
+              className="flex items-center gap-3 rounded-none border border-border bg-card px-4 py-3 hover:border-primary/30 hover:shadow-sm transition-all"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary text-xs font-bold text-primary">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-none bg-secondary text-xs font-bold text-primary">
                 {i + 40}
               </span>
               <div className="flex-1 min-w-0">
