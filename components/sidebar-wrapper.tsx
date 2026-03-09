@@ -14,20 +14,26 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
     }
 
     return (
-        <div className="mx-auto max-w-[1200px] px-2 py-4 lg:px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                <div className="lg:col-span-8">
+        <div className="mx-auto max-w-[1200px] px-2 lg:px-6 site-container">
+            <div className="flex flex-col lg:flex-row gap-8">
+                <main className="flex-1 min-w-0 mv-content-body">
                     {children}
-                </div>
-                <aside className="lg:col-span-4 hidden lg:block">
-                    <ExploreMoreSidebar />
+                </main>
+
+                {/* Desktop Sidebar */}
+                <aside className="hidden lg:block w-[300px] flex-shrink-0 sidebar">
+                    <div className="sticky top-24 space-y-8">
+                        <ExploreMoreSidebar />
+                    </div>
+                </aside>
+
+                {/* Mobile Sidebar - below content */}
+                <aside className="lg:hidden mt-12 pt-12 border-t border-border sidebar">
+                    <div className="space-y-8">
+                        <ExploreMoreSidebar />
+                    </div>
                 </aside>
             </div>
-
-            {/* Mobile-only sidebar: appears below content */}
-            <aside className="lg:hidden mt-12 border-t border-border pt-8 space-y-8">
-                <ExploreMoreSidebar />
-            </aside>
         </div>
     )
 }

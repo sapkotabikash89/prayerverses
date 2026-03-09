@@ -27,27 +27,29 @@ export default async function HomePage() {
   const categories = await getCategories()
 
   return (
-    <div className="space-y-8">
-      <HomeHero />
-      <QuickAccessGrid />
+    <article className="post-content">
+      <div className="space-y-8">
+        <HomeHero />
+        <QuickAccessGrid />
 
-      <section id="categories">
-        <TopicGrid categories={categories} />
-      </section>
+        <section id="categories">
+          <TopicGrid categories={categories} />
+        </section>
 
-      <LatestPostsSection />
+        <LatestPostsSection />
 
-      <section className="bg-primary/5 p-8 border border-primary/20 flex flex-col items-center text-center">
-        <h2 className="text-2xl font-serif font-bold mb-4">Explore the Full Bible</h2>
-        <p className="text-muted-foreground mb-6 max-w-2xl">
-          Access all 66 books of the Bible from Genesis to Revelation. Discover the wisdom and hope contained in every chapter.
-        </p>
-        <Link href="/books-of-the-bible/">
-          <Button size="lg" className="font-bold px-8">
-            View All Bible Books
-          </Button>
-        </Link>
-      </section>
-    </div>
+        <section className="bg-primary/5 p-8 border border-primary/20 flex flex-col items-center text-center">
+          <h2 className="text-2xl font-serif font-bold mb-4">Explore the Full Bible</h2>
+          <p className="text-muted-foreground mb-6 max-w-2xl">
+            Access all 66 books of the Bible from Genesis to Revelation. Discover the wisdom and hope contained in every chapter.
+          </p>
+          <Link href="/books-of-the-bible/">
+            <Button size="lg" className="font-bold px-8">
+              View All Bible Books
+            </Button>
+          </Link>
+        </section>
+      </div>
+    </article>
   )
 }

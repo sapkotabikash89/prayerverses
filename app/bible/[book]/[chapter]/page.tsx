@@ -148,98 +148,100 @@ export default async function BibleChapterPage({
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 lg:px-8 lg:py-10">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <Breadcrumb
-        items={[
-          { label: "Bible", href: "/books-of-the-bible/" },
-          { label: b.name, href: `/bible/${b.slug}/` },
-          { label: `Chapter ${ch}`, href: `/bible/${b.slug}/${ch}/` }
-        ]}
-      />
-      <Link
-        href={`/bible/${b.slug}/`}
-        className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-6"
-      >
-        <ChevronLeft className="h-4 w-4" />
-        {b.name}
-      </Link>
+    <article className="post-content">
+      <div className="mx-auto max-w-3xl px-4 py-8 lg:px-8 lg:py-10">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <Breadcrumb
+          items={[
+            { label: "Bible", href: "/books-of-the-bible/" },
+            { label: b.name, href: `/bible/${b.slug}/` },
+            { label: `Chapter ${ch}`, href: `/bible/${b.slug}/${ch}/` }
+          ]}
+        />
+        <Link
+          href={`/bible/${b.slug}/`}
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-6"
+        >
+          <ChevronLeft className="h-4 w-4" />
+          {b.name}
+        </Link>
 
-      <h1 className="text-3xl font-serif font-bold text-card-foreground mb-8 lg:text-4xl">
-        {b.name} {ch}
-      </h1>
-
-
-      <div className="rounded-none border border-border bg-card p-6 lg:p-8">
-        <div className="flex flex-col gap-4">
-          {verses.map((v) => (
-            <p
-              key={v.verseId}
-              id={`verse${v.verse}`}
-              className="text-base leading-relaxed text-card-foreground scroll-mt-24"
-            >
-              <span className="text-xs font-bold text-primary mr-1.5 align-super">
-                {v.verse}
-              </span>
-              {v.text}
-            </p>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between mt-8">
-        {prevCh ? (
-          <Link
-            href={`/bible/${b.slug}/${prevCh}/`}
-            className="inline-flex items-center gap-1 text-sm text-primary"
-          >
-            <ChevronLeft className="h-4 w-4" />
-            Chapter {prevCh}
-          </Link>
-        ) : (
-          <span />
-        )}
-        {nextCh ? (
-          <Link
-            href={`/bible/${b.slug}/${nextCh}/`}
-            className="inline-flex items-center gap-1 text-sm text-primary"
-          >
-            Chapter {nextCh}
-            <ChevronRight className="h-4 w-4" />
-          </Link>
-        ) : (
-          <span />
-        )}
-      </div>
+        <h1 className="text-3xl font-serif font-bold text-card-foreground mb-8 lg:text-4xl">
+          {b.name} {ch}
+        </h1>
 
 
-      {/* Bible Study FAQ Section */}
-      <section className="mt-16 border-t border-border pt-12">
-        <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 text-center">
-          Related Questions and Answers
-        </h2>
-        <div className="mx-auto max-w-3xl">
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqs.map((faq, i) => (
-              <AccordionItem
-                key={i}
-                value={`item-${i}`}
-                className="border border-border rounded-none px-6 bg-card shadow-sm overflow-hidden"
+        <div className="rounded-none border border-border bg-card p-6 lg:p-8">
+          <div className="flex flex-col gap-4">
+            {verses.map((v) => (
+              <p
+                key={v.verseId}
+                id={`verse${v.verse}`}
+                className="text-base leading-relaxed text-card-foreground scroll-mt-24"
               >
-                <AccordionTrigger className="text-left font-semibold text-card-foreground hover:text-primary transition-colors py-4">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+                <span className="text-xs font-bold text-primary mr-1.5 align-super">
+                  {v.verse}
+                </span>
+                {v.text}
+              </p>
             ))}
-          </Accordion>
+          </div>
         </div>
-      </section>
-    </div>
+
+        <div className="flex items-center justify-between mt-8">
+          {prevCh ? (
+            <Link
+              href={`/bible/${b.slug}/${prevCh}/`}
+              className="inline-flex items-center gap-1 text-sm text-primary"
+            >
+              <ChevronLeft className="h-4 w-4" />
+              Chapter {prevCh}
+            </Link>
+          ) : (
+            <span />
+          )}
+          {nextCh ? (
+            <Link
+              href={`/bible/${b.slug}/${nextCh}/`}
+              className="inline-flex items-center gap-1 text-sm text-primary"
+            >
+              Chapter {nextCh}
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+          ) : (
+            <span />
+          )}
+        </div>
+
+
+        {/* Bible Study FAQ Section */}
+        <section className="mt-16 border-t border-border pt-12">
+          <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 text-center">
+            Related Questions and Answers
+          </h2>
+          <div className="mx-auto max-w-3xl">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {faqs.map((faq, i) => (
+                <AccordionItem
+                  key={i}
+                  value={`item-${i}`}
+                  className="border border-border rounded-none px-6 bg-card shadow-sm overflow-hidden"
+                >
+                  <AccordionTrigger className="text-left font-semibold text-card-foreground hover:text-primary transition-colors py-4">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+      </div>
+    </article>
   )
 }

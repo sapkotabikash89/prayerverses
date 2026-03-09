@@ -63,37 +63,39 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     const description = category.description ? rewriteVerseLinks(linkifyBibleVerses(category.description)) : '';
 
     return (
-        <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 lg:py-10">
-            <Breadcrumb
-                items={[
-                    { label: 'Categories', href: '/categories/' },
-                    { label: category.name, href: `/category/${slug}/` },
-                ]}
-            />
+        <article className="post-content">
+            <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 lg:py-10">
+                <Breadcrumb
+                    items={[
+                        { label: 'Categories', href: '/categories/' },
+                        { label: category.name, href: `/category/${slug}/` },
+                    ]}
+                />
 
-            <div className="mb-12">
-                <h1 className="text-3xl font-serif font-bold text-card-foreground mb-4 lg:text-5xl">
-                    {category.name}
-                </h1>
-                {description && (
-                    <div
-                        className="prose prose-lg text-lg text-muted-foreground max-w-3xl leading-relaxed"
-                        dangerouslySetInnerHTML={{ __html: description }}
+                <div className="mb-12">
+                    <h1 className="text-3xl font-serif font-bold text-card-foreground mb-4 lg:text-5xl">
+                        {category.name}
+                    </h1>
+                    {description && (
+                        <div
+                            className="prose prose-lg text-lg text-muted-foreground max-w-3xl leading-relaxed"
+                            dangerouslySetInnerHTML={{ __html: description }}
+                        />
+                    )}
+                </div>
+
+                {posts.length > 0 ? (
+                    <PostGrid
+                        initialPosts={posts}
+                        initialPageInfo={pageInfo}
+                        categorySlug={slug}
                     />
+                ) : (
+                    <div className="text-center py-20 bg-secondary/20 rounded-none border border-dashed border-border">
+                        <p className="text-muted-foreground">No posts found in this category.</p>
+                    </div>
                 )}
             </div>
-
-            {posts.length > 0 ? (
-                <PostGrid
-                    initialPosts={posts}
-                    initialPageInfo={pageInfo}
-                    categorySlug={slug}
-                />
-            ) : (
-                <div className="text-center py-20 bg-secondary/20 rounded-none border border-dashed border-border">
-                    <p className="text-muted-foreground">No posts found in this category.</p>
-                </div>
-            )}
-        </div>
+        </article>
     );
 }

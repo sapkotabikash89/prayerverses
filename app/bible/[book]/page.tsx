@@ -104,73 +104,75 @@ export default async function BibleBookPage({
   const chapters = Array.from({ length: b.chapters }, (_, i) => i + 1)
 
   return (
-    <div className="py-8">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <Breadcrumb
-        items={[
-          { label: "Bible", href: "/books-of-the-bible/" },
-          { label: b.name, href: `/bible/${b.slug}/` }
-        ]}
-      />
-      <Link
-        href="/books-of-the-bible/"
-        className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-6"
-      >
-        <ChevronLeft className="h-4 w-4" />
-        All Books
-      </Link>
+    <article className="post-content">
+      <div className="py-8">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <Breadcrumb
+          items={[
+            { label: "Bible", href: "/books-of-the-bible/" },
+            { label: b.name, href: `/bible/${b.slug}/` }
+          ]}
+        />
+        <Link
+          href="/books-of-the-bible/"
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-6"
+        >
+          <ChevronLeft className="h-4 w-4" />
+          All Books
+        </Link>
 
-      <h1 className="text-3xl font-serif font-bold text-card-foreground mb-2 lg:text-4xl">
-        {b.name}
-      </h1>
-      <p className="text-muted-foreground mb-8">
-        {b.testament === "OT" ? "Old Testament" : "New Testament"} &middot;{" "}
-        {b.chapters} {b.chapters === 1 ? "Chapter" : "Chapters"}
-      </p>
-
-
-      <section>
-        <div className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10">
-          {chapters.map((ch) => (
-            <Link
-              key={ch}
-              href={`/bible/${b.slug}/${ch}/`}
-              className="flex items-center justify-center rounded-none border border-border bg-card py-3 text-sm font-medium text-card-foreground hover:border-primary/30 hover:bg-secondary hover:shadow-sm transition-all"
-            >
-              {ch}
-            </Link>
-          ))}
-        </div>
-      </section>
+        <h1 className="text-3xl font-serif font-bold text-card-foreground mb-2 lg:text-4xl">
+          {b.name}
+        </h1>
+        <p className="text-muted-foreground mb-8">
+          {b.testament === "OT" ? "Old Testament" : "New Testament"} &middot;{" "}
+          {b.chapters} {b.chapters === 1 ? "Chapter" : "Chapters"}
+        </p>
 
 
-      {/* Bible Study FAQ Section */}
-      <section className="mt-16 border-t border-border pt-12">
-        <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 text-center">
-          Related Questions and Answers
-        </h2>
-        <div className="mx-auto max-w-3xl">
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqs.map((faq, i) => (
-              <AccordionItem
-                key={i}
-                value={`item-${i}`}
-                className="border border-border rounded-none px-6 bg-card shadow-sm overflow-hidden"
+        <section>
+          <div className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10">
+            {chapters.map((ch) => (
+              <Link
+                key={ch}
+                href={`/bible/${b.slug}/${ch}/`}
+                className="flex items-center justify-center rounded-none border border-border bg-card py-3 text-sm font-medium text-card-foreground hover:border-primary/30 hover:bg-secondary hover:shadow-sm transition-all"
               >
-                <AccordionTrigger className="text-left font-semibold text-card-foreground hover:text-primary transition-colors py-4">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+                {ch}
+              </Link>
             ))}
-          </Accordion>
-        </div>
-      </section>
-    </div>
+          </div>
+        </section>
+
+
+        {/* Bible Study FAQ Section */}
+        <section className="mt-16 border-t border-border pt-12">
+          <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 text-center">
+            Related Questions and Answers
+          </h2>
+          <div className="mx-auto max-w-3xl">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {faqs.map((faq, i) => (
+                <AccordionItem
+                  key={i}
+                  value={`item-${i}`}
+                  className="border border-border rounded-none px-6 bg-card shadow-sm overflow-hidden"
+                >
+                  <AccordionTrigger className="text-left font-semibold text-card-foreground hover:text-primary transition-colors py-4">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+      </div>
+    </article>
   )
 }

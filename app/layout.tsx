@@ -80,13 +80,13 @@ export default async function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.variable} ${lora.variable} font-sans antialiased min-h-screen flex flex-col`}>
+      <body className={`${inter.variable} ${lora.variable} font-sans antialiased min-h-screen flex flex-col site-body`}>
         <SiteHeader categories={categories} />
-        <main className="flex-1">
+        <div className="flex-1">
           <SidebarWrapper>
             {children}
           </SidebarWrapper>
-        </main>
+        </div>
         <SiteFooter categories={categories} />
         <Analytics />
 

@@ -47,7 +47,7 @@ export default function BooksOfTheBiblePage() {
     <>
       <Breadcrumb items={[{ label: "Books of the Bible", href: "/books-of-the-bible/" }]} />
 
-      <article className="prose prose-stone max-w-none prose-img:rounded-none prose-headings:font-serif">
+      <article className="post-content prose prose-stone max-w-none prose-img:rounded-none prose-headings:font-serif">
         <h1 className="text-3xl lg:text-5xl font-serif font-bold text-card-foreground mb-6">
           Complete List of 66 Books of the Bible
         </h1>

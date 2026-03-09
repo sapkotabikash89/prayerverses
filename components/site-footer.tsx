@@ -24,7 +24,7 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
   }
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary text-primary-foreground site-footer">
       <div className="mx-auto max-w-[1200px] px-2 py-8 lg:px-6">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
