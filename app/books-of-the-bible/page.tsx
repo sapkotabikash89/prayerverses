@@ -5,7 +5,6 @@ import { bibleBooks } from "@/data/bible"
 import { Breadcrumb } from "@/components/breadcrumb"
 import { TableOfContents, type Heading } from "@/components/table-of-contents"
 import { BibleLinkifiedText } from "@/components/bible-linkified-text"
-import { AdsenseInArticleAd } from "@/components/adsense-in-article-ad"
 
 export const metadata: Metadata = {
   title: "Complete List of 66 Books of the Bible - Old & New Testament",
@@ -132,7 +131,6 @@ export default function BooksOfTheBiblePage() {
         </p>
 
         <h2 id="chronological-order-list">Books of the Bible List in Chronological Order</h2>
-        <AdsenseInArticleAd />
         <p>
           Here is a simplified list of Bible books arranged chronologically (based on the time events happened or were written). This helps in understanding the timeline of biblical history:
         </p>
@@ -624,7 +622,6 @@ export default function BooksOfTheBiblePage() {
         </ul>
 
         <h2 id="old-testament">Old Testament Books (39 Books)</h2>
-        <AdsenseInArticleAd />
         <p>Here&apos;s the list of all 39 Old Testament books in canonical order, with their number of chapters:</p>
 
         <div className="not-prose grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-12">
@@ -645,10 +642,8 @@ export default function BooksOfTheBiblePage() {
           ))}
         </div>
 
-        <AdsenseInArticleAd />
 
         <h2 id="how-many-books-in-nt">How Many Books in the New Testament?</h2>
-        <AdsenseInArticleAd />
         <p>
           The New Testament has 27 books, written after the birth, death, and resurrection of Jesus Christ. These books were completed in the 1st century A.D., by Jesus&apos; disciples and other early Christian leaders. They are the foundation of Christian faith and practice.
         </p>
@@ -670,7 +665,6 @@ export default function BooksOfTheBiblePage() {
         </ul>
 
         <h2 id="new-testament">New Testament Books (27 Books)</h2>
-        <AdsenseInArticleAd />
         <p>Here are the 27 New Testament books listed with their chapter count:</p>
 
         <div className="not-prose grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-12">
@@ -691,7 +685,6 @@ export default function BooksOfTheBiblePage() {
           ))}
         </div>
 
-        <AdsenseInArticleAd />
 
         <h2 id="why-are-these-books-important">Why Are These Books Important?</h2>
         <p>

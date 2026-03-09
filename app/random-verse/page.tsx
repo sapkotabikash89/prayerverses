@@ -8,7 +8,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { AdsenseInArticleAd } from "@/components/adsense-in-article-ad"
 
 export const metadata: Metadata = {
   title: "Random Bible Verse",
@@ -95,7 +94,6 @@ export default async function RandomVersePage() {
           <RandomVerseClient initialVerse={initialVerse} allVerses={allVerses} />
 
           <div className="mt-8 max-w-3xl mx-auto">
-            <AdsenseInArticleAd />
           </div>
         </div>
       </div>
@@ -153,7 +151,6 @@ export default async function RandomVersePage() {
             </div>
           </section>
 
-          <AdsenseInArticleAd />
 
           {/* Why Use Section */}
           <section>
@@ -278,7 +275,6 @@ export default async function RandomVersePage() {
             </div>
           </section>
 
-          <AdsenseInArticleAd />
 
           {/* Transformation Section */}
           <section className="text-center bg-primary/5 rounded-3xl p-8 lg:p-12 border border-primary/10">

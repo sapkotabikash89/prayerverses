@@ -10,7 +10,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { AdsenseInArticleAd } from "@/components/adsense-in-article-ad"
 
 export function generateStaticParams() {
   return bibleBooks.map((b) => ({ book: b.slug }))
@@ -132,7 +131,6 @@ export default async function BibleBookPage({
         {b.chapters} {b.chapters === 1 ? "Chapter" : "Chapters"}
       </p>
 
-      <AdsenseInArticleAd />
 
       <section>
         <div className="grid grid-cols-5 gap-2 sm:grid-cols-8 md:grid-cols-10">
@@ -148,7 +146,6 @@ export default async function BibleBookPage({
         </div>
       </section>
 
-      <AdsenseInArticleAd />
 
       {/* Bible Study FAQ Section */}
       <section className="mt-16 border-t border-border pt-12">

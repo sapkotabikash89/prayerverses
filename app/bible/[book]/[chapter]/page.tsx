@@ -5,7 +5,6 @@ import { bibleBooks, getBookBySlug } from "@/data/bible"
 import { notFound } from "next/navigation"
 import { getChapterVerses } from "@/lib/bible-text"
 import { Breadcrumb } from "@/components/breadcrumb"
-import { AdsenseInArticleAd } from "@/components/adsense-in-article-ad"
 import {
   Accordion,
   AccordionContent,
@@ -173,7 +172,6 @@ export default async function BibleChapterPage({
         {b.name} {ch}
       </h1>
 
-      <AdsenseInArticleAd />
 
       <div className="rounded-xl border border-border bg-card p-6 lg:p-8">
         <div className="flex flex-col gap-4">
@@ -217,7 +215,6 @@ export default async function BibleChapterPage({
         )}
       </div>
 
-      <AdsenseInArticleAd />
 
       {/* Bible Study FAQ Section */}
       <section className="mt-16 border-t border-border pt-12">

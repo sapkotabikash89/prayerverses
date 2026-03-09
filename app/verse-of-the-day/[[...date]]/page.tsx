@@ -8,7 +8,6 @@ import versesData from "@/data/verses.json"
 import { VerseOfTheDayClient } from "@/components/verse-of-the-day-client"
 import { VerseDateSelector } from "@/components/verse-date-selector"
 import { Breadcrumb } from "@/components/breadcrumb"
-import { AdsenseInArticleAd } from "@/components/adsense-in-article-ad"
 import { linkifyBibleVerses } from "@/lib/bible-links"
 import {
   Accordion,
@@ -26,6 +25,14 @@ import {
 } from "@/components/ui/table"
 
 const verses = versesData as Record<string, { text: string; ref: string }>
+
+export function generateStaticParams() {
+  const dates = Object.keys(verses);
+  return [
+    { date: undefined }, // for the base route
+    ...dates.map(date => ({ date: [date] }))
+  ];
+}
 
 export async function generateMetadata({
   params,
@@ -207,7 +214,6 @@ export default async function VerseOfTheDayPage({
           <VerseOfTheDayClient verse={displayVerse} date={dateStr} />
 
           <div className="mt-8 max-w-3xl mx-auto">
-            <AdsenseInArticleAd />
           </div>
         </div>
       </div>
@@ -241,7 +247,6 @@ export default async function VerseOfTheDayPage({
             </div>
           </section>
 
-          <AdsenseInArticleAd />
 
           {/* In-Context Section */}
           {contextVerses.length > 0 && (
@@ -436,7 +441,6 @@ export default async function VerseOfTheDayPage({
             </div>
           </section>
 
-          <AdsenseInArticleAd />
 
           {/* Random Bible Scripture Grid */}
           <section>
