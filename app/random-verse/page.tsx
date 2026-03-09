@@ -82,7 +82,7 @@ export default async function RandomVersePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="bg-secondary/30 border-b border-border py-12 lg:py-16">
+      <div className="bg-secondary/30 border-b border-border py-8 lg:py-10">
         <div className="text-center px-4">
           <div className="flex justify-start mb-8">
             <Breadcrumb items={[{ label: "Random Bible Verse", href: "/random-verse/" }]} />

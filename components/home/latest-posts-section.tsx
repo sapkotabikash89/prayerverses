@@ -10,7 +10,7 @@ export async function LatestPostsSection() {
     if (!posts || posts.length === 0) return null
 
     return (
-        <section className="py-12">
+        <section className="py-8">
             <div className="flex items-center justify-between mb-8">
                 <div>
                     <h2 className="text-2xl font-serif font-bold text-card-foreground lg:text-3xl">

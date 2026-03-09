@@ -65,13 +65,20 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google AdSense */}
+        {/* Mediavine Journey */}
         <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8258486511038311"
-          crossOrigin="anonymous"
+          type="text/javascript"
+          src="//scripts.scriptwrapper.com/tags/1ea9a248-74ed-44aa-821d-989e148cc551.js"
           strategy="afterInteractive"
+          data-noptimize="1"
+          data-cfasync="false"
         />
+        {/* Grow Script */}
+        <Script id="grow-init" strategy="afterInteractive">
+          {`
+            !(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZToxZWE5YTI0OC03NGVkLTQ0YWEtODIxZC05ODllMTQ4Y2M1NTE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();
+          `}
+        </Script>
       </head>
       <body className={`${inter.variable} ${lora.variable} font-sans antialiased min-h-screen flex flex-col`}>
         <SiteHeader categories={categories} />

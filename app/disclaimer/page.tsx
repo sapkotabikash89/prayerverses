@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function DisclaimerPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 lg:px-8 lg:py-16">
+    <div className="mx-auto max-w-3xl px-4 py-8 lg:px-8 lg:py-10">
       <Breadcrumb items={[{ label: "Disclaimer", href: "/disclaimer/" }]} />
       <h1 className="text-3xl font-serif font-bold text-card-foreground mb-6 lg:text-4xl">
         Disclaimer

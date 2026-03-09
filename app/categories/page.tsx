@@ -16,7 +16,7 @@ export default async function CategoriesPage() {
     const categories = await getCategories()
 
     return (
-        <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 lg:py-10">
             <Breadcrumb items={[{ label: "Categories", href: "/categories/" }]} />
             <h1 className="text-3xl font-serif font-bold text-card-foreground mb-2 lg:text-4xl">
                 Spiritual Categories

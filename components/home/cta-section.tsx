@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export function CtaSection() {
   return (
-    <section className="py-16 lg:py-20 bg-primary">
+    <section className="py-10 lg:py-20 bg-primary">
       <div className="mx-auto max-w-3xl px-4 text-center lg:px-8">
         <h2 className="text-2xl font-serif font-bold text-primary-foreground lg:text-3xl text-balance">
           Start Your Spiritual Journey Today

@@ -197,7 +197,7 @@ export default async function VerseOfTheDayPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       {/* Header Section */}
-      <div className="bg-secondary/30 border-b border-border py-12 lg:py-16">
+      <div className="bg-secondary/30 border-b border-border py-8 lg:py-10">
         <div className="text-center">
           <div className="flex justify-start mb-8">
             <Breadcrumb items={[{ label: "Verse of the Day", href: "/verse-of-the-day/" }]} />
@@ -522,7 +522,7 @@ export default async function VerseOfTheDayPage({
           </section>
 
           {/* Final Thought Section */}
-          <section className="text-center py-12 bg-secondary/20 rounded-none border border-border">
+          <section className="text-center py-8 bg-secondary/20 rounded-none border border-border">
             <h2 className="text-2xl font-serif font-bold text-card-foreground mb-6">
               Final Thought
             </h2>

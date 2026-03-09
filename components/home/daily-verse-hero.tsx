@@ -97,7 +97,7 @@ export function DailyVerseHero() {
   const toDate = lastDate ? new Date(lastDate + "T12:00:00") : undefined
 
   return (
-    <section className="relative overflow-hidden bg-secondary py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-secondary py-10 lg:py-16">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_var(--accent)_0%,_transparent_50%)]" />
       </div>

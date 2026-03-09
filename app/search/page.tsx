@@ -221,7 +221,7 @@ export default function SearchPage() {
       )}
 
       {query.trim() && results.length === 0 && (
-        <div className="text-center py-12">
+        <div className="text-center py-8">
           <p className="text-muted-foreground">
             No results found for &ldquo;{query}&rdquo;. Try a different search
             term.
