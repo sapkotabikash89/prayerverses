@@ -25,7 +25,7 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-[1200px] px-4 py-12 lg:px-6">
+      <div className="mx-auto max-w-[1200px] px-2 py-8 lg:px-6">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
@@ -39,7 +39,7 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
               />
               <span className="text-xl font-serif font-bold transition-colors">PrayerVerses</span>
             </Link>
-            <p className="text-sm text-primary-foreground/80 leading-relaxed">
+            <p className="text-xs text-primary-foreground/80 leading-snug">
               Your daily source of inspiration and spiritual guidance through God&apos;s Word. Discover, share, and reflect on beautiful Bible verses, and prayers every day.
             </p>
             <p className="text-xs text-primary-foreground/60 mt-4 italic">
@@ -50,15 +50,15 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">
+              <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">
                 {title}
               </h3>
-              <ul className="flex flex-col gap-2">
+              <ul className="flex flex-col gap-1">
                 {links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                      className="text-xs text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                     >
                       {link.label}
                     </Link>

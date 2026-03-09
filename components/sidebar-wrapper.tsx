@@ -15,7 +15,7 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
     }
 
     return (
-        <div className="mx-auto max-w-[1200px] px-4 py-8 lg:px-6">
+        <div className="mx-auto max-w-[1200px] px-2 py-4 lg:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 <div className="lg:col-span-8">
                     {children}

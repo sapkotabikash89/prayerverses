@@ -3,6 +3,8 @@ import { QuickAccessGrid } from "@/components/home/quick-access-grid"
 import { LatestPostsSection } from "@/components/home/latest-posts-section"
 import { TopicGrid } from "@/components/home/topic-grid"
 import { BibleBooksSection } from "@/components/home/bible-books-section"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 import { getCategories } from "@/lib/wordpress"
 import type { Metadata } from "next"
 
@@ -25,7 +27,7 @@ export default async function HomePage() {
   const categories = await getCategories()
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-8">
       <HomeHero />
       <QuickAccessGrid />
 
@@ -35,8 +37,16 @@ export default async function HomePage() {
 
       <LatestPostsSection />
 
-      <section className="bg-secondary/20 rounded-none p-8 border border-border">
-        <BibleBooksSection />
+      <section className="bg-primary/5 p-8 border border-primary/20 flex flex-col items-center text-center">
+        <h2 className="text-2xl font-serif font-bold mb-4">Explore the Full Bible</h2>
+        <p className="text-muted-foreground mb-6 max-w-2xl">
+          Access all 66 books of the Bible from Genesis to Revelation. Discover the wisdom and hope contained in every chapter.
+        </p>
+        <Link href="/books-of-the-bible/">
+          <Button size="lg" className="font-bold px-8">
+            View All Bible Books
+          </Button>
+        </Link>
       </section>
     </div>
   )

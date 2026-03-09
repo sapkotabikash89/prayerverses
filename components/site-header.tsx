@@ -22,7 +22,7 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 lg:px-6">
+      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-2 lg:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
