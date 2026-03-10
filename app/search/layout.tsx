@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: { canonical: "https://prayerverses.com/search/" },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 }
 
 export default function SearchLayout({
