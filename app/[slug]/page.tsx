@@ -15,6 +15,7 @@ import { processContentForTOC } from '@/lib/toc-utils';
 import { RelatedPosts } from '@/components/related-posts';
 import { getReadingTime, cn } from '@/lib/utils';
 import { rewriteVerseLinks } from '@/lib/link-utils';
+import { PostBodyCleanup } from '@/components/post-body-cleanup';
 
 interface BlogPostPageProps {
    params: Promise<{ slug: string }>;
@@ -80,9 +81,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     // Process TOC
     const { updatedContent: contentWithIds, headings } = processContentForTOC(rawContent);
 
-    // Splicing TOC before first H2 is tricky with dangerouslySetInnerHTML
-    // Instead, we can split the content or just render TOC above content if we want it simple
-    // But user asked "above the first h2 tag".
+    // Splice TOC before first H2
     const firstH2Index = contentWithIds.indexOf('<h2');
     const contentBeforeH2 = firstH2Index !== -1 ? contentWithIds.substring(0, firstH2Index) : contentWithIds;
     const contentAfterH2 = firstH2Index !== -1 ? contentWithIds.substring(firstH2Index) : '';
@@ -119,11 +118,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
 
     return (
-        <article className="mx-auto max-w-4xl px-4 py-8 lg:px-8 lg:py-10 post-content">
+        <article className="mx-auto max-w-4xl px-4 py-8 lg:px-8 lg:py-10 post-article">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <PostBodyCleanup />
             <Breadcrumb
                 items={[
                     {
@@ -134,7 +134,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 ]}
             />
 
-            <header className="mb-12">
+            <header className="mb-12 post-header">
                 <h1 className="text-3xl font-serif font-bold text-card-foreground mb-6 lg:text-5xl leading-tight">
                     {post.title}
                 </h1>
@@ -179,7 +179,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             )}
 
 
-            <div className="prose prose-lg prose-serif max-w-none text-muted-foreground leading-relaxed content-area">
+            <div className="content-area article-body prose prose-lg prose-serif max-w-none text-muted-foreground leading-relaxed">
                 <div dangerouslySetInnerHTML={{ __html: contentBeforeH2 }} />
                 {headings.length > 0 && <TableOfContents headings={headings} />}
                 <div dangerouslySetInnerHTML={{ __html: contentAfterH2 }} />
