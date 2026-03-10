@@ -29,7 +29,8 @@ async function generateIndex() {
         { slug: "2-samuel", name: "2 Samuel" }, { slug: "1-kings", name: "1 Kings" }, { slug: "2-kings", name: "2 Kings" },
         { slug: "1-chronicles", name: "1 Chronicles" }, { slug: "2-chronicles", name: "2 Chronicles" }, { slug: "ezra", name: "Ezra" },
         { slug: "nehemiah", name: "Nehemiah" }, { slug: "esther", name: "Esther" }, { slug: "job", name: "Job" },
-        { slug: "psalms", name: "Psalms" }, { slug: "proverbs", name: "Proverbs" }, { slug: "ecclesiastes", name: "Ecclesiastes" },
+        { slug: "psalm", name: "Psalms" },
+        { slug: "proverbs", name: "Proverbs" }, { slug: "ecclesiastes", name: "Ecclesiastes" },
         { slug: "song-of-solomon", name: "Song of Solomon" }, { slug: "isaiah", name: "Isaiah" }, { slug: "jeremiah", name: "Jeremiah" },
         { slug: "lamentations", name: "Lamentations" }, { slug: "ezekiel", name: "Ezekiel" }, { slug: "daniel", name: "Daniel" },
         { slug: "hosea", name: "Hosea" }, { slug: "joel", name: "Joel" }, { slug: "amos", name: "Amos" },
@@ -53,19 +54,21 @@ async function generateIndex() {
     // 1. All Bible Verses
     for (const book of bibleBooks) {
         try {
-            const raw = readJson(`data/books/${book.slug}.json`);
-            for (const [chapterNum, chapterData] of Object.entries(raw.chapters)) {
-                for (const [verseNum, verseData] of Object.entries(chapterData)) {
+            // Map 'psalm' slug to 'psalms.json' file
+           const fileName = book.slug === 'psalm' ? 'psalms' : book.slug;
+           const raw = readJson(`data/books/${fileName}.json`);
+           for (const [chapterNum, chapterData] of Object.entries(raw.chapters)) {
+               for (const [verseNum, verseData] of Object.entries(chapterData)) {
                     results.push({
-                        type: "verse",
+                       type: "verse",
                         title: verseData.reference,
                         text: verseData.text,
                         href: `/bible/${book.slug}/${chapterNum}/#verse${verseNum}`,
                     });
                 }
             }
-        } catch (e) {
-            console.error(`Error loading book ${book.slug}:`, e.message);
+        } catch(e) {
+           console.error(`Error loading book ${book.slug}:`, e.message);
         }
     }
 
