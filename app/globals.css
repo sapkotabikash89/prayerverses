@@ -121,12 +121,13 @@
   }
 
   /* Responsive YouTube Embeds */
-  .prose iframe,
   .prose .wp-block-embed-youtube {
-    @apply mx-auto block rounded-none overflow-hidden max-w-full my-10;
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    height: auto;
+    @apply relative w-full my-10;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  }
+
+  .prose .wp-block-embed-youtube iframe {
+    @apply absolute top-0 left-0 w-full h-full rounded-none;
   }
 }
 
