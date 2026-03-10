@@ -172,9 +172,11 @@ const BOOK_LOADERS: Record<string, BookLoader> = {
 }
 
 async function loadBook(bookSlug: string): Promise<RawBook | null> {
-  const loader = BOOK_LOADERS[bookSlug]
+  // Map 'psalm' slug to 'psalms' for loading JSON file
+  const normalizedSlug = bookSlug === 'psalm' ? 'psalms' : bookSlug
+  const loader = BOOK_LOADERS[normalizedSlug]
   if (!loader) return null
-  return loader()
+ return loader()
 }
 
 export async function getChapterVerses(

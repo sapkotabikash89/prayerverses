@@ -30,7 +30,7 @@ export async function generateMetadata({
   const b = getBookBySlug(book)
   if (!b) return {}
 
-  const title = `${b.name} Chapter ${chapter}`
+  const title = `${b.name === 'Psalms' ? 'Psalm' : b.name} Chapter ${chapter}`
   const description = `Read ${b.name} Chapter ${chapter} from the Holy Bible. Study Scripture verse by verse.`
 
   return {
@@ -78,28 +78,28 @@ export default async function BibleChapterPage({
 
   let faqs = [
     {
-      question: `What is the central theme of ${b.name} Chapter ${ch}?`,
-      answer: `The central theme of ${b.name} Chapter ${ch} revolves around ${b.testament === 'OT' ? "God's instruction and the history of His people" : 'the teachings of Jesus and the growth of the early church'}. It contains key verses that illustrate ${b.name}'s overall message.`
+     question: `What is the central theme of ${b.name === 'Psalms' ? 'Psalm' : b.name} ${ch}?`,
+      answer: `The central theme of ${b.name === 'Psalms' ? 'Psalm' : b.name} ${ch} revolves around ${b.testament === 'OT' ? "God's instruction and the history of His people" : 'the teachings of Jesus and the growth of the early church'}. It contains key verses that illustrate ${b.name}'s overall message.`
     },
     {
-      question: `How many verses are in ${b.name} Chapter ${ch}?`,
-      answer: `There are ${verses.length} verses in ${b.name} Chapter ${ch}. Each verse contributes to the detailed narrative and spiritual lessons presented in this portion of the ${b.testament === 'OT' ? 'Old' : 'New'} Testament.`
+     question: `How many verses are in ${b.name === 'Psalms' ? 'Psalm' : b.name} ${ch}?`,
+      answer: `There are ${verses.length} verses in ${b.name === 'Psalms' ? 'Psalm' : b.name} ${ch}. Each verse contributes to the detailed narrative and spiritual lessons presented in this portion of the ${b.testament === 'OT' ? 'Old' : 'New'} Testament.`
     },
     {
-      question: `Who wrote the book of ${b.name} and this chapter?`,
+     question: `Who wrote the book of ${b.name} and this chapter?`,
       answer: `The book of ${b.name} is traditionally attributed to ${b.slug === 'genesis' || b.slug === 'exodus' || b.slug === 'leviticus' || b.slug === 'numbers' || b.slug === 'deuteronomy' ? 'Moses' : 'divinely inspired authors'}. This historical context is essential for a deeper understanding of the text.`
     },
     {
-      question: `How does ${b.name} Chapter ${ch} apply to modern Christian life?`,
+     question: `How does ${b.name === 'Psalms' ? 'Psalm' : b.name} ${ch} apply to modern Christian life?`,
       answer: `This chapter applies to modern life by offering timeless wisdom on faith, obedience, and God's relationship with humanity. It encourages believers to apply these scriptural principles in their daily walk with Christ.`
     },
     {
-      question: `What are the key verses in ${b.name} ${ch}?`,
+     question: `What are the key verses in ${b.name} ${ch}?`,
       answer: `Key verses in this chapter include ${verses[0]?.reference} and others that highlight the ${b.name.toLowerCase()}'s core teachings. These verses are often used for meditation and deeper Bible study.`
     },
     {
-      question: `Where can I find a summary of ${b.name} Chapter ${ch}?`,
-      answer: `A summary of ${b.name} Chapter ${ch} can be found by reading through its ${verses.length} verses, which detail the events and instructions God provided for His people during this specific time in biblical history.`
+     question: `Where can I find a summary of ${b.name === 'Psalms' ? 'Psalm' : b.name} ${ch}?`,
+      answer: `A summary of ${b.name === 'Psalms' ? 'Psalm' : b.name} ${ch} can be found by reading through its ${verses.length} verses, which detail the events and instructions God provided for His people during this specific time in biblical history.`
     }
   ]
 
@@ -157,7 +157,7 @@ export default async function BibleChapterPage({
           items={[
             { label: "Bible", href: "/books-of-the-bible/" },
             { label: b.name, href: `/bible/${b.slug}/` },
-            { label: `Chapter ${ch}`, href: `/bible/${b.slug}/${ch}/` }
+            { label: `${b.name === 'Psalms' ? 'Psalm' : b.name} ${ch}`, href: `/bible/${b.slug}/${ch}/` }
           ]}
         />
         <a
@@ -169,7 +169,7 @@ export default async function BibleChapterPage({
         </a>
 
         <h1 className="text-3xl font-serif font-bold text-card-foreground mb-8 lg:text-4xl">
-          {b.name} {ch}
+          {b.name === 'Psalms' ? 'Psalm' : b.name} {ch}
         </h1>
 
 

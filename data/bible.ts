@@ -24,7 +24,7 @@ export const bibleBooks: BibleBook[] = [
   { slug: "nehemiah", name: "Nehemiah", testament: "OT", chapters: 13 },
   { slug: "esther", name: "Esther", testament: "OT", chapters: 10 },
   { slug: "job", name: "Job", testament: "OT", chapters: 42 },
-  { slug: "psalms", name: "Psalms", testament: "OT", chapters: 150 },
+  { slug: "psalm", name: "Psalms", testament: "OT", chapters: 150 },
   { slug: "proverbs", name: "Proverbs", testament: "OT", chapters: 31 },
   { slug: "ecclesiastes", name: "Ecclesiastes", testament: "OT", chapters: 12 },
   { slug: "song-of-solomon", name: "Song of Solomon", testament: "OT", chapters: 8 },
@@ -75,7 +75,9 @@ export const bibleBooks: BibleBook[] = [
 ]
 
 export function getBookBySlug(slug: string): BibleBook | undefined {
-  return bibleBooks.find((b) => b.slug === slug)
+  // Support both 'psalm' and 'psalms' for backward compatibility
+ const normalizedSlug = slug === 'psalms' ? 'psalm' : slug
+  return bibleBooks.find((b) => b.slug === normalizedSlug)
 }
 
 export function getBooksByTestament(testament: "OT" | "NT"): BibleBook[] {
@@ -110,7 +112,13 @@ export function referenceToChapterHref(ref: string): string | null {
   const chapter = parseInt(chapterStr, 10)
   if (Number.isNaN(chapter)) return null
 
-  let href = `/bible/${bookMeta.slug}/${chapter}/`
+  // Use 'psalm' slug for Psalms book
+  let slug = bookMeta.slug
+  if (bookMeta.name === 'Psalms') {
+  slug = 'psalm'
+  }
+
+  let href = `/bible/${slug}/${chapter}/`
   if (verseStr) {
     href += `#verse${verseStr}`
   }

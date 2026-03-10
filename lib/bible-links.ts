@@ -36,17 +36,23 @@ export function linkifyBibleVerses(html: string): string {
         let normalizedBook = book.trim()
         if (normalizedBook.toLowerCase() === "psalm") normalizedBook = "Psalms"
 
-        const bookMeta = bibleBooks.find(b => b.name.toLowerCase() === normalizedBook.toLowerCase())
+       const bookMeta = bibleBooks.find(b => b.name.toLowerCase() === normalizedBook.toLowerCase())
         if (!bookMeta) return match
 
-        const chapter = firstNum
+        // Use 'psalm' slug for Psalms book
+        let slug = bookMeta.slug
+        if (bookMeta.name === 'Psalms') {
+          slug = 'psalm'
+        }
+
+       const chapter= firstNum
 
         if (verse) {
             // Link to chapter page with anchor for the specific verse
-            return `<a href="/bible/${bookMeta.slug}/${chapter}/#verse${verse}" class="bible-verse-link">${match}</a>`
+            return `<a href="/bible/${slug}/${chapter}/#verse${verse}" class="bible-verse-link">${match}</a>`
         } else if (rangeEnd) {
             // Chapter range without verse (e.g., "Leviticus 1–7") → link to first chapter
-            return `<a href="/bible/${bookMeta.slug}/${chapter}/" class="bible-verse-link">${match}</a>`
+            return `<a href="/bible/${slug}/${chapter}/" class="bible-verse-link">${match}</a>`
         }
 
         // Just a chapter number with no verse and no range — don't linkify
