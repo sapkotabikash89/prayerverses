@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://prayerverses.com/sitemap.xml
-Sitemap: https://prayerverses.com/sitemap/posts
+Sitemap: https://prayerverses.com/sitemap/posts/sitemap.xml
