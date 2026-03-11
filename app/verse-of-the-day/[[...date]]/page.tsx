@@ -25,6 +25,15 @@ import {
 
 const verses = versesData as Record<string, { text: string; ref: string }>
 
+function getNYDate() {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/New_York',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).format(new Date());
+}
+
 export function generateStaticParams() {
   const dates = Object.keys(verses);
   return [
@@ -39,12 +48,12 @@ export async function generateMetadata({
   params: Promise<{ date?: string[] }>
 }): Promise<Metadata> {
   const { date } = await params
-  const dateStr = date?.[0] || new Date().toISOString().split("T")[0]
+  const todayStr = getNYDate()
+  const dateStr = date?.[0] || todayStr
   const v = verses[dateStr]
 
   const title = `Bible Verse of the Day - ${v.ref}`
   const description = `Daily Bible verse for ${dateStr}: "${v.text}"`
-  const todayStr = new Date().toISOString().split("T")[0]
   const isToday = dateStr === todayStr
 
   return {
@@ -90,7 +99,7 @@ export default async function VerseOfTheDayPage({
   params: Promise<{ date?: string[] }>
 }) {
   const { date } = await params
-  const todayStr = new Date().toISOString().split("T")[0]
+  const todayStr = getNYDate()
   let dateStr = date?.[0] || todayStr
   let v = verses[dateStr]
 
@@ -295,6 +304,19 @@ export default async function VerseOfTheDayPage({
                     `)
                     }} />
                   </>
+                ) : displayVerse.ref === "Matthew 5:16" ? (
+                   <>
+                    <div dangerouslySetInnerHTML={{
+                      __html: linkifyBibleVerses(`
+                      Starting your day with Matthew 5:16 provides a clear mission for every disciple. Jesus commands: "Let your light so shine before men." This isn't just a suggestion; it is our primary identity as followers of Christ. Furthermore, this verse reminds us that our "good works" are meant to be visible, not for our own praise, but to point others toward God.
+                    `)
+                    }} />
+                    <div dangerouslySetInnerHTML={{
+                      __html: linkifyBibleVerses(`
+                      As you begin your morning, consider how you can be a beacon of hope and kindness. Your light shine brightest when you respond with grace in difficult situations. Consequently, those around you will notice something different about your character. Most importantly, the end goal of your reflection is that they may "glorify your Father which is in heaven."
+                    `)
+                    }} />
+                  </>
                 ) : isToday ? (
                   <>
                     <div dangerouslySetInnerHTML={{
@@ -346,6 +368,24 @@ export default async function VerseOfTheDayPage({
                     <div dangerouslySetInnerHTML={{
                       __html: linkifyBibleVerses(`
                       Try to let this verse guide your focus throughout the afternoon. When anxiety whispers, answer back with the truth: "The Lord is good." When you meditate on this scripture, it becomes a quiet melody that keeps you steady. Consequently, you can live with a sense of security that the world cannot provide or take away.
+                    `)
+                    }} />
+                  </>
+                ) : displayVerse.ref === "Matthew 5:16" ? (
+                   <>
+                    <div dangerouslySetInnerHTML={{
+                      __html: linkifyBibleVerses(`
+                      Shining our light is an active daily practice, not a one-time event. For instance, Matthew 5:16 encourages us to live with integrity so that our "good works" are evident to everyone. This doesn't mean we seek the spotlight. Rather, we simply live in a way that makes God's presence undeniable. Similarly, when we show love to those who are difficult, we reflect the heart of Jesus.
+                    `)
+                    }} />
+                    <div dangerouslySetInnerHTML={{
+                      __html: linkifyBibleVerses(`
+                      In addition, we should notice the intention behind our actions. The ultimate purpose of our light is to lead others to the Father. Therefore, do not hide your faith or be timid about your values. Instead, let your life be a testament to the transformation God has done in you. Your kindness could be the bridge that someone else uses to find their way to God.
+                    `)
+                    }} />
+                    <div dangerouslySetInnerHTML={{
+                      __html: linkifyBibleVerses(`
+                      Try to let this verse guide your focus throughout the afternoon. Ask yourself: "Does my current attitude reflect the light of Christ?" Maybe it is a nudge to be more patient or to offer a kind word. When you live intentionally for God's glory, even small acts become significant. Consequently, your life becomes a powerful sermon without saying a word.
                     `)
                     }} />
                   </>
@@ -409,6 +449,10 @@ export default async function VerseOfTheDayPage({
                     <p className="text-muted-foreground leading-relaxed italic">
                       &ldquo;Heavenly Father, I thank You for Your goodness and for being my refuge. In this day of trouble, I run to You as my stronghold. Thank You for knowing me and for Your constant care. Help me to trust You more deeply as I walk through this day. In Jesus&rsquo; name, Amen.&rdquo;
                     </p>
+                  ) : displayVerse.ref === "Matthew 5:16" ? (
+                    <p className="text-muted-foreground leading-relaxed italic">
+                      &ldquo;Heavenly Father, I thank You for calling me to be Your light. Please help me to shine brightly today in my words and deeds. Let others see Your goodness through my life and give You all the glory. Fill me with Your Spirit so that I may be a faithful witness. In Jesus&rsquo; name, Amen.&rdquo;
+                    </p>
                   ) : isToday ? (
                     <p className="text-muted-foreground leading-relaxed italic">
                       &ldquo;Heavenly Father, I thank You for Your amazing provision. Please help me trust Your timing today. I believe You will meet my every need according to Your riches. Let Your peace fill my heart as I walk in faith. In Jesus&rsquo; name, Amen.&rdquo;
@@ -427,6 +471,10 @@ export default async function VerseOfTheDayPage({
                   {displayVerse.ref === "Nahum 1:7" ? (
                     <p className="text-muted-foreground leading-relaxed italic">
                       &ldquo;Lord Jesus, thank You for being my shelter today. I find rest in the knowledge that Your goodness surrounds me. As I sleep, I trust in Your protective presence. Thank You for knowing my heart and keeping me safe. Amen.&rdquo;
+                    </p>
+                  ) : displayVerse.ref === "Matthew 5:16" ? (
+                    <p className="text-muted-foreground leading-relaxed italic">
+                      &ldquo;Lord Jesus, thank You for the opportunities I had to reflect Your light today. Forgive me for the times I dimmed my light due to fear or pride. As I rest tonight, may Your peace fill my soul and prepare me for another day of service. Amen.&rdquo;
                     </p>
                   ) : isToday ? (
                     <p className="text-muted-foreground leading-relaxed italic">
