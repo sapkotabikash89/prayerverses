@@ -15,6 +15,7 @@ async function fetchAllPostSlugs() {
         }
         nodes {
           slug
+          modified
         }
       }
     }
