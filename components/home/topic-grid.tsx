@@ -15,12 +15,12 @@ export function TopicGrid({ categories = [] }: { categories?: Category[] }) {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-3 md:gap-4">
           {categories.map((category) => (
             <a
               key={category.id}
               href={`/category/${category.slug}/`}
-              className="group flex flex-col items-center gap-2 rounded-none border border-border bg-card p-5 text-center transition-all hover:border-primary/30 hover:shadow-md min-w-[140px]"
+              className="group flex flex-col items-center gap-2 rounded-none border border-border bg-card p-3 sm:p-5 text-center transition-all hover:border-primary/30 hover:shadow-md sm:min-w-[140px]"
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-none bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                 <TopicIcon name="BookOpen" className="h-5 w-5" />

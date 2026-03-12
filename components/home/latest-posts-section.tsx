@@ -13,13 +13,13 @@ export async function LatestPostsSection() {
             <div className="flex items-center justify-between mb-8">
                 <div>
                     <h2 className="text-2xl font-serif font-bold text-card-foreground lg:text-3xl">
-                        Latest Spiritual Insights
+                        Latest Posts
                     </h2>
                     <p className="text-sm text-muted-foreground mt-1">
                         Read our latest blog posts and grow in your spiritual journey.
                     </p>
                 </div>
-                <a href="/blog/" className="hidden sm:block">
+                <a href="https://prayerverses.com/category/blog/" className="hidden sm:block">
                     <Button variant="ghost" className="text-primary font-bold hover:text-primary/80">
                         View All Posts <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -33,7 +33,7 @@ export async function LatestPostsSection() {
             </div>
 
             <div className="mt-8 text-center sm:hidden">
-                <a href="/blog/">
+                <a href="https://prayerverses.com/category/blog/">
                     <Button variant="outline" className="w-full border-primary text-primary font-bold">
                         View All Posts
                     </Button>
