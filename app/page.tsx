@@ -8,12 +8,12 @@ import { getCategories } from "@/lib/wordpress"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "PrayerVerses - Daily Bible Verses & Spiritual Inspiration",
+  title: "PrayerVerses - Connect with God Through Verses and Prayers",
   description:
     "Discover daily Bible verses, read Scripture by topic, and deepen your faith with beautiful verse cards.",
   keywords: ["bible verses", "daily bible verse", "scripture of the day", "bible quotes", "spiritual inspiration", "bible study", "holy bible", "bible verses by topic", "christian faith"],
   openGraph: {
-    title: "PrayerVerses - Daily Bible Verses & Spiritual Inspiration",
+    title: "PrayerVerses - Connect with God Through Verses and Prayers",
     description:
       "Discover daily Bible verses, read Scripture by topic, and deepen your faith with beautiful verse cards.",
     type: "website",
