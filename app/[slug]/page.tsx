@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getPostBySlug, getRelatedPosts, getRandomPostFromCategory } from '@/lib/wordpress';
+import { getPostBySlug, getRelatedPosts } from '@/lib/wordpress';
 import postSlugsData from '@/data/post-slugs.json';
 import { format } from 'date-fns';
 import { Breadcrumb } from '@/components/breadcrumb';
@@ -14,7 +14,6 @@ import { TableOfContents } from '@/components/table-of-contents';
 import { processContentForTOC } from '@/lib/toc-utils';
 import { RelatedPosts } from '@/components/related-posts';
 import { RelatedPostsAboveNav } from '@/components/related-posts-above-nav';
-import { ReadNext } from '@/components/read-next';
 import { getReadingTime, cn } from '@/lib/utils';
 import { rewriteVerseLinks } from '@/lib/link-utils';
 import { PostBodyCleanup } from '@/components/post-body-cleanup';
@@ -73,19 +72,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
     const primaryCategory = post.categories?.nodes?.[0];
     const relatedPosts = primaryCategory
-        ? await getRelatedPosts(primaryCategory.slug, post.id, 6)
+        ? await getRelatedPosts(primaryCategory.slug, post.id, 20) // Fetch more for Read Next injection
         : [];
     
-    // Get one random post for Read Next (different from related posts)
-    const randomReadNext = primaryCategory && relatedPosts.length > 0
-        ? await getRandomPostFromCategory(primaryCategory.slug, post.id)
-        : null;
-    
-    // Make sure Read Next is different from Related Posts
-    const finalReadNext = randomReadNext && !relatedPosts.some(rp => rp.id === randomReadNext.id)
-        ? randomReadNext
-        : null;
-
     const formattedDate = post.date ? format(new Date(post.date), 'MMMM dd, yyyy') : '';
     const featuredImage = post.featuredImage?.node;
     const rawContent = post.content ? rewriteVerseLinks(linkifyBibleVerses(post.content)) : '';
@@ -93,21 +82,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     // Process TOC
     const { updatedContent: contentWithIds, headings } = processContentForTOC(rawContent);
 
-    // Insert Read Next after ALL images if we have a Read Next post
+    // Insert Read Next after ALL images if we have related posts
     let processedContent = contentWithIds;
-    if (finalReadNext) {
-        const readNextHTML = `
-            <div class="read-next-container">
-                <div class="my-6 bg-gray-50 dark:bg-gray-900 rounded-lg p-4 border-l-4 border-primary">
-                    <p class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Read Next</p>
-                    <a href="/${finalReadNext.slug}/" class="group block">
-                        <h3 class="text-sm font-serif font-semibold text-card-foreground group-hover:text-primary transition-colors leading-snug">${finalReadNext.title}</h3>
-                    </a>
-                </div>
-            </div>
-        `;
-        
-        // Find ALL images and insert Read Next after each one
+    if (relatedPosts.length > 0) {
         let result = processedContent;
         let match;
         const imgRegex = /<img[^>]*>/gi;
@@ -134,10 +111,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             }
         }
         
+        // Shuffle or pick unique posts for each image
+        // We'll use the last related posts for Read Next to avoid duplicates with the bottom ones (which use relatedPosts.slice(0, 6))
+        const readNextCandidates = [...relatedPosts].reverse();
+        
         // Insert Read Next after each image (in reverse order to maintain positions)
         positions.reverse().forEach((pos, idx) => {
-            // Only insert after the first image, or add variation for subsequent ones
-            if (idx === 0 || idx % 2 === 0) { // Insert after every other image to avoid repetition
+            const nextPost = readNextCandidates[idx % readNextCandidates.length];
+            if (nextPost) {
+                const postImg = nextPost.featuredImage?.node?.sourceUrl || '';
+                const readNextHTML = `
+                    <div class="read-next-container my-10 not-prose">
+                        <div class="flex items-center gap-4 bg-secondary/20 dark:bg-secondary/10 p-4 rounded-xl border border-primary/10 hover:border-primary/40 transition-all group shadow-sm hover:shadow-md">
+                            ${postImg ? `
+                            <div class="hidden sm:block relative w-20 h-20 flex-shrink-0 overflow-hidden rounded-lg">
+                                <img src="${postImg}" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 m-0" alt="${nextPost.title}" />
+                            </div>` : ''}
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-1 block">Read Next</span>
+                                <a href="/${nextPost.slug}/" class="block no-underline">
+                                    <h4 class="text-base font-serif font-bold text-card-foreground group-hover:text-primary transition-colors leading-snug line-clamp-2 m-0">${nextPost.title}</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
                 const beforeInsert = result.substring(0, pos.position);
                 const afterInsert = result.substring(pos.position);
                 result = beforeInsert + readNextHTML + afterInsert;
@@ -263,7 +261,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <SocialShare />
                 <HelpfulPoll />
                 <RelatedPosts
-                    posts={relatedPosts}
+                    posts={relatedPosts.slice(0, 6)}
                     categorySlug={primaryCategory?.slug}
                 />
             </div>
