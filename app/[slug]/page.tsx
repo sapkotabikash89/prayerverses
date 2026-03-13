@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getPostBySlug, getRelatedPosts } from '@/lib/wordpress';
+import { getPostBySlug, getRelatedPosts, getRandomPostFromCategory } from '@/lib/wordpress';
 import postSlugsData from '@/data/post-slugs.json';
 import { format } from 'date-fns';
 import { Breadcrumb } from '@/components/breadcrumb';
@@ -13,6 +13,8 @@ import { BlogImageActions } from '@/components/blog-image-actions';
 import { TableOfContents } from '@/components/table-of-contents';
 import { processContentForTOC } from '@/lib/toc-utils';
 import { RelatedPosts } from '@/components/related-posts';
+import { RelatedPostsAboveNav } from '@/components/related-posts-above-nav';
+import { ReadNext } from '@/components/read-next';
 import { getReadingTime, cn } from '@/lib/utils';
 import { rewriteVerseLinks } from '@/lib/link-utils';
 import { PostBodyCleanup } from '@/components/post-body-cleanup';
@@ -73,6 +75,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const relatedPosts = primaryCategory
         ? await getRelatedPosts(primaryCategory.slug, post.id, 6)
         : [];
+    
+    // Get one random post for Read Next (different from related posts)
+    const randomReadNext = primaryCategory && relatedPosts.length > 0
+        ? await getRandomPostFromCategory(primaryCategory.slug, post.id)
+        : null;
+    
+    // Make sure Read Next is different from Related Posts
+    const finalReadNext = randomReadNext && !relatedPosts.some(rp => rp.id === randomReadNext.id)
+        ? randomReadNext
+        : null;
 
     const formattedDate = post.date ? format(new Date(post.date), 'MMMM dd, yyyy') : '';
     const featuredImage = post.featuredImage?.node;
@@ -81,10 +93,44 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     // Process TOC
     const { updatedContent: contentWithIds, headings } = processContentForTOC(rawContent);
 
+    // Insert Read Next after first image if we have a Read Next post
+    let processedContent = contentWithIds;
+    if (finalReadNext) {
+        const readNextHTML = `
+            <div class="read-next-container">
+                <div class="my-6 bg-gray-50 dark:bg-gray-900 rounded-lg p-4 border-l-4 border-primary">
+                    <p class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Read Next</p>
+                    <a href="/${finalReadNext.slug}/" class="group block">
+                        <h3 class="text-sm font-serif font-semibold text-card-foreground group-hover:text-primary transition-colors leading-snug">${finalReadNext.title}</h3>
+                    </a>
+                </div>
+            </div>
+        `;
+        
+        // Find first image and insert Read Next after it
+        const firstImageMatch = processedContent.match(/<img[^>]*>/i);
+        if (firstImageMatch && firstImageMatch.index !== undefined) {
+            const insertPosition = firstImageMatch.index + firstImageMatch[0].length;
+            // Check if there's already a closing tag or wrapper nearby
+            const beforeInsert = processedContent.substring(0, insertPosition);
+            const afterInsert = processedContent.substring(insertPosition);
+            
+            // Look for the end of the image wrapper (usually </figure> or similar)
+            const wrapperEndMatch = afterInsert.match(/^\s*(<\/figure>|<\/div>|<br[^>]*>\s*)/i);
+            if (wrapperEndMatch) {
+                const wrapperEnd = wrapperEndMatch[0];
+                processedContent = beforeInsert + afterInsert.substring(0, wrapperEndMatch.index! + wrapperEnd.length) + readNextHTML + afterInsert.substring(wrapperEndMatch.index! + wrapperEnd.length);
+            } else {
+                // Just insert right after image
+                processedContent = beforeInsert + readNextHTML + afterInsert;
+            }
+        }
+    }
+
     // Splice TOC before first H2
-    const firstH2Index = contentWithIds.indexOf('<h2');
-    const contentBeforeH2 = firstH2Index !== -1 ? contentWithIds.substring(0, firstH2Index) : contentWithIds;
-    const contentAfterH2 = firstH2Index !== -1 ? contentWithIds.substring(firstH2Index) : '';
+    const firstH2Index = processedContent.indexOf('<h2');
+    const contentBeforeH2 = firstH2Index !== -1 ? processedContent.substring(0, firstH2Index) : processedContent;
+    const contentAfterH2 = firstH2Index !== -1 ? processedContent.substring(firstH2Index) : '';
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -187,6 +233,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
 
             <div className="mt-16">
+                {/* Related Posts Above Navigation */}
+                <RelatedPostsAboveNav posts={relatedPosts.slice(0, 5)} />
+                
                 <PostNavigation
                     previous={post.previous}
                     next={post.next}

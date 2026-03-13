@@ -106,19 +106,6 @@ async function generateIndex() {
         }
     } catch (e) { console.error("Error loading topics:", e.message); }
 
-    // 4. Spiritual Meaning
-    try {
-        const spiritualData = readJson('data/spiritual-meaning.json');
-        for (const item of spiritualData) {
-            results.push({
-                type: "spiritual",
-                title: item.title,
-                text: rewriteVerseLinks(item.description),
-                href: `/spiritual-meaning/${item.slug}/`,
-            });
-        }
-    } catch (e) { console.error("Error loading spiritual meaning:", e.message); }
-
     const outputPath = path.join(rootDir, 'public', 'search-index.json');
     fs.writeFileSync(outputPath, JSON.stringify(results));
     console.log(`Search index generated at ${outputPath} (${results.length} items)`);

@@ -444,6 +444,53 @@ export async function getRelatedPosts(categorySlug: string, currentPostId: strin
   }
 }
 
+export async function getRandomPostFromCategory(categorySlug: string, excludePostId: string): Promise<Post | null> {
+  const query = gql`
+    query GetPostsFromCategory($categoryName: String!, $first: Int!) {
+      posts(where: { categoryName: $categoryName }, first: $first) {
+        nodes {
+          id
+          title
+          slug
+          date
+          excerpt
+          featuredImage {
+            node {
+              sourceUrl
+              altText
+            }
+          }
+          categories {
+            nodes {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  try {
+    // Fetch more posts to have a good pool to randomly select from
+    const data = await client.request<{ posts: { nodes: Post[] } }>(query, {
+      categoryName: categorySlug,
+      first: 20
+    });
+
+    const filtered = data.posts.nodes.filter(post => post.id !== excludePostId);
+    
+    if (filtered.length === 0) return null;
+
+    // Random selection
+    const randomIndex = Math.floor(Math.random() * filtered.length);
+    return filtered[randomIndex];
+  } catch (err) {
+    console.error('Error fetching random post from category:', err);
+    return null;
+  }
+}
+
 export async function getAllPostSlugs(): Promise<{ slug: string }[]> {
   const query = gql`
     query GetAllPostSlugs($after: String) {

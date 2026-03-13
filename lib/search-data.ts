@@ -1,6 +1,5 @@
 import versesData from "@/data/verses.json"
 import topicsData from "@/data/topics.json"
-import spiritualData from "@/data/spiritual-meaning.json"
 import { getAllVerses } from "./bible-text"
 import { getSemanticKeywords } from "./bible-semantics"
 import { rewriteVerseLinks } from "./link-utils"
@@ -58,16 +57,6 @@ export async function buildSearchIndex(): Promise<SearchResult[]> {
     }
   }
 
-
-  // Spiritual meaning
-  for (const item of spiritualData) {
-    results.push({
-      type: "spiritual",
-      title: item.title,
-      text: rewriteVerseLinks(item.description),
-      href: `/spiritual-meaning/${item.slug}/`,
-    })
-  }
 
   return results
 }
