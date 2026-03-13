@@ -256,7 +256,7 @@ export default async function VerseOfTheDayPage({
           <div className="flex flex-col gap-16">
             {/* Translations Section */}
             <section>
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-6 border-b border-border pb-4">
+              <h2 className="border-b border-border pb-4">
                 Translations of Today's Verse - {displayVerse.ref}
               </h2>
               <div className="space-y-8">
@@ -285,7 +285,7 @@ export default async function VerseOfTheDayPage({
             {/* In-Context Section */}
             {contextVerses.length > 0 && (
               <section>
-                <h2 className="text-2xl font-serif font-bold text-card-foreground mb-6 border-b border-border pb-4">
+                <h2 className="border-b border-border pb-4">
                   Today's Bible Verse ({displayVerse.ref}) In-Context
                 </h2>
                 <div className="space-y-4 bg-card border border-border rounded-none p-6 lg:p-8">
@@ -312,7 +312,7 @@ export default async function VerseOfTheDayPage({
 
             {/* Daily Morning Scripture Section */}
             <section>
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-6 border-b border-border pb-4">
+              <h2 className="border-b border-border pb-4">
                 Daily Morning Scripture of the Day
               </h2>
               <div className="prose prose-stone max-w-none dark:prose-invert text-muted-foreground space-y-6">

@@ -194,7 +194,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             />
 
             <header className="mb-12 post-header">
-                <h1 className="text-3xl font-serif font-bold text-card-foreground mb-6 lg:text-5xl leading-tight">
+                <h1 className="leading-tight">
                     {post.title}
                 </h1>
 

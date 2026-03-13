@@ -73,7 +73,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 />
 
                 <div className="mb-12">
-                    <h1 className="text-3xl font-serif font-bold text-card-foreground mb-4 lg:text-5xl">
+                    <h1>
                         {category.name}
                     </h1>
                     {description && (

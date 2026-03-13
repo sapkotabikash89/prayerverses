@@ -6,7 +6,7 @@ export function TopicGrid({ categories = [] }: { categories?: Category[] }) {
     <section className="py-10 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-2xl font-serif font-bold text-card-foreground lg:text-3xl text-balance">
+          <h2 className="text-balance">
             Explore by Category
           </h2>
           <p className="mt-2 text-muted-foreground max-w-xl mx-auto">

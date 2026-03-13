@@ -168,7 +168,7 @@ export default async function BibleChapterPage({
           {b.name}
         </a>
 
-        <h1 className="text-3xl font-serif font-bold text-card-foreground mb-8 lg:text-4xl">
+        <h1>
           {b.name === 'Psalms' ? 'Psalm' : b.name} {ch}
         </h1>
 
@@ -218,7 +218,7 @@ export default async function BibleChapterPage({
 
         {/* Bible Study FAQ Section */}
         <section className="mt-16 border-t border-border pt-12">
-          <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 text-center">
+          <h2 className="text-center">
             Related Questions and Answers
           </h2>
           <div className="mx-auto max-w-3xl">

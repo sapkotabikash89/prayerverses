@@ -21,7 +21,7 @@ export default function AboutPage() {
     <article className="post-content">
       <div className="mx-auto max-w-3xl px-4 py-8 lg:px-8 lg:py-10">
         <Breadcrumb items={[{ label: "About", href: "/about/" }]} />
-        <h1 className="text-3xl font-serif font-bold text-card-foreground mb-6 lg:text-4xl">
+        <h1>
           About PrayerVerses
         </h1>
 

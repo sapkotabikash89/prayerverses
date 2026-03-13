@@ -22,7 +22,7 @@ export default function ContactPage() {
     <article className="post-content">
       <div className="mx-auto max-w-3xl px-4 py-8 lg:px-8 lg:py-10">
         <Breadcrumb items={[{ label: "Contact", href: "/contact/" }]} />
-        <h1 className="text-3xl font-serif font-bold text-card-foreground mb-2 lg:text-4xl">
+        <h1>
           Contact Us
         </h1>
         <div className="flex flex-col gap-8">
@@ -42,7 +42,7 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <h2 className="text-xl font-serif font-bold text-card-foreground mb-6">Prayer Verses Social Pages</h2>
+            <h2>Prayer Verses Social Pages</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { name: "Pinterest", href: "https://www.pinterest.com/prayerverses/", icon: "📌" },

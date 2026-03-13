@@ -123,7 +123,7 @@ export default async function BibleBookPage({
           All Books
         </a>
 
-        <h1 className="text-3xl font-serif font-bold text-card-foreground mb-2 lg:text-4xl">
+        <h1>
           {b.name}
         </h1>
         <p className="text-muted-foreground mb-8">
@@ -149,7 +149,7 @@ export default async function BibleBookPage({
 
         {/* Bible Study FAQ Section */}
         <section className="mt-16 border-t border-border pt-12">
-          <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 text-center">
+          <h2 className="text-center">
             Related Questions and Answers
           </h2>
           <div className="mx-auto max-w-3xl">
