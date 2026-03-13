@@ -346,12 +346,12 @@ export default async function VerseOfTheDayPage({
                   <>
                     <div dangerouslySetInnerHTML={{
                       __html: linkifyBibleVerses(`
-                      Every morning brings new hope and fresh opportunities. Therefore, starting your day with God's Word changes your perspective. Today, we focus on a powerful promise from ${displayVerse.ref}. This verse reminds us that God actively cares for our every requirement. Furthermore, it reassures us that His resources never run dry.
+                      Morning is God's special gift of time to us. As you wake up, invite the Holy Spirit to lead your thoughts before anything else. Open your Bible and let His words be the first voice you hear. This simple practice transforms ordinary mornings into divine appointments.
                     `)
                     }} />
                     <div dangerouslySetInnerHTML={{
                       __html: linkifyBibleVerses(`
-                      When you face early challenges, remember this divine truth. God provides specifically for your physical and spiritual needs. Consequently, you can walk into your day with bold confidence. This morning scripture offers strength to those feeling overwhelmed. Trust in His riches and witness His faithfulness.
+                      Consider starting with gratitude: thank God for breath in your lungs, for another sunrise, for His mercies that are new this morning. Gratitude shifts your focus from problems to Providence. It prepares your heart to receive what God wants to speak to you today.
                     `)
                     }} />
                   </>
@@ -359,12 +359,12 @@ export default async function VerseOfTheDayPage({
                   <>
                     <div dangerouslySetInnerHTML={{
                       __html: linkifyBibleVerses(`
-                      Every day brings new challenges and fresh opportunities. Starting the morning with a Bible verse of the day set the tone. It is more than a habit. It is a way of connecting with God and finding direction. Also, it allows Scripture to shape your heart before the day begins.
+                      Mornings set the trajectory for your entire day. Before checking messages or news, spend time in prayer and Scripture reading. Let God's truth be the foundation that everything else builds upon. This discipline creates spiritual stability that lasts all day long.
                     `)
                     }} />
                     <div dangerouslySetInnerHTML={{
                       __html: linkifyBibleVerses(`
-                      Think about how a single verse speaks differently in each season. A passage like <span className="text-primary font-medium">&ldquo;${displayVerse.text}&rdquo; (${displayVerse.ref})</span> brings comfort during hardship. It fuels courage when you face a new challenge. Most importantly, it provides the exact peace your soul needs today.
+                      Think about Mary rising early to visit the tomb, or Jesus withdrawing before dawn to pray. The morning hours hold special significance for encountering God. Use this time to surrender your plans and listen for His direction. What seems like a small investment yields eternal returns.
                     `)
                     }} />
                   </>
@@ -378,84 +378,31 @@ export default async function VerseOfTheDayPage({
                 Devotional Thoughts
               </h2>
               <div className="prose prose-stone max-w-none dark:prose-invert text-muted-foreground space-y-6">
-                {displayVerse.ref === "Nahum 1:7" ? (
-                  <>
+                {[
+                  {
+                    title: "Understanding God's Character",
+                    content: `Every verse reveals something about who God is. When you read ${displayVerse.ref}, you're not just reading ancient words—you're discovering the heart of an unchanging God. His character remains constant across all generations, which means the same God who spoke in biblical times still speaks today.`
+                  },
+                  {
+                    title: "Applying Scripture to Modern Life",
+                    content: `The Bible isn't a museum piece to admire but bread to eat. Take one phrase from today's verse and carry it with you throughout your day. Repeat it during your commute, before meetings, or when facing decisions. Let it move from your head to your heart and into your actions.`
+                  },
+                  {
+                    title: "The Power of Daily Meditation",
+                    content: `Meditation is simply thinking deeply about God's truth. Unlike worldly meditation that empties the mind, biblical meditation fills it with Scripture. As you ponder today's verse, ask: What does this teach me about God? About myself? How should I respond? The Holy Spirit uses these moments to transform you from within.`
+                  },
+                  {
+                    title: "Building Spiritual Discipline",
+                    content: `Consistency matters more than intensity in spiritual growth. Reading one verse daily with sincerity builds stronger faith than occasional marathon sessions. Start small: read, reflect, respond in prayer. Over time, these daily encounters compound into profound spiritual maturity and deeper intimacy with Christ.`
+                  }
+                ].map((item, idx) => (
+                  <div key={idx} className="space-y-3">
+                    <h3 className="text-lg font-serif font-bold text-card-foreground">{item.title}</h3>
                     <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Trusting God is an active choice, especially when we find ourselves in a "day of trouble." Nahum's message was originally written to people facing overwhelming odds, yet it remains just as relevant for us. Faith involves running to the Stronghold when the storms of life begin to howl. It's about letting His goodness be the anchor for your heart.
-                    `)
+                      __html: linkifyBibleVerses(item.content)
                     }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      In addition, consider the intimacy of being "known" by God. This isn't just about data; it's about a protective relationship. When you trust in Him, He takes personal responsibility for your care. Therefore, do not spend your energy on constant worry. Instead, focus your heart on the One who sees your faith and provides the exact peace your soul needs.
-                    `)
-                    }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Try to let this verse guide your focus throughout the afternoon. When anxiety whispers, answer back with the truth: "The Lord is good." When you meditate on this scripture, it becomes a quiet melody that keeps you steady. Consequently, you can live with a sense of security that the world cannot provide or take away.
-                    `)
-                    }} />
-                  </>
-                ) : displayVerse.ref === "Matthew 5:16" ? (
-                   <>
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Shining our light is an active daily practice, not a one-time event. For instance, Matthew 5:16 encourages us to live with integrity so that our "good works" are evident to everyone. This doesn't mean we seek the spotlight. Rather, we simply live in a way that makes God's presence undeniable. Similarly, when we show love to those who are difficult, we reflect the heart of Jesus.
-                    `)
-                    }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      In addition, we should notice the intention behind our actions. The ultimate purpose of our light is to lead others to the Father. Therefore, do not hide your faith or be timid about your values. Instead, let your life be a testament to the transformation God has done in you. Your kindness could be the bridge that someone else uses to find their way to God.
-                    `)
-                    }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Try to let this verse guide your focus throughout the afternoon. Ask yourself: "Does my current attitude reflect the light of Christ?" Maybe it is a nudge to be more patient or to offer a kind word. When you live intentionally for God's glory, even small acts become significant. Consequently, your life becomes a powerful sermon without saying a word.
-                    `)
-                    }} />
-                  </>
-                ) : isToday ? (
-                  <>
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Faith involves trusting God even when resources seem low. For instance, ${displayVerse.ref} promises that He meets every single lack. This scripture reminds us of His limitless riches and His desire to provide for His children. Similarly, we must rely on Christ for our daily strength.
-                    `)
-                    }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      In addition, we should notice the deep promises in this passage. It covers your emotional stability and your spiritual growth. Therefore, do not spend your energy on constant worry. Instead, focus your heart on the One who holds everything. God invites you to bring your burdens to Him directly.
-                    `)
-                    }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Try to let this verse guide your focus throughout the afternoon. Ask what God is telling you through this promise. Maybe it is a nudge to trust more and worry less. When you meditate on Scripture, it becomes like a quiet melody. Consequently, this melody keeps you steady no matter what comes.
-                    `)
-                    }} />
-                  </>
-                ) : (
-                  <>
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Spending time with Scripture is not about a spiritual list. It is about listening. When you slow down, the words settle in your heart. You begin to notice how they gently reshape your thoughts and priorities.
-                    `)
-                    }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      A verse about patience reminds you to pause before reacting. Also, a verse about forgiveness softens your heart. These small moments transform an ordinary day into something sacred. 
-                    `)
-                    }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Try to let the verse of the day guide your primary focus. Ask what God is trying to tell you through this. Maybe it is a nudge to trust more or extend grace. When you meditate on Scripture, it keeps you steady.
-                    `)
-                    }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Next, write down the verse and a few reflections if you journal. Repeat it in your thoughts if you are on the move. The goal is presence rather than perfection. God's Word is living and active for you today.
-                    `)
-                    }} />
-                  </>
-                )}
+                  </div>
+                ))}
               </div>
             </section>
 
@@ -468,51 +415,87 @@ export default async function VerseOfTheDayPage({
                 <div className="p-8 rounded-none bg-primary/5 border border-primary/10 shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-primary">
                     <span className="text-2xl">🙏</span>
-                    <h3 className="font-serif font-bold text-xl">Morning Prayer</h3>
+                    <h3 className="font-serif font-bold text-xl">Morning Prayer for Guidance</h3>
                   </div>
-                  {displayVerse.ref === "Nahum 1:7" ? (
-                    <p className="text-muted-foreground leading-relaxed italic">
-                      &ldquo;Heavenly Father, I thank You for Your goodness and for being my refuge. In this day of trouble, I run to You as my stronghold. Thank You for knowing me and for Your constant care. Help me to trust You more deeply as I walk through this day. In Jesus&rsquo; name, Amen.&rdquo;
-                    </p>
-                  ) : displayVerse.ref === "Matthew 5:16" ? (
-                    <p className="text-muted-foreground leading-relaxed italic">
-                      &ldquo;Heavenly Father, I thank You for calling me to be Your light. Please help me to shine brightly today in my words and deeds. Let others see Your goodness through my life and give You all the glory. Fill me with Your Spirit so that I may be a faithful witness. In Jesus&rsquo; name, Amen.&rdquo;
-                    </p>
-                  ) : isToday ? (
-                    <p className="text-muted-foreground leading-relaxed italic">
-                      &ldquo;Heavenly Father, I thank You for Your amazing provision. Please help me trust Your timing today. I believe You will meet my every need according to Your riches. Let Your peace fill my heart as I walk in faith. In Jesus&rsquo; name, Amen.&rdquo;
-                    </p>
-                  ) : (
-                    <p className="text-muted-foreground leading-relaxed italic">
-                      &ldquo;Heavenly Father, thank You for a new day. Help me to open my heart to Your Word. Let the truth of Scripture guide my thoughts today. Fill me with wisdom and strength as I walk with You. Amen.&rdquo;
-                    </p>
-                  )}
+                  <p className="text-muted-foreground leading-relaxed italic">
+                    &ldquo;Gracious Heavenly Father, as I begin this day, I surrender my plans to You. Open my eyes to see Your wonders hidden in ordinary moments. Give me wisdom to discern Your voice amid the noise of life. Let today&apos;s verse take root in my heart and transform my thoughts, words, and actions. May everything I do bring honor to Your holy name. In Jesus&apos; mighty name, Amen.&rdquo;
+                  </p>
                 </div>
                 <div className="p-8 rounded-none bg-secondary/30 border border-border shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-card-foreground">
                     <span className="text-2xl">🙏</span>
-                    <h3 className="font-serif font-bold text-xl">Evening Prayer</h3>
+                    <h3 className="font-serif font-bold text-xl">Evening Prayer for Reflection</h3>
                   </div>
-                  {displayVerse.ref === "Nahum 1:7" ? (
-                    <p className="text-muted-foreground leading-relaxed italic">
-                      &ldquo;Lord Jesus, thank You for being my shelter today. I find rest in the knowledge that Your goodness surrounds me. As I sleep, I trust in Your protective presence. Thank You for knowing my heart and keeping me safe. Amen.&rdquo;
-                    </p>
-                  ) : displayVerse.ref === "Matthew 5:16" ? (
-                    <p className="text-muted-foreground leading-relaxed italic">
-                      &ldquo;Lord Jesus, thank You for the opportunities I had to reflect Your light today. Forgive me for the times I dimmed my light due to fear or pride. As I rest tonight, may Your peace fill my soul and prepare me for another day of service. Amen.&rdquo;
-                    </p>
-                  ) : isToday ? (
-                    <p className="text-muted-foreground leading-relaxed italic">
-                      &ldquo;Lord Jesus, thank You for watching over me today. I rest easy knowing You are my provider. Grant me peace as I sleep tonight. I trust in Your limitless grace for tomorrow. Amen.&rdquo;
-                    </p>
-                  ) : (
-                    <p className="text-muted-foreground leading-relaxed italic">
-                      &ldquo;Lord Jesus, I thank You for Your faithfulness this evening. Where I fell short, please forgive me. Let Your Word settle in my spirit tonight. Teach me to rest in Your presence. Amen.&rdquo;
-                    </p>
-                  )}
+                  <p className="text-muted-foreground leading-relaxed italic">
+                    &ldquo;Dear Lord Jesus, I come before You tonight with a grateful heart. Thank You for walking beside me through every moment of this day. Forgive me where I fell short and help me grow from each experience. As I rest tonight, quiet my mind and fill my dreams with Your peace. Renew my strength for tomorrow&apos;s journey with You. Amen.&rdquo;
+                  </p>
                 </div>
               </div>
             </section>
+
+            {/* Daily Devotional Reading Section */}
+           <section>
+             <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 border-b border-border pb-4">
+               Daily Devotional Reading
+             </h2>
+             <div className="space-y-6">
+               <div className="p-6 rounded-none bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
+                 <h3 className="font-serif font-bold text-xl text-card-foreground mb-4 flex items-center gap-2">
+                   <span className="text-2xl">📖</span>
+                   Extended Scripture Reading
+                 </h3>
+                 <p className="text-muted-foreground leading-relaxed mb-4">
+                   Expand your understanding by reading the full chapter containing today's verse. Here are additional passages that complement {displayVerse.ref}:
+                 </p>
+                 <ul className="space-y-2 text-muted-foreground">
+                   <li className="flex items-start gap-2">
+                     <span className="text-primary mt-1">•</span>
+                     <span><strong>Psalm 27:1-6</strong> - A psalm of trust in God's protection and guidance</span>
+                   </li>
+                   <li className="flex items-start gap-2">
+                     <span className="text-primary mt-1">•</span>
+                     <span><strong>Isaiah 43:1-7</strong> - God's promise to be with us through every trial</span>
+                   </li>
+                   <li className="flex items-start gap-2">
+                     <span className="text-primary mt-1">•</span>
+                     <span><strong>Romans 8:28-39</strong> - The depth of God's love and faithfulness to His children</span>
+                   </li>
+                 </ul>
+               </div>
+               
+               <div className="grid md:grid-cols-2 gap-6">
+                 <div className="p-6 rounded-none bg-card border border-border shadow-sm">
+                   <h3 className="font-serif font-bold text-lg text-card-foreground mb-3 flex items-center gap-2">
+                     <span className="text-xl">💡</span>
+                     Key Takeaway
+                   </h3>
+                   <p className="text-muted-foreground leading-relaxed">
+                     God's Word is not just information—it's transformation. As you meditate on {displayVerse.ref}, allow the Holy Spirit to renew your mind and reshape your heart. Small daily doses of Scripture, consistently applied, produce lasting spiritual growth.
+                   </p>
+                 </div>
+                 
+                 <div className="p-6 rounded-none bg-card border border-border shadow-sm">
+                   <h3 className="font-serif font-bold text-lg text-card-foreground mb-3 flex items-center gap-2">
+                     <span className="text-xl">🎯</span>
+                     Practical Application
+                   </h3>
+                   <p className="text-muted-foreground leading-relaxed">
+                     Write today's verse on a card or set it as your phone wallpaper. Reference it throughout the day, especially during challenging moments. Let Scripture become your immediate source of truth, comfort, and direction in real-time situations.
+                   </p>
+                 </div>
+               </div>
+               
+               <div className="p-6 rounded-none bg-secondary/30 border border-border">
+                 <h3 className="font-serif font-bold text-lg text-card-foreground mb-3 flex items-center gap-2">
+                   <span className="text-xl">🤝</span>
+                   Community Connection
+                 </h3>
+                 <p className="text-muted-foreground leading-relaxed">
+                   Share today's verse with someone who might need encouragement. Text it to a friend, post it on social media, or mention it in conversation. God often uses His children to be the voice that speaks truth into each other's lives. Your obedience might be exactly what someone else needs to hear today.
+                 </p>
+               </div>
+             </div>
+           </section>
 
 
             {/* Random Bible Scripture Grid */}
