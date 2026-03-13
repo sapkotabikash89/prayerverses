@@ -14,17 +14,17 @@ export function RelatedPostsAboveNav({ posts }: RelatedPostsAboveNavProps) {
             </h2>
 
             <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
-                <ol className="space-y-4">
+                <ol className="space-y-3">
                     {posts.map((post, index) => (
-                        <li key={post.id} className="flex gap-3 items-start">
-                            <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-primary text-primary-foreground text-xs font-bold rounded-full mt-0.5">
+                        <li key={post.id} className="flex gap-3 items-baseline">
+                            <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-primary text-primary-foreground text-xs font-bold rounded-full">
                                 {index + 1}
                             </span>
                             <a 
                                 href={`/${post.slug}/`}
                                 className="group flex-1"
                             >
-                                <h3 className="text-base font-serif font-semibold text-card-foreground group-hover:text-primary transition-colors leading-snug">
+                                <h3 className="text-base font-serif font-semibold text-card-foreground group-hover:text-primary transition-colors leading-relaxed">
                                     {post.title}
                                 </h3>
                             </a>

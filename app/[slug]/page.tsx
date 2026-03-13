@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     // Process TOC
     const { updatedContent: contentWithIds, headings } = processContentForTOC(rawContent);
 
-    // Insert Read Next after first image if we have a Read Next post
+    // Insert Read Next after ALL images if we have a Read Next post
     let processedContent = contentWithIds;
     if (finalReadNext) {
         const readNextHTML = `
@@ -107,24 +107,44 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
         `;
         
-        // Find first image and insert Read Next after it
-        const firstImageMatch = processedContent.match(/<img[^>]*>/i);
-        if (firstImageMatch && firstImageMatch.index !== undefined) {
-            const insertPosition = firstImageMatch.index + firstImageMatch[0].length;
-            // Check if there's already a closing tag or wrapper nearby
-            const beforeInsert = processedContent.substring(0, insertPosition);
-            const afterInsert = processedContent.substring(insertPosition);
+        // Find ALL images and insert Read Next after each one
+        let result = processedContent;
+        let match;
+        const imgRegex = /<img[^>]*>/gi;
+        const positions = [];
+        
+        // Collect all image positions
+        while ((match = imgRegex.exec(result)) !== null) {
+            const insertPosition = match.index + match[0].length;
             
-            // Look for the end of the image wrapper (usually </figure> or similar)
-            const wrapperEndMatch = afterInsert.match(/^\s*(<\/figure>|<\/div>|<br[^>]*>\s*)/i);
+            // Check for wrapper end after image
+            const afterImage = result.substring(insertPosition);
+            const wrapperEndMatch = afterImage.match(/^\s*(<\/figure>|<\/div>|<br[^>]*>\s*)/i);
+            
             if (wrapperEndMatch) {
-                const wrapperEnd = wrapperEndMatch[0];
-                processedContent = beforeInsert + afterInsert.substring(0, wrapperEndMatch.index! + wrapperEnd.length) + readNextHTML + afterInsert.substring(wrapperEndMatch.index! + wrapperEnd.length);
+                positions.push({
+                    position: insertPosition + wrapperEndMatch[0].length,
+                    wrapperLength: wrapperEndMatch[0].length
+                });
             } else {
-                // Just insert right after image
-                processedContent = beforeInsert + readNextHTML + afterInsert;
+                positions.push({
+                    position: insertPosition,
+                    wrapperLength: 0
+                });
             }
         }
+        
+        // Insert Read Next after each image (in reverse order to maintain positions)
+        positions.reverse().forEach((pos, idx) => {
+            // Only insert after the first image, or add variation for subsequent ones
+            if (idx === 0 || idx % 2 === 0) { // Insert after every other image to avoid repetition
+                const beforeInsert = result.substring(0, pos.position);
+                const afterInsert = result.substring(pos.position);
+                result = beforeInsert + readNextHTML + afterInsert;
+            }
+        });
+        
+        processedContent = result;
     }
 
     // Splice TOC before first H2
