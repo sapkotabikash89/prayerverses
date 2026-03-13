@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react"
 import { getVersesForReference, getChapterVerses } from "@/lib/bible-text"
 import { referenceToFirstVerseId } from "@/data/bible"
 import versesData from "@/data/verses.json"
+import bibleTranslations from "@/data/bible-translations.json"
 import { VerseOfTheDayClient } from "@/components/verse-of-the-day-client"
 import { VerseDateSelector } from "@/components/verse-date-selector"
 import { Breadcrumb } from "@/components/breadcrumb"
@@ -122,18 +123,29 @@ export default async function VerseOfTheDayPage({
     ? { text: realVerses.map(rv => rv.text).join(" "), ref: v.ref }
     : v
 
-  // Get translations for today's verse (simulated for static build)
-  const getTranslations = (ref: string) => {
-    // In a real implementation, this would fetch from an API
-    // For now, we'll use placeholder translations based on common versions
-    return {
-      ESV: "English Standard Version - " + displayVerse.text.substring(0, 100) + "...",
-      NIV: "New International Version - " + displayVerse.text.substring(0, 100) + "...",
-      NLT: "New Living Translation - " + displayVerse.text.substring(0, 100) + "...",
-      WEB: "World English Bible - " + displayVerse.text.substring(0, 100) + "...",
-      NKJV: "New King James Version - " + displayVerse.text.substring(0, 100) + "...",
-    }
-  }
+  // Get translations for today's verse from data file
+ const getTranslations = (ref: string) => {
+   // Check if we have translations in verses.json first
+   const verseData = v as any
+   if (verseData.translations) {
+     return verseData.translations
+   }
+   
+   // Otherwise, use the bible-translations.json lookup
+   const translations = bibleTranslations[ref as keyof typeof bibleTranslations]
+   if (translations) {
+     return translations
+   }
+   
+   // Fallback to KJV text for all versions if no translation found
+   return {
+     ESV: displayVerse.text,
+     NIV: displayVerse.text,
+     NLT: displayVerse.text,
+     WEB: displayVerse.text,
+     NKJV: displayVerse.text,
+   }
+ }
 
   // Get in-context verses (surrounding verses in the same chapter)
   const verseId = referenceToFirstVerseId(v.ref)
@@ -245,25 +257,25 @@ export default async function VerseOfTheDayPage({
             {/* Translations Section */}
             <section>
               <h2 className="text-2xl font-serif font-bold text-card-foreground mb-6 border-b border-border pb-4">
-                Bible Translations of Today's Verse - {displayVerse.ref}
+                Translations of Today's Verse - {displayVerse.ref}
               </h2>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {["ESV", "NIV", "NLT", "WEB", "NKJV"].map((version, i) => {
                   const translations = getTranslations(displayVerse.ref)
                   const translationText = translations[version as keyof typeof translations] || displayVerse.text
                   return (
-                    <div key={version} className="flex gap-4 p-4 rounded-none border border-border bg-card/50 hover:shadow-md transition-shadow">
-                      <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-none bg-primary/10 text-primary font-bold text-sm">
-                        {i + 1}
+                    <div key={version} className="space-y-2">
+                      <div className="flex items-center gap-3">
+                        <span className="flex items-center justify-center w-8 h-8 rounded-none bg-primary/10 text-primary font-bold text-sm">
+                          {i + 1}
+                        </span>
+                        <p className="text-sm font-bold text-primary uppercase tracking-widest">{version}</p>
                       </div>
-                      <div className="flex-1">
-                        <p className="text-xs font-bold text-primary uppercase tracking-widest mb-1">{version}</p>
-                        <p className="text-base text-card-foreground leading-relaxed">{translationText}</p>
-                      </div>
+                      <p className="text-base text-card-foreground leading-relaxed pl-11">{translationText}</p>
                     </div>
                   )
                 })}
-                <p className="text-xs text-muted-foreground italic mt-4">
+                <p className="text-xs text-muted-foreground italic mt-6">
                   Each translated version is copyrighted by its respective company. All rights reserved.
                 </p>
               </div>
@@ -519,47 +531,47 @@ export default async function VerseOfTheDayPage({
                   <TableBody>
                     {[
                       {
-                        cat: "Bible verse for today morning",
-                        ref: "Psalm 143:8",
-                        text: "Let me hear in the morning of your steadfast love, for in you I trust.",
-                        thought: "This reminds us to begin the day listening for God's love and guidance."
+                        cat: "Daily Bible Verse for Morning",
+                        ref: "Lamentations 3:22-23",
+                        text: "The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness.",
+                        thought: "God's mercies are refreshed each morning, giving us new hope and strength for today."
                       },
                       {
-                        cat: "Bible verse of the day about strength",
-                        ref: "Isaiah 40:31",
-                        text: "They who wait for the Lord shall renew their strength.",
-                        thought: "We gain strength through patience and trust in God."
+                        cat: "Scripture for Strength and Courage",
+                        ref: "Deuteronomy 31:6",
+                        text: "Be strong and courageous. Do not fear or be in dread of them, for it is the LORD your God who goes with you. He will not leave you or forsake you.",
+                        thought: "God's constant presence gives us courage to face any challenge with confidence."
                       },
                       {
-                        cat: "Inspirational verse of the day",
-                        ref: "Philippians 4:13",
-                        text: "I can do all things through him who strengthens me.",
-                        thought: "It points us to the source of our power: Christ."
+                        cat: "Inspirational Daily Verse",
+                        ref: "Psalm 46:1",
+                        text: "God is our refuge and strength, a very present help in trouble.",
+                        thought: "In times of need, God is not distant but immediately available as our fortress."
                       },
                       {
-                        cat: "Verse of the day with reflection",
-                        ref: "Romans 8:28",
-                        text: "We know that in all things God works for the good of those who love him.",
-                        thought: "Even hard things are woven by God for redemptive purposes."
+                        cat: "Verse for Faith and Trust",
+                        ref: "Hebrews 11:1",
+                        text: "Now faith is the assurance of things hoped for, the conviction of things not seen.",
+                        thought: "Faith gives us certainty about God's promises even when we can't see the outcome."
                       },
                       {
-                        cat: "Verse of the day about love",
-                        ref: "1 John 4:19",
-                        text: "We love because he first loved us.",
-                        thought: "Our love stems from God’s initiative toward us."
+                        cat: "Scripture on God's Love",
+                        ref: "Romans 5:8",
+                        text: "But God shows his love for us in that while we were still sinners, Christ died for us.",
+                        thought: "God's love is unconditional and demonstrated through Christ's sacrifice."
                       },
                       {
-                        cat: "Random Bible Scripture of the day",
-                        catSub: "(Peace)",
-                        ref: "Colossians 3:15",
-                        text: "And let the peace of Christ rule in your hearts.",
-                        thought: "We are reminded to let Christ’s peace guide us."
+                        cat: "Daily Wisdom from Proverbs",
+                        catSub: "(Guidance)",
+                        ref: "Proverbs 16:9",
+                        text: "The heart of man plans his way, but the LORD establishes his steps.",
+                        thought: "We make plans, but God directs our path according to His perfect will."
                       },
                       {
-                        cat: "Geneva Bible Verse of the day",
-                        ref: "Psalm 119:105",
-                        text: "Thy word is a lantern unto my feet.",
-                        thought: "God’s Word shows the way forward."
+                        cat: "Promise for Today",
+                        ref: "Matthew 11:28",
+                        text: "Come to me, all who labor and are heavy laden, and I will give you rest.",
+                        thought: "Jesus invites us to find true rest and peace in Him, no matter our burdens."
                       }
                     ].map((row, i) => (
                       <TableRow key={i} className="hover:bg-transparent">
