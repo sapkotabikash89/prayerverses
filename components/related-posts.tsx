@@ -43,13 +43,13 @@ export function RelatedPosts({ posts, categorySlug }: RelatedPostsProps) {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             </div>
 
-                            <div className="flex flex-1 flex-col p-6">
-                                <h3 className="text-lg font-serif font-bold text-card-foreground line-clamp-2 group-hover:text-primary transition-colors leading-snug">
+                            <div className="flex flex-1 flex-col p-5">
+                                <h3 className="text-base font-serif font-bold text-card-foreground group-hover:text-primary transition-colors leading-snug">
                                     {post.title}
                                 </h3>
-                                <div className="mt-auto pt-4 flex items-center text-primary font-bold text-sm">
+                                <div className="mt-4 flex items-center text-primary font-bold text-xs uppercase tracking-wider">
                                     Read Article
-                                    <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                    <ArrowRight className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-1" />
                                 </div>
                             </div>
                         </a>

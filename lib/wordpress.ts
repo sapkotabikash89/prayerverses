@@ -425,18 +425,6 @@ export async function getRelatedPosts(categorySlug: string, currentPostId: strin
 
     let related = data.posts.nodes.filter(post => post.id !== currentPostId).slice(0, limit);
 
-    // If not enough related posts in the same category, fill with newest posts
-    if (related.length < limit) {
-      const newestResponse = await getNewestPosts(limit + 5);
-      const newest = newestResponse.nodes;
-      const remainingCount = limit - related.length;
-      const filteredNewest = newest.filter((p: Post) =>
-        p.id !== currentPostId && !related.some(r => r.id === p.id)
-      ).slice(0, remainingCount);
-
-      related = [...related, ...filteredNewest];
-    }
-
     return related;
   } catch (err) {
     console.error('Error fetching related posts:', err);
