@@ -119,20 +119,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         positions.reverse().forEach((pos, idx) => {
             const nextPost = readNextCandidates[idx % readNextCandidates.length];
             if (nextPost) {
-                const postImg = nextPost.featuredImage?.node?.sourceUrl || '';
                 const readNextHTML = `
-                    <div class="read-next-container my-10 not-prose">
-                        <div class="flex items-center gap-4 bg-secondary/20 dark:bg-secondary/10 p-4 rounded-xl border border-primary/10 hover:border-primary/40 transition-all group shadow-sm hover:shadow-md">
-                            ${postImg ? `
-                            <div class="hidden sm:block relative w-20 h-20 flex-shrink-0 overflow-hidden rounded-lg">
-                                <img src="${postImg}" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 m-0" alt="${nextPost.title}" />
-                            </div>` : ''}
-                            <div class="flex-1">
-                                <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-1 block">Read Next</span>
-                                <a href="/${nextPost.slug}/" class="block no-underline">
-                                    <h4 class="text-base font-serif font-bold text-card-foreground group-hover:text-primary transition-colors leading-snug line-clamp-2 m-0">${nextPost.title}</h4>
+                    <div class="read-next-container my-8 not-prose">
+                        <div class="bg-secondary/20 dark:bg-secondary/10 px-4 py-3 rounded-xl border border-primary/10 hover:border-primary/40 transition-all group shadow-sm hover:shadow-md">
+                            <p class="text-sm m-0 flex flex-wrap items-center gap-2">
+                                <span class="font-bold text-primary uppercase tracking-wider text-xs whitespace-nowrap">Read Next:</span>
+                                <a href="/${nextPost.slug}/" class="font-serif font-bold text-card-foreground group-hover:text-primary transition-colors no-underline line-clamp-1">
+                                    ${nextPost.title}
                                 </a>
-                            </div>
+                            </p>
                         </div>
                     </div>
                 `;
@@ -245,14 +240,30 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             <div className="content-area article-body prose prose-lg prose-serif max-w-none text-muted-foreground leading-relaxed">
                 <div dangerouslySetInnerHTML={{ __html: contentBeforeH2 }} />
-                {headings.length > 0 && <TableOfContents headings={headings} />}
+                {headings.length > 0 && (
+                    <>
+                        {relatedPosts.length > 0 && (
+                            <div className="read-next-container my-8 not-prose">
+                                <div className="bg-secondary/20 dark:bg-secondary/10 px-4 py-3 rounded-xl border border-primary/10 hover:border-primary/40 transition-all group shadow-sm hover:shadow-md">
+                                    <p className="text-sm m-0 flex flex-wrap items-center gap-2">
+                                        <span className="font-bold text-primary uppercase tracking-wider text-xs whitespace-nowrap">Read Next:</span>
+                                        <a href={`/${relatedPosts[0].slug}/`} className="font-serif font-bold text-card-foreground group-hover:text-primary transition-colors no-underline line-clamp-1">
+                                            {relatedPosts[0].title}
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        )}
+                        <TableOfContents headings={headings} />
+                    </>
+                )}
                 <div dangerouslySetInnerHTML={{ __html: contentAfterH2 }} />
             </div>
 
 
             <div className="mt-16">
                 {/* Related Posts Above Navigation */}
-                <RelatedPostsAboveNav posts={relatedPosts.slice(0, 5)} />
+                <RelatedPostsAboveNav posts={relatedPosts.slice(0, 6)} />
                 
                 <PostNavigation
                     previous={post.previous}
