@@ -18,7 +18,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "PrayerVerses - Daily Bible Verses & Spiritual Inspiration",
+    default: "PrayerVerses - Connect with God Through Bible Verses and Prayers",
     template: "%s | PrayerVerses",
   },
   description:
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "PrayerVerses",
-    title: "PrayerVerses - Daily Bible Verses & Spiritual Inspiration",
+    title: "PrayerVerses - Connect with God Through Bible Verses and Prayers",
     description:
       "Discover daily Bible verses, read Scripture by topic, and deepen your faith.",
     images: [{ url: "/prayer-verses-logo.webp" }],

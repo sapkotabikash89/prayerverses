@@ -3,5 +3,5 @@ export const siteConfig = {
   url: "https://prayerverses.com",
   description:
     "Discover daily Bible verses, read Scripture by topic, and deepen your faith with beautiful verse cards.",
-  tagline: "Daily Bible Verses & Spiritual Inspiration",
+  tagline: "Connect with God Through Bible Verses and Prayers",
 }
