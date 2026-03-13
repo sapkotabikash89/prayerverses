@@ -70,7 +70,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         notFound();
     }
 
-    const primaryCategory = post.categories?.nodes?.[0];
+    const categories = post.categories?.nodes || [];
+    // Filter out broad/parent categories to find a more specific one for "Read Next"
+    const broadCategories = ['bible-verses', 'blog', 'uncategorized', 'verses-by-topic', 'verses-by-category'];
+    const primaryCategory = categories.find(cat => !broadCategories.includes(cat.slug)) || categories[0];
+    
     const relatedPosts = primaryCategory
         ? await getRelatedPosts(primaryCategory.slug, post.id, 20) // Fetch more for Read Next injection
         : [];
@@ -121,9 +125,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             if (nextPost) {
                 const readNextHTML = `
                     <div class="read-next-container my-8 not-prose">
-                        <div class="bg-secondary/20 dark:bg-secondary/10 px-4 py-4 rounded-xl border border-primary/10 hover:border-primary/40 transition-all group shadow-sm hover:shadow-md">
-                            <p class="text-xl m-0 flex flex-wrap items-center gap-2">
-                                <span class="font-bold text-primary uppercase tracking-wider text-sm whitespace-nowrap">Read Next:</span>
+                        <div class="bg-secondary/20 dark:bg-secondary/10 px-5 py-4 rounded-xl border border-primary/10 hover:border-primary/40 transition-all group shadow-sm hover:shadow-md flex items-center">
+                            <p class="text-xl m-0 flex items-center gap-3 w-full overflow-hidden">
+                                <span class="font-bold text-primary uppercase tracking-wider text-xs whitespace-nowrap">Read Next:</span>
                                 <a href="/${nextPost.slug}/" class="font-serif font-bold text-card-foreground group-hover:text-primary transition-colors no-underline line-clamp-1">
                                     ${nextPost.title}
                                 </a>
@@ -186,8 +190,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <Breadcrumb
                 items={[
                     {
-                        label: post.categories?.nodes?.[0]?.name || 'Categories',
-                        href: post.categories?.nodes?.[0] ? `/category/${post.categories.nodes[0].slug}/` : '/categories/'
+                        label: primaryCategory?.name || 'Categories',
+                        href: primaryCategory ? `/category/${primaryCategory.slug}/` : '/categories/'
                     },
                     { label: post.title, href: `/${slug}/` },
                 ]}
@@ -244,9 +248,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <>
                         {relatedPosts.length > 0 && (
                             <div className="read-next-container my-8 not-prose">
-                                <div className="bg-secondary/20 dark:bg-secondary/10 px-4 py-4 rounded-xl border border-primary/10 hover:border-primary/40 transition-all group shadow-sm hover:shadow-md">
-                                    <p className="text-xl m-0 flex flex-wrap items-center gap-2">
-                                        <span className="font-bold text-primary uppercase tracking-wider text-sm whitespace-nowrap">Read Next:</span>
+                                <div className="bg-secondary/20 dark:bg-secondary/10 px-5 py-4 rounded-xl border border-primary/10 hover:border-primary/40 transition-all group shadow-sm hover:shadow-md flex items-center">
+                                    <p className="text-xl m-0 flex items-center gap-3 w-full overflow-hidden">
+                                        <span className="font-bold text-primary uppercase tracking-wider text-xs whitespace-nowrap">Read Next:</span>
                                         <a href={`/${relatedPosts[0].slug}/`} className="font-serif font-bold text-card-foreground group-hover:text-primary transition-colors no-underline line-clamp-1">
                                             {relatedPosts[0].title}
                                         </a>
