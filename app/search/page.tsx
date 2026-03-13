@@ -179,7 +179,7 @@ export default function SearchPage() {
 
             return (
               <div key={type} className="flex flex-col gap-4">
-                <h2 className="text-primary border-b border-border pb-2">
+                <h2>
                   {headings[type]}
                 </h2>
                 <div className="flex flex-col gap-3">

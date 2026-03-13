@@ -88,7 +88,7 @@ export default async function RandomVersePage() {
             <div className="flex justify-start mb-8">
               <Breadcrumb items={[{ label: "Random Bible Verse", href: "/random-verse/" }]} />
             </div>
-            <h1>
+            <h1 className="text-4xl font-serif font-bold text-card-foreground mb-4">
               Random Bible Verse
             </h1>
             <p className="text-lg text-muted-foreground mb-12 max-w-lg mx-auto">

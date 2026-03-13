@@ -28,7 +28,7 @@ export function VerseTranslations({ reference, bookName, chapter, verse, kjvText
   return (
     <section className="mb-16">
       <h2 className="mb-8 text-2xl font-serif font-bold text-card-foreground">
-        {reference} in Other Translations
+        Translations
       </h2>
       <div className="grid gap-6 md:grid-cols-2">
         {translations.map((t) => (

@@ -8,8 +8,8 @@ export function BibleBooksSection() {
     <section className="py-10 lg:py-20 bg-secondary/50">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-2xl font-serif font-bold text-card-foreground lg:text-3xl text-balance">
-            Books of the Bible
+          <h2 className="text-balance">
+            Explore the Books of the Bible
           </h2>
           <p className="mt-2 text-muted-foreground max-w-xl mx-auto">
             Read through all 66 books of the Bible, from Genesis to Revelation.

@@ -124,7 +124,7 @@ export default async function BibleBookPage({
         </a>
 
         <h1>
-          {b.name}
+          Read the Book of {b.name}
         </h1>
         <p className="text-muted-foreground mb-8">
           {b.testament === "OT" ? "Old Testament" : "New Testament"} &middot;{" "}

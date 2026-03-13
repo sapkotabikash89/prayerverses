@@ -121,9 +121,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             if (nextPost) {
                 const readNextHTML = `
                     <div class="read-next-container my-8 not-prose">
-                        <div class="bg-secondary/20 dark:bg-secondary/10 px-4 py-3 rounded-xl border border-primary/10 hover:border-primary/40 transition-all group shadow-sm hover:shadow-md">
-                            <p class="text-sm m-0 flex flex-wrap items-center gap-2">
-                                <span class="font-bold text-primary uppercase tracking-wider text-xs whitespace-nowrap">Read Next:</span>
+                        <div class="bg-secondary/20 dark:bg-secondary/10 px-4 py-4 rounded-xl border border-primary/10 hover:border-primary/40 transition-all group shadow-sm hover:shadow-md">
+                            <p class="text-xl m-0 flex flex-wrap items-center gap-2">
+                                <span class="font-bold text-primary uppercase tracking-wider text-sm whitespace-nowrap">Read Next:</span>
                                 <a href="/${nextPost.slug}/" class="font-serif font-bold text-card-foreground group-hover:text-primary transition-colors no-underline line-clamp-1">
                                     ${nextPost.title}
                                 </a>
@@ -194,7 +194,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             />
 
             <header className="mb-12 post-header">
-                <h1 className="leading-tight">
+                <h1>
                     {post.title}
                 </h1>
 
@@ -244,9 +244,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <>
                         {relatedPosts.length > 0 && (
                             <div className="read-next-container my-8 not-prose">
-                                <div className="bg-secondary/20 dark:bg-secondary/10 px-4 py-3 rounded-xl border border-primary/10 hover:border-primary/40 transition-all group shadow-sm hover:shadow-md">
-                                    <p className="text-sm m-0 flex flex-wrap items-center gap-2">
-                                        <span className="font-bold text-primary uppercase tracking-wider text-xs whitespace-nowrap">Read Next:</span>
+                                <div className="bg-secondary/20 dark:bg-secondary/10 px-4 py-4 rounded-xl border border-primary/10 hover:border-primary/40 transition-all group shadow-sm hover:shadow-md">
+                                    <p className="text-xl m-0 flex flex-wrap items-center gap-2">
+                                        <span className="font-bold text-primary uppercase tracking-wider text-sm whitespace-nowrap">Read Next:</span>
                                         <a href={`/${relatedPosts[0].slug}/`} className="font-serif font-bold text-card-foreground group-hover:text-primary transition-colors no-underline line-clamp-1">
                                             {relatedPosts[0].title}
                                         </a>

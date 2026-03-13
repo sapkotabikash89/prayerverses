@@ -169,7 +169,7 @@ export default async function BibleChapterPage({
         </a>
 
         <h1>
-          {b.name === 'Psalms' ? 'Psalm' : b.name} {ch}
+          {b.name === 'Psalms' ? 'Psalm' : b.name} Chapter {ch}
         </h1>
 
 

@@ -12,8 +12,8 @@ export function RelatedPosts({ posts, categorySlug }: RelatedPostsProps) {
 
     return (
         <section className="mt-20 pt-16 border-t border-border">
-            <h2 className="text-3xl font-serif font-bold text-card-foreground mb-10 text-center">
-                More Spiritual Insights
+            <h2>
+                More Biblical Insights
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">

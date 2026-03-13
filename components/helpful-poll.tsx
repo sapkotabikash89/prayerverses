@@ -24,9 +24,9 @@ export function HelpfulPoll() {
     }
 
     return (
-        <div className="flex flex-col items-center py-8 border-t border-border">
-            <h3 className="text-xl font-serif font-bold text-card-foreground mb-6 text-center">Was this helpful?</h3>
-            <div className="flex items-center gap-4">
+        <div className="my-8 rounded-none border border-border bg-secondary/30 p-6 text-center">
+            <h4 className="mb-2 font-bold">Was this page helpful?</h4>
+            <div className="mt-4 flex items-center justify-center gap-4">
                 <Button
                     variant="outline"
                     className="flex items-center gap-2 px-6 h-11 rounded-none bg-card hover:bg-secondary transition-all"

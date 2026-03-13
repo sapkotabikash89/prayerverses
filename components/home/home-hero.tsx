@@ -21,7 +21,7 @@ export function HomeHero() {
                     <span>Welcome to PrayerVerses</span>
                 </div>
 
-                <h1 className="text-white drop-shadow-lg">
+                <h1>
                     Connect with God Through <br className="hidden md:block" />
                     <span className="text-primary-foreground">Bible Verses and Prayers</span>
                 </h1>

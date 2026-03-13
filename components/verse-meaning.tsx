@@ -78,28 +78,16 @@ export function VerseMeaning({
             {renderedMeaning ? (
               <div dangerouslySetInnerHTML={{ __html: renderedMeaning }} />
             ) : (
-              <>
-                <div dangerouslySetInnerHTML={{
+              <div
+                dangerouslySetInnerHTML={{
                   __html: linkifyBibleVerses(`
-                  In ${reference}, we encounter a pivotal moment within the larger narrative of ${bookName} Chapter ${chapter}. This verse speaks directly to the ${theme}, offering a profound insight into God's character and His divine will. When we examine the words &ldquo;<span className="text-card-foreground italic">${text}</span>,&rdquo; we see a clear call to trust in the sovereignty and timing of the Lord.
-                `)
-                }} />
-                <div dangerouslySetInnerHTML={{
-                  __html: linkifyBibleVerses(`
-                  The preceding context often sets the stage for this specific truth. In the journey of faith, moments like the one described in ${reference} serve as milestones, reminding us that God's Word is not just a collection of historical records, but a living and active force. This verse encourages believers to look beyond their immediate circumstances and find peace in the eternal promises of Scripture.
-                `)
-                }} />
-                <div dangerouslySetInnerHTML={{
-                  __html: linkifyBibleVerses(`
-                  God's commitment as shown here reveals His deep desire for a relationship with His people. While human nature remains prone to wandering, the truth of ${reference} stands as a testament to His unchanging grace. It invites us to meditate on how this specific revelation might reshape our thoughts, our priorities, and our daily walk with Christ.
-                `)
-                }} />
-                <div dangerouslySetInnerHTML={{
-                  __html: linkifyBibleVerses(`
-                  Ultimately, we are meant to be comforted by the presence of God found in these words. They remind us that even in silence or struggle, the Creator is speaking, providing the exact spiritual nourishment we need for the season we are in.
-                `)
-                }} />
-              </>
+                    <p>In ${reference}, we encounter a pivotal moment within the larger narrative of ${bookName} Chapter ${chapter}. This verse speaks directly to the ${theme}, offering a profound insight into God's character and His divine will. When we examine the words &ldquo;<span class="text-card-foreground italic">${text}</span>,&rdquo; we see a clear call to trust in the sovereignty and timing of the Lord.</p>
+                    <p>The preceding context often sets the stage for this specific truth. In the journey of faith, moments like the one described in ${reference} serve as milestones, reminding us that God's Word is not just a collection of historical records, but a living and active force. This verse encourages believers to look beyond their immediate circumstances and find peace in the eternal promises of Scripture.</p>
+                    <p>God's commitment as shown here reveals His deep desire for a relationship with His people. While human nature remains prone to wandering, the truth of ${reference} stands as a testament to His unchanging grace. It invites us to meditate on how this specific revelation might reshape our thoughts, our priorities, and our daily walk with Christ.</p>
+                    <p>Ultimately, we are meant to be comforted by the presence of God found in these words. They remind us that even in silence or struggle, the Creator is speaking, providing the exact spiritual nourishment we need for the season we are in.</p>
+                  `)
+                }}
+              />
             )}
           </div>
         )}

@@ -32,7 +32,7 @@ export function ExploreMoreSidebar() {
     ]
 
     // Filter out the current page
-    const filteredItems = items.filter(item => pathname === item.href || pathname.startsWith(item.href) ? false : true)
+    const filteredItems = items.filter(item => !pathname.startsWith(item.href))
 
     // Also handle cases where pathname might be empty or "/"
     if (filteredItems.length === 0) return null

@@ -102,7 +102,7 @@ export function DailyVerseHero() {
       </div>
 
       <div className="relative mx-auto max-w-3xl px-4 text-center lg:px-8">
-        <h1 className="text-balance">
+        <h1>
           Find Inspiration in God&apos;s Word
         </h1>
         <p className="mx-auto mb-8 max-w-2xl text-sm text-muted-foreground sm:text-base">

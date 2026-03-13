@@ -38,6 +38,14 @@ const ACTIONS = [
 export function QuickAccessGrid() {
     return (
         <section className="mb-16">
+            <div className="text-center mb-12">
+                <h2 className="text-2xl font-serif font-bold text-card-foreground lg:text-3xl">
+                    Quick Access
+                </h2>
+                <p className="mx-auto mt-2 max-w-xl text-muted-foreground">
+                    Jump directly to key sections of our website.
+                </p>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {ACTIONS.map((action) => (
                     <a

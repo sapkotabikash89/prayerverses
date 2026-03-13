@@ -9,7 +9,7 @@ export function RelatedPostsAboveNav({ posts }: RelatedPostsAboveNavProps) {
 
     return (
         <section className="my-12 pt-10 border-t border-border">
-            <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8">
+            <h2>
                 You May Also Like
             </h2>
 

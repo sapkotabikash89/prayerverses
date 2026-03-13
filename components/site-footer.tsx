@@ -49,10 +49,10 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">
+              <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-primary-foreground/60">
                 {title}
               </h3>
-              <ul className="flex flex-col gap-1">
+              <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link.href}>
                     <a

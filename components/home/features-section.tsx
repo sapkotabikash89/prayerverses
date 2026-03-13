@@ -31,9 +31,9 @@ export function FeaturesSection() {
   return (
     <section className="py-10 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl font-serif font-bold text-card-foreground lg:text-3xl text-balance">
-            Everything You Need for Daily Scripture
+        <div className="text-center">
+          <h2 className="text-2xl font-serif font-bold text-balance text-card-foreground lg:text-3xl">
+            A Hub for Spiritual Growth
           </h2>
           <p className="mt-2 text-muted-foreground max-w-xl mx-auto">
             PrayerVerses brings the Bible to your fingertips with tools designed

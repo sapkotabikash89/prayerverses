@@ -19,7 +19,7 @@ export default async function CategoriesPage() {
             <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 lg:py-10">
                 <Breadcrumb items={[{ label: "Categories", href: "/categories/" }]} />
                 <h1>
-                    Spiritual Categories
+                    Categories
                 </h1>
                 <p className="text-muted-foreground mb-10 max-w-2xl">
                     Explore our curated content organized by category. Find guidance,
