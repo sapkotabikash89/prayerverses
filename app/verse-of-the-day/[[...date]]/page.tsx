@@ -122,6 +122,19 @@ export default async function VerseOfTheDayPage({
     ? { text: realVerses.map(rv => rv.text).join(" "), ref: v.ref }
     : v
 
+  // Get translations for today's verse (simulated for static build)
+  const getTranslations = (ref: string) => {
+    // In a real implementation, this would fetch from an API
+    // For now, we'll use placeholder translations based on common versions
+    return {
+      ESV: "English Standard Version - " + displayVerse.text.substring(0, 100) + "...",
+      NIV: "New International Version - " + displayVerse.text.substring(0, 100) + "...",
+      NLT: "New Living Translation - " + displayVerse.text.substring(0, 100) + "...",
+      WEB: "World English Bible - " + displayVerse.text.substring(0, 100) + "...",
+      NKJV: "New King James Version - " + displayVerse.text.substring(0, 100) + "...",
+    }
+  }
+
   // Get in-context verses (surrounding verses in the same chapter)
   const verseId = referenceToFirstVerseId(v.ref)
   let contextVerses: any[] = []
@@ -232,18 +245,18 @@ export default async function VerseOfTheDayPage({
             {/* Translations Section */}
             <section>
               <h2 className="text-2xl font-serif font-bold text-card-foreground mb-6 border-b border-border pb-4">
-                Translations of Today's Verse - {displayVerse.ref}
+                Bible Translations of Today's Verse - {displayVerse.ref}
               </h2>
               <div className="space-y-6">
                 {["ESV", "NIV", "NLT", "WEB", "NKJV"].map((version, i) => {
-                  const translations = (v as any).translations || {}
-                  const translationText = translations[version] || displayVerse.text
+                  const translations = getTranslations(displayVerse.ref)
+                  const translationText = translations[version as keyof typeof translations] || displayVerse.text
                   return (
-                    <div key={version} className="flex gap-4 p-4 rounded-none border border-border bg-card/50">
+                    <div key={version} className="flex gap-4 p-4 rounded-none border border-border bg-card/50 hover:shadow-md transition-shadow">
                       <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-none bg-primary/10 text-primary font-bold text-sm">
                         {i + 1}
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <p className="text-xs font-bold text-primary uppercase tracking-widest mb-1">{version}</p>
                         <p className="text-base text-card-foreground leading-relaxed">{translationText}</p>
                       </div>
@@ -251,7 +264,7 @@ export default async function VerseOfTheDayPage({
                   )
                 })}
                 <p className="text-xs text-muted-foreground italic mt-4">
-                  Each translated version is copyrighted by its respective company.
+                  Each translated version is copyrighted by its respective company. All rights reserved.
                 </p>
               </div>
             </section>
@@ -403,7 +416,7 @@ export default async function VerseOfTheDayPage({
                     }} />
                     <div dangerouslySetInnerHTML={{
                       __html: linkifyBibleVerses(`
-                      Try to let this verse guide your focus throughout the afternoon. Ask yourself what God is telling you through this promise. Maybe it is a nudge to trust more and worry less. When you meditate on Scripture, it becomes like a quiet melody. Consequently, this melody keeps you steady no matter what comes.
+                      Try to let this verse guide your focus throughout the afternoon. Ask what God is telling you through this promise. Maybe it is a nudge to trust more and worry less. When you meditate on Scripture, it becomes like a quiet melody. Consequently, this melody keeps you steady no matter what comes.
                     `)
                     }} />
                   </>
