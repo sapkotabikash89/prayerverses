@@ -69,61 +69,61 @@
 
   h1 {
     @apply font-serif font-bold text-card-foreground leading-tight mb-6;
-    font-size: 1.875rem; /* text-3xl */
+    font-size: 2.25rem; /* text-4xl */
   }
   @screen lg {
     h1 {
-      font-size: 3rem; /* text-5xl */
+      font-size: 3.75rem; /* text-6xl */
     }
   }
 
   h2 {
     @apply font-serif font-bold text-card-foreground leading-snug mt-12 mb-6;
-    font-size: 1.5rem; /* text-2xl */
+    font-size: 1.875rem; /* text-3xl */
   }
   @screen lg {
     h2 {
-      font-size: 2.25rem; /* text-4xl */
+      font-size: 3rem; /* text-5xl */
     }
   }
 
   h3 {
     @apply font-serif font-bold text-card-foreground leading-snug mt-10 mb-5;
-    font-size: 1.25rem; /* text-xl */
+    font-size: 1.5rem; /* text-2xl */
   }
   @screen lg {
     h3 {
-      font-size: 1.875rem; /* text-3xl */
+      font-size: 2.25rem; /* text-4xl */
     }
   }
 
   h4 {
     @apply font-serif font-bold text-card-foreground leading-snug mt-8 mb-4;
-    font-size: 1.125rem; /* text-lg */
+    font-size: 1.25rem; /* text-xl */
   }
   @screen lg {
     h4 {
-      font-size: 1.5rem; /* text-2xl */
+      font-size: 1.875rem; /* text-3xl */
     }
   }
 
   h5 {
     @apply font-serif font-bold text-card-foreground leading-snug mt-6 mb-3;
-    font-size: 1rem; /* text-base */
+    font-size: 1.125rem; /* text-lg */
   }
   @screen lg {
     h5 {
-      font-size: 1.25rem; /* text-xl */
+      font-size: 1.5rem; /* text-2xl */
     }
   }
 
   h6 {
     @apply font-serif font-bold text-card-foreground leading-snug mt-4 mb-2;
-    font-size: 0.875rem; /* text-sm */
+    font-size: 1rem; /* text-base */
   }
   @screen lg {
     h6 {
-      font-size: 1.125rem; /* text-lg */
+      font-size: 1.25rem; /* text-xl */
     }
   }
 
@@ -169,11 +169,11 @@
 }
 
 .prose h1 {
-  font-size: 1.875rem !important; /* text-3xl */
+  font-size: 2.25rem !important; /* text-4xl */
 }
 @screen lg {
   .prose h1 {
-    font-size: 3rem !important; /* text-5xl */
+    font-size: 3.75rem !important; /* text-6xl */
   }
 }
 
@@ -183,11 +183,11 @@
   font-weight: 700 !important;
   margin-top: 2.5rem !important;
   margin-bottom: 1.5rem !important;
-  font-size: 1.5rem !important; /* text-2xl */
+  font-size: 1.875rem !important; /* text-3xl */
 }
 @screen lg {
   .prose h2 {
-    font-size: 2.25rem !important; /* text-4xl */
+    font-size: 3rem !important; /* text-5xl */
   }
 }
 
@@ -197,11 +197,11 @@
   font-weight: 700 !important;
   margin-top: 2.5rem !important;
   margin-bottom: 1.5rem !important;
-  font-size: 1.25rem !important; /* text-xl */
+  font-size: 1.5rem !important; /* text-2xl */
 }
 @screen lg {
   .prose h3 {
-    font-size: 1.875rem !important; /* text-3xl */
+    font-size: 2.25rem !important; /* text-4xl */
   }
 }
 
@@ -211,11 +211,11 @@
   font-weight: 700 !important;
   margin-top: 2.5rem !important;
   margin-bottom: 1.5rem !important;
-  font-size: 1.125rem !important; /* text-lg */
+  font-size: 1.25rem !important; /* text-xl */
 }
 @screen lg {
   .prose h4 {
-    font-size: 1.5rem !important; /* text-2xl */
+    font-size: 1.875rem !important; /* text-3xl */
   }
 }
 
@@ -225,11 +225,11 @@
   font-weight: 700 !important;
   margin-top: 2.5rem !important;
   margin-bottom: 1.5rem !important;
-  font-size: 1rem !important; /* text-base */
+  font-size: 1.125rem !important; /* text-lg */
 }
 @screen lg {
   .prose h5 {
-    font-size: 1.25rem !important; /* text-xl */
+    font-size: 1.5rem !important; /* text-2xl */
   }
 }
 
@@ -239,11 +239,11 @@
   font-weight: 700 !important;
   margin-top: 2.5rem !important;
   margin-bottom: 1.5rem !important;
-  font-size: 0.875rem !important; /* text-sm */
+  font-size: 1rem !important; /* text-base */
 }
 @screen lg {
   .prose h6 {
-    font-size: 1.125rem !important; /* text-lg */
+    font-size: 1.25rem !important; /* text-xl */
   }
 }
 
