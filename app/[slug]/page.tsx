@@ -72,7 +72,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
     const categories = post.categories?.nodes || [];
     // Filter out broad/parent categories to find a more specific one for "Read Next"
-    const broadCategories = ['bible-verses', 'blog', 'uncategorized', 'verses-by-topic', 'verses-by-category'];
+    const broadCategories = ['bible-verses', 'blog', 'uncategorized', 'verses-by-topic', 'verses-by-category', 'topics', 'biblical-insights', 'spiritual-insights'];
     const primaryCategory = categories.find(cat => !broadCategories.includes(cat.slug)) || categories[0];
     
     const relatedPosts = primaryCategory
@@ -125,9 +125,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             if (nextPost) {
                 const readNextHTML = `
                     <div class="read-next-container my-8 not-prose">
-                        <div class="bg-secondary/10 px-4 py-3 border-l-4 border-primary/40 hover:border-primary transition-all group shadow-sm">
-                            <p class="text-xl m-0 flex items-center gap-3 w-full">
-                                <span class="font-bold text-primary uppercase tracking-wider text-xs whitespace-nowrap">Read Next:</span>
+                        <div class="bg-secondary/10 px-4 py-4 border-l-4 border-primary/40 hover:border-primary transition-all group shadow-sm flex items-center">
+                            <p class="text-xl m-0 flex items-center gap-3 w-full leading-tight">
+                                <span class="font-bold text-primary uppercase tracking-wider text-[10px] whitespace-nowrap">Read Next:</span>
                                 <a href="/${nextPost.slug}/" class="font-serif font-bold text-card-foreground group-hover:text-primary transition-colors no-underline">
                                     ${nextPost.title}
                                 </a>
@@ -248,9 +248,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <>
                         {relatedPosts.length > 0 && (
                             <div className="read-next-container my-8 not-prose">
-                                <div className="bg-secondary/10 px-4 py-3 border-l-4 border-primary/40 hover:border-primary transition-all group shadow-sm">
-                                    <p className="text-xl m-0 flex items-center gap-3 w-full">
-                                        <span className="font-bold text-primary uppercase tracking-wider text-xs whitespace-nowrap">Read Next:</span>
+                                <div className="bg-secondary/10 px-4 py-4 border-l-4 border-primary/40 hover:border-primary transition-all group shadow-sm flex items-center">
+                                    <p className="text-xl m-0 flex items-center gap-3 w-full leading-tight">
+                                        <span className="font-bold text-primary uppercase tracking-wider text-[10px] whitespace-nowrap">Read Next:</span>
                                         <a href={`/${relatedPosts[0].slug}/`} className="font-serif font-bold text-card-foreground group-hover:text-primary transition-colors no-underline">
                                             {relatedPosts[0].title}
                                         </a>
