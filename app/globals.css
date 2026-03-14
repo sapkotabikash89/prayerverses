@@ -72,9 +72,29 @@
     @apply text-3xl lg:text-5xl;
   }
 
-  h2, h3, h4, h5, h6 {
+  h2 {
     @apply font-serif font-bold text-card-foreground leading-snug mt-12 mb-6;
     @apply text-2xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply font-serif font-bold text-card-foreground leading-snug mt-10 mb-5;
+    @apply text-xl lg:text-3xl;
+  }
+
+  h4 {
+    @apply font-serif font-bold text-card-foreground leading-snug mt-8 mb-4;
+    @apply text-lg lg:text-2xl;
+  }
+
+  h5 {
+    @apply font-serif font-bold text-card-foreground leading-snug mt-6 mb-3;
+    @apply text-base lg:text-xl;
+  }
+
+  h6 {
+    @apply font-serif font-bold text-card-foreground leading-snug mt-4 mb-2;
+    @apply text-sm lg:text-lg;
   }
 
   p {
@@ -122,17 +142,49 @@
   @apply text-3xl lg:text-5xl;
 }
 
-.prose h2,
-.prose h3,
-.prose h4,
-.prose h5,
-.prose h6 {
+.prose h2 {
   color: var(--card-foreground) !important;
   font-family: var(--font-serif), serif !important;
   font-weight: 700 !important;
   margin-top: 2.5rem !important;
   margin-bottom: 1.5rem !important;
   @apply text-2xl lg:text-4xl;
+}
+
+.prose h3 {
+  color: var(--card-foreground) !important;
+  font-family: var(--font-serif), serif !important;
+  font-weight: 700 !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1.5rem !important;
+  @apply text-xl lg:text-3xl;
+}
+
+.prose h4 {
+  color: var(--card-foreground) !important;
+  font-family: var(--font-serif), serif !important;
+  font-weight: 700 !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1.5rem !important;
+  @apply text-lg lg:text-2xl;
+}
+
+.prose h5 {
+  color: var(--card-foreground) !important;
+  font-family: var(--font-serif), serif !important;
+  font-weight: 700 !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1.5rem !important;
+  @apply text-base lg:text-xl;
+}
+
+.prose h6 {
+  color: var(--card-foreground) !important;
+  font-family: var(--font-serif), serif !important;
+  font-weight: 700 !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1.5rem !important;
+  @apply text-sm lg:text-lg;
 }
 
 .prose p {
