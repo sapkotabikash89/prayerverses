@@ -48,8 +48,8 @@ function getDateStr(offset: number, base: string) {
 
 export function DailyVerseHero() {
   const todayStr = useMemo(() => {
-    const now = new Date()
-    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`
+    const nepalTime = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Kathmandu"}));
+    return `${nepalTime.getFullYear()}-${String(nepalTime.getMonth() + 1).padStart(2, "0")}-${String(nepalTime.getDate()).padStart(2, "0")}`
   }, [])
 
   const verses = versesData as Record<string, { text: string; ref: string }>

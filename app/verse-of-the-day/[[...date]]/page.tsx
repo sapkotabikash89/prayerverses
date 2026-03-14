@@ -26,9 +26,9 @@ import {
 
 const verses = versesData as Record<string, { text: string; ref: string }>
 
-function getNYDate() {
+function getNepalDate() {
   return new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'America/New_York',
+    timeZone: 'Asia/Kathmandu',
     year: 'numeric',
     month: '2-digit',
     day: '2-digit'
@@ -49,7 +49,7 @@ export async function generateMetadata({
   params: Promise<{ date?: string[] }>
 }): Promise<Metadata> {
   const { date } = await params
-  const todayStr = getNYDate()
+  const todayStr = getNepalDate()
   const dateStr = date?.[0] || todayStr
   const v = verses[dateStr]
 
@@ -100,7 +100,7 @@ export default async function VerseOfTheDayPage({
   params: Promise<{ date?: string[] }>
 }) {
   const { date } = await params
-  const todayStr = getNYDate()
+  const todayStr = getNepalDate()
   let dateStr = date?.[0] || todayStr
   let v = verses[dateStr]
 

@@ -50,7 +50,11 @@ export function VerseDateSelector({ currentDate, allDates }: VerseDateSelectorPr
             mode="single"
             selected={new Date(currentDate + "T12:00:00")}
             onSelect={handleDateSelect}
-            disabled={(date) => date > new Date() || date < new Date(allDates[0] + "T12:00:00")}
+            disabled={(date) => {
+              const nepalToday = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Kathmandu"}));
+              nepalToday.setHours(23, 59, 59, 999);
+              return date > nepalToday || date < new Date(allDates[0] + "T12:00:00")
+            }}
             initialFocus
           />
         </PopoverContent>
