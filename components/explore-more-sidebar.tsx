@@ -57,7 +57,7 @@ export function ExploreMoreSidebar() {
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <h3>
-                                        {post.title}
+                                        {item.title}
                                     </h3>
                                     <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
                                         {item.description}
