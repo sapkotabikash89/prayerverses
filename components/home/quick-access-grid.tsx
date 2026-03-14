@@ -39,7 +39,7 @@ export function QuickAccessGrid() {
     return (
         <section className="mb-16">
             <div className="text-center mb-12">
-                <h2 className="text-2xl font-serif font-bold text-card-foreground lg:text-3xl">
+                <h2>
                     Quick Access
                 </h2>
                 <p className="mx-auto mt-2 max-w-xl text-muted-foreground">
@@ -58,7 +58,7 @@ export function QuickAccessGrid() {
                                 <action.icon className="h-6 w-6" />
                             </div>
                             <div>
-                                <h3 className="text-lg font-bold text-card-foreground mb-1">
+                                <h3>
                                     {action.title}
                                 </h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">

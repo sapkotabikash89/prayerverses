@@ -32,13 +32,14 @@ export default async function HomePage() {
         <QuickAccessGrid />
 
         <section id="categories">
+          <h2 className="sr-only">Browse by Topic</h2>
           <TopicGrid categories={categories} />
         </section>
 
         <LatestPostsSection />
 
         <section className="bg-primary/5 p-8 border border-primary/20 flex flex-col items-center text-center">
-          <h2 className="text-2xl font-serif font-bold mb-4">Explore the Full Bible</h2>
+          <h2>Explore the Full Bible</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl">
             Access all 66 books of the Bible from Genesis to Revelation. Discover the wisdom and hope contained in every chapter.
           </p>

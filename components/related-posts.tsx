@@ -44,7 +44,7 @@ export function RelatedPosts({ posts, categorySlug }: RelatedPostsProps) {
                             </div>
 
                             <div className="flex flex-1 flex-col p-5">
-                                <h3 className="text-base font-serif font-bold text-card-foreground group-hover:text-primary transition-colors leading-snug">
+                                <h3>
                                     {post.title}
                                 </h3>
                                 <div className="mt-4 flex items-center text-primary font-bold text-xs uppercase tracking-wider">

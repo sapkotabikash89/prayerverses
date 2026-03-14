@@ -236,7 +236,7 @@ export default async function VerseOfTheDayPage({
             <div className="flex justify-start mb-8">
               <Breadcrumb items={[{ label: "Verse of the Day", href: "/verse-of-the-day/" }]} />
             </div>
-            <h1 className="text-3xl font-serif font-bold text-card-foreground mb-2 lg:text-4xl">
+            <h1>
               Today's Bible Verse of the Day (KJV)
             </h1>
             <p className="text-lg text-muted-foreground mb-8">{formattedDate}</p>
@@ -374,7 +374,7 @@ export default async function VerseOfTheDayPage({
 
             {/* Devotional Thoughts Section */}
             <section>
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-6 border-b border-border pb-4">
+              <h2>
                 Devotional Thoughts
               </h2>
               <div className="prose prose-stone max-w-none dark:prose-invert text-muted-foreground space-y-6">
@@ -397,7 +397,7 @@ export default async function VerseOfTheDayPage({
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="space-y-3">
-                    <h3 className="text-lg font-serif font-bold text-card-foreground">{item.title}</h3>
+                    <h3>{item.title}</h3>
                     <div dangerouslySetInnerHTML={{
                       __html: linkifyBibleVerses(item.content)
                     }} />
@@ -408,14 +408,14 @@ export default async function VerseOfTheDayPage({
 
             {/* Prayers of the Day Section */}
             <section>
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 border-b border-border pb-4">
+              <h2>
                 Prayers of the Day
               </h2>
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="p-8 rounded-none bg-primary/5 border border-primary/10 shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-primary">
                     <span className="text-2xl">🙏</span>
-                    <h3 className="font-serif font-bold text-xl">Morning Prayer for Guidance</h3>
+                    <h3>Morning Prayer for Guidance</h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed italic">
                     &ldquo;Gracious Heavenly Father, as I begin this day, I surrender my plans to You. Open my eyes to see Your wonders hidden in ordinary moments. Give me wisdom to discern Your voice amid the noise of life. Let today&apos;s verse take root in my heart and transform my thoughts, words, and actions. May everything I do bring honor to Your holy name. In Jesus&apos; mighty name, Amen.&rdquo;
@@ -424,7 +424,7 @@ export default async function VerseOfTheDayPage({
                 <div className="p-8 rounded-none bg-secondary/30 border border-border shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-card-foreground">
                     <span className="text-2xl">🙏</span>
-                    <h3 className="font-serif font-bold text-xl">Evening Prayer for Reflection</h3>
+                    <h3>Evening Prayer for Reflection</h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed italic">
                     &ldquo;Dear Lord Jesus, I come before You tonight with a grateful heart. Thank You for walking beside me through every moment of this day. Forgive me where I fell short and help me grow from each experience. As I rest tonight, quiet my mind and fill my dreams with Your peace. Renew my strength for tomorrow&apos;s journey with You. Amen.&rdquo;
@@ -435,12 +435,12 @@ export default async function VerseOfTheDayPage({
 
             {/* Daily Devotional Reading Section */}
            <section>
-             <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 border-b border-border pb-4">
+             <h2>
                Daily Devotional Reading
              </h2>
              <div className="space-y-6">
                <div className="p-6 rounded-none bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
-                 <h3 className="font-serif font-bold text-xl text-card-foreground mb-4 flex items-center gap-2">
+                 <h3 className="mb-4 flex items-center gap-2">
                    <span className="text-2xl">📖</span>
                    Extended Scripture Reading
                  </h3>
@@ -465,7 +465,7 @@ export default async function VerseOfTheDayPage({
                
                <div className="grid md:grid-cols-2 gap-6">
                  <div className="p-6 rounded-none bg-card border border-border shadow-sm">
-                   <h3 className="font-serif font-bold text-lg text-card-foreground mb-3 flex items-center gap-2">
+                   <h3 className="mb-3 flex items-center gap-2">
                      <span className="text-xl">💡</span>
                      Key Takeaway
                    </h3>
@@ -475,7 +475,7 @@ export default async function VerseOfTheDayPage({
                  </div>
                  
                  <div className="p-6 rounded-none bg-card border border-border shadow-sm">
-                   <h3 className="font-serif font-bold text-lg text-card-foreground mb-3 flex items-center gap-2">
+                   <h3 className="mb-3 flex items-center gap-2">
                      <span className="text-xl">🎯</span>
                      Practical Application
                    </h3>
@@ -486,7 +486,7 @@ export default async function VerseOfTheDayPage({
                </div>
                
                <div className="p-6 rounded-none bg-secondary/30 border border-border">
-                 <h3 className="font-serif font-bold text-lg text-card-foreground mb-3 flex items-center gap-2">
+                 <h3 className="mb-3 flex items-center gap-2">
                    <span className="text-xl">🤝</span>
                    Community Connection
                  </h3>
@@ -500,7 +500,7 @@ export default async function VerseOfTheDayPage({
 
             {/* Random Bible Scripture Grid */}
             <section>
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 border-b border-border pb-4">
+              <h2>
                 Random Bible Scripture of the Day
               </h2>
               <div className="rounded-none border border-border overflow-hidden bg-card shadow-sm">
@@ -579,7 +579,7 @@ export default async function VerseOfTheDayPage({
 
             {/* Final Thought Section */}
             <section className="text-center py-8 bg-secondary/20 rounded-none border border-border">
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-6">
+              <h2>
                 Final Thought
               </h2>
               <div className="max-w-2xl mx-auto space-y-6 text-muted-foreground leading-relaxed px-6">
@@ -594,7 +594,7 @@ export default async function VerseOfTheDayPage({
 
             {/* FAQ Section */}
             <section className="mt-16">
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 text-center">
+              <h2>
                 FAQs About the Daily Bible Verses
               </h2>
               <div className="mx-auto max-w-3xl">

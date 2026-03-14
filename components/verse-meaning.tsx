@@ -58,9 +58,9 @@ export function VerseMeaning({
       {/* What does it mean section */}
       <div className="mb-10">
         <div className="flex items-center justify-between mb-6 border-b border-border pb-4">
-          <h2 className="text-2xl font-serif font-bold text-card-foreground">
-            What does {reference} mean?
-          </h2>
+            <h2>
+             What does {reference} mean?
+            </h2>
           <button
             onClick={() => setIsMeaningCollapsed(!isMeaningCollapsed)}
             className="text-xs font-medium text-muted-foreground hover:text-primary flex items-center gap-1 uppercase tracking-wider transition-colors"
@@ -96,7 +96,7 @@ export function VerseMeaning({
       {/* Context Summary */}
       <div className="mb-10 p-8 rounded-none bg-secondary/20 border border-border shadow-sm">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-xl font-serif font-bold text-card-foreground">
+          <h3>
             Context Summary
           </h3>
           <button
@@ -129,7 +129,7 @@ export function VerseMeaning({
       {/* Chapter Context */}
       <div className="p-8 rounded-none bg-primary/5 border border-primary/10 shadow-sm">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-xl font-serif font-bold text-card-foreground">
+          <h3>
             Chapter Context
           </h3>
           <button

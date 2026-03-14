@@ -218,7 +218,7 @@ export default async function BibleChapterPage({
 
         {/* Bible Study FAQ Section */}
         <section className="mt-16 border-t border-border pt-12">
-          <h2 className="text-center">
+          <h2>
             Related Questions and Answers
           </h2>
           <div className="mx-auto max-w-3xl">

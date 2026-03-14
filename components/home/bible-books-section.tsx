@@ -7,8 +7,8 @@ export function BibleBooksSection() {
   return (
     <section className="py-10 lg:py-20 bg-secondary/50">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-balance">
+        <div className="mb-10 text-center">
+          <h2>
             Explore the Books of the Bible
           </h2>
           <p className="mt-2 text-muted-foreground max-w-xl mx-auto">
@@ -17,7 +17,7 @@ export function BibleBooksSection() {
         </div>
 
         <div className="mb-12">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-6">
+          <h3>
             Old Testament ({ot.length} books)
           </h3>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
@@ -34,7 +34,7 @@ export function BibleBooksSection() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-6">
+          <h3>
             New Testament ({nt.length} books)
           </h3>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">

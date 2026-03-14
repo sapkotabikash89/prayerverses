@@ -40,12 +40,9 @@ export function ExploreMoreSidebar() {
     return (
         <div className="space-y-6">
             <section className="bg-card border border-border rounded-none p-6 shadow-sm overflow-hidden">
-                <h2 className="text-lg font-serif font-bold text-card-foreground mb-4 flex items-center gap-3">
-                    <span className="w-7 h-7 rounded-none bg-primary/10 flex items-center justify-center">
-                        <BookOpen className="w-3.5 h-3.5 text-primary" />
-                    </span>
-                    Explore More
-                </h2>
+                  <h2>
+                      Explore More
+                  </h2>
 
                 <div className="space-y-3">
                     {filteredItems.map((item) => (
@@ -59,8 +56,8 @@ export function ExploreMoreSidebar() {
                                     {cloneElement(item.icon as React.ReactElement<any>, { className: "w-4 h-4" })}
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                    <h3 className="text-sm font-bold text-card-foreground group-hover:text-primary transition-colors leading-tight mb-0.5">
-                                        {item.title}
+                                    <h3>
+                                        {post.title}
                                     </h3>
                                     <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
                                         {item.description}

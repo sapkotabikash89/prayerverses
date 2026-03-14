@@ -54,7 +54,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
                     </span>
                 </div>
 
-                <h3 className="text-lg font-serif font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors leading-tight line-clamp-2">
+                <h3>
                     {post.title}
                 </h3>
 

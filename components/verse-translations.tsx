@@ -27,9 +27,7 @@ export function VerseTranslations({ reference, bookName, chapter, verse, kjvText
 
   return (
     <section className="mb-16">
-      <h2 className="mb-8 text-2xl font-serif font-bold text-card-foreground">
-        Translations
-      </h2>
+      <h3>Translations</h3>
       <div className="grid gap-6 md:grid-cols-2">
         {translations.map((t) => (
           <div key={t.id} className="group rounded-none border border-border bg-card p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md">

@@ -69,32 +69,62 @@
 
   h1 {
     @apply font-serif font-bold text-card-foreground leading-tight mb-6;
-    @apply text-3xl lg:text-5xl;
+    font-size: 1.875rem; /* text-3xl */
+  }
+  @screen lg {
+    h1 {
+      font-size: 3rem; /* text-5xl */
+    }
   }
 
   h2 {
     @apply font-serif font-bold text-card-foreground leading-snug mt-12 mb-6;
-    @apply text-2xl lg:text-4xl;
+    font-size: 1.5rem; /* text-2xl */
+  }
+  @screen lg {
+    h2 {
+      font-size: 2.25rem; /* text-4xl */
+    }
   }
 
   h3 {
     @apply font-serif font-bold text-card-foreground leading-snug mt-10 mb-5;
-    @apply text-xl lg:text-3xl;
+    font-size: 1.25rem; /* text-xl */
+  }
+  @screen lg {
+    h3 {
+      font-size: 1.875rem; /* text-3xl */
+    }
   }
 
   h4 {
     @apply font-serif font-bold text-card-foreground leading-snug mt-8 mb-4;
-    @apply text-lg lg:text-2xl;
+    font-size: 1.125rem; /* text-lg */
+  }
+  @screen lg {
+    h4 {
+      font-size: 1.5rem; /* text-2xl */
+    }
   }
 
   h5 {
     @apply font-serif font-bold text-card-foreground leading-snug mt-6 mb-3;
-    @apply text-base lg:text-xl;
+    font-size: 1rem; /* text-base */
+  }
+  @screen lg {
+    h5 {
+      font-size: 1.25rem; /* text-xl */
+    }
   }
 
   h6 {
     @apply font-serif font-bold text-card-foreground leading-snug mt-4 mb-2;
-    @apply text-sm lg:text-lg;
+    font-size: 0.875rem; /* text-sm */
+  }
+  @screen lg {
+    h6 {
+      font-size: 1.125rem; /* text-lg */
+    }
   }
 
   p {
@@ -139,7 +169,12 @@
 }
 
 .prose h1 {
-  @apply text-3xl lg:text-5xl;
+  font-size: 1.875rem !important; /* text-3xl */
+}
+@screen lg {
+  .prose h1 {
+    font-size: 3rem !important; /* text-5xl */
+  }
 }
 
 .prose h2 {
@@ -148,7 +183,12 @@
   font-weight: 700 !important;
   margin-top: 2.5rem !important;
   margin-bottom: 1.5rem !important;
-  @apply text-2xl lg:text-4xl;
+  font-size: 1.5rem !important; /* text-2xl */
+}
+@screen lg {
+  .prose h2 {
+    font-size: 2.25rem !important; /* text-4xl */
+  }
 }
 
 .prose h3 {
@@ -157,7 +197,12 @@
   font-weight: 700 !important;
   margin-top: 2.5rem !important;
   margin-bottom: 1.5rem !important;
-  @apply text-xl lg:text-3xl;
+  font-size: 1.25rem !important; /* text-xl */
+}
+@screen lg {
+  .prose h3 {
+    font-size: 1.875rem !important; /* text-3xl */
+  }
 }
 
 .prose h4 {
@@ -166,7 +211,12 @@
   font-weight: 700 !important;
   margin-top: 2.5rem !important;
   margin-bottom: 1.5rem !important;
-  @apply text-lg lg:text-2xl;
+  font-size: 1.125rem !important; /* text-lg */
+}
+@screen lg {
+  .prose h4 {
+    font-size: 1.5rem !important; /* text-2xl */
+  }
 }
 
 .prose h5 {
@@ -175,7 +225,12 @@
   font-weight: 700 !important;
   margin-top: 2.5rem !important;
   margin-bottom: 1.5rem !important;
-  @apply text-base lg:text-xl;
+  font-size: 1rem !important; /* text-base */
+}
+@screen lg {
+  .prose h5 {
+    font-size: 1.25rem !important; /* text-xl */
+  }
 }
 
 .prose h6 {
@@ -184,7 +239,12 @@
   font-weight: 700 !important;
   margin-top: 2.5rem !important;
   margin-bottom: 1.5rem !important;
-  @apply text-sm lg:text-lg;
+  font-size: 0.875rem !important; /* text-sm */
+}
+@screen lg {
+  .prose h6 {
+    font-size: 1.125rem !important; /* text-lg */
+  }
 }
 
 .prose p {

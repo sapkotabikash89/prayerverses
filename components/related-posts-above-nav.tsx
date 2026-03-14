@@ -23,7 +23,7 @@ export function RelatedPostsAboveNav({ posts }: RelatedPostsAboveNavProps) {
                         <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary/10 text-primary text-sm font-bold rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                             {index + 1}
                         </span>
-                        <h3 className="text-sm font-serif font-bold text-card-foreground group-hover:text-primary transition-colors leading-snug">
+                        <h3>
                             {post.title}
                         </h3>
                     </a>

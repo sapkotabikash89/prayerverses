@@ -17,7 +17,7 @@ export function HelpfulPoll() {
     if (voted) {
         return (
             <div className="flex flex-col items-center py-8 border-t border-border">
-                <h3 className="text-xl font-serif font-bold text-card-foreground mb-4">Thank you for your feedback!</h3>
+                <h3>Thank you for your feedback!</h3>
                 <p className="text-muted-foreground text-sm">We're glad you found this helpful.</p>
             </div>
         )
@@ -25,7 +25,7 @@ export function HelpfulPoll() {
 
     return (
         <div className="my-8 rounded-none border border-border bg-secondary/30 p-6 text-center">
-            <h4 className="mb-2 font-bold">Was this page helpful?</h4>
+            <h4>Was this page helpful?</h4>
             <div className="mt-4 flex items-center justify-center gap-4">
                 <Button
                     variant="outline"

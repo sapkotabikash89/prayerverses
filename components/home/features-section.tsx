@@ -31,8 +31,8 @@ export function FeaturesSection() {
   return (
     <section className="py-10 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-2xl font-serif font-bold text-balance text-card-foreground lg:text-3xl">
+        <div className="text-center mb-10 lg:mb-16">
+          <h2>
             A Hub for Spiritual Growth
           </h2>
           <p className="mt-2 text-muted-foreground max-w-xl mx-auto">
@@ -50,7 +50,7 @@ export function FeaturesSection() {
               <span className="flex h-12 w-12 items-center justify-center rounded-none bg-primary/10 text-primary mb-4">
                 <feature.icon className="h-6 w-6" />
               </span>
-              <h3 className="text-base font-semibold text-card-foreground mb-2">
+              <h3>
                 {feature.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">

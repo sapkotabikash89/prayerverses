@@ -121,7 +121,7 @@ export default function SearchPage() {
       <div className="py-8">
         <Breadcrumb items={[{ label: "Search", href: "/search/" }]} />
         <div className="flex flex-col items-center mb-10">
-          <h1 className="text-3xl font-serif font-bold text-card-foreground mb-2 lg:text-4xl">
+          <h1>
             Search the Bible
           </h1>
           <p className="text-muted-foreground text-center max-w-lg">
@@ -193,7 +193,7 @@ export default function SearchPage() {
                         <Badge variant="secondary" className="text-xs">
                           {typeLabels[result.type]}
                         </Badge>
-                        <h3 className="text-sm font-semibold text-card-foreground group-hover:text-primary transition-colors">
+                        <h3>
                           <HighlightText text={result.title} query={query} matchType={result.matchType} />
                         </h3>
                       </div>

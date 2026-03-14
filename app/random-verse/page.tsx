@@ -88,7 +88,7 @@ export default async function RandomVersePage() {
             <div className="flex justify-start mb-8">
               <Breadcrumb items={[{ label: "Random Bible Verse", href: "/random-verse/" }]} />
             </div>
-            <h1 className="text-4xl font-serif font-bold text-card-foreground mb-4">
+            <h1>
               Random Bible Verse
             </h1>
             <p className="text-lg text-muted-foreground mb-12 max-w-lg mx-auto">
@@ -118,7 +118,7 @@ export default async function RandomVersePage() {
 
             {/* What Is Section */}
             <section>
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 border-b border-border pb-4">
+              <h2>
                 What Is a Random Bible Verse Generator?
               </h2>
               <div className="grid gap-8 lg:grid-cols-2">
@@ -134,7 +134,7 @@ export default async function RandomVersePage() {
                   </p>
                 </div>
                 <div className="bg-secondary/30 rounded-none p-6 border border-border">
-                  <h4 className="font-bold text-card-foreground mb-4">It’s especially helpful for people who:</h4>
+                  <h4>It’s especially helpful for people who:</h4>
                   <ul className="space-y-3">
                     {["Don’t know where to begin reading the Bible", "Need guidance or comfort in the moment", "Want to make Bible reading more engaging and dynamic"].map((item, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
@@ -158,7 +158,7 @@ export default async function RandomVersePage() {
 
             {/* Why Use Section */}
             <section>
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 border-b border-border pb-4">
+              <h2>
                 Why Use a Random Bible Verse Generator?
               </h2>
               <p className="text-muted-foreground mb-10">
@@ -188,7 +188,7 @@ export default async function RandomVersePage() {
                   }
                 ].map((benefit, i) => (
                   <div key={i} className="p-6 rounded-none border border-border bg-card shadow-sm hover:shadow-md transition-shadow">
-                    <h3 className="text-lg font-bold text-primary mb-3">{benefit.title}</h3>
+                    <h3>{benefit.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{benefit.text}</p>
                   </div>
                 ))}
@@ -200,7 +200,7 @@ export default async function RandomVersePage() {
 
             {/* How to Use Section */}
             <section className="bg-secondary/20 rounded-none p-8 lg:p-12 border border-border">
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 text-center">
+              <h2>
                 How to Use Our Random Bible Verse Generator [Step-by-Step Guide]
               </h2>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -214,7 +214,7 @@ export default async function RandomVersePage() {
                 ].map((step, i) => (
                   <div key={i} className="flex flex-col gap-2">
                     <span className="text-xs font-bold text-primary uppercase tracking-widest">{step.step}</span>
-                    <h4 className="font-bold text-card-foreground">{step.title}</h4>
+                    <h4>{step.title}</h4>
                     <p className="text-sm text-muted-foreground">{step.text}</p>
                   </div>
                 ))}
@@ -226,7 +226,7 @@ export default async function RandomVersePage() {
 
             {/* Daily Habit Section */}
             <section>
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 border-b border-border pb-4">
+              <h2>
                 Benefits of Checking a Random Bible Texts Daily
               </h2>
               <p className="text-muted-foreground mb-10 leading-relaxed">
@@ -263,7 +263,7 @@ export default async function RandomVersePage() {
                     </div>
                     <div className="flex-1">
                       <span className="text-xs font-bold text-primary uppercase tracking-widest mb-1 block">{habit.time}</span>
-                      <h3 className="text-xl font-bold text-card-foreground mb-3">{habit.title}</h3>
+                      <h3>{habit.title}</h3>
                       <p className="text-muted-foreground mb-4 leading-relaxed">{habit.text}</p>
                       <ul className="grid gap-2 sm:grid-cols-2">
                         {habit.points.map((point, j) => (
@@ -282,7 +282,7 @@ export default async function RandomVersePage() {
 
             {/* Transformation Section */}
             <section className="text-center bg-primary/5 rounded-none p-8 lg:p-12 border border-primary/10">
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-6 flex items-center justify-center gap-3">
+              <h2>
                 <span className="text-3xl">📖</span> Daily Bible Verses, Daily Transformation
               </h2>
               <p className="text-muted-foreground mb-10 max-w-2xl mx-auto">
@@ -296,7 +296,7 @@ export default async function RandomVersePage() {
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col items-center">
                     <span className="text-3xl mb-3">{item.icon}</span>
-                    <h4 className="font-bold text-card-foreground mb-1">{item.title}</h4>
+                    <h4>{item.title}</h4>
                     <p className="text-sm text-muted-foreground">{item.text}</p>
                   </div>
                 ))}
@@ -308,7 +308,7 @@ export default async function RandomVersePage() {
 
             {/* Why This Website Section */}
             <section>
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 border-b border-border pb-4">
+              <h2>
                 Why Use Our Random Bible Verse Generator on This Website?
               </h2>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -322,7 +322,7 @@ export default async function RandomVersePage() {
                   <div key={i} className="flex gap-4 p-5 rounded-none bg-card border border-border">
                     <span className="flex-shrink-0 w-6 h-6 rounded-none bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xs font-bold">✓</span>
                     <div>
-                      <h4 className="font-bold text-card-foreground mb-1">{feature.title}</h4>
+                      <h4>{feature.title}</h4>
                       <p className="text-sm text-muted-foreground">{feature.text}</p>
                     </div>
                   </div>
@@ -332,7 +332,7 @@ export default async function RandomVersePage() {
 
             {/* Closing Section */}
             <section className="text-center py-8">
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-4">
+              <h2>
                 Random Bible Verses: Small Verses, Big Impact
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">
@@ -345,7 +345,7 @@ export default async function RandomVersePage() {
 
             {/* FAQ Section */}
             <section className="mt-16">
-              <h2 className="text-2xl font-serif font-bold text-card-foreground mb-8 text-center">
+              <h2>
                 FAQs about Random Bible Verse Generator
               </h2>
               <div className="mx-auto max-w-3xl">

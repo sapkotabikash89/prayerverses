@@ -4,7 +4,7 @@ import { Breadcrumb } from "@/components/breadcrumb"
 import { TopicIcon } from "@/components/topic-icon"
 
 export const metadata: Metadata = {
-    title: "Bible Categories & Spiritial Topics",
+    title: "Bible Categories & Spiritual Topics",
     description:
         "Browse through all categories and topics from our spiritual blog. Discover insights, prayers, and biblical wisdom organized for your growth.",
     alternates: { canonical: "https://prayerverses.com/categories/" },
@@ -38,7 +38,7 @@ export default async function CategoriesPage() {
                                     <TopicIcon name="BookOpen" className="h-5 w-5" />
                                 </span>
                                 <div>
-                                    <h2 className="text-base font-semibold text-card-foreground mb-1">
+                                    <h2>
                                         {topic.name}
                                     </h2>
                                     {topic.description && (
