@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react"
 import { getVersesForReference, getChapterVerses } from "@/lib/bible-text"
 import { referenceToFirstVerseId } from "@/data/bible"
 import versesData from "@/data/verses.json"
+import devotionalsData from "@/data/devotionals.json"
 import bibleTranslations from "@/data/bible-translations.json"
 import { VerseOfTheDayClient } from "@/components/verse-of-the-day-client"
 import { VerseDateSelector } from "@/components/verse-date-selector"
@@ -316,18 +317,20 @@ export default async function VerseOfTheDayPage({
                 Daily Morning Scripture of the Day
               </h2>
               <div className="prose prose-stone max-w-none dark:prose-invert text-muted-foreground space-y-6">
-                <>
-                  <div dangerouslySetInnerHTML={{
-                    __html: linkifyBibleVerses(`
-                    The morning brings a fresh start, and today's scripture from ${displayVerse.ref} is a powerful message for our lives. In a world full of noise and uncertainty, this verse declares a simple yet profound truth: "${displayVerse.text}". This truth isn't based on our circumstances, but on God's eternal word.
-                  `)
-                  }} />
-                  <div dangerouslySetInnerHTML={{
-                    __html: linkifyBibleVerses(`
-                    As you step into your day, take comfort in knowing that God speaks directly to you through ${displayVerse.ref}. Whether you face minor stress or significant trials, let these words guide your steps. Most importantly, the verse reminds us to keep our focus on Him. You are personally known and deeply loved by your Creator.
-                  `)
-                  }} />
-                </>
+                {(() => {
+                  const devotionals = devotionalsData as Record<string, { title?: string, p1: string, p2: string }>;
+                  const devotion = devotionals[displayVerse.ref] || {
+                    title: "Strength in the Word",
+                    p1: `Every piece of Scripture carries life-giving power. As we reflect on today's verse from ${displayVerse.ref}, we are reminded that God's truth is an anchor for our soul. The promises found in His Word remain true despite the changing circumstances of our lives.`,
+                    p2: `Take a moment today to internalize this truth. Let God's voice be louder than the noise of the world. Through prayer and reflection, allow this scripture to guide your decisions, comfort your heart, and empower your day.`
+                  };
+                  return (
+                    <>
+                      <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(devotion.p1) }} />
+                      <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(devotion.p2) }} />
+                    </>
+                  );
+                })()}
               </div>
             </section>
 

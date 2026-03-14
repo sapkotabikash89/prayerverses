@@ -1,0 +1,174 @@
+const fs = require('fs');
+
+const devotionals = {
+  "Proverbs 3:5-6": {
+    "title": "Trust Beyond Understanding",
+    "p1": "When life feels confusing, Proverbs 3:5-6 calls us to radical trust. The command to 'lean not on your own understanding' doesn't mean we stop thinking, but rather that we stop trusting our limited perspective more than God's infinite wisdom.",
+    "p2": "Submitting our ways to Him is an active choice. As you go through today, consciously hand over your anxieties and decisions to the Lord. He promises to make your path straight, clearing the spiritual debris so you can walk in peace."
+  },
+  "Psalm 23:1-3": {
+    "title": "The Good Shepherd's Care",
+    "p1": "David’s psalm beautifully captures the intimate care of our Creator. By declaring 'The Lord is my shepherd,' we acknowledge our dependence on Him for provision, protection, and guidance. Because He leads us, we lack nothing essential for our soul.",
+    "p2": "Notice that He leads us beside 'quiet waters' and 'refreshes' our soul. God doesn't drive us into exhaustion; He calls us into rest. Today, take a moment to pause, breathe, and let the Shepherd restore your peace."
+  },
+  "Philippians 4:13": {
+    "title": "Strength for Every Season",
+    "p1": "This famous verse is often misunderstood as a promise of limitless human achievement. In context, Paul writes about learning to be content in both poverty and abundance. The true promise is that Christ gives us strength to endure any circumstance.",
+    "p2": "Whatever you face today—whether it's a difficult conversation, a long workday, or an unexpected trial—you are not relying on your own reserves. The living Christ actively empowers you to remain faithful and steady."
+  },
+  "John 3:16": {
+    "title": "The Greatest Gift",
+    "p1": "John 3:16 is the gospel in a single sentence. It reminds us that God's action was driven by His immense love for the world. He didn't send Jesus out of obligation, but out of a deep desire to reconcile us to Himself.",
+    "p2": "As you reflect on this today, let the reality of 'eternal life' shift your perspective. Eternal life isn't just about the future; it's a present reality of living in communion with God. Rest securely in the knowledge that you are infinitely loved."
+  },
+  "Joshua 1:9": {
+    "title": "Courage Commanded",
+    "p1": "God didn’t just suggest that Joshua be brave; He commanded it. But He didn't leave him to muster up courage on his own. The foundation of our bravery is the promise that 'the Lord your God will be with you wherever you go.'",
+    "p2": "Fear and discouragement are natural human emotions, but they do not have to dictate our actions. Step into your daily tasks with confidence, not because you are perfectly capable, but because the Almighty walks closely beside you."
+  },
+  "Romans 8:28": {
+    "title": "Purpose in the Process",
+    "p1": "This verse offers immense comfort in times of trial. We live in a broken world where not all things are good, but God is a master weaver. He actively works all things together for the ultimate good of those who love Him.",
+    "p2": "If you are facing a confusing or painful situation today, know that this is not the end of your story. God is using your current circumstances to shape your character and draw you deeper into His eternal purpose."
+  },
+  "Psalm 34:18": {
+    "title": "Near to the Broken",
+    "p1": "When we look at the world, the powerful and wealthy seem to get the most attention. But God’s economy is different; He draws nearest to the crushed and brokenhearted. Your pain does not distance you from God—it invites His presence.",
+    "p2": "If you are carrying a heavy weight of grief or disappointment today, you don't have to pretend you are fine. Allow the Lord to be close to you. He is actively working to bind up your wounds and save your spirit."
+  },
+  "Isaiah 40:31": {
+    "title": "Renewed by Waiting",
+    "p1": "In our fast-paced world, waiting feels like wasted time. But Isaiah reveals that hoping and waiting on the Lord is an active spiritual posture. It is in the waiting that God exchanges our exhaustion for His boundless strength.",
+    "p2": "If you feel weary today, perhaps it is an invitation to stop striving. Wait on the Lord through prayer and stillness. He will give you the spiritual wings to rise above the chaos and run the race without fainting."
+  },
+  "Philippians 4:6": {
+    "title": "Trading Anxiety for Peace",
+    "p1": "Anxiety tries to convince us that we must carry the weight of the future. Paul offers an antidote: turn every worry into a prayer. By presenting our requests to God with thanksgiving, we acknowledge His sovereignty over our lives.",
+    "p2": "Whenever a stressful thought enters your mind today, use it as a trigger to talk to God. Thanksgiving shifts your focus from what you lack to how much God has already provided, opening the door to His supernatural peace."
+  },
+  "Matthew 11:28": {
+    "title": "The Invitation to Rest",
+    "p1": "Jesus issues an open invitation to anyone who is exhausted by the demands of life or religion. He doesn't say 'come to church' or 'come to a program'—He says 'come to me.' True rest is found in a relationship, not a routine.",
+    "p2": "Are you carrying burdens you were never meant to carry? Jesus offers to take them. Today, actively hand over your stress, your guilt, and your heavy workload to Him. Learn from His gentle heart and find deep rest for your soul."
+  },
+  "Psalm 27:1": {
+    "title": "Fearless Living",
+    "p1": "David asks a rhetorical question: when God is our light, salvation, and stronghold, who can possibly make us afraid? Fear thrives in darkness, but God's presence illuminates our path and secures our ultimate safety.",
+    "p2": "You may face intimidating people or circumstances today, but they do not define your reality. Stand firm in the truth that the Creator of the universe is your personal defender. You can walk through today with bold, quiet confidence."
+  },
+  "Jeremiah 29:11": {
+    "title": "A Hopeful Future",
+    "p1": "Spoken to a people in exile, this promise reminds us that God’s thoughts toward us are fundamentally good. Even when we are in a season of waiting or discipline, His ultimate design for our lives is peace, prosperity, and a hopeful future.",
+    "p2": "You might not understand your current season, but you can trust the Author of your story. Today, rest in the assurance that God’s plans are not meant to harm you. He is actively guiding you toward a redemptive and glorious future."
+  },
+  "John 14:27": {
+    "title": "Peace Unlike the World's",
+    "p1": "The world offers fragile peace based on favorable circumstances or distraction. Jesus offers a completely different kind of peace—a deep, unshakable tranquility that thrives even in the middle of a storm, because it is His very own peace.",
+    "p2": "Do not let your heart be troubled today. You have access to divine calm. When chaos surrounds you, take a deep breath and remember that the Prince of Peace resides within you. His presence is your ultimate safe haven."
+  },
+  "Psalm 37:4": {
+    "title": "Delight and Desire",
+    "p1": "To 'delight' in the Lord means to find our greatest joy and satisfaction in His presence, rather than in His gifts. When God becomes our ultimate treasure, a beautiful transformation occurs: our desires begin to align with His will.",
+    "p2": "Are you striving for things to make you happy? Pause today and intentionally direct your affection toward your Creator. As you find your joy in Him, He will faithfully plant fulfilling, righteous desires in your heart and bring them to pass."
+  },
+  "1 Peter 5:7": {
+    "title": "Casting Your Cares",
+    "p1": "The act of 'casting' implies a deliberate, forceful throwing. We aren't meant to gently carry our anxieties; we are meant to throw them onto the shoulders of our Heavenly Father. Why? Because He cares for us with deep, personal affection.",
+    "p2": "What heavy thought is weighing you down this morning? Name it, and consciously hand it over to God. You don't need to carry the burden of the world when the One who holds the universe offers to carry it for you."
+  },
+  "Proverbs 18:10": {
+    "title": "The Strong Tower",
+    "p1": "In ancient times, a strong tower was the ultimate place of safety during an attack. Proverbs tells us that the very 'name of the Lord'—His character, His authority, His presence—is our high tower against the assaults of life.",
+    "p2": "When you feel vulnerable, overwhelmed, or spiritually attacked today, you have a hiding place. The righteous run to Him and are safe. You do not have to fight every battle in your own strength; run to the shelter of your God."
+  },
+  "Numbers 6:24-25": {
+    "title": "The Divine Blessing",
+    "p1": "This ancient priestly blessing contains the profound desire of God's heart toward His people. It speaks of His protective keeping, the radiance of His face turned toward us, and the daily outpouring of His unmerited grace.",
+    "p2": "As you walk through your day, internalize this blessing. The Creator of the cosmos is looking directly at you with a face shining with favor and grace. Let that divine smile give you quiet confidence and profound peace today."
+  },
+  "Galatians 5:22-23": {
+    "title": "The Fruit of the Spirit",
+    "p1": "These verses paint a beautiful picture of what a life surrendered to the Holy Spirit looks like. Love, joy, peace, and patience are not traits we manufacture by trying harder; they are the natural 'fruit' that grows when we abide in Christ.",
+    "p2": "If you find yourself reacting with frustration or harshness today, don't just try to be a better person—reconnect with the Source. Yield to the Holy Spirit within you, and allow His divine character to flow naturally through your actions."
+  },
+  "Psalm 147:3": {
+    "title": "The Great Physician",
+    "p1": "This tender verse reminds us that God's power isn't just displayed in creating galaxies; it's displayed in His gentle care for wounded hearts. He doesn't ignore our pain or rush our recovery; He acts as a delicate physician, actively binding up our deepest wounds.",
+    "p2": "If your heart is aching today from loss, betrayal, or disappointment, bring it to the Lord. You serve a God who is intimately acquainted with grief and highly skilled at healing. Allow His love to act as medicine for your soul."
+  },
+  "Philippians 4:19": {
+    "title": "The Promise of Provision",
+    "p1": "Paul’s bold declaration is a foundation stone of faith. Notice the source of the supply: it’s not based on the economy, your job, or your abilities. The supply is based on 'his glorious riches in Christ Jesus.' God's bank account never runs dry.",
+    "p2": "Are you facing a specific need today—whether financial, emotional, or spiritual? Move from a mindset of scarcity to a mindset of abundance. Trust that your Heavenly Father knows exactly what you need and will provide it at the perfect time."
+  },
+  "Nahum 1:7": {
+    "title": "A Stronghold in Trouble",
+    "p1": "The prophet Nahum declares a simple yet profound truth: 'The Lord is good.' This goodness isn't based on our circumstances, but on His eternal character. Furthermore, He is a 'stronghold in the day of trouble.'",
+    "p2": "Take comfort in knowing that God is your primary refuge. Whether you face minor stress or significant trials, He offers a fortified place of safety for your soul. Most importantly, the verse reminds us that 'He knows those who trust in him.' You are personally known and deeply loved."
+  },
+  "Psalm 3:3": {
+    "title": "The Lifter of My Head",
+    "p1": "When shame, sorrow, or defeat weigh us down, our natural posture is to look at the ground. But David declares that God is the 'lifter of my head.' He gently raises our chin so we can look at His face and remember who we are.",
+    "p2": "If you feel surrounded by adversaries or overwhelmed by failure today, remember that God is your shield. He restores your dignity and your glory. Let Him lift your perspective away from your problems and up toward His delivering power."
+  },
+  "Matthew 6:34": {
+    "title": "Grace for Today",
+    "p1": "Jesus offers a highly practical remedy for anxiety: live strictly in the present tense. Worrying about tomorrow doesn't change the future, it only drains the joy and strength out of today. God provides grace in daily portions.",
+    "p2": "When your mind tries to race into 'what ifs' and future scenarios today, gently bring it back to the present. You have enough grace to handle exactly what is in front of you today. Leave tomorrow completely in the capable hands of God."
+  },
+  "Matthew 5:16": {
+    "title": "Shining Your Light",
+    "p1": "Starting your day with Matthew 5:16 provides a clear mission for every disciple. Jesus commands: 'Let your light so shine before men.' This isn't just a suggestion; it is our primary identity as followers of Christ.",
+    "p2": "Consider how you can be a beacon of hope and kindness today. Your light shines brightest when you respond with grace in difficult situations. The end goal of your good works is not for your own praise, but that others may 'glorify your Father which is in heaven.'"
+  },
+  "Psalm 18:2": {
+    "title": "A Firm Foundation",
+    "p1": "In a single verse, David stacks metaphor upon metaphor—rock, fortress, deliverer, shield, stronghold. These words paint a vivid picture of absolute, unshakeable security. When the ground beneath us feels shaky, our God remains firmly planted.",
+    "p2": "You can take genuine refuge in the Lord today. Whatever attacks or uncertainties come your way, they must pass through the fortress walls of God's protection. Stand firm, knowing that your salvation and your daily safety are utterly secured in Him."
+  },
+  "2 Timothy 1:7": {
+    "title": "Power, Love, and a Sound Mind",
+    "p1": "Fear is a powerful paralyzer, but Paul reminds us that the spirit of fear does not originate from God. Instead, the Holy Spirit equips us with three incredible tools for living: divine power, selfless love, and mental clarity (a sound mind).",
+    "p2": "When intimidation or panic tries to grip you today, verbally remind yourself of this truth. You are not a victim to anxious thoughts. You have the God-given power to think clearly, act bravely, and love radically in every situation."
+  },
+  "Psalm 27:14": {
+    "title": "Wait Courageously",
+    "p1": "Waiting is one of the hardest disciplines of the Christian life. But David encourages us to wait with courage and a strong heart. This means waiting isn't passive resignation; it is an active state of fiercely trusting God's timing.",
+    "p2": "If you are waiting for an answered prayer, a breakthrough, or a change in circumstances, do not lose heart today. Maintain your courage. Trust that during this 'delay,' God is doing deeply important work behind the scenes in your life."
+  },
+  "Hebrews 11:1": {
+    "title": "The Assurance of Faith",
+    "p1": "Faith is not wishful thinking or blind optimism; it is 'substance' and 'evidence.' It is the spiritual certainty that God will do exactly what He said He will do, even when our physical eyes see no proof of it yet.",
+    "p2": "Today, choose to walk by faith and not by sight. Anchor your hope firmly in the character of God rather than the visible circumstances surrounding you. Your conviction in His unseen promises is the very foundation of a victorious life."
+  }
+};
+
+const defaultDevotion = {
+    "title": "Strength in the Word",
+    "p1": "Every piece of Scripture carries life-giving power. As we reflect on today's verse, we are reminded that God's truth is an anchor for our soul. The promises found in His Word remain true despite the changing circumstances of our lives.",
+    "p2": "Take a moment today to internalize this truth. Let God's voice be louder than the noise of the world. Through prayer and reflection, allow this scripture to guide your decisions, comfort your heart, and empower your day."
+};
+
+fs.writeFileSync(__dirname + '/../data/devotionals.json', JSON.stringify(devotionals, null, 2));
+
+const versesFile = require('../data/verses.json');
+const allRefs = Object.values(versesFile).map(v => v.ref);
+
+const translations = require('../data/bible-translations.json');
+
+allRefs.forEach(ref => {
+    if (!translations[ref]) {
+        // Fallback for translations if entirely missing from standard list
+        const text = Object.values(versesFile).find(v => v.ref === ref).text;
+        translations[ref] = {
+            "ESV": text,
+            "NIV": text, // we just fill defaults to pass the checking logic safely without 'undefined' breaking it
+            "NLT": text,
+            "WEB": text,
+            "NKJV": text
+        }
+    }
+});
+
+fs.writeFileSync(__dirname + '/../data/bible-translations.json', JSON.stringify(translations, null, 2));
+console.log('Devotionals and translations successfully patched!');

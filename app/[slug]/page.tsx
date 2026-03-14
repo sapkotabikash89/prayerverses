@@ -98,14 +98,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         while ((match = imgRegex.exec(result)) !== null) {
             const insertPosition = match.index + match[0].length;
             
-            // Check for wrapper end after image
+            // Check for wrapper end after image, safely skipping any immediate <figcaption>
             const afterImage = result.substring(insertPosition);
-            const wrapperEndMatch = afterImage.match(/^\s*(<\/figure>|<\/div>|<br[^>]*>\s*)/i);
+            const closeMatch = afterImage.match(/^\s*(?:<figcaption[^>]*>.*?<\/figcaption>\s*)?(?:<\/figure>|<\/div>|<br[^>]*>\s*)/is);
             
-            if (wrapperEndMatch) {
+            if (closeMatch) {
                 positions.push({
-                    position: insertPosition + wrapperEndMatch[0].length,
-                    wrapperLength: wrapperEndMatch[0].length
+                    position: insertPosition + closeMatch[0].length,
+                    wrapperLength: closeMatch[0].length
                 });
             } else {
                 positions.push({
