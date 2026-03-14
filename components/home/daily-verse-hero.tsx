@@ -169,7 +169,7 @@ export function DailyVerseHero() {
 
         {displayVerse ? (
           <div
-            className={`relative mx-auto max-w-xl overflow-hidden rounded-none border border-border/60 bg-card/80 p-4 shadow-sm backdrop-blur-sm ${selectedBackground.wrapperClass}`}
+            className={`relative mx-auto max-w-xl overflow-hidden rounded-2xl border-0 bg-background/95 p-6 shadow-sm backdrop-blur-md ${selectedBackground.wrapperClass}`}
           >
             <div className="relative">
               <VerseCard
@@ -198,7 +198,7 @@ export function DailyVerseHero() {
                       onClick={() => setBackgroundId(bg.id)}
                       aria-label={bg.label}
                       aria-pressed={backgroundId === bg.id}
-                      className={`h-7 w-7 rounded-none border border-border/60 ring-offset-2 transition hover:scale-105 ${bg.previewClass} ${backgroundId === bg.id
+                      className={`h-8 w-8 rounded-full ring-offset-2 transition hover:scale-105 ${bg.previewClass} ${backgroundId === bg.id
                         ? "ring-2 ring-primary"
                         : "ring-0"
                         }`}
@@ -209,7 +209,7 @@ export function DailyVerseHero() {
             </div>
           </div>
         ) : (
-          <div className="bg-card border border-border rounded-none p-6">
+          <div className="bg-secondary/30 rounded-2xl p-8 border-0">
             <p className="text-muted-foreground font-serif italic">
               No verse available for this date yet. Check back soon.
             </p>

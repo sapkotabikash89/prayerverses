@@ -20,7 +20,7 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
   const [categoriesDropdown, setCategoriesDropdown] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 site-header">
+    <header className="sticky top-0 z-50 w-full border-b bg-secondary/80 backdrop-blur supports-[backdrop-filter]:bg-secondary/60 site-header">
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-2 lg:px-6">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2">
@@ -42,7 +42,7 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
             <a
               key={link.href}
               href={link.href}
-              className="px-3 py-2 text-sm font-medium text-secondary-foreground rounded-none hover:bg-secondary transition-colors"
+              className="px-3 py-2 text-sm font-medium text-foreground rounded-full hover:text-primary hover:bg-primary/10 transition-colors"
             >
               {link.label}
             </a>
@@ -57,7 +57,7 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
                 setCategoriesDropdown(!categoriesDropdown);
               }}
               onBlur={() => setTimeout(() => setCategoriesDropdown(false), 200)}
-              className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-secondary-foreground rounded-none hover:bg-secondary transition-colors"
+              className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground rounded-full hover:text-primary hover:bg-primary/10 transition-colors"
               aria-expanded={categoriesDropdown}
               aria-haspopup="true"
             >
@@ -65,13 +65,13 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
               <ChevronDown className="h-3.5 w-3.5" />
             </a>
             {categoriesDropdown && (
-              <div className="absolute left-0 top-full mt-1 w-56 bg-card border border-border rounded-none shadow-lg p-2 z-50">
+              <div className="absolute left-0 top-full mt-2 w-56 bg-card border border-border rounded-xl shadow-lg p-2 z-50">
                 {categories.length > 0 ? (
                   categories.map((cat) => (
                     <a
                       key={cat.id}
                       href={`/category/${cat.slug}/`}
-                      className="block px-3 py-2 text-sm text-secondary-foreground rounded-none hover:bg-secondary transition-colors"
+                      className="block px-3 py-2.5 text-sm text-muted-foreground rounded-md hover:text-primary hover:bg-primary/5 transition-colors"
                     >
                       {cat.name}
                     </a>
@@ -92,7 +92,7 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
                 setBibleDropdown(!bibleDropdown);
               }}
               onBlur={() => setTimeout(() => setBibleDropdown(false), 200)}
-              className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-secondary-foreground rounded-none hover:bg-secondary transition-colors"
+              className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground rounded-full hover:text-primary hover:bg-primary/10 transition-colors"
               aria-expanded={bibleDropdown}
               aria-haspopup="true"
             >
@@ -100,8 +100,8 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
               <ChevronDown className="h-3.5 w-3.5" />
             </a>
             {bibleDropdown && (
-              <div className="absolute right-0 top-full mt-1 w-[540px] bg-card border border-border rounded-none shadow-lg p-4 grid grid-cols-3 gap-1 max-h-[70vh] overflow-y-auto z-50">
-                <p className="col-span-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1 px-2">
+              <div className="absolute right-0 top-full mt-2 w-[540px] bg-card border border-border rounded-xl shadow-lg p-4 grid grid-cols-3 gap-1 max-h-[70vh] overflow-y-auto z-50">
+                <p className="col-span-3 text-xs font-bold text-primary uppercase tracking-wider mb-2 px-2">
                   Old Testament
                 </p>
                 {bibleBooks
@@ -137,13 +137,13 @@ export function SiteHeader({ categories = [] }: { categories?: Category[] }) {
         {/* Desktop Search + Mobile Toggle */}
         <div className="flex items-center gap-2">
           <a href="/search/" aria-label="Search">
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary">
+            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary rounded-full">
               <Search className="h-5 w-5" />
             </Button>
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-muted-foreground hover:text-primary"
+            className="lg:hidden p-2 text-muted-foreground hover:text-primary rounded-full"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

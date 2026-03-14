@@ -15,7 +15,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
     return (
         <a
             href={`/${post.slug}/`}
-            className="group flex flex-col overflow-hidden rounded-none border border-border bg-card transition-all hover:border-primary/30 hover:shadow-md"
+            className="group flex flex-col overflow-hidden rounded-lg bg-secondary/50 transition-colors hover:bg-secondary/70"
         >
             {featuredImage ? (
                 <div className="relative aspect-video w-full overflow-hidden">
@@ -35,9 +35,9 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
             )}
 
             <div className="flex flex-1 flex-col p-5">
-                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-2">
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-3">
                     {post.categories?.nodes?.[0]?.name && (
-                        <span className="text-[10px] font-bold text-[#1e3a8a] uppercase tracking-wider">
+                        <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
                             {post.categories.nodes[0].name}
                         </span>
                     )}
@@ -45,7 +45,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
                         <span className="text-[10px] text-muted-foreground">/</span>
                     )}
                     {post.author?.node?.name && (
-                        <span className="text-[10px] font-bold text-[#1e3a8a] uppercase tracking-wider">
+                        <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
                             {post.author.node.name}
                         </span>
                     )}
@@ -54,7 +54,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
                     </span>
                 </div>
 
-                <h3>
+                <h3 className="text-xl font-bold font-serif mb-3 text-card-foreground group-hover:text-primary transition-colors mt-0 line-clamp-2 leading-tight">
                     {post.title}
                 </h3>
 

@@ -30,7 +30,7 @@ export function VerseTranslations({ reference, bookName, chapter, verse, kjvText
       <h3>Translations</h3>
       <div className="grid gap-6 md:grid-cols-2">
         {translations.map((t) => (
-          <div key={t.id} className="group rounded-none border border-border bg-card p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md">
+          <div key={t.id} className="group rounded-2xl bg-secondary/30 border-0 p-6 transition-colors hover:bg-secondary/60">
             <div className="flex items-center justify-between mb-4">
               <div className="flex flex-col">
                 <span className="text-sm font-bold text-primary uppercase tracking-wider">{t.id}</span>
@@ -52,7 +52,7 @@ export function VerseTranslations({ reference, bookName, chapter, verse, kjvText
                   {t.text}
                 </p>
               ) : (
-                <p className="text-sm italic text-muted-foreground bg-secondary/20 p-3 rounded-none border border-border/50">
+                <p className="text-sm italic text-muted-foreground bg-secondary/40 p-3 rounded-lg border-0">
                   Read the {t.id} translation of {reference} on Bible Gateway.
                 </p>
               )}

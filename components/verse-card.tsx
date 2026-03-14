@@ -34,7 +34,7 @@ export function VerseCard({ text, reference, className = "" }: VerseCardProps) {
 
   return (
     <div
-      className={`bg-card border border-border rounded-none p-6 ${className}`}
+      className={`bg-secondary/30 border-0 rounded-2xl p-6 ${className}`}
     >
       <blockquote className="text-lg font-serif leading-relaxed text-card-foreground mb-3">
         &ldquo;{text}&rdquo;

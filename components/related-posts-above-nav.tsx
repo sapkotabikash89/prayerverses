@@ -18,7 +18,7 @@ export function RelatedPostsAboveNav({ posts }: RelatedPostsAboveNavProps) {
                     <a 
                         key={post.id}
                         href={`/${post.slug}/`}
-                        className="group flex items-center gap-4 bg-secondary/10 dark:bg-secondary/5 p-4 rounded-xl border border-border/50 hover:border-primary/30 transition-all hover:shadow-sm"
+                        className="group flex items-center gap-4 bg-secondary/50 p-4 rounded-2xl border-0 hover:bg-secondary/70 transition-all hover:shadow-sm"
                     >
                         <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary/10 text-primary text-sm font-bold rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                             {index + 1}

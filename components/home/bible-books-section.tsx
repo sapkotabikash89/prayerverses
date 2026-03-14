@@ -25,7 +25,7 @@ export function BibleBooksSection() {
               <a
                 key={book.slug}
                 href={`/bible/${book.slug}/`}
-                className="rounded-none border border-border bg-card px-4 py-3 text-center text-sm font-medium text-card-foreground hover:border-primary/30 hover:shadow-md transition-all flex items-center justify-center min-h-[50px]"
+                className="rounded-xl border-0 bg-secondary/30 px-4 py-3 text-center text-sm font-medium text-card-foreground hover:bg-secondary/60 transition-colors flex items-center justify-center min-h-[50px]"
               >
                 {book.name}
               </a>
@@ -42,7 +42,7 @@ export function BibleBooksSection() {
               <a
                 key={book.slug}
                 href={`/bible/${book.slug}/`}
-                className="rounded-none border border-border bg-card px-4 py-3 text-center text-sm font-medium text-card-foreground hover:border-primary/30 hover:shadow-md transition-all flex items-center justify-center min-h-[50px]"
+                className="rounded-xl border-0 bg-secondary/30 px-4 py-3 text-center text-sm font-medium text-card-foreground hover:bg-secondary/60 transition-colors flex items-center justify-center min-h-[50px]"
               >
                 {book.name}
               </a>

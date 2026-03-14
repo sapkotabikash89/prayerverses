@@ -124,15 +124,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             const nextPost = readNextCandidates[idx % readNextCandidates.length];
             if (nextPost) {
                 const readNextHTML = `
-                    <div class="read-next-container my-8 not-prose">
-                        <div class="bg-secondary/10 px-4 py-4 border-l-4 border-primary/40 hover:border-primary transition-all group shadow-sm flex items-center">
-                            <p class="text-xl m-0 flex items-center gap-3 w-full leading-tight">
-                                <span class="font-bold text-primary uppercase tracking-wider text-[10px] whitespace-nowrap">Read Next:</span>
-                                <a href="/${nextPost.slug}/" class="font-serif font-bold text-card-foreground group-hover:text-primary transition-colors no-underline">
-                                    ${nextPost.title}
-                                </a>
-                            </p>
-                        </div>
+                    <div class="mt-6 mb-4 not-prose bg-secondary/50 px-5 py-4 rounded-xl shadow-sm border border-border/50">
+                        <a href="/${nextPost.slug}/" class="text-lg sm:text-xl font-serif font-bold text-card-foreground hover:text-primary transition-colors no-underline block leading-tight">
+                            <span class="text-primary font-bold tracking-wider uppercase text-xs sm:text-sm mr-2 font-sans inline-block mb-1">READ NEXT:</span> ${nextPost.title}
+                        </a>
                     </div>
                 `;
                 const beforeInsert = result.substring(0, pos.position);
@@ -159,7 +154,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "dateModified": post.date,
         "author": {
             "@type": "Person",
-            "name": post.author?.node?.name || "PrayerVerses Team"
+            "name": post.author?.node?.name || "PrayerVerses Staff"
         },
         "publisher": {
             "@type": "Organization",
@@ -181,7 +176,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
 
     return (
-        <article className="mx-auto max-w-4xl px-4 py-8 lg:px-8 lg:py-10 post-article">
+        <article className="mx-auto max-w-3xl px-4 py-8 lg:px-6 lg:py-10 post-article">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -204,9 +199,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
                 <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium text-muted-foreground mb-8">
                     <span>by</span>
-                    <span className="font-bold text-[#1e3a8a]">
-                        {post.author?.node?.name || 'PrayerVerses Team'}
-                    </span>
+                    <a href="/" className="font-bold text-primary hover:underline">
+                        {post.author?.node?.name || 'PrayerVerses Staff'}
+                    </a>
                     <span className="text-muted-foreground/30 px-1">/</span>
                     <span>{formattedDate}</span>
                     <span className="text-muted-foreground/30 px-1">/</span>
@@ -214,7 +209,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         <>
                             <a
                                 href={`/category/${primaryCategory.slug}/`}
-                                className="text-[#1e3a8a] font-bold hover:underline"
+                                className="text-primary font-bold hover:underline"
                             >
                                 {primaryCategory.name}
                             </a>
@@ -247,15 +242,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {headings.length > 0 && (
                     <>
                         {relatedPosts.length > 0 && (
-                            <div className="read-next-container my-8 not-prose">
-                                <div className="bg-secondary/10 px-4 py-4 border-l-4 border-primary/40 hover:border-primary transition-all group shadow-sm flex items-center">
-                                    <p className="text-xl m-0 flex items-center gap-3 w-full leading-tight">
-                                        <span className="font-bold text-primary uppercase tracking-wider text-[10px] whitespace-nowrap">Read Next:</span>
-                                        <a href={`/${relatedPosts[0].slug}/`} className="font-serif font-bold text-card-foreground group-hover:text-primary transition-colors no-underline">
-                                            {relatedPosts[0].title}
-                                        </a>
-                                    </p>
-                                </div>
+                            <div className="my-8 not-prose bg-secondary/50 px-6 py-5 rounded-xl shadow-sm border border-border/50">
+                                <a href={`/${relatedPosts[0].slug}/`} className="text-xl font-serif font-bold text-card-foreground hover:text-primary transition-colors no-underline block leading-tight">
+                                    <span className="text-primary font-bold tracking-wider uppercase text-sm mr-2 font-sans inline-block mb-1">READ NEXT:</span> {relatedPosts[0].title}
+                                </a>
                             </div>
                         )}
                         <TableOfContents headings={headings} />

@@ -23,12 +23,12 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
   }
 
   return (
-    <footer className="bg-primary text-primary-foreground site-footer">
+    <footer className="bg-secondary/50 text-foreground border-t border-border site-footer pt-12 pb-8">
       <div className="mx-auto max-w-[1200px] px-2 py-8 lg:px-6">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <a href="/" className="group flex items-center gap-2 mb-4 transition-colors hover:text-black">
+            <a href="/" className="group flex items-center gap-2 mb-4 transition-colors">
               <Image
                 src="/prayer-verses-logo.webp"
                 alt="PrayerVerses Logo"
@@ -36,12 +36,12 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
                 height={32}
                 className="h-8 w-8 object-contain transition-all"
               />
-              <span className="text-xl font-serif font-bold transition-colors">PrayerVerses</span>
+              <span className="text-xl font-serif font-bold text-primary transition-colors">PrayerVerses</span>
             </a>
-            <p className="text-xs text-primary-foreground/80 leading-snug">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Your daily source of inspiration and spiritual guidance through God&apos;s Word. Discover, share, and reflect on beautiful Bible verses, and prayers every day.
             </p>
-            <p className="text-xs text-primary-foreground/60 mt-4 italic">
+            <p className="text-xs text-muted-foreground/60 mt-4 italic">
               ♡ Made with love for the Kingdom of God
             </p>
           </div>
@@ -49,7 +49,7 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h5>
+              <h5 className="font-bold text-card-foreground mb-4 mt-0">
                 {title}
               </h5>
               <ul className="space-y-3">
@@ -57,7 +57,7 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="text-xs text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
                       {link.label}
                     </a>
@@ -68,7 +68,7 @@ export function SiteFooter({ categories = [] }: { categories?: Category[] }) {
           ))}
         </div>
 
-        <div className="mt-10 border-t border-primary-foreground/20 pt-6 text-center text-xs text-primary-foreground/60">
+        <div className="mt-10 border-t border-border pt-6 text-center text-sm text-muted-foreground">
           <p>
             &copy; {new Date().getFullYear()} PrayerVerses. All rights reserved.
           </p>

@@ -5,7 +5,7 @@ import { BookOpen, Sparkles } from "lucide-react"
 
 export function HomeHero() {
     return (
-        <section className="relative h-[500px] w-full overflow-hidden rounded-none mb-12">
+        <section className="relative h-[500px] w-full overflow-hidden rounded-2xl mb-12 shadow-lg">
             {/* Background Image with Overlay */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -16,7 +16,7 @@ export function HomeHero() {
 
             {/* Content */}
             <div className="relative h-full flex flex-col items-center justify-center text-center px-6 lg:px-12">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-primary/20 backdrop-blur-md border border-primary/30 text-primary-foreground text-xs font-bold uppercase tracking-widest mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 text-primary-foreground text-xs font-bold uppercase tracking-widest mb-6">
                     <Sparkles className="h-3 w-3" />
                     <span>Welcome to PrayerVerses</span>
                 </div>
@@ -33,12 +33,12 @@ export function HomeHero() {
 
                 <div className="flex flex-wrap items-center justify-center gap-4">
                     <a href="/verse-of-the-day/">
-                        <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 rounded-none shadow-lg transition-all hover:scale-105">
+                        <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 rounded-full shadow-lg transition-all hover:scale-105">
                             Read Today&apos;s Verse
                         </Button>
                     </a>
                     <a href="/books-of-the-bible/">
-                        <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-md font-bold px-8 rounded-none shadow-lg transition-all hover:scale-105">
+                        <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-md font-bold px-8 rounded-full shadow-lg transition-all hover:scale-105">
                             <BookOpen className="mr-2 h-5 w-5" />
                             Explore the Bible
                         </Button>

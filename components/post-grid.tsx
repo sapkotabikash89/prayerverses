@@ -45,7 +45,7 @@ export function PostGrid({ initialPosts, initialPageInfo, categorySlug }: PostGr
                         onClick={handleLoadMore}
                         disabled={isLoading}
                         size="lg"
-                        className="min-w-[200px] font-bold text-lg"
+                        className="min-w-[200px] font-bold text-lg rounded-full"
                     >
                         {isLoading ? (
                             <>

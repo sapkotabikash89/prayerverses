@@ -39,39 +39,35 @@ export function ExploreMoreSidebar() {
 
     return (
         <div className="space-y-6">
-            <section className="bg-card border border-border rounded-none p-6 shadow-sm overflow-hidden">
-                  <h2>
+            <div className="bg-secondary/50 p-6 rounded-2xl border-0 shadow-sm">
+                  <h2 className="text-xl font-bold font-serif mb-4 mt-0 text-card-foreground">
                       Explore More
                   </h2>
 
-                <div className="space-y-3">
+                <div className="space-y-1">
                     {filteredItems.map((item) => (
                         <a
                             key={item.href}
                             href={item.href}
-                            className="group block p-3.5 rounded-none border border-border hover:border-primary/30 hover:shadow-md transition-all bg-background relative overflow-hidden"
+                            className="group block p-3 rounded-lg hover:bg-white dark:hover:bg-card transition-all"
                         >
-                            <div className="flex items-start gap-3 relative z-10">
-                                <div className={`p-2 rounded-none border ${item.color} group-hover:scale-105 transition-transform duration-300`}>
+                            <div className="flex items-start gap-3">
+                                <div className={`p-2 rounded-md ${item.color} border-0 bg-opacity-50 group-hover:scale-105 transition-transform duration-300`}>
                                     {cloneElement(item.icon as React.ReactElement<any>, { className: "w-4 h-4" })}
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                    <h3>
+                                    <span className="block font-bold text-[15px] mb-1 text-card-foreground group-hover:text-primary transition-colors">
                                         {item.title}
-                                    </h3>
-                                    <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
+                                    </span>
+                                    <p className="text-[13px] text-muted-foreground line-clamp-2 leading-relaxed m-0">
                                         {item.description}
                                     </p>
                                 </div>
-                                <ArrowRight className="w-3 h-3 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all mt-1 hidden sm:block" />
                             </div>
-
-                            {/* Subtle hover background effect */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                         </a>
                     ))}
                 </div>
-            </section>
+            </div>
         </div>
     )
 }

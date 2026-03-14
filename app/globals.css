@@ -5,24 +5,24 @@
 
 :root {
   --background: #FFFFFF;
-  --foreground: #1C1917;
+  --foreground: #111827; /* Darker, higher contrast text */
   --card: #FFFFFF;
-  --card-foreground: #1C1917;
+  --card-foreground: #111827;
   --popover: #FFFFFF;
-  --popover-foreground: #1C1917;
-  --primary: #8B5E3C;
+  --popover-foreground: #111827;
+  --primary: #0096FF;
   --primary-foreground: #FFFFFF;
-  --secondary: #F5EDE4;
-  --secondary-foreground: #44403C;
-  --muted: #F5F0EB;
-  --muted-foreground: #78716C;
-  --accent: #D4A574;
-  --accent-foreground: #1C1917;
-  --destructive: #DC2626;
+  --secondary: #F3F4F6;
+  --secondary-foreground: #1F2937;
+  --muted: #F9FAFB;
+  --muted-foreground: #4B5563;
+  --accent: #E0F2FE;
+  --accent-foreground: #0096FF;
+  --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
-  --border: #E7DDD1;
-  --input: #E7DDD1;
-  --ring: #8B5E3C;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #0096FF;
   --radius: 0;
 }
 
@@ -68,78 +68,77 @@
   }
 
   h1 {
-    @apply font-serif font-bold text-card-foreground leading-tight mb-8;
-    font-size: 3rem; /* text-5xl */
+    @apply font-serif font-bold text-card-foreground leading-tight mb-6;
+    font-size: 2.25rem;
   }
   @screen lg {
     h1 {
-      font-size: 4.5rem; /* text-7xl */
+      font-size: 3rem;
     }
   }
 
   h2 {
-    @apply font-serif font-bold text-card-foreground leading-snug mt-16 mb-8;
-    font-size: 2.25rem; /* text-4xl */
+    @apply font-serif font-bold text-card-foreground leading-snug mt-10 mb-4;
+    font-size: 1.875rem;
   }
   @screen lg {
     h2 {
-      font-size: 3.75rem; /* text-6xl */
+      font-size: 2.25rem;
     }
   }
 
   h3 {
-    @apply font-serif font-bold text-card-foreground leading-snug mt-12 mb-6;
-    font-size: 1.875rem; /* text-3xl */
+    @apply font-serif font-bold text-card-foreground leading-snug mt-8 mb-4;
+    font-size: 1.5rem;
   }
   @screen lg {
     h3 {
-      font-size: 3rem; /* text-5xl */
+      font-size: 1.875rem;
     }
   }
 
   h4 {
-    @apply font-serif font-bold text-card-foreground leading-snug mt-10 mb-5;
-    font-size: 1.5rem; /* text-2xl */
+    @apply font-serif font-bold text-card-foreground leading-snug mt-6 mb-3;
+    font-size: 1.25rem;
   }
   @screen lg {
     h4 {
-      font-size: 2.25rem; /* text-4xl */
+      font-size: 1.5rem;
     }
   }
 
   h5 {
-    @apply font-serif font-bold text-card-foreground leading-snug mt-8 mb-4;
-    font-size: 1.25rem; /* text-xl */
+    @apply font-serif font-bold text-card-foreground leading-snug mt-5 mb-2;
+    font-size: 1.125rem;
   }
   @screen lg {
     h5 {
-      font-size: 1.875rem; /* text-3xl */
+      font-size: 1.25rem;
     }
   }
 
   h6 {
-    @apply font-serif font-bold text-card-foreground leading-snug mt-6 mb-3;
-    font-size: 1.125rem; /* text-lg */
+    @apply font-serif font-bold text-card-foreground leading-snug mt-4 mb-2;
+    font-size: 1rem;
   }
   @screen lg {
     h6 {
-      font-size: 1.5rem; /* text-2xl */
+      font-size: 1.125rem;
     }
   }
 
   p {
-    @apply mb-6;
+    @apply mb-5 text-foreground;
   }
 
   a {
     @apply transition-colors;
-    color: #1e3a8a;
-    /* Dark Blue */
+    color: #0096FF;
     text-decoration: none;
   }
 
   a:hover {
-    @apply text-primary;
+    color: #0076cc;
   }
 
   /* Centered Media in prose */
@@ -147,12 +146,12 @@
   .prose video,
   .prose .wp-block-image,
   .prose .wp-block-video {
-    @apply mx-auto block rounded-none shadow-sm my-10;
+    @apply mx-auto block rounded-none shadow-sm my-6;
   }
 
   /* Responsive YouTube Embeds */
   .prose .wp-block-embed-youtube {
-    @apply relative w-full my-10;
+    @apply relative w-full my-6;
     padding-top: 56.25%; /* 16:9 Aspect Ratio */
   }
 
@@ -163,17 +162,18 @@
 
 /* Custom prose overrides for WordPress content */
 .prose {
-  font-size: 1.25rem !important;
+  font-size: 1.125rem !important; /* Smaller, more balanced text base */
   color: var(--foreground) !important;
   max-width: none !important;
 }
 
 .prose h1 {
-  font-size: 3rem !important; /* text-5xl */
+  font-size: 2.5rem !important;
+  line-height: 1.2 !important;
 }
 @screen lg {
   .prose h1 {
-    font-size: 4.5rem !important; /* text-7xl */
+    font-size: 3.5rem !important;
   }
 }
 
@@ -181,13 +181,14 @@
   color: var(--card-foreground) !important;
   font-family: var(--font-serif), serif !important;
   font-weight: 700 !important;
-  margin-top: 4rem !important;
-  margin-bottom: 2rem !important;
-  font-size: 2.25rem !important; /* text-4xl */
+  margin-top: 2.5rem !important;
+  margin-bottom: 1rem !important;
+  font-size: 2rem !important;
+  line-height: 1.3 !important;
 }
 @screen lg {
   .prose h2 {
-    font-size: 3.75rem !important; /* text-6xl */
+    font-size: 2.5rem !important;
   }
 }
 
@@ -195,13 +196,14 @@
   color: var(--card-foreground) !important;
   font-family: var(--font-serif), serif !important;
   font-weight: 700 !important;
-  margin-top: 3rem !important;
-  margin-bottom: 1.5rem !important;
-  font-size: 1.875rem !important; /* text-3xl */
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  font-size: 1.75rem !important;
+  line-height: 1.4 !important;
 }
 @screen lg {
   .prose h3 {
-    font-size: 3rem !important; /* text-5xl */
+    font-size: 2rem !important;
   }
 }
 
@@ -209,13 +211,13 @@
   color: var(--card-foreground) !important;
   font-family: var(--font-serif), serif !important;
   font-weight: 700 !important;
-  margin-top: 2.5rem !important;
-  margin-bottom: 1.25rem !important;
-  font-size: 1.5rem !important; /* text-2xl */
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
+  font-size: 1.5rem !important;
 }
 @screen lg {
   .prose h4 {
-    font-size: 2.25rem !important; /* text-4xl */
+    font-size: 1.75rem !important;
   }
 }
 
@@ -223,13 +225,13 @@
   color: var(--card-foreground) !important;
   font-family: var(--font-serif), serif !important;
   font-weight: 700 !important;
-  margin-top: 2rem !important;
-  margin-bottom: 1rem !important;
-  font-size: 1.25rem !important; /* text-xl */
+  margin-top: 1.25rem !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 1.125rem !important;
 }
 @screen lg {
   .prose h5 {
-    font-size: 1.875rem !important; /* text-3xl */
+    font-size: 1.25rem !important;
   }
 }
 
@@ -237,35 +239,35 @@
   color: var(--card-foreground) !important;
   font-family: var(--font-serif), serif !important;
   font-weight: 700 !important;
-  margin-top: 1.5rem !important;
-  margin-bottom: 0.75rem !important;
-  font-size: 1.125rem !important; /* text-lg */
+  margin-top: 1.25rem !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 1rem !important;
 }
 @screen lg {
   .prose h6 {
-    font-size: 1.5rem !important; /* text-2xl */
+    font-size: 1.125rem !important;
   }
 }
 
 .prose p {
-  margin-bottom: 2rem !important;
-  line-height: 1.8 !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.6 !important;
 }
 
 /* Lists and Numbering - Precision Alignment */
 .prose ul,
 .prose ul.wp-block-list {
   list-style-type: disc !important;
-  padding-left: 1.1rem !important;
-  margin-bottom: 2.5rem !important;
+  padding-left: 1.25rem !important;
+  margin-bottom: 1.5rem !important;
   display: block !important;
 }
 
 .prose ol,
 .prose ol.wp-block-list {
   list-style-type: decimal !important;
-  padding-left: 1.5rem !important;
-  margin-bottom: 2.5rem !important;
+  padding-left: 1.25rem !important;
+  margin-bottom: 1.5rem !important;
   display: block !important;
 }
 
@@ -284,8 +286,9 @@
 /* Blockquotes */
 .prose blockquote,
 .prose .wp-block-quote {
-  @apply border-l-4 border-primary bg-secondary/30 p-8 rounded-none italic my-10 relative overflow-hidden;
-  font-size: 1.35rem;
+  @apply border-l-4 border-primary bg-secondary/30 p-6 rounded-sm italic my-8 relative overflow-hidden;
+  font-size: 1.25rem;
+  line-height: 1.6;
   color: var(--card-foreground);
 }
 
@@ -296,16 +299,16 @@
 
 .prose blockquote cite,
 .prose .wp-block-quote cite {
-  @apply block mt-4 text-sm font-semibold not-italic text-primary;
+  @apply block mt-3 text-sm font-semibold not-italic text-primary;
 }
 
 /* WordPress Background and Text Colors */
 .prose .has-background {
-  @apply p-8 rounded-none my-8;
+  @apply p-6 rounded-sm my-6;
 }
 
 .prose [class*="has-"].has-background {
-  @apply p-8 rounded-none my-8;
+  @apply p-6 rounded-sm my-6;
 }
 
 .prose .has-primary-color {
@@ -334,11 +337,11 @@
 }
 
 .prose .has-black-color {
-  color: #000000 !important;
+  color: #111827 !important;
 }
 
 .prose .has-black-background-color {
-  background-color: #000000 !important;
+  background-color: #111827 !important;
 }
 
 /* Table Support */

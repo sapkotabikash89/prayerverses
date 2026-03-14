@@ -39,7 +39,7 @@ export function QuickAccessGrid() {
     return (
         <section className="mb-16">
             <div className="text-center mb-12">
-                <h2>
+                <h2 className="text-3xl font-bold font-serif mb-2 mt-0 text-card-foreground">
                     Quick Access
                 </h2>
                 <p className="mx-auto mt-2 max-w-xl text-muted-foreground">
@@ -51,17 +51,17 @@ export function QuickAccessGrid() {
                     <a
                         key={action.title}
                         href={action.href}
-                        className={`group block p-6 rounded-none border border-border bg-card transition-all hover:shadow-md hover:-translate-y-1`}
+                        className={`group block p-6 rounded-xl bg-secondary/30 transition-colors hover:bg-secondary/60`}
                     >
                         <div className="flex items-start gap-4">
-                            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-none ${action.iconBg} ${action.color.split(' ')[1]} transition-colors group-hover:bg-primary group-hover:text-primary-foreground`}>
+                            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg ${action.iconBg} ${action.color.split(' ')[1]} transition-colors group-hover:bg-primary group-hover:text-primary-foreground`}>
                                 <action.icon className="h-6 w-6" />
                             </div>
                             <div>
-                                <h3>
+                                <h3 className="text-lg font-bold font-serif mt-0 mb-1 text-card-foreground">
                                     {action.title}
                                 </h3>
-                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                <p className="text-sm text-muted-foreground leading-relaxed m-0">
                                     {action.description}
                                 </p>
                             </div>

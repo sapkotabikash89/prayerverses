@@ -316,59 +316,18 @@ export default async function VerseOfTheDayPage({
                 Daily Morning Scripture of the Day
               </h2>
               <div className="prose prose-stone max-w-none dark:prose-invert text-muted-foreground space-y-6">
-                {displayVerse.ref === "Nahum 1:7" ? (
-                  <>
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      The morning brings a fresh start, and today's scripture from Nahum 1:7 is a powerful reminder of God's unchanging nature. In a world full of noise and uncertainty, the prophet Nahum declares a simple yet profound truth: "The Lord is good." This goodness isn't based on our circumstances, but on His eternal character. Furthermore, He is a "stronghold in the day of trouble."
-                    `)
-                    }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      As you step into your day, take comfort in knowing that God is your primary refuge. Whether you face minor stress or significant trials, He offers a fortified place of safety for your soul. Most importantly, the verse reminds us that "He knows those who trust in him." You are not just a number; you are personally known and deeply loved by your Creator.
-                    `)
-                    }} />
-                  </>
-                ) : displayVerse.ref === "Matthew 5:16" ? (
-                   <>
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Starting your day with Matthew 5:16 provides a clear mission for every disciple. Jesus commands: "Let your light so shine before men." This isn't just a suggestion; it is our primary identity as followers of Christ. Furthermore, this verse reminds us that our "good works" are meant to be visible, not for our own praise, but to point others toward God.
-                    `)
-                    }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      As you begin your morning, consider how you can be a beacon of hope and kindness. Your light shine brightest when you respond with grace in difficult situations. Consequently, those around you will notice something different about your character. Most importantly, the end goal of your reflection is that they may "glorify your Father which is in heaven."
-                    `)
-                    }} />
-                  </>
-                ) : isToday ? (
-                  <>
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Morning is God's special gift of time to us. As you wake up, invite the Holy Spirit to lead your thoughts before anything else. Open your Bible and let His words be the first voice you hear. This simple practice transforms ordinary mornings into divine appointments.
-                    `)
-                    }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Consider starting with gratitude: thank God for breath in your lungs, for another sunrise, for His mercies that are new this morning. Gratitude shifts your focus from problems to Providence. It prepares your heart to receive what God wants to speak to you today.
-                    `)
-                    }} />
-                  </>
-                ) : (
-                  <>
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Mornings set the trajectory for your entire day. Before checking messages or news, spend time in prayer and Scripture reading. Let God's truth be the foundation that everything else builds upon. This discipline creates spiritual stability that lasts all day long.
-                    `)
-                    }} />
-                    <div dangerouslySetInnerHTML={{
-                      __html: linkifyBibleVerses(`
-                      Think about Mary rising early to visit the tomb, or Jesus withdrawing before dawn to pray. The morning hours hold special significance for encountering God. Use this time to surrender your plans and listen for His direction. What seems like a small investment yields eternal returns.
-                    `)
-                    }} />
-                  </>
-                )}
+                <>
+                  <div dangerouslySetInnerHTML={{
+                    __html: linkifyBibleVerses(`
+                    The morning brings a fresh start, and today's scripture from ${displayVerse.ref} is a powerful message for our lives. In a world full of noise and uncertainty, this verse declares a simple yet profound truth: "${displayVerse.text}". This truth isn't based on our circumstances, but on God's eternal word.
+                  `)
+                  }} />
+                  <div dangerouslySetInnerHTML={{
+                    __html: linkifyBibleVerses(`
+                    As you step into your day, take comfort in knowing that God speaks directly to you through ${displayVerse.ref}. Whether you face minor stress or significant trials, let these words guide your steps. Most importantly, the verse reminds us to keep our focus on Him. You are personally known and deeply loved by your Creator.
+                  `)
+                  }} />
+                </>
               </div>
             </section>
 

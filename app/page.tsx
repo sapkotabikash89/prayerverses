@@ -38,13 +38,13 @@ export default async function HomePage() {
 
         <LatestPostsSection />
 
-        <section className="bg-primary/5 p-8 border border-primary/20 flex flex-col items-center text-center">
-          <h2>Explore the Full Bible</h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl">
+        <section className="bg-secondary/30 p-8 rounded-2xl flex flex-col items-center text-center my-12">
+          <h2 className="text-3xl font-bold font-serif mt-0 mb-4 text-card-foreground">Explore the Full Bible</h2>
+          <p className="text-muted-foreground mb-6 max-w-2xl text-lg">
             Access all 66 books of the Bible from Genesis to Revelation. Discover the wisdom and hope contained in every chapter.
           </p>
           <a href="/books-of-the-bible/">
-            <Button size="lg" className="font-bold px-8">
+            <Button size="lg" className="font-bold px-8 rounded-full">
               View All Bible Books
             </Button>
           </a>

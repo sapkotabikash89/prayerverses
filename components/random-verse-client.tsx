@@ -123,7 +123,7 @@ export function RandomVerseClient({ initialVerse, allVerses }: RandomVerseClient
       {/* Hero Verse Card */}
       <div 
         ref={cardRef}
-        className={`relative w-full max-w-3xl overflow-hidden rounded-none border border-border/60 p-8 shadow-xl transition-all duration-500 lg:p-12 ${selectedBackground.wrapperClass}`}
+        className={`relative w-full max-w-3xl overflow-hidden rounded-2xl border-0 p-8 shadow-xl transition-all duration-500 lg:p-12 ${selectedBackground.wrapperClass}`}
       >
         <div className="flex flex-col items-center text-center">
           <blockquote className={`text-2xl font-serif leading-relaxed lg:text-3xl mb-6 ${selectedBackground.textClass}`}>

@@ -12,7 +12,7 @@ export async function LatestPostsSection() {
         <section className="py-8">
             <div className="flex items-center justify-between mb-8">
                 <div>
-                    <h2>
+                    <h2 className="text-3xl font-bold font-serif mb-0 mt-0 text-card-foreground">
                         Latest Posts
                     </h2>
                     <p className="text-sm text-muted-foreground mt-1">

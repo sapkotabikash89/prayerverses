@@ -23,7 +23,7 @@ export function RelatedPosts({ posts, categorySlug }: RelatedPostsProps) {
                         <a
                             key={post.id}
                             href={`/${post.slug}/`}
-                            className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-primary/30 hover:shadow-xl hover:-translate-y-1"
+                            className="group flex flex-col overflow-hidden rounded-lg bg-secondary/30 transition-colors hover:bg-secondary/50"
                         >
                             <div className="relative aspect-video w-full overflow-hidden">
                                 {featuredImage ? (
@@ -44,10 +44,10 @@ export function RelatedPosts({ posts, categorySlug }: RelatedPostsProps) {
                             </div>
 
                             <div className="flex flex-1 flex-col p-5">
-                                <h3>
+                                <h3 className="text-lg font-bold font-serif mb-2 text-card-foreground group-hover:text-primary transition-colors mt-0">
                                     {post.title}
                                 </h3>
-                                <div className="mt-4 flex items-center text-primary font-bold text-xs uppercase tracking-wider">
+                                <div className="mt-auto pt-3 flex items-center text-primary font-bold text-xs uppercase tracking-wider">
                                     Read Article
                                     <ArrowRight className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-1" />
                                 </div>
@@ -61,10 +61,10 @@ export function RelatedPosts({ posts, categorySlug }: RelatedPostsProps) {
                 <div className="flex justify-center">
                     <a
                         href={`/category/${categorySlug}/`}
-                        className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-xl active:scale-95"
+                        className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-md font-bold transition-colors"
                     >
                         Explore More from this Category
-                        <ArrowRight className="w-5 h-5" />
+                        <ArrowRight className="w-4 h-4" />
                     </a>
                 </div>
             )}

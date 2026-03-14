@@ -179,7 +179,7 @@ export default function SearchPage() {
 
             return (
               <div key={type} className="flex flex-col gap-4">
-                <h2>
+                <h2 className="text-xl font-bold font-serif mb-2 mt-0 text-card-foreground">
                   {headings[type]}
                 </h2>
                 <div className="flex flex-col gap-3">
@@ -187,15 +187,15 @@ export default function SearchPage() {
                     <a
                       key={`${type}-${i}`}
                       href={result.href}
-                      className="group rounded-none border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm"
+                      className="group rounded-xl bg-secondary/30 p-5 transition-colors hover:bg-secondary/60"
                     >
-                      <div className="flex items-center gap-2 mb-1">
+                      <div className="flex items-center gap-2 mb-2">
                         <Badge variant="secondary" className="text-xs">
                           {typeLabels[result.type]}
                         </Badge>
-                        <h3>
+                        <span className="font-bold text-card-foreground">
                           <HighlightText text={result.title} query={query} matchType={result.matchType} />
-                        </h3>
+                        </span>
                       </div>
                       <p className="text-sm text-muted-foreground line-clamp-2">
                         <HighlightText text={result.text} query={query} matchType={result.matchType} />
@@ -213,7 +213,7 @@ export default function SearchPage() {
             <Button
               variant="outline"
               onClick={() => setVisibleCount((prev) => prev + 20)}
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto rounded-full"
             >
               Load More Results
             </Button>
