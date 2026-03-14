@@ -114,7 +114,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             const nextPost = readNextCandidates[idx % readNextCandidates.length];
             if (nextPost) {
                 const readNextHTML = `
-                    <div class="mt-6 mb-4 not-prose bg-secondary/50 px-5 py-4 rounded-xl shadow-sm border border-border/50">
+                    <div class="mt-8 mb-6 not-prose bg-secondary px-6 py-5 rounded-xl shadow-sm border border-border/50">
                         <a href="/${nextPost.slug}/" class="text-lg sm:text-xl font-serif font-bold text-card-foreground hover:text-primary transition-colors no-underline block leading-tight">
                             <span class="text-primary font-bold tracking-wider uppercase text-xs sm:text-sm mr-2 font-sans inline-block mb-1">READ NEXT:</span> ${nextPost.title}
                         </a>

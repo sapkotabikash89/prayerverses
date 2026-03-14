@@ -9,7 +9,7 @@ interface TableOfContentsProps {
 
 export function TableOfContents({ headings }: { headings: Heading[] }) {
   return (
-    <div className="my-8 rounded-2xl border border-border/50 bg-secondary/50 p-6 md:p-8 not-prose shadow-sm">
+    <div className="my-8 rounded-2xl border border-border/50 bg-secondary p-6 md:p-8 not-prose shadow-sm table-of-contents-box">
       <h4 className="text-xl font-bold font-serif mb-4 mt-0 text-card-foreground">Table of Contents</h4>
       <ul className="space-y-3 list-none pl-0 mb-0">
         {headings.map((heading) => (

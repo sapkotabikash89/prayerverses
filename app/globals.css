@@ -12,7 +12,7 @@
   --popover-foreground: #111827;
   --primary: #0096FF;
   --primary-foreground: #FFFFFF;
-  --secondary: #F3F4F6;
+  --secondary: #E5E7EB;
   --secondary-foreground: #1F2937;
   --muted: #F9FAFB;
   --muted-foreground: #4B5563;
@@ -143,9 +143,14 @@
 
   .prose img,
   .prose video,
+  .prose figure,
   .prose .wp-block-image,
   .prose .wp-block-video {
-    @apply mx-auto block rounded-none shadow-sm my-6;
+    @apply mx-auto block rounded-none border-0! p-0! bg-transparent! shadow-none! my-6;
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
   }
 
   /* Responsive YouTube Embeds */
