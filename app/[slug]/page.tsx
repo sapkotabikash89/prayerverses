@@ -91,28 +91,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     if (relatedPosts.length > 0) {
         let result = processedContent;
         let match;
-        const imgRegex = /<img[^>]*>/gi;
+        const blockRegex = /(<figure[^>]*>[\s\S]*?<\/figure>|<p[^>]*>(?:\s*|<br[^>]*>|<a[^>]*>)*<img[^>]*>(?:\s*|<br[^>]*>|<\/a>)*<\/p>|<div[^>]*class=["'][^"']*wp-block-image[^"']*["'][^>]*>[\s\S]*?<\/div>|<img[^>]*>)/gi;
         const positions = [];
         
-        // Collect all image positions
-        while ((match = imgRegex.exec(result)) !== null) {
+        while ((match = blockRegex.exec(result)) !== null) {
+            // Because our regex matches the ENTIRE figure, div wrapper, or standalone img,
+            // we can confidently just insert right after the match string!
             const insertPosition = match.index + match[0].length;
             
-            // Check for wrapper end after image, safely skipping any immediate <figcaption>
-            const afterImage = result.substring(insertPosition);
-            const closeMatch = afterImage.match(/^\s*(?:<figcaption[^>]*>.*?<\/figcaption>\s*)?(?:<\/figure>|<\/div>|<br[^>]*>\s*)/is);
-            
-            if (closeMatch) {
-                positions.push({
-                    position: insertPosition + closeMatch[0].length,
-                    wrapperLength: closeMatch[0].length
-                });
-            } else {
-                positions.push({
-                    position: insertPosition,
-                    wrapperLength: 0
-                });
-            }
+            positions.push({
+                position: insertPosition,
+                wrapperLength: 0
+            });
         }
         
         // Shuffle or pick unique posts for each image

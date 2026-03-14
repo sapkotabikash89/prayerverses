@@ -145,7 +145,7 @@
   .prose video,
   .prose .wp-block-image,
   .prose .wp-block-video {
-    @apply mx-auto block rounded-none shadow-sm border border-border/60 p-2 bg-secondary/10 my-6;
+    @apply mx-auto block rounded-none shadow-sm my-6;
   }
 
   /* Responsive YouTube Embeds */
