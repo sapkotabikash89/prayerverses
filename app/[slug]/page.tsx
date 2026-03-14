@@ -166,28 +166,35 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
 
     return (
-        <article className="mx-auto max-w-3xl px-4 py-8 lg:px-6 lg:py-10 post-article">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <PostBodyCleanup />
-            <Breadcrumb
-                items={[
-                    {
-                        label: primaryCategory?.name || 'Categories',
-                        href: primaryCategory ? `/category/${primaryCategory.slug}/` : '/categories/'
-                    },
-                    { label: post.title, href: `/${slug}/` },
-                ]}
-            />
+        <>
+            <div className="pt-8">
+                <Breadcrumb
+                    items={[
+                        {
+                            label: primaryCategory?.name || 'Categories',
+                            href: primaryCategory ? `/category/${primaryCategory.slug}/` : '/categories/'
+                        },
+                        { label: post.title, href: `/${slug}/` },
+                    ]}
+                />
+            </div>
 
-            <header className="mb-12 post-header">
+            <article className={cn(
+                "post-article article-body",
+                "post-content prose prose-stone max-w-none prose-img:rounded-none prose-headings:font-serif",
+                "text-muted-foreground leading-relaxed"
+            )}>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+                <PostBodyCleanup />
+
                 <h1>
                     {post.title}
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium text-muted-foreground mb-8">
+                <p className="not-prose flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium text-muted-foreground mb-8">
                     <span>by</span>
                     <a href="/" className="font-bold text-primary hover:underline">
                         {post.author?.node?.name || 'PrayerVerses Staff'}
@@ -207,45 +214,42 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         </>
                     )}
                     <span>{getReadingTime(post.content || '')} min read</span>
-                </div>
-            </header>
+                </p>
 
-            {featuredImage && (
-                <>
-                    <div className="w-full mb-6">
-                        <Image
-                            src={featuredImage.sourceUrl}
-                            alt={featuredImage.altText || post.title}
-                            width={featuredImage.mediaDetails?.width || 1200}
-                            height={featuredImage.mediaDetails?.height || 675}
-                            className="w-full h-auto rounded-none shadow-sm"
-                            priority
-                        />
+                {featuredImage && (
+                    <div className="not-prose">
+                        <div className="w-full mb-6">
+                            <Image
+                                src={featuredImage.sourceUrl}
+                                alt={featuredImage.altText || post.title}
+                                width={featuredImage.mediaDetails?.width || 1200}
+                                height={featuredImage.mediaDetails?.height || 675}
+                                className="w-full h-auto rounded-none shadow-sm"
+                                priority
+                            />
+                        </div>
+                        <BlogImageActions slug={slug} />
                     </div>
-                    <BlogImageActions slug={slug} />
+                )}
+
+
+            <div className="cms-content" dangerouslySetInnerHTML={{ __html: contentBeforeH2 }} />
+            {headings.length > 0 && (
+                <>
+                    {relatedPosts.length > 0 && (
+                        <div className="my-8 not-prose bg-secondary/50 px-6 py-5 rounded-xl shadow-sm border border-border/50">
+                            <a href={`/${relatedPosts[0].slug}/`} className="text-xl font-serif font-bold text-card-foreground hover:text-primary transition-colors no-underline block leading-tight">
+                                <span className="text-primary font-bold tracking-wider uppercase text-sm mr-2 font-sans inline-block mb-1">READ NEXT:</span> {relatedPosts[0].title}
+                            </a>
+                        </div>
+                    )}
+                    <TableOfContents headings={headings} />
                 </>
             )}
+            <div className="cms-content" dangerouslySetInnerHTML={{ __html: contentAfterH2 }} />
 
 
-            <div className="content-area article-body prose prose-lg prose-serif max-w-none text-muted-foreground leading-relaxed">
-                <div dangerouslySetInnerHTML={{ __html: contentBeforeH2 }} />
-                {headings.length > 0 && (
-                    <>
-                        {relatedPosts.length > 0 && (
-                            <div className="my-8 not-prose bg-secondary/50 px-6 py-5 rounded-xl shadow-sm border border-border/50">
-                                <a href={`/${relatedPosts[0].slug}/`} className="text-xl font-serif font-bold text-card-foreground hover:text-primary transition-colors no-underline block leading-tight">
-                                    <span className="text-primary font-bold tracking-wider uppercase text-sm mr-2 font-sans inline-block mb-1">READ NEXT:</span> {relatedPosts[0].title}
-                                </a>
-                            </div>
-                        )}
-                        <TableOfContents headings={headings} />
-                    </>
-                )}
-                <div dangerouslySetInnerHTML={{ __html: contentAfterH2 }} />
-            </div>
-
-
-            <div className="mt-16">
+            <div className="mt-16 not-prose">
                 {/* Related Posts Above Navigation */}
                 <RelatedPostsAboveNav posts={relatedPosts.slice(0, 6)} />
                 
@@ -261,5 +265,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 />
             </div>
         </article>
+        </>
     );
 }
