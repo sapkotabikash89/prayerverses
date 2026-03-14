@@ -5,7 +5,7 @@ import { BookOpen, Sparkles } from "lucide-react"
 
 export function HomeHero() {
     return (
-        <section className="relative h-[500px] w-full overflow-hidden rounded-2xl mb-12 shadow-lg">
+        <section className="relative h-[500px] w-full overflow-hidden rounded-2xl mt-6 mb-12 shadow-lg">
             {/* Background Image with Overlay */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -21,7 +21,7 @@ export function HomeHero() {
                     <span>Welcome to PrayerVerses</span>
                 </div>
 
-                <h1>
+                <h1 className="text-white">
                     Connect with God Through <br className="hidden md:block" />
                     <span className="text-primary-foreground">Bible Verses and Prayers</span>
                 </h1>

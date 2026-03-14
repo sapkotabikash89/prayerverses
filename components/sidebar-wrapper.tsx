@@ -15,7 +15,7 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
 
     return (
         <div className="mx-auto max-w-[1200px] px-2 lg:px-6 site-container">
-            <div className="flex flex-col lg:flex-row gap-8">
+            <div className="flex flex-col lg:flex-row gap-8 pt-4">
                 <main className="flex-1 min-w-0 mv-content-body">
                     {children}
                 </main>
