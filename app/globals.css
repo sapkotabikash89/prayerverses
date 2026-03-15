@@ -224,7 +224,7 @@
 
 .article-body figure img, .cms-content figure img,
 .article-body .wp-block-image img, .cms-content .wp-block-image img {
-  @apply mx-auto !important;
+  @apply mx-auto!;
   display: block !important;
   float: none !important;
 }
