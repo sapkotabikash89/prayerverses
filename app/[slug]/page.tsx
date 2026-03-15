@@ -194,7 +194,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     {post.title}
                 </h1>
 
-                <p className="not-prose flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium text-muted-foreground mb-8">
+                <p className="not-prose flex flex-wrap items-center gap-x-2 gap-y-1 text-xs lg:text-sm font-medium text-muted-foreground mb-8">
                     <span>by</span>
                     <a href="/" className="font-bold text-primary hover:underline">
                         {post.author?.node?.name || 'PrayerVerses Staff'}
