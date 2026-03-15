@@ -154,6 +154,18 @@
   font-size: 1.125rem !important;
 }
 
+/* Explicit Meta Area Sizing to match breadcrumbs */
+.post-meta-area, .post-meta-area * {
+  font-size: 0.75rem !important; /* 12px */
+  line-height: 1.25rem !important;
+}
+
+@media (min-width: 1024px) {
+  .post-meta-area, .post-meta-area * {
+    font-size: 0.875rem !important; /* 14px */
+  }
+}
+
 .article-body > h1, .cms-content h1 { font-size: 2.5rem !important; line-height: 1.2 !important; font-family: var(--font-serif), serif !important; font-weight: 700 !important; margin-top: 3rem !important; margin-bottom: 1.5rem !important; }
 .article-body > h2, .cms-content h2 { font-size: 2rem !important; line-height: 1.3 !important; font-family: var(--font-serif), serif !important; font-weight: 700 !important; margin-top: 2.5rem !important; margin-bottom: 1rem !important; color: var(--card-foreground) !important; }
 .article-body > h3, .cms-content h3 { font-size: 1.75rem !important; line-height: 1.4 !important; font-family: var(--font-serif), serif !important; font-weight: 700 !important; margin-top: 2rem !important; margin-bottom: 1rem !important; color: var(--card-foreground) !important; }
@@ -195,21 +207,26 @@
   font-weight: bold !important;
 }
 
-/* Media and Embeds */
-.article-body > img, .cms-content img,
-.article-body > video, .cms-content video,
-.article-body > figure, .cms-content figure {
+/* Media and Embeds - Force Central Alignment */
+.article-body img, .cms-content img,
+.article-body video, .cms-content video,
+.article-body figure, .cms-content figure,
+.article-body .wp-block-image, .cms-content .wp-block-image {
   @apply mx-auto block rounded-none border-0! p-0! bg-transparent! shadow-none! my-6;
-  border: none !important;
-  background: transparent !important;
-  padding: 0 !important;
-  box-shadow: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
   text-align: center !important;
+  float: none !important;
+  max-width: 100% !important;
+  height: auto !important;
 }
 
-.article-body figure img, .cms-content figure img {
+.article-body figure img, .cms-content figure img,
+.article-body .wp-block-image img, .cms-content .wp-block-image img {
   @apply mx-auto !important;
   display: block !important;
+  float: none !important;
 }
 
 .article-body > .wp-block-embed-youtube, .cms-content .wp-block-embed-youtube {
