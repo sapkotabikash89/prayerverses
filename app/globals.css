@@ -147,8 +147,8 @@
   Targets direct children of .article-body (after cleaning) 
   and descendants of .cms-content (before cleaning).
 */
-.article-body > p,
-.cms-content p {
+.article-body > p:not(.not-prose),
+.cms-content p:not(.not-prose) {
   margin-bottom: 1.5rem !important;
   line-height: 1.6 !important;
   font-size: 1.125rem !important;
@@ -204,6 +204,12 @@
   background: transparent !important;
   padding: 0 !important;
   box-shadow: none !important;
+  text-align: center !important;
+}
+
+.article-body figure img, .cms-content figure img {
+  @apply mx-auto !important;
+  display: block !important;
 }
 
 .article-body > .wp-block-embed-youtube, .cms-content .wp-block-embed-youtube {
