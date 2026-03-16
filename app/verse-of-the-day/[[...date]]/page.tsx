@@ -377,19 +377,19 @@ export default async function VerseOfTheDayPage({
                 <div className="p-8 rounded-none bg-primary/5 border border-primary/10 shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-primary">
                     <span className="text-2xl">🙏</span>
-                    <h3>Morning Prayer for Guidance</h3>
+                    <h3>Morning Prayer for Commitment</h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed italic">
-                    &ldquo;Gracious Heavenly Father, as I begin this day, I surrender my plans to You. Open my eyes to see Your wonders hidden in ordinary moments. Give me wisdom to discern Your voice amid the noise of life. Let today&apos;s verse take root in my heart and transform my thoughts, words, and actions. May everything I do bring honor to Your holy name. In Jesus&apos; mighty name, Amen.&rdquo;
+                    &ldquo;Lord, I commit this day and all its tasks into Your hands. Help me to labor not for my own glory, but for Yours. Give me a spirit of excellence and a heart of service. I roll my plans onto You, trusting that You will establish my steps and lead me toward Your perfect purpose. Amen.&rdquo;
                   </p>
                 </div>
                 <div className="p-8 rounded-none bg-secondary/30 border border-border shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-card-foreground">
                     <span className="text-2xl">🙏</span>
-                    <h3>Evening Prayer for Reflection</h3>
+                    <h3>Evening Prayer for Trust</h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed italic">
-                    &ldquo;Dear Lord Jesus, I come before You tonight with a grateful heart. Thank You for walking beside me through every moment of this day. Forgive me where I fell short and help me grow from each experience. As I rest tonight, quiet my mind and fill my dreams with Your peace. Renew my strength for tomorrow&apos;s journey with You. Amen.&rdquo;
+                    &ldquo;Thank You, Father, for Your guidance through this day. I lay down my work and my worries at Your feet. Forgive me where I relied on my own strength. Tonight, I rest in the assurance that You are already working in the details of tomorrow. Establish my heart in Your peace as I sleep. In Jesus' name, Amen.&rdquo;
                   </p>
                 </div>
               </div>
@@ -477,46 +477,46 @@ export default async function VerseOfTheDayPage({
                     {[
                       {
                         cat: "Daily Bible Verse for Morning",
-                        ref: "Lamentations 3:22-23",
-                        text: "The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness.",
-                        thought: "God's mercies are refreshed each morning, giving us new hope and strength for today."
+                        ref: "Psalm 118:24",
+                        text: "This is the day that the LORD has made; let us rejoice and be glad in it.",
+                        thought: "Every day is a gift from God. Start your morning with a heart full of joy and gratitude."
                       },
                       {
                         cat: "Scripture for Strength and Courage",
-                        ref: "Deuteronomy 31:6",
-                        text: "Be strong and courageous. Do not fear or be in dread of them, for it is the LORD your God who goes with you. He will not leave you or forsake you.",
-                        thought: "God's constant presence gives us courage to face any challenge with confidence."
+                        ref: "Isaiah 41:10",
+                        text: "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand.",
+                        thought: "When you feel weak or afraid, remember that the Almighty is personally holding you up."
                       },
                       {
                         cat: "Inspirational Daily Verse",
-                        ref: "Psalm 46:1",
-                        text: "God is our refuge and strength, a very present help in trouble.",
-                        thought: "In times of need, God is not distant but immediately available as our fortress."
+                        ref: "Colossians 3:23",
+                        text: "Whatever you do, work heartily, as for the Lord and not for men.",
+                        thought: "Your work has eternal value when done with a heart focused on serving the Savior."
                       },
                       {
                         cat: "Verse for Faith and Trust",
-                        ref: "Hebrews 11:1",
-                        text: "Now faith is the assurance of things hoped for, the conviction of things not seen.",
-                        thought: "Faith gives us certainty about God's promises even when we can't see the outcome."
+                        ref: "Proverbs 3:5-6",
+                        text: "Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.",
+                        thought: "Life's path becomes clear when we stop relying on our logic and start relying on God's wisdom."
                       },
                       {
                         cat: "Scripture on God's Love",
-                        ref: "Romans 5:8",
-                        text: "But God shows his love for us in that while we were still sinners, Christ died for us.",
-                        thought: "God's love is unconditional and demonstrated through Christ's sacrifice."
+                        ref: "1 John 4:19",
+                        text: "We love because he first loved us.",
+                        thought: "Our ability to show grace and kindness flows directly from the immense love God has shown us."
                       },
                       {
                         cat: "Daily Wisdom from Proverbs",
-                        catSub: "(Guidance)",
-                        ref: "Proverbs 16:9",
-                        text: "The heart of man plans his way, but the LORD establishes his steps.",
-                        thought: "We make plans, but God directs our path according to His perfect will."
+                        catSub: "(Success)",
+                        ref: "Proverbs 16:3",
+                        text: "Commit your work to the LORD, and your plans will be established.",
+                        thought: "True success is found in surrendering our efforts to God and trusting His direction."
                       },
                       {
                         cat: "Promise for Today",
-                        ref: "Matthew 11:28",
-                        text: "Come to me, all who labor and are heavy laden, and I will give you rest.",
-                        thought: "Jesus invites us to find true rest and peace in Him, no matter our burdens."
+                        ref: "Jeremiah 29:11",
+                        text: "For I know the plans I have for you, declares the LORD, plans for welfare and not for evil, to give you a future and a hope.",
+                        thought: "No matter how confusing today feels, God's ultimate plan for your life is full of hope."
                       }
                     ].map((row, i) => (
                       <TableRow key={i} className="hover:bg-transparent">
@@ -546,10 +546,10 @@ export default async function VerseOfTheDayPage({
               </h2>
               <div className="max-w-2xl mx-auto space-y-6 text-muted-foreground leading-relaxed px-6">
                 <p>
-                  The Bible verse of the day is an invitation from God. Each verse whispers a unique message to your soul. However, every one of them points to the same truth. God is present and faithful.
+                  Today's Bible verse is a reminder that we don't have to carry the weight of our future alone. When we commit our works to the Lord, we are making Him the CEO of our lives. He takes our humble efforts and weaves them into a masterpiece of His grace.
                 </p>
                 <p className="text-xl font-serif italic text-primary pt-4">
-                  &ldquo;When you make time for His Word, it lights your path. It strengthens your heart for every challenge ahead.&rdquo;
+                  &ldquo;Success is not just achieving a goal; it is walking in the perfect alignment of God's will. Commit your day to Him, and watch Him establish your paths.&rdquo;
                 </p>
               </div>
             </section>
