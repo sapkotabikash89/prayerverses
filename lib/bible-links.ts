@@ -22,21 +22,25 @@ export function linkifyBibleVerses(html: string): string {
     const booksRegexPart = sortedBooks.map(b => b.replace(/\s+/g, '\\s+')).join('|')
 
     // Combined regex that matches all three patterns:
-    // Group 1: Book name
-    // Group 2: First number (chapter or chapter in chapter:verse)
-    // Group 3: Optional colon + verse (e.g., ":16")
-    // Group 4: The verse number itself (from group 3)
-    // Group 5: Optional range part (e.g., "–31", "-5", "–7:3")
+    // Group 1: HTML Tag (to be skipped)
+    // Group 2: Book name
+    // Group 3: First number (chapter or chapter in chapter:verse)
+    // Group 4: Optional colon + verse (e.g., ":16")
+    // Group 5: The verse number itself (from group 4)
+    // Group 6: Optional range part (e.g., "–31", "-5", "–7:3")
     const refRegex = new RegExp(
-        `\\b(${booksRegexPart})\\s+(\\d+)(:(\\d+))?(?:[–\\-](\\d+(?::\\d+)?))?\\b`,
+        `(<[^>]+>)|\\b(${booksRegexPart})\\s+(\\d+)(:(\\d+))?(?:[–\\-](\\d+(?::\\d+)?))?\\b`,
         'gi'
     )
 
-    return html.replace(refRegex, (match, book, firstNum, _colonVerse, verse, rangeEnd) => {
+    return html.replace(refRegex, (match, tag, book, firstNum, _colonVerse, verse, rangeEnd) => {
+        // If it's a tag, return it as is
+        if (tag) return tag
+
         let normalizedBook = book.trim()
         if (normalizedBook.toLowerCase() === "psalm") normalizedBook = "Psalms"
 
-       const bookMeta = bibleBooks.find(b => b.name.toLowerCase() === normalizedBook.toLowerCase())
+        const bookMeta = bibleBooks.find(b => b.name.toLowerCase() === normalizedBook.toLowerCase())
         if (!bookMeta) return match
 
         // Use 'psalm' slug for Psalms book
@@ -45,7 +49,7 @@ export function linkifyBibleVerses(html: string): string {
           slug = 'psalm'
         }
 
-       const chapter= firstNum
+        const chapter = firstNum
 
         if (verse) {
             // Link to chapter page with anchor for the specific verse

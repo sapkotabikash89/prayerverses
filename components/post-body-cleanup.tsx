@@ -46,6 +46,15 @@ export function PostBodyCleanup() {
         return false
       }
 
+      // Preserve YouTube/embed wrapper divs (needed for 16:9 aspect-ratio CSS)
+      if (
+        el.classList.contains("wp-block-embed__wrapper") ||
+        el.classList.contains("wp-block-embed") ||
+        el.closest("figure") !== null
+      ) {
+        return false
+      }
+
       // Check if inside a protected block (Header, Footers, and anything marked not-prose)
       // We check parents to ensure we don't accidentally unwrap internal metadata divs.
       let parent = el.parentElement
