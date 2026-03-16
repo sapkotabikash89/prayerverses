@@ -41,21 +41,29 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
     const { seo } = post;
 
+    // WordPress Yoast SEO already appends site name (e.g. "| Prayer Verses | PrayerVerses").
+    // Strip any trailing separator + site name so Next.js template doesn't double it.
+    const stripSiteName = (t?: string) =>
+        t?.replace(/\s*[|\-–]\s*(Prayer\s*Verses|PrayerVerses)\s*$/i, '').trim() ?? '';
+
+    const rawTitle = seo?.title || post.title;
+    const cleanTitle = stripSiteName(rawTitle);
+
     return {
-        title: seo?.title || post.title,
+        title: cleanTitle,
         description: seo?.metaDesc || post.excerpt,
         alternates: {
             canonical: `https://prayerverses.com/${slug}/`,
         },
         openGraph: {
-            title: seo?.opengraphTitle || seo?.title || post.title,
+            title: stripSiteName(seo?.opengraphTitle || seo?.title) || cleanTitle,
             description: seo?.opengraphDescription || seo?.metaDesc || post.excerpt,
             images: seo?.opengraphImage?.sourceUrl ? [{ url: seo.opengraphImage.sourceUrl }] : [],
             type: 'article',
         },
         twitter: {
             card: 'summary_large_image',
-            title: seo?.twitterTitle || seo?.title || post.title,
+            title: stripSiteName(seo?.twitterTitle || seo?.title) || cleanTitle,
             description: seo?.twitterDescription || seo?.metaDesc || post.excerpt,
             images: seo?.twitterImage?.sourceUrl ? [seo.twitterImage.sourceUrl] : [],
         },
