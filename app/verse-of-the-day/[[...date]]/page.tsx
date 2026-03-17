@@ -379,18 +379,18 @@ export default async function VerseOfTheDayPage({
                     <span className="text-2xl">🙏</span>
                     <h3>Morning Prayer for a Renewed Mind</h3>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed italic">
-                    &ldquo;Heavenly Father, I bring my mind before You this morning. Thank You for the truth of Romans 12:2. I choose today not to be pressed into the world's mold. Transform my thoughts, Father, and fill my mind with Your Word. Help me see my circumstances through Your eyes. Guide every decision I make today by Your good and perfect will. In Jesus' mighty name, Amen.&rdquo;
-                  </p>
+                  <div className="text-muted-foreground leading-relaxed italic"
+                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Heavenly Father, I bring my mind before You this morning. Thank You for the truth found in ${displayVerse.ref}. I choose today not to be pressed into the world's mold. Transform my thoughts, Father, and fill my mind with Your Word. Help me see my circumstances through Your eyes. Guide every decision I make today by Your good and perfect will. In Jesus' mighty name, Amen.&rdquo;`) }}
+                  />
                 </div>
                 <div className="p-8 rounded-none bg-secondary/30 border border-border shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-card-foreground">
                     <span className="text-2xl">🙏</span>
                     <h3>Evening Prayer for Spiritual Protection</h3>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed italic">
-                    &ldquo;Lord, thank You for this day and for Your faithfulness. Forgive me for the moments when I allowed the world's thinking to influence me more than Your Word did. Tonight, as I rest, guard my heart and mind through Christ Jesus, as Philippians 4:7 promises. Renew me as I sleep. Let me rise tomorrow with a mind that is sharper, clearer, and more aligned with Your truth. Amen.&rdquo;
-                  </p>
+                  <div className="text-muted-foreground leading-relaxed italic"
+                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Lord, thank You for this day and for Your faithfulness. Forgive me for the moments when I allowed the world's thinking to influence me more than Your Word did. Tonight, as I rest, guard my heart and mind through Christ Jesus. Renew me as I sleep according to the promise in ${displayVerse.ref}. Let me rise tomorrow with a mind that is sharper, clearer, and more aligned with Your truth. Amen.&rdquo;`) }}
+                  />
                 </div>
               </div>
             </section>
@@ -406,14 +406,14 @@ export default async function VerseOfTheDayPage({
                    <span className="text-2xl">📖</span>
                    Extended Scripture Reading on Mind Renewal
                  </h3>
-                 <p className="text-muted-foreground leading-relaxed mb-4">
-                   Today's verse from Romans 12:2 connects deeply with many other Bible passages about the power of the mind and the call to holy living. These related scriptures help you understand the full biblical picture of transformation.
-                 </p>
+                 <div className="text-muted-foreground leading-relaxed mb-4"
+                   dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Today's verse from ${displayVerse.ref} connects deeply with many other Bible passages about the power of the mind and the call to holy living. These related scriptures help you understand the full biblical picture of transformation.`) }}
+                 />
                  <div className="space-y-4 text-muted-foreground">
-                   <p><strong>Philippians 4:8</strong> instructs believers to fix their thoughts on things that are true, noble, right, pure, lovely, and admirable. This verse acts as a practical checklist for a renewed mind. Before consuming any content, a believer can ask: does this pass the Philippians 4:8 test?</p>
-                   <p><strong>Colossians 3:1-2</strong> adds another layer, urging believers to set their minds on things above, not on earthly things. Together with Romans 12:2, this paints a picture of a mind that is anchored in heaven even while living on earth.</p>
-                   <p><strong>2 Corinthians 10:5</strong> takes it further still, calling believers to take every thought captive and make it obedient to Christ. This reveals that transformation is not just passive. Rather, it requires active, intentional spiritual warfare over the thought life.</p>
-                   <p>Finally, <strong>Ephesians 4:22-24</strong> connects mind renewal directly to putting off the old self and putting on the new self created in God's likeness. All these passages together reveal a consistent biblical theme: who you become starts with what you think.</p>
+                   <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p><strong>Philippians 4:8</strong> instructs believers to fix their thoughts on things that are true, noble, right, pure, lovely, and admirable. This verse acts as a practical checklist for a renewed mind. Before consuming any content, a believer can ask: does this pass the Philippians 4:8 test?</p>`) }} />
+                   <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p><strong>Colossians 3:1-2</strong> adds another layer, urging believers to set their minds on things above, not on earthly things. Together with ${displayVerse.ref}, this paints a picture of a mind that is anchored in heaven even while living on earth.</p>`) }} />
+                   <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p><strong>2 Corinthians 10:5</strong> takes it further still, calling believers to take every thought captive and make it obedient to Christ. This reveals that transformation is not just passive. Rather, it requires active, intentional spiritual warfare over the thought life.</p>`) }} />
+                   <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Finally, <strong>Ephesians 4:22-24</strong> connects mind renewal directly to putting off the old self and putting on the new self created in God's likeness. All these passages together reveal a consistent biblical theme: who you become starts with what you think.</p>`) }} />
                  </div>
                </div>
                
@@ -423,9 +423,9 @@ export default async function VerseOfTheDayPage({
                      <span className="text-xl">💡</span>
                      Key Takeaway
                    </h3>
-                   <p className="text-muted-foreground leading-relaxed">
-                     Transformation is not about trying harder. It is about thinking differently. When you consistently feed your mind with God's Word, your behavior naturally follows. Romans 12:2 teaches that a changed life always starts with a changed mind. So today, focus on what goes into your mind. Scripture, worship music, and prayer all fuel the renewal that changes everything else.
-                   </p>
+                   <div className="text-muted-foreground leading-relaxed"
+                     dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Transformation is not about trying harder. It is about thinking differently. When you consistently feed your mind with God's Word, your behavior naturally follows. ${displayVerse.ref} teaches that a changed life always starts with a changed mind. So today, focus on what goes into your mind. Scripture, worship music, and prayer all fuel the renewal that changes everything else.`) }}
+                   />
                  </div>
                  
                  <div className="p-6 rounded-none bg-card border border-border shadow-sm">
@@ -433,9 +433,9 @@ export default async function VerseOfTheDayPage({
                      <span className="text-xl">🎯</span>
                      Practical Application
                    </h3>
-                   <p className="text-muted-foreground leading-relaxed">
-                     Choose one area of your thinking where the world's influence feels strongest. Perhaps it is anxiety about money, bitterness toward someone, or discouragement about your future. Then find a specific Bible verse that addresses that exact area. Write it down and repeat it out loud throughout today. This is exactly what Romans 12:2 looks like in daily action. Over time, consistent application of God's Word to specific thought patterns produces remarkable change.
-                   </p>
+                   <div className="text-muted-foreground leading-relaxed"
+                     dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Choose one area of your thinking where the world's influence feels strongest. Perhaps it is anxiety about money, bitterness toward someone, or discouragement about your future. Then find a specific Bible verse that addresses that exact area. Write it down and repeat it out loud throughout today. This is exactly what ${displayVerse.ref} looks like in daily action. Over time, consistent application of God's Word to specific thought patterns produces remarkable change.`) }}
+                   />
                  </div>
                </div>
                
@@ -444,9 +444,9 @@ export default async function VerseOfTheDayPage({
                    <span className="text-xl">🤝</span>
                    Community Connection
                  </h3>
-                 <p className="text-muted-foreground leading-relaxed">
-                   Renewal does not happen in isolation. Hebrews 10:24-25 encourages believers to meet together regularly and to spur one another on toward love and good deeds. Share Romans 12:2 with a friend today and ask them: where in your life is your mind most shaped by the world right now? That simple conversation might be the spark that starts genuine transformation for both of you.
-                 </p>
+                 <div className="text-muted-foreground leading-relaxed"
+                   dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Renewal does not happen in isolation. Hebrews 10:24-25 encourages believers to meet together regularly and to spur one another on toward love and good deeds. Share ${displayVerse.ref} with a friend today and ask them: where in your life is your mind most shaped by the world right now? That simple conversation might be the spark that starts genuine transformation for both of you.`) }}
+                 />
                </div>
              </div>
            </section>
@@ -538,15 +538,11 @@ export default async function VerseOfTheDayPage({
                 Final Thought
               </h2>
               <div className="max-w-2xl mx-auto space-y-6 text-muted-foreground leading-relaxed px-6">
-                <p>
-                  Today, Romans 12:2 presents every believer with a clear fork in the road. One path follows the world's patterns, its thinking, its values, and its version of success. The other path follows the renewing power of God's Word. Choosing the second path does not happen just once. Rather, you make that choice again and again, thought by thought, decision by decision, moment by moment throughout the day.
-                </p>
-                <p>
-                  Thankfully, you do not make that choice alone. The Holy Spirit works within you to renew your thinking. He makes the things of God attractive, and He makes the things of the world lose their grip. So lean into that work today. Open your Bible. Pray. Worship. And trust that as your mind is renewed, your whole life will follow.
-                </p>
-                <p className="text-xl font-serif italic text-primary pt-4">
-                  &ldquo;You cannot think the same thoughts and expect a different life. Let God renew your mind, and transformation will follow naturally.&rdquo;
-                </p>
+                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Today, Romans 12:2 presents every believer with a clear fork in the road. One path follows the world's patterns, its thinking, its values, and its version of success. The other path follows the renewing power of God's Word. Choosing the second path does not happen just once. Rather, you make that choice again and again, thought by thought, decision by decision, moment by moment throughout the day.</p>`) }} />
+                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Thankfully, you do not make that choice alone. The Holy Spirit works within you to renew your thinking. He makes the things of God attractive, and He makes the things of the world lose their grip. So lean into that work today. Open your Bible. Pray. Worship. And trust that as your mind is renewed, your whole life will follow.</p>`) }} />
+                <div className="text-xl font-serif italic text-primary pt-4"
+                  dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;You cannot think the same thoughts and expect a different life. Let God renew your mind, and transformation will follow naturally.&rdquo;`) }}
+                />
               </div>
             </section>
 
