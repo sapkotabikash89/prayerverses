@@ -30,8 +30,13 @@ export async function generateMetadata({
   const b = getBookBySlug(book)
   if (!b) return {}
 
-  const title = `${b.name === 'Psalms' ? 'Psalm' : b.name} Chapter ${chapter}`
-  const description = `Read ${b.name} Chapter ${chapter} from the Holy Bible. Study Scripture verse by verse.`
+  const stripSiteName = (t?: string) =>
+    t?.replace(/\s*[|\-–]\s*(Prayer\s*Verses|PrayerVerses)\s*$/i, '').trim() ?? '';
+
+  const bookNameFormatted = b.name === 'Psalms' ? 'Psalm' : b.name;
+  const rawTitle = `${bookNameFormatted} Chapter ${chapter}: Read Bible Online`;
+  const title = stripSiteName(rawTitle);
+  const description = `Read ${b.name} Chapter ${chapter} from the Holy Bible KJV. Explore baily verse, verse of the day, and daily scripture of the day.`;
 
   return {
     title,
@@ -39,14 +44,16 @@ export async function generateMetadata({
     keywords: [
       `${b.name} ${chapter}`,
       `read ${b.name} chapter ${chapter}`,
-      "bible chapter",
+      "bible verse of the day",
+      "daily scripture",
+      "bible quotes of the day",
+      "baily verse",
+      "vserse of today",
+      "scripture of the day",
       "kjv bible",
       "holy scripture",
       "verse by verse",
       "bible study",
-      b.name,
-      "online bible",
-      "christian devotional",
     ],
     openGraph: {
       title,

@@ -9,26 +9,46 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-export const metadata: Metadata = {
-  title: "Random Bible Verse",
-  description: "Get a random Bible verse to inspire your day and strengthen your faith.",
-  robots: { index: true, follow: true },
-  keywords: ["random bible verse", "bible verse generator", "random scripture", "bible passage", "spontaneous bible quotes", "spiritual guidance", "bible verses for inspiration", "daily scripture", "bible study tool", "christian meditation"],
-  alternates: {
-    canonical: "/random-verse/",
-  },
-  openGraph: {
-    title: "Random Bible Verse",
-    description: "Get a random Bible verse to inspire your day and strengthen your faith.",
-    type: "website",
-    images: [{ url: "/random-bible-verse.webp" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Random Bible Verse",
-    description: "Get a random Bible verse to inspire your day and strengthen your faith.",
-    images: ["/random-bible-verse.webp"],
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const stripSiteName = (t?: string) =>
+    t?.replace(/\s*[|\-–]\s*(Prayer\s*Verses|PrayerVerses)\s*$/i, '').trim() ?? '';
+
+  const rawTitle = "Random Bible Verse Generator: Daily Scripture & Bible Quotes of the Day";
+  const title = stripSiteName(rawTitle);
+  const description = "Get a random bible verse of today morning or a baily verse to inspire your day. Our random bible generator provides today's bible quote and daily scripture.";
+
+  return {
+    title,
+    description,
+    robots: { index: true, follow: true },
+    keywords: [
+      "random bible verse",
+      "random bible generator",
+      "bible verse of the day",
+      "baily verse",
+      "daily scripture",
+      "bible quotes of the day",
+      "today's bible text",
+      "today's bible quote",
+      "verse of today",
+      "random scripture",
+    ],
+    alternates: {
+      canonical: "https://prayerverses.com/random-verse/",
+    },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      images: [{ url: "/random-bible-verse.webp" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/random-bible-verse.webp"],
+    },
+  };
 }
 
 export default async function RandomVersePage() {

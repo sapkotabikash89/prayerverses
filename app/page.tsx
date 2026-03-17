@@ -8,14 +8,14 @@ import { getCategories } from "@/lib/wordpress"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "PrayerVerses - Connect with God Through Verses and Prayers",
+  title: "PrayerVerses - Bible Verse of the Day, Daily Scripture & Prayers",
   description:
-    "Discover daily Bible verses, read Scripture by topic, and deepen your faith with beautiful verse cards.",
-  keywords: ["bible verses", "daily bible verse", "scripture of the day", "bible quotes", "spiritual inspiration", "bible study", "holy bible", "bible verses by topic", "christian faith"],
+    "Explore our bible verse of today morning, today's bible quote, and baily verse. Connect with God through daily scripture of the day and powerful prayers.",
+  keywords: ["bible verse of the day", "daily scripture", "bible quotes of the day", "today's bible quote", "bible verse of today morning", "baily verse", "verse of today", "spiritual inspiration", "bible study", "christian faith"],
   openGraph: {
-    title: "PrayerVerses - Connect with God Through Verses and Prayers",
+    title: "PrayerVerses - Bible Verse of the Day, Daily Scripture & Prayers",
     description:
-      "Discover daily Bible verses, read Scripture by topic, and deepen your faith with beautiful verse cards.",
+      "Explore our bible verse of today morning, today's bible quote, and baily verse. Connect with God through daily scripture of the day.",
     type: "website",
   },
   alternates: { canonical: "https://prayerverses.com/" },

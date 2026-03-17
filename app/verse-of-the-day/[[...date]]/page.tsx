@@ -54,8 +54,12 @@ export async function generateMetadata({
   const dateStr = date?.[0] || todayStr
   const v = verses[dateStr]
 
-  const title = `Bible Verse of the Day - ${v.ref}`
-  const description = `Daily Bible verse for ${dateStr}: "${v.text}"`
+  const stripSiteName = (t?: string) =>
+    t?.replace(/\s*[|\-–]\s*(Prayer\s*Verses|PrayerVerses)\s*$/i, '').trim() ?? '';
+
+  const rawTitle = `Bible Verse of the Day: Daily Scripture & Verse of Today - ${v.ref}`
+  const title = stripSiteName(rawTitle)
+  const description = `Start your morning with our bible verse of today morning and today's bible quote. Explore daily scripture, baily verse, and verse of the day for ${dateStr} - "${v.text}"`
   const isToday = dateStr === todayStr
 
   return {
@@ -78,12 +82,12 @@ export async function generateMetadata({
       "bible verse of today morning",
       "verse of today",
       "daily bible verse",
-      `bible verse for ${dateStr}`,
-      "morning bible verse",
-      "scripture of the day",
+      "bible study",
+      "christian devotional",
+      "scripture morning",
+      "daily inspiration",
+      "spiritual nourishment",
       v.ref,
-      "daily devotion",
-      "bible quotes",
     ],
     openGraph: {
       title,

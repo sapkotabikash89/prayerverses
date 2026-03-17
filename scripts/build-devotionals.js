@@ -3,8 +3,8 @@ const fs = require('fs');
 const devotionals = {
   "Proverbs 3:5-6": {
     "title": "Trust Beyond Understanding",
-    "p1": "When life feels confusing, Proverbs 3:5-6 calls us to radical trust. The command to 'lean not on your own understanding' doesn't mean we stop thinking, but rather that we stop trusting our limited perspective more than God's infinite wisdom.",
-    "p2": "Submitting our ways to Him is an active choice. As you go through today, consciously hand over your anxieties and decisions to the Lord. He promises to make your path straight, clearing the spiritual debris so you can walk in peace."
+    "p1": "When life feels confusing, the bible verse of today morning from Proverbs 3:5-6 calls us to radical trust. This baily verse reminds us to 'lean not on your own understanding' which doesn't mean we stop thinking, but rather that we stop trusting our limited perspective more than God's infinite wisdom.",
+    "p2": "Submitting our ways to Him is an active choice in our daily scripture walk. As you go through today, consciously hand over your anxieties and decisions to the Lord through this verse of today. He promises to make your path straight, clearing the spiritual debris so you can walk in peace."
   },
   "Psalm 23:1-3": {
     "title": "The Good Shepherd's Care",
@@ -145,8 +145,8 @@ const devotionals = {
 
 const defaultDevotion = {
     "title": "Strength in the Word",
-    "p1": "Every piece of Scripture carries life-giving power. As we reflect on today's verse, we are reminded that God's truth is an anchor for our soul. The promises found in His Word remain true despite the changing circumstances of our lives.",
-    "p2": "Take a moment today to internalize this truth. Let God's voice be louder than the noise of the world. Through prayer and reflection, allow this scripture to guide your decisions, comfort your heart, and empower your day."
+    "p1": "Every piece of our daily scripture carries life-giving power. As we reflect on the bible verse of today morning, we are reminded that God's truth is an anchor for our soul. The promises found in today's bible quote remain true despite the changing circumstances of our lives.",
+    "p2": "Take a moment with this baily verse to internalize this truth. Let God's voice be louder than the noise of the world. Through prayer and reflection, allow this verse of today to guide your decisions, comfort your heart, and empower your day."
 };
 
 fs.writeFileSync(__dirname + '/../data/devotionals.json', JSON.stringify(devotionals, null, 2));

@@ -29,21 +29,27 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 
     const { seo } = category;
 
+    const stripSiteName = (t?: string) =>
+        t?.replace(/\s*[|\-–]\s*(Prayer\s*Verses|PrayerVerses)\s*$/i, '').trim() ?? '';
+
+    const rawTitle = seo?.title || category.name;
+    const cleanTitle = stripSiteName(rawTitle);
+
     return {
-        title: seo?.title || category.name,
+        title: cleanTitle,
         description: seo?.metaDesc || category.description,
         alternates: {
             canonical: `https://prayerverses.com/category/${slug}/`,
         },
         openGraph: {
-            title: seo?.opengraphTitle || seo?.title || category.name,
+            title: stripSiteName(seo?.opengraphTitle || seo?.title) || cleanTitle,
             description: seo?.opengraphDescription || seo?.metaDesc || category.description,
             images: seo?.opengraphImage?.sourceUrl ? [{ url: seo.opengraphImage.sourceUrl }] : [],
             type: 'website',
         },
         twitter: {
             card: 'summary_large_image',
-            title: seo?.twitterTitle || seo?.title || category.name,
+            title: stripSiteName(seo?.twitterTitle || seo?.title) || cleanTitle,
             description: seo?.twitterDescription || seo?.metaDesc || category.description,
             images: seo?.twitterImage?.sourceUrl ? [seo.twitterImage.sourceUrl] : [],
         },
