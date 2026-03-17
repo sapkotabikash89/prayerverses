@@ -4,6 +4,38 @@ const API_URL = 'https://blog.prayerverses.com/graphql';
 
 const client = new GraphQLClient(API_URL);
 
+/**
+ * Wrapper for GraphQL requests with retry logic and longer timeout
+ */
+async function requestWithRetry<T>(query: string, variables?: any, retries = 3): Promise<T> {
+  let lastError: any;
+  for (let i = 0; i < retries; i++) {
+    try {
+      // Use a controller to set a custom timeout (30 seconds)
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000);
+
+      const result = await client.request<T>(query, variables, {
+        signal: controller.signal as any
+      });
+      
+      clearTimeout(timeoutId);
+      return result;
+    } catch (err: any) {
+      lastError = err;
+      // If it's a timeout or connection error, wait and retry
+      const isTimeout = err.name === 'AbortError' || err.message?.includes('timeout') || err.message?.includes('UND_ERR_CONNECT_TIMEOUT');
+      if (isTimeout && i < retries - 1) {
+        console.warn(`Fetch attempt ${i + 1} failed, retrying in 2s...`, err.message);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        continue;
+      }
+      throw err;
+    }
+  }
+  throw lastError;
+}
+
 export interface SeoMetadata {
   title?: string;
   metaDesc?: string;
@@ -105,7 +137,7 @@ export async function getCategories(): Promise<Category[]> {
       }
     }
   `;
-  const data = await client.request<{ categories: { nodes: Category[] } }>(query);
+  const data = await requestWithRetry<{ categories: { nodes: Category[] } }>(query);
   const categories = data.categories.nodes.filter(cat =>
     cat.slug !== 'uncategorized' && cat.slug !== 'bible-verses' && cat.slug !== 'blog'
   );
@@ -165,7 +197,7 @@ export async function getCategoryBySlug(slug: string): Promise<Category | null> 
       }
     }
   `;
-  const data = await client.request<{ category: Category | null }>(query, { id: slug });
+  const data = await requestWithRetry<{ category: Category | null }>(query, { id: slug });
   return data.category;
 }
 
@@ -208,7 +240,7 @@ export async function getPostsByCategory(categorySlug: string, first = 21, after
       }
     }
   `;
-  const data = await client.request<{ posts: PostConnection }>(query, {
+  const data = await requestWithRetry<{ posts: PostConnection }>(query, {
     categoryName: categorySlug,
     first,
     after
@@ -274,7 +306,7 @@ async function getNeighborPost(date: string, direction: 'previous' | 'next'): Pr
       `;
 
   try {
-    const data = await client.request<{ posts: { nodes: { title: string; slug: string }[] } }>(neighborQuery, dateObj);
+    const data = await requestWithRetry<{ posts: { nodes: { title: string; slug: string }[] } }>(neighborQuery, dateObj);
     return data.posts.nodes[0];
   } catch (err) {
     console.error(`Error fetching ${direction} post:`, err);
@@ -336,7 +368,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   `;
 
   try {
-    const data = await client.request<{ post: Post | null }>(query, { id: slug });
+    const data = await requestWithRetry<{ post: Post | null }>(query, { id: slug });
     const post = data.post;
 
     if (post && post.date) {
@@ -386,7 +418,7 @@ export async function getNewestPosts(first = 21, after?: string): Promise<PostCo
       }
     }
   `;
-  const data = await client.request<{ posts: PostConnection }>(query, { first, after });
+  const data = await requestWithRetry<{ posts: PostConnection }>(query, { first, after });
   return data.posts;
 }
 
@@ -418,7 +450,7 @@ export async function getRelatedPosts(categorySlug: string, currentPostId: strin
   `;
 
   try {
-    const data = await client.request<{ posts: { nodes: Post[] } }>(query, {
+    const data = await requestWithRetry<{ posts: { nodes: Post[] } }>(query, {
       categoryName: categorySlug,
       first: limit + 1 // Get one extra in case current is included
     });
@@ -461,7 +493,7 @@ export async function getRandomPostFromCategory(categorySlug: string, excludePos
 
   try {
     // Fetch more posts to have a good pool to randomly select from
-    const data = await client.request<{ posts: { nodes: Post[] } }>(query, {
+    const data = await requestWithRetry<{ posts: { nodes: Post[] } }>(query, {
       categoryName: categorySlug,
       first: 20
     });
@@ -500,7 +532,7 @@ export async function getAllPostSlugs(): Promise<{ slug: string }[]> {
 
   try {
     while (hasNextPage) {
-      const response: PostSlugsResponse = await client.request<PostSlugsResponse>(query, { after });
+      const response: PostSlugsResponse = await requestWithRetry<PostSlugsResponse>(query, { after });
 
       allSlugs = [...allSlugs, ...response.posts.nodes];
       hasNextPage = response.posts.pageInfo.hasNextPage;

@@ -67,6 +67,16 @@ export async function generateMetadata({
     },
     keywords: [
       "verse of the day",
+      "baily verse",
+      "bible verse of the day",
+      "daily scripture",
+      "bible quotes of the day",
+      "random verse of the day",
+      "today's bible text",
+      "today's bible quote",
+      "daily morning verse",
+      "bible verse of today morning",
+      "verse of today",
       "daily bible verse",
       `bible verse for ${dateStr}`,
       "morning bible verse",
@@ -74,8 +84,6 @@ export async function generateMetadata({
       v.ref,
       "daily devotion",
       "bible quotes",
-      "christian inspiration",
-      "spiritual nourishment",
     ],
     openGraph: {
       title,
@@ -238,7 +246,7 @@ export default async function VerseOfTheDayPage({
               <Breadcrumb items={[{ label: "Verse of the Day", href: "/verse-of-the-day/" }]} />
             </div>
             <h1>
-              Today's Bible Verse of the Day (KJV)
+              Today's Bible Verse of the Day: Your Daily Scripture (KJV)
             </h1>
             <p className="text-lg text-muted-foreground mb-8">{formattedDate}</p>
 
@@ -258,7 +266,7 @@ export default async function VerseOfTheDayPage({
             {/* Translations Section */}
             <section>
               <h2>
-                Translations of Today's Verse - {displayVerse.ref}
+                Bible Quotes of the Day: Multiple Translations of {displayVerse.ref}
               </h2>
               <div className="space-y-8">
                 {["ESV", "NIV", "NLT", "WEB", "NKJV"].map((version, i) => {
@@ -314,15 +322,15 @@ export default async function VerseOfTheDayPage({
             {/* Daily Morning Scripture Section */}
             <section>
               <h2>
-                Daily Morning Scripture of the Day
+                Daily Morning Verse and Today's Bible Text
               </h2>
               <div className="prose prose-stone max-w-none dark:prose-invert text-muted-foreground space-y-6">
                 {(() => {
                   const devotionals = devotionalsData as Record<string, { title?: string, p1: string, p2: string }>;
                   const devotion = devotionals[displayVerse.ref] || {
                     title: "Strength in the Word",
-                    p1: `Every piece of Scripture carries life-giving power. As we reflect on today's verse from ${displayVerse.ref}, we are reminded that God's truth is an anchor for our soul. The promises found in His Word remain true despite the changing circumstances of our lives.`,
-                    p2: `Take a moment today to internalize this truth. Let God's voice be louder than the noise of the world. Through prayer and reflection, allow this scripture to guide your decisions, comfort your heart, and empower your day.`
+                    p1: `Every piece of our daily scripture carries life-giving power. As we reflect on the bible verse of today morning from ${displayVerse.ref}, we are reminded that God's truth is an anchor for our soul. The promises found in today's bible quote remain true despite the changing circumstances of our lives.`,
+                    p2: `Take a moment with this baily verse to internalize this truth. Let God's voice be louder than the noise of the world. Through prayer and reflection, allow this verse of today to guide your decisions, comfort your heart, and empower your day.`
                   };
                   return (
                     <>
@@ -455,7 +463,7 @@ export default async function VerseOfTheDayPage({
             {/* Random Bible Scripture Grid */}
             <section>
               <h2>
-                Random Bible Scripture of the Day
+                Random Verse of the Day and Daily Bible Quotes
               </h2>
               <div className="rounded-none border border-border overflow-hidden bg-card shadow-sm">
                 <Table>

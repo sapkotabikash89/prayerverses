@@ -71,7 +71,7 @@
     @apply font-serif font-bold text-card-foreground leading-tight mb-6;
     font-size: 2.25rem;
   }
-  @screen lg {
+  @media (min-width: 1024px) {
     h1 {
       font-size: 3rem;
     }
@@ -81,7 +81,7 @@
     @apply font-serif font-bold text-card-foreground leading-snug mt-10 mb-4;
     font-size: 1.875rem;
   }
-  @screen lg {
+  @media (min-width: 1024px) {
     h2 {
       font-size: 2.25rem;
     }
@@ -91,7 +91,7 @@
     @apply font-serif font-bold text-card-foreground leading-snug mt-8 mb-4;
     font-size: 1.5rem;
   }
-  @screen lg {
+  @media (min-width: 1024px) {
     h3 {
       font-size: 1.875rem;
     }
@@ -101,7 +101,7 @@
     @apply font-serif font-bold text-card-foreground leading-snug mt-6 mb-3;
     font-size: 1.25rem;
   }
-  @screen lg {
+  @media (min-width: 1024px) {
     h4 {
       font-size: 1.5rem;
     }
@@ -111,7 +111,7 @@
     @apply font-serif font-bold text-card-foreground leading-snug mt-5 mb-2;
     font-size: 1.125rem;
   }
-  @screen lg {
+  @media (min-width: 1024px) {
     h5 {
       font-size: 1.25rem;
     }
@@ -121,7 +121,7 @@
     @apply font-serif font-bold text-card-foreground leading-snug mt-4 mb-2;
     font-size: 1rem;
   }
-  @screen lg {
+  @media (min-width: 1024px) {
     h6 {
       font-size: 1.125rem;
     }
@@ -171,7 +171,7 @@
 .article-body > h3, .cms-content h3 { font-size: 1.75rem !important; line-height: 1.4 !important; font-family: var(--font-serif), serif !important; font-weight: 700 !important; margin-top: 2rem !important; margin-bottom: 1rem !important; color: var(--card-foreground) !important; }
 .article-body > h4, .cms-content h4 { font-size: 1.5rem !important; font-family: var(--font-serif), serif !important; font-weight: 700 !important; margin-top: 1.5rem !important; margin-bottom: 0.75rem !important; color: var(--card-foreground) !important; }
 
-@screen lg {
+@media (min-width: 1024px) {
   .article-body > h1, .cms-content h1 { font-size: 3.5rem !important; }
   .article-body > h2, .cms-content h2 { font-size: 2.5rem !important; }
   .article-body > h3, .cms-content h3 { font-size: 2rem !important; }
