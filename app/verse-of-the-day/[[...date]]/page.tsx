@@ -342,20 +342,20 @@ export default async function VerseOfTheDayPage({
               <div className="prose prose-stone max-w-none dark:prose-invert text-muted-foreground space-y-6">
                 {[
                   {
-                    title: "Understanding God's Character",
-                    content: `Every verse reveals something about who God is. When you read ${displayVerse.ref}, you're not just reading ancient words—you're discovering the heart of an unchanging God. His character remains constant across all generations, which means the same God who spoke in biblical times still speaks today.`
+                    title: "What It Means to Be Conformed",
+                    content: `The word "conform" in Romans 12:2 carries a vivid picture. It describes something being pressed into a mold. Think of clay being shaped by an outside force. Every day, the world around us tries to do exactly that. Our culture shapes opinions, values, and desires in very subtle ways. Paul therefore warns believers to recognize this pressure. He also urges them to actively resist it. When you scroll through social media without a filter, the world is shaping you. When you absorb news without discernment, culture is pressing you into its mold. Awareness is the very first step toward freedom. Scripture passages like 1 John 2:15-17 and James 4:4 also warn believers about the danger of loving the world's system more than God.`
                   },
                   {
-                    title: "Applying Scripture to Modern Life",
-                    content: `The Bible isn't a museum piece to admire but bread to eat. Take one phrase from today's verse and carry it with you throughout your day. Repeat it during your commute, before meetings, or when facing decisions. Let it move from your head to your heart and into your actions.`
+                    title: "The Power of a Renewed Mind",
+                    content: `Paul does not just warn believers. He also gives them the answer: transformation through the renewal of the mind. Renewal here is not a one-time event. Rather, it is a beautiful ongoing process, much like a daily shower that washes off the dirt of the day. This renewal happens through reading God's Word consistently, as taught in Joshua 1:8 and Psalm 119:105. It also grows through prayer, worship, and spending time in community with other believers. Additionally, it deepens through choosing good and godly thoughts, especially when negative ones arrive. Over time, a renewed mind begins to see life differently. It starts thinking about situations the way God thinks about them. Consequently, decisions become clearer, peace grows stronger, and purpose feels more alive.`
                   },
                   {
-                    title: "The Power of Daily Meditation",
-                    content: `Meditation is simply thinking deeply about God's truth. Unlike worldly meditation that empties the mind, biblical meditation fills it with Scripture. As you ponder today's verse, ask: What does this teach me about God? About myself? How should I respond? The Holy Spirit uses these moments to transform you from within.`
+                    title: "Discerning the Perfect Will of God",
+                    content: `The beautiful promise at the end of Romans 12:2 is this: a renewed mind helps believers discern God's will. Many Christians genuinely struggle to know what God wants them to do in specific situations. However, Scripture reveals that the answer starts in the mind. When you fill your mind with Scripture like Proverbs 3:5-6 and Colossians 3:16, you begin to think in harmony with God's nature. As a result, His will becomes clearer and easier to recognize. This does not mean every decision comes with a dramatic sign from heaven. Instead, a well-nourished mind simply begins to sense what is good, acceptable, and perfect in God's sight. Furthermore, the Holy Spirit works through a Word-filled mind to guide, nudge, and confirm the right path. Start renewing your mind today, and watch how much better your direction in life becomes.`
                   },
                   {
-                    title: "Building Spiritual Discipline",
-                    content: `Consistency matters more than intensity in spiritual growth. Reading one verse daily with sincerity builds stronger faith than occasional marathon sessions. Start small: read, reflect, respond in prayer. Over time, these daily encounters compound into profound spiritual maturity and deeper intimacy with Christ.`
+                    title: "Building Spiritual Discipline Every Day",
+                    content: `Consistency matters more than intensity in spiritual growth. Reading God's Word for ten minutes every single morning produces far more transformation than a two-hour session once a month. Therefore, start small and stay steady. Read Romans 12:1-2 today, reflect on its meaning, and then respond with a simple prayer of surrender. Over time, these small daily deposits of Scripture compound into deep spiritual maturity. Additionally, find a pattern that works for your life. Some people meditate on a verse during their morning coffee. Others listen to Scripture during a commute. The method matters far less than the habit itself. As Hebrews 10:24-25 reminds believers, staying connected to the community of faith also accelerates this renewal process. Together, believers sharpen one another and stay rooted in truth.`
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="space-y-3">
@@ -377,19 +377,19 @@ export default async function VerseOfTheDayPage({
                 <div className="p-8 rounded-none bg-primary/5 border border-primary/10 shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-primary">
                     <span className="text-2xl">🙏</span>
-                    <h3>Morning Prayer for Commitment</h3>
+                    <h3>Morning Prayer for a Renewed Mind</h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed italic">
-                    &ldquo;Lord, I commit this day and all its tasks into Your hands. Help me to labor not for my own glory, but for Yours. Give me a spirit of excellence and a heart of service. I roll my plans onto You, trusting that You will establish my steps and lead me toward Your perfect purpose. Amen.&rdquo;
+                    &ldquo;Heavenly Father, I bring my mind before You this morning. Thank You for the truth of Romans 12:2. I choose today not to be pressed into the world's mold. Transform my thoughts, Father, and fill my mind with Your Word. Help me see my circumstances through Your eyes. Guide every decision I make today by Your good and perfect will. In Jesus' mighty name, Amen.&rdquo;
                   </p>
                 </div>
                 <div className="p-8 rounded-none bg-secondary/30 border border-border shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-card-foreground">
                     <span className="text-2xl">🙏</span>
-                    <h3>Evening Prayer for Trust</h3>
+                    <h3>Evening Prayer for Spiritual Protection</h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed italic">
-                    &ldquo;Thank You, Father, for Your guidance through this day. I lay down my work and my worries at Your feet. Forgive me where I relied on my own strength. Tonight, I rest in the assurance that You are already working in the details of tomorrow. Establish my heart in Your peace as I sleep. In Jesus' name, Amen.&rdquo;
+                    &ldquo;Lord, thank You for this day and for Your faithfulness. Forgive me for the moments when I allowed the world's thinking to influence me more than Your Word did. Tonight, as I rest, guard my heart and mind through Christ Jesus, as Philippians 4:7 promises. Renew me as I sleep. Let me rise tomorrow with a mind that is sharper, clearer, and more aligned with Your truth. Amen.&rdquo;
                   </p>
                 </div>
               </div>
@@ -404,25 +404,17 @@ export default async function VerseOfTheDayPage({
                <div className="p-6 rounded-none bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
                  <h3 className="mb-4 flex items-center gap-2">
                    <span className="text-2xl">📖</span>
-                   Extended Scripture Reading
+                   Extended Scripture Reading on Mind Renewal
                  </h3>
                  <p className="text-muted-foreground leading-relaxed mb-4">
-                   Expand your understanding by reading the full chapter containing today's verse. Here are additional passages that complement {displayVerse.ref}:
+                   Today's verse from Romans 12:2 connects deeply with many other Bible passages about the power of the mind and the call to holy living. These related scriptures help you understand the full biblical picture of transformation.
                  </p>
-                 <ul className="space-y-2 text-muted-foreground">
-                   <li className="flex items-start gap-2">
-                     <span className="text-primary mt-1">•</span>
-                     <span><strong>Psalm 27:1-6</strong> - A psalm of trust in God's protection and guidance</span>
-                   </li>
-                   <li className="flex items-start gap-2">
-                     <span className="text-primary mt-1">•</span>
-                     <span><strong>Isaiah 43:1-7</strong> - God's promise to be with us through every trial</span>
-                   </li>
-                   <li className="flex items-start gap-2">
-                     <span className="text-primary mt-1">•</span>
-                     <span><strong>Romans 8:28-39</strong> - The depth of God's love and faithfulness to His children</span>
-                   </li>
-                 </ul>
+                 <div className="space-y-4 text-muted-foreground">
+                   <p><strong>Philippians 4:8</strong> instructs believers to fix their thoughts on things that are true, noble, right, pure, lovely, and admirable. This verse acts as a practical checklist for a renewed mind. Before consuming any content, a believer can ask: does this pass the Philippians 4:8 test?</p>
+                   <p><strong>Colossians 3:1-2</strong> adds another layer, urging believers to set their minds on things above, not on earthly things. Together with Romans 12:2, this paints a picture of a mind that is anchored in heaven even while living on earth.</p>
+                   <p><strong>2 Corinthians 10:5</strong> takes it further still, calling believers to take every thought captive and make it obedient to Christ. This reveals that transformation is not just passive. Rather, it requires active, intentional spiritual warfare over the thought life.</p>
+                   <p>Finally, <strong>Ephesians 4:22-24</strong> connects mind renewal directly to putting off the old self and putting on the new self created in God's likeness. All these passages together reveal a consistent biblical theme: who you become starts with what you think.</p>
+                 </div>
                </div>
                
                <div className="grid md:grid-cols-2 gap-6">
@@ -432,7 +424,7 @@ export default async function VerseOfTheDayPage({
                      Key Takeaway
                    </h3>
                    <p className="text-muted-foreground leading-relaxed">
-                     God's Word is not just information—it's transformation. As you meditate on {displayVerse.ref}, allow the Holy Spirit to renew your mind and reshape your heart. Small daily doses of Scripture, consistently applied, produce lasting spiritual growth.
+                     Transformation is not about trying harder. It is about thinking differently. When you consistently feed your mind with God's Word, your behavior naturally follows. Romans 12:2 teaches that a changed life always starts with a changed mind. So today, focus on what goes into your mind. Scripture, worship music, and prayer all fuel the renewal that changes everything else.
                    </p>
                  </div>
                  
@@ -442,7 +434,7 @@ export default async function VerseOfTheDayPage({
                      Practical Application
                    </h3>
                    <p className="text-muted-foreground leading-relaxed">
-                     Write today's verse on a card or set it as your phone wallpaper. Reference it throughout the day, especially during challenging moments. Let Scripture become your immediate source of truth, comfort, and direction in real-time situations.
+                     Choose one area of your thinking where the world's influence feels strongest. Perhaps it is anxiety about money, bitterness toward someone, or discouragement about your future. Then find a specific Bible verse that addresses that exact area. Write it down and repeat it out loud throughout today. This is exactly what Romans 12:2 looks like in daily action. Over time, consistent application of God's Word to specific thought patterns produces remarkable change.
                    </p>
                  </div>
                </div>
@@ -453,7 +445,7 @@ export default async function VerseOfTheDayPage({
                    Community Connection
                  </h3>
                  <p className="text-muted-foreground leading-relaxed">
-                   Share today's verse with someone who might need encouragement. Text it to a friend, post it on social media, or mention it in conversation. God often uses His children to be the voice that speaks truth into each other's lives. Your obedience might be exactly what someone else needs to hear today.
+                   Renewal does not happen in isolation. Hebrews 10:24-25 encourages believers to meet together regularly and to spur one another on toward love and good deeds. Share Romans 12:2 with a friend today and ask them: where in your life is your mind most shaped by the world right now? That simple conversation might be the spark that starts genuine transformation for both of you.
                  </p>
                </div>
              </div>
@@ -476,47 +468,47 @@ export default async function VerseOfTheDayPage({
                   <TableBody>
                     {[
                       {
-                        cat: "Daily Bible Verse for Morning",
-                        ref: "Psalm 118:24",
-                        text: "This is the day that the LORD has made; let us rejoice and be glad in it.",
-                        thought: "Every day is a gift from God. Start your morning with a heart full of joy and gratitude."
+                        cat: "Scripture for Morning Focus",
+                        ref: "Philippians 4:8",
+                        text: "Whatever is true, whatever is noble, whatever is right, whatever is pure, whatever is lovely, whatever is admirable — think about such things.",
+                        thought: "Your mind shapes your mood and your day. Feed it with God's truth every single morning and watch your whole perspective shift."
                       },
                       {
-                        cat: "Scripture for Strength and Courage",
-                        ref: "Isaiah 41:10",
-                        text: "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand.",
-                        thought: "When you feel weak or afraid, remember that the Almighty is personally holding you up."
+                        cat: "Verse for Resisting Temptation",
+                        ref: "James 4:7",
+                        text: "Submit yourselves therefore to God. Resist the devil, and he will flee from you.",
+                        thought: "Spiritual victory starts with surrender. When you submit your will to God, He gives you the power to stand firm."
                       },
                       {
-                        cat: "Inspirational Daily Verse",
-                        ref: "Colossians 3:23",
-                        text: "Whatever you do, work heartily, as for the Lord and not for men.",
-                        thought: "Your work has eternal value when done with a heart focused on serving the Savior."
+                        cat: "Daily Verse on Transformation",
+                        ref: "2 Corinthians 5:17",
+                        text: "Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come.",
+                        thought: "You are not who you used to be. In Christ, genuine change is not just possible. It has already begun inside you."
                       },
                       {
-                        cat: "Verse for Faith and Trust",
+                        cat: "Scripture on Spiritual Growth",
+                        ref: "Colossians 3:10",
+                        text: "And have put on the new self, which is being renewed in knowledge after the image of its creator.",
+                        thought: "Renewal is an active, daily process. Each choice to think God's way brings you closer to who He created you to be."
+                      },
+                      {
+                        cat: "Verse on God's Guidance",
                         ref: "Proverbs 3:5-6",
                         text: "Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.",
-                        thought: "Life's path becomes clear when we stop relying on our logic and start relying on God's wisdom."
+                        thought: "When your mind aligns with God's Word, your path becomes clear. Trust brings direction that human logic alone cannot provide."
                       },
                       {
-                        cat: "Scripture on God's Love",
-                        ref: "1 John 4:19",
-                        text: "We love because he first loved us.",
-                        thought: "Our ability to show grace and kindness flows directly from the immense love God has shown us."
-                      },
-                      {
-                        cat: "Daily Wisdom from Proverbs",
-                        catSub: "(Success)",
-                        ref: "Proverbs 16:3",
-                        text: "Commit your work to the LORD, and your plans will be established.",
-                        thought: "True success is found in surrendering our efforts to God and trusting His direction."
+                        cat: "Scripture for Inner Strength",
+                        catSub: "(Ephesians)",
+                        ref: "Ephesians 4:23",
+                        text: "Be renewed in the spirit of your minds.",
+                        thought: "Spiritual renewal is not automatic. It is a choice you make every day to think, speak, and act according to God's values."
                       },
                       {
                         cat: "Promise for Today",
-                        ref: "Jeremiah 29:11",
-                        text: "For I know the plans I have for you, declares the LORD, plans for welfare and not for evil, to give you a future and a hope.",
-                        thought: "No matter how confusing today feels, God's ultimate plan for your life is full of hope."
+                        ref: "Isaiah 26:3",
+                        text: "You keep him in perfect peace whose mind is stayed on you, because he trusts in you.",
+                        thought: "A mind fixed on God rests in perfect peace. No matter what today brings, anchoring your thoughts in Him brings deep calm."
                       }
                     ].map((row, i) => (
                       <TableRow key={i} className="hover:bg-transparent">
@@ -534,6 +526,7 @@ export default async function VerseOfTheDayPage({
                         </TableCell>
                       </TableRow>
                     ))}
+
                   </TableBody>
                 </Table>
               </div>
@@ -546,10 +539,13 @@ export default async function VerseOfTheDayPage({
               </h2>
               <div className="max-w-2xl mx-auto space-y-6 text-muted-foreground leading-relaxed px-6">
                 <p>
-                  Today's Bible verse is a reminder that we don't have to carry the weight of our future alone. When we commit our works to the Lord, we are making Him the CEO of our lives. He takes our humble efforts and weaves them into a masterpiece of His grace.
+                  Today, Romans 12:2 presents every believer with a clear fork in the road. One path follows the world's patterns, its thinking, its values, and its version of success. The other path follows the renewing power of God's Word. Choosing the second path does not happen just once. Rather, you make that choice again and again, thought by thought, decision by decision, moment by moment throughout the day.
+                </p>
+                <p>
+                  Thankfully, you do not make that choice alone. The Holy Spirit works within you to renew your thinking. He makes the things of God attractive, and He makes the things of the world lose their grip. So lean into that work today. Open your Bible. Pray. Worship. And trust that as your mind is renewed, your whole life will follow.
                 </p>
                 <p className="text-xl font-serif italic text-primary pt-4">
-                  &ldquo;Success is not just achieving a goal; it is walking in the perfect alignment of God's will. Commit your day to Him, and watch Him establish your paths.&rdquo;
+                  &ldquo;You cannot think the same thoughts and expect a different life. Let God renew your mind, and transformation will follow naturally.&rdquo;
                 </p>
               </div>
             </section>
