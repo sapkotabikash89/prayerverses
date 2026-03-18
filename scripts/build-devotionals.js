@@ -140,6 +140,11 @@ const devotionals = {
     "title": "The Assurance of Faith",
     "p1": "Faith is not wishful thinking or blind optimism; it is 'substance' and 'evidence.' It is the spiritual certainty that God will do exactly what He said He will do, even when our physical eyes see no proof of it yet.",
     "p2": "Today, choose to walk by faith and not by sight. Anchor your hope firmly in the character of God rather than the visible circumstances surrounding you. Your conviction in His unseen promises is the very foundation of a victorious life."
+  },
+  "Isaiah 41:10": {
+    "title": "Divine Strength for Your Heart",
+    "p1": "Today, this bible verse of today morning from Isaiah 41:10 offers profound hope to every soul in need. This baily verse reminds every believer that God remains present in the darkest valleys of life. Scripture declares that the Creator personally walks beside His children during every single trial. Consequently, fear loses its power when we recognize His constant presence in our daily morning verse meditation.",
+    "p2": "Our daily scripture reveals that the Almighty God actively strengthens and helps everyone who calls upon Him. He promises to uphold us with the right hand of His perfect righteousness. Therefore, take comfort in this verse of today as you face the unique challenges of this morning. Let the truth of today's bible text anchor your spirit and provide you with lasting peace."
   }
 };
 

@@ -354,20 +354,20 @@ export default async function VerseOfTheDayPage({
               <div className="prose prose-stone max-w-none dark:prose-invert text-muted-foreground space-y-6">
                 {[
                   {
-                    title: "What It Means to Be Conformed",
-                    content: `The word "conform" in Romans 12:2 carries a vivid picture. It describes something being pressed into a mold. Think of clay being shaped by an outside force. Every day, the world around us tries to do exactly that. Our culture shapes opinions, values, and desires in very subtle ways. Paul therefore warns believers to recognize this pressure. He also urges them to actively resist it. When you scroll through social media without a filter, the world is shaping you. When you absorb news without discernment, culture is pressing you into its mold. Awareness is the very first step toward freedom. Scripture passages like 1 John 2:15-17 and James 4:4 also warn believers about the danger of loving the world's system more than God.`
+                    title: "Overcoming Daily Fears",
+                    content: `Fear often tries to grip our hearts before we even leave our beds in the morning. However, this bible verse of today morning from Isaiah 41:10 provides an immediate and powerful spiritual shield. God commands His children not to be afraid because He remains personally present in every situation. He promises to replace our natural anxiety with His divine and perfect peace. Therefore, we can face every challenge today with quiet and steady confidence in our souls. Scripture passages like John 14:27 and Psalm 56:3 also remind us that trust is the ultimate antidote to fear.`
                   },
                   {
-                    title: "The Power of a Renewed Mind",
-                    content: `Paul does not just warn believers. He also gives them the answer: transformation through the renewal of the mind. Renewal here is not a one-time event. Rather, it is a beautiful ongoing process, much like a daily shower that washes off the dirt of the day. This renewal happens through reading God's Word consistently, as taught in Joshua 1:8 and Psalm 119:105. It also grows through prayer, worship, and spending time in community with other believers. Additionally, it deepens through choosing good and godly thoughts, especially when negative ones arrive. Over time, a renewed mind begins to see life differently. It starts thinking about situations the way God thinks about them. Consequently, decisions become clearer, peace grows stronger, and purpose feels more alive.`
+                    title: "God's Personal Presence",
+                    content: `Every baily verse in Scripture reveals the deep and intimate heart of our loving Creator. Today, the bible verse of today morning emphasizes that we never walk through difficult seasons alone. God declares that He is our God, which establishes a permanent and unbreakable relationship with Him. This truth anchors our identity and provides stability when life feels completely overwhelming. Consequently, His presence becomes a tangible source of daily morning verse inspiration for our hearts. Verses like Matthew 28:20 and Psalm 23:4 further confirm that He never leaves our side.`
                   },
                   {
-                    title: "Discerning the Perfect Will of God",
-                    content: `The beautiful promise at the end of Romans 12:2 is this: a renewed mind helps believers discern God's will. Many Christians genuinely struggle to know what God wants them to do in specific situations. However, Scripture reveals that the answer starts in the mind. When you fill your mind with Scripture like Proverbs 3:5-6 and Colossians 3:16, you begin to think in harmony with God's nature. As a result, His will becomes clearer and easier to recognize. This does not mean every decision comes with a dramatic sign from heaven. Instead, a well-nourished mind simply begins to sense what is good, acceptable, and perfect in God's sight. Furthermore, the Holy Spirit works through a Word-filled mind to guide, nudge, and confirm the right path. Start renewing your mind today, and watch how much better your direction in life becomes.`
+                    title: "Receiving Divine Strength",
+                    content: `Often, we rely on our own limited energy to get through a busy and tiring workday. Yet, our daily scripture reminds us that God is the true and infinite source of all strength. He promises to strengthen us and provide the help we desperately need in every single moment. This divine empowerment allows us to perform our tasks with excellence and grace. Also, it ensures that we do not grow weary or discouraged when obstacles arise. We can find more encouragement on this in Philippians 4:13 and Isaiah 40:31.`
                   },
                   {
-                    title: "Building Spiritual Discipline Every Day",
-                    content: `Consistency matters more than intensity in spiritual growth. Reading God's Word for ten minutes every single morning produces far more transformation than a two-hour session once a month. Therefore, start small and stay steady. Read Romans 12:1-2 today, reflect on its meaning, and then respond with a simple prayer of surrender. Over time, these small daily deposits of Scripture compound into deep spiritual maturity. Additionally, find a pattern that works for your life. Some people meditate on a verse during their morning coffee. Others listen to Scripture during a commute. The method matters far less than the habit itself. As Hebrews 10:24-25 reminds believers, staying connected to the community of faith also accelerates this renewal process. Together, believers sharpen one another and stay rooted in truth.`
+                    title: "Being Uphold by Grace",
+                    content: `The right hand of God represents His supreme power and His sovereign authority over the entire universe. In this verse of today, He promises to uphold us with His righteous and strong right hand. This means that even if we stumble, we will not fall into total despair or defeat. He keeps us steady and maintains our path through His unmerited and amazing grace. Furthermore, we can trust that His righteous hand will always lead us toward goodness and life. Psalm 37:24 and Psalm 63:8 also illustrate this beautiful reality of being held by God.`
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="space-y-3">
@@ -383,25 +383,25 @@ export default async function VerseOfTheDayPage({
             {/* Prayers of the Day Section */}
             <section>
               <h2>
-                Prayers of the Day
+                Daily Prayers for Faith and Courage
               </h2>
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="p-8 rounded-none bg-primary/5 border border-primary/10 shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-primary">
                     <span className="text-2xl">🙏</span>
-                    <h3>Morning Prayer for a Renewed Mind</h3>
+                    <h3>Morning Prayer for Heavenly Support</h3>
                   </div>
                   <div className="text-muted-foreground leading-relaxed italic"
-                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Heavenly Father, I bring my mind before You this morning. Thank You for the truth found in ${displayVerse.ref}. I choose today not to be pressed into the world's mold. Transform my thoughts, Father, and fill my mind with Your Word. Help me see my circumstances through Your eyes. Guide every decision I make today by Your good and perfect will. In Jesus' mighty name, Amen.&rdquo;`) }}
+                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Heavenly Father, I thank You for this bible verse of today morning that brings peace to me. Please take away every fear from my mind and fill me with Your divine strength today. Help me to remember that You are always with me as I go about my many tasks. I trust in Your righteous hand to uphold me and guide my every single step. In Jesus' name, Amen.&rdquo;`) }}
                   />
                 </div>
                 <div className="p-8 rounded-none bg-secondary/30 border border-border shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-card-foreground">
                     <span className="text-2xl">🙏</span>
-                    <h3>Evening Prayer for Spiritual Protection</h3>
+                    <h3>Evening Prayer for Peaceful Rest</h3>
                   </div>
                   <div className="text-muted-foreground leading-relaxed italic"
-                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Lord, thank You for this day and for Your faithfulness. Forgive me for the moments when I allowed the world's thinking to influence me more than Your Word did. Tonight, as I rest, guard my heart and mind through Christ Jesus. Renew me as I sleep according to the promise in ${displayVerse.ref}. Let me rise tomorrow with a mind that is sharper, clearer, and more aligned with Your truth. Amen.&rdquo;`) }}
+                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Lord, thank You for this day and for Your faithfulness. I reflect on today's bible quote from ${displayVerse.ref} as I prepare to sleep in Your loving care. Forgive me for any moment when I doubted Your presence or relied only on my own effort. Please grant me a restful sleep and renew my spirit for the coming morning. I cast every worry upon You because You are my faithful and strong God. Amen.&rdquo;`) }}
                   />
                 </div>
               </div>
@@ -416,16 +416,16 @@ export default async function VerseOfTheDayPage({
                <div className="p-6 rounded-none bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
                  <h3 className="mb-4 flex items-center gap-2">
                    <span className="text-2xl">📖</span>
-                   Extended Scripture Reading on Mind Renewal
+                   Extended Scripture Reading on Divine Strength
                  </h3>
                  <div className="text-muted-foreground leading-relaxed mb-4"
-                   dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Today's verse from ${displayVerse.ref} connects deeply with many other Bible passages about the power of the mind and the call to holy living. These related scriptures help you understand the full biblical picture of transformation.`) }}
+                   dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Today's verse from ${displayVerse.ref} connects deeply with many other Bible passages about the power of God and the call to live without fear. These related scriptures help you understand the full biblical picture of spiritual courage.`) }}
                  />
-                 <div className="space-y-4 text-muted-foreground">
-                   <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p><strong>Philippians 4:8</strong> instructs believers to fix their thoughts on things that are true, noble, right, pure, lovely, and admirable. This verse acts as a practical checklist for a renewed mind. Before consuming any content, a believer can ask: does this pass the Philippians 4:8 test?</p>`) }} />
-                   <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p><strong>Colossians 3:1-2</strong> adds another layer, urging believers to set their minds on things above, not on earthly things. Together with ${displayVerse.ref}, this paints a picture of a mind that is anchored in heaven even while living on earth.</p>`) }} />
-                   <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p><strong>2 Corinthians 10:5</strong> takes it further still, calling believers to take every thought captive and make it obedient to Christ. This reveals that transformation is not just passive. Rather, it requires active, intentional spiritual warfare over the thought life.</p>`) }} />
-                   <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Finally, <strong>Ephesians 4:22-24</strong> connects mind renewal directly to putting off the old self and putting on the new self created in God's likeness. All these passages together reveal a consistent biblical theme: who you become starts with what you think.</p>`) }} />
+                 <div className="space-y-4 text-muted-foreground leading-relaxed">
+                   <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>The prophet Isaiah wrote these encouraging words to a people who felt completely forgotten and deeply discouraged. During their time of exile, they needed a powerful reminder of God's unchanging and steady character. This bible verse of today morning still speaks with the same life giving authority to us right now. It invites us to stop looking at our problems and start looking at our Great God. Other passages like Jeremiah 29:11 and Lamentations 3:22-23 serve to reinforce this same message of hope.</p>`) }} />
+                   <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Transitioning from fear to faith is not a one time activity but a continuous daily choice. We must actively decide to trust the promises found in our daily scripture instead of believing our feelings. Whenever dismay tries to cloud your vision, remember that God has already promised to be your God. He is not distant or uncaring but is actively involved in every detail of your life. Joshua 1:9 and Deuteronomy 31:6 also provide foundational strength for this journey.</p>`) }} />
+                   <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>God's strength is not just a poetic idea but a real and practical force for living. When you feel weak, you can literally ask Him for the help He promised in today's bible text. He loves to display His power through our human limitations and our varied needs. Therefore, your weakness is actually a perfect opportunity for God to show His great and amazing strength. Recall that 2 Corinthians 12:9 teaches that His grace is sufficient in our weakest moments.</p>`) }} />
+                   <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Finally, we must rest in the assurance that God's righteousness is our ultimate and steady firm foundation. He upholds us not because we are perfect but because He is perfectly faithful to His Word. This verse of today serves as a beautiful anchor for every soul tossed by the storms of life. Hold tightly to this promise, and you will find that God is more than enough for you. Psalm 18:2 and Psalm 46:1 remind believers that God is our rock and refuge.</p>`) }} />
                  </div>
                </div>
                
@@ -436,7 +436,7 @@ export default async function VerseOfTheDayPage({
                      Key Takeaway
                    </h3>
                    <div className="text-muted-foreground leading-relaxed"
-                     dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Transformation is not about trying harder. It is about thinking differently. When you consistently feed your mind with God's Word, your behavior naturally follows. ${displayVerse.ref} teaches that a changed life always starts with a changed mind. So today, focus on what goes into your mind. Scripture, worship music, and prayer all fuel the renewal that changes everything else.`) }}
+                     dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Your fear cannot survive in the presence of a God who has already promised to uphold you. Trusting this bible verse of today morning changes your entire perspective on every single challenge you face. When you realize that the Almighty God is for you, the obstacles ahead of you begin to look much smaller. Consequently, you can move forward with bold and quiet confidence in His love.`) }}
                    />
                  </div>
                  
@@ -446,7 +446,7 @@ export default async function VerseOfTheDayPage({
                      Practical Application
                    </h3>
                    <div className="text-muted-foreground leading-relaxed"
-                     dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Choose one area of your thinking where the world's influence feels strongest. Perhaps it is anxiety about money, bitterness toward someone, or discouragement about your future. Then find a specific Bible verse that addresses that exact area. Write it down and repeat it out loud throughout today. This is exactly what ${displayVerse.ref} looks like in daily action. Over time, consistent application of God's Word to specific thought patterns produces remarkable change.`) }}
+                     dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Choose one specific fear that is bothering your mind right now during your morning. Then, read ${displayVerse.ref} out loud and consciously hand that specific fear over to the Lord today. You might even write the fear on a piece of paper and then write the words "God is with me" across it. This simple act of faith turns abstract truth into a tangible reality for your life.`) }}
                    />
                  </div>
                </div>
@@ -457,7 +457,7 @@ export default async function VerseOfTheDayPage({
                    Community Connection
                  </h3>
                  <div className="text-muted-foreground leading-relaxed"
-                   dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Renewal does not happen in isolation. Hebrews 10:24-25 encourages believers to meet together regularly and to spur one another on toward love and good deeds. Share ${displayVerse.ref} with a friend today and ask them: where in your life is your mind most shaped by the world right now? That simple conversation might be the spark that starts genuine transformation for both of you.`) }}
+                   dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`We are meant to carry each other's heavy burdens as we walk together in this life of faith. Share this baily verse with a friend who is going through a tough time and pray for them. Encouraging someone else with today's bible quote often strengthens your own faith as well. Together, we can remind one another that our God is faithful and He never lets us go.`) }}
                  />
                </div>
              </div>
@@ -480,47 +480,53 @@ export default async function VerseOfTheDayPage({
                   <TableBody>
                     {[
                       {
-                        cat: "Scripture for Morning Focus",
-                        ref: "Philippians 4:8",
-                        text: "Whatever is true, whatever is noble, whatever is right, whatever is pure, whatever is lovely, whatever is admirable — think about such things.",
-                        thought: "Your mind shapes your mood and your day. Feed it with God's truth every single morning and watch your whole perspective shift."
+                        cat: "Strength for Trials",
+                        catSub: "",
+                        ref: "Psalm 46:1",
+                        text: "God is our refuge and strength, a very present help in trouble.",
+                        thought: "When trouble comes, you do not have to find God because He is already there with you."
                       },
                       {
-                        cat: "Verse for Resisting Temptation",
-                        ref: "James 4:7",
-                        text: "Submit yourselves therefore to God. Resist the devil, and he will flee from you.",
-                        thought: "Spiritual victory starts with surrender. When you submit your will to God, He gives you the power to stand firm."
+                        cat: "Peace in the Storm",
+                        catSub: "",
+                        ref: "John 14:27",
+                        text: "Peace I leave with you, my peace I give unto you: not as the world giveth.",
+                        thought: "The peace of Jesus is much deeper and more lasting than any comfort this world can offer."
                       },
                       {
-                        cat: "Daily Verse on Transformation",
-                        ref: "2 Corinthians 5:17",
-                        text: "Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come.",
-                        thought: "You are not who you used to be. In Christ, genuine change is not just possible. It has already begun inside you."
+                        cat: "Courage to Lead",
+                        catSub: "",
+                        ref: "Joshua 1:9",
+                        text: "Be strong and of a good courage; be not afraid, neither be thou dismayed.",
+                        thought: "You can be brave today because the Lord your God is with you wherever you go."
                       },
                       {
-                        cat: "Scripture on Spiritual Growth",
-                        ref: "Colossians 3:10",
-                        text: "And have put on the new self, which is being renewed in knowledge after the image of its creator.",
-                        thought: "Renewal is an active, daily process. Each choice to think God's way brings you closer to who He created you to be."
+                        cat: "Trusting the Path",
+                        catSub: "",
+                        ref: "Proverbs 3:5",
+                        text: "Trust in the LORD with all thine heart; and lean not unto thine own understanding.",
+                        thought: "Leting go of your own logic and trusting God's wisdom brings true and lasting clarity."
                       },
                       {
-                        cat: "Verse on God's Guidance",
-                        ref: "Proverbs 3:5-6",
-                        text: "Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.",
-                        thought: "When your mind aligns with God's Word, your path becomes clear. Trust brings direction that human logic alone cannot provide."
+                        cat: "Guidance for Tomorrow",
+                        catSub: "",
+                        ref: "Psalm 32:8",
+                        text: "I will instruct thee and teach thee in the way which thou shalt go.",
+                        thought: "God is not just a creator but also a gentle teacher who shows you the right path."
                       },
                       {
-                        cat: "Scripture for Inner Strength",
-                        catSub: "(Ephesians)",
-                        ref: "Ephesians 4:23",
-                        text: "Be renewed in the spirit of your minds.",
-                        thought: "Spiritual renewal is not automatic. It is a choice you make every day to think, speak, and act according to God's values."
+                        cat: "Rest for the Weary",
+                        catSub: "",
+                        ref: "Matthew 11:28",
+                        text: "Come unto me, all ye that labour and are heavy laden, and I will give you rest.",
+                        thought: "True rest comes from a living relationship with Jesus rather than just a weekend break from work."
                       },
                       {
-                        cat: "Promise for Today",
-                        ref: "Isaiah 26:3",
-                        text: "You keep him in perfect peace whose mind is stayed on you, because he trusts in you.",
-                        thought: "A mind fixed on God rests in perfect peace. No matter what today brings, anchoring your thoughts in Him brings deep calm."
+                        cat: "Hope for the Future",
+                        catSub: "",
+                        ref: "Jeremiah 29:11",
+                        text: "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace.",
+                        thought: "Your future is entirely safe because it is held in the loving hands of a good God."
                       }
                     ].map((row, i) => (
                       <TableRow key={i} className="hover:bg-transparent">
@@ -547,13 +553,13 @@ export default async function VerseOfTheDayPage({
             {/* Final Thought Section */}
             <section className="text-center py-8 bg-secondary/20 rounded-none border border-border">
               <h2>
-                Final Thought
+                Final Thought on Today's Bible Text
               </h2>
               <div className="max-w-2xl mx-auto space-y-6 text-muted-foreground leading-relaxed px-6">
-                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Today, Romans 12:2 presents every believer with a clear fork in the road. One path follows the world's patterns, its thinking, its values, and its version of success. The other path follows the renewing power of God's Word. Choosing the second path does not happen just once. Rather, you make that choice again and again, thought by thought, decision by decision, moment by moment throughout the day.</p>`) }} />
-                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Thankfully, you do not make that choice alone. The Holy Spirit works within you to renew your thinking. He makes the things of God attractive, and He makes the things of the world lose their grip. So lean into that work today. Open your Bible. Pray. Worship. And trust that as your mind is renewed, your whole life will follow.</p>`) }} />
+                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Today, the bible verse of today morning from Isaiah 41:10 gives us a reason to smile through tears. We serve a God who is both infinitely powerful and intimately close to our every single need. He does not just give us a map and leave us to find our way alone. Instead, He takes our hand and walks every step of the journey with us until the end.</p>`) }} />
+                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>You can trust Him with your biggest fears and your smallest worries throughout this entire and busy day. Let the truth of our daily scripture sink deep into your heart and transform your entire life now. God is with you, He is for you, and He will never ever let you go.</p>`) }} />
                 <div className="text-xl font-serif italic text-primary pt-4"
-                  dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;You cannot think the same thoughts and expect a different life. Let God renew your mind, and transformation will follow naturally.&rdquo;`) }}
+                  dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;When you realize that the Almighty God is upholding you, fear no longer has the power to hold you back.&rdquo;`) }}
                 />
               </div>
             </section>
