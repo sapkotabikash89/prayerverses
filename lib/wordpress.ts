@@ -7,7 +7,7 @@ const client = new GraphQLClient(API_URL);
 /**
  * Wrapper for GraphQL requests with retry logic and longer timeout
  */
-async function requestWithRetry<T>(query: string, variables?: any, retries = 3): Promise<T> {
+async function requestWithRetry<T>(query: string, variables?: any, retries = 3): Promise<T | null> {
   let lastError: any;
   for (let i = 0; i < retries; i++) {
     try {
@@ -24,16 +24,24 @@ async function requestWithRetry<T>(query: string, variables?: any, retries = 3):
     } catch (err: any) {
       lastError = err;
       // If it's a timeout or connection error, wait and retry
-      const isTimeout = err.name === 'AbortError' || err.message?.includes('timeout') || err.message?.includes('UND_ERR_CONNECT_TIMEOUT');
+      const isTimeout = err.name === 'AbortError' || err.message?.includes('timeout') || err.message?.includes('UND_ERR_CONNECT_TIMEOUT') || err.message?.includes('fetch failed');
       if (isTimeout && i < retries - 1) {
         console.warn(`Fetch attempt ${i + 1} failed, retrying in 2s...`, err.message);
         await new Promise(resolve => setTimeout(resolve, 2000));
         continue;
       }
-      throw err;
+      
+      // For 500 errors or other issues, we might want to log it but not fail the whole build
+      console.error(`Fetch attempt ${i + 1} failed with error:`, err.message);
+      if (i < retries - 1) {
+          await new Promise(resolve => setTimeout(resolve, 2000));
+          continue;
+      }
     }
   }
-  throw lastError;
+  
+  console.error('All fetch attempts failed. Returning null to allow build to proceed.');
+  return null;
 }
 
 export interface SeoMetadata {
@@ -138,6 +146,7 @@ export async function getCategories(): Promise<Category[]> {
     }
   `;
   const data = await requestWithRetry<{ categories: { nodes: Category[] } }>(query);
+  if (!data) return [];
   const categories = data.categories.nodes.filter(cat =>
     cat.slug !== 'uncategorized' && cat.slug !== 'bible-verses' && cat.slug !== 'blog'
   );
@@ -198,7 +207,7 @@ export async function getCategoryBySlug(slug: string): Promise<Category | null> 
     }
   `;
   const data = await requestWithRetry<{ category: Category | null }>(query, { id: slug });
-  return data.category;
+  return data?.category ?? null;
 }
 
 export async function getPostsByCategory(categorySlug: string, first = 21, after?: string): Promise<PostConnection> {
@@ -245,7 +254,7 @@ export async function getPostsByCategory(categorySlug: string, first = 21, after
     first,
     after
   });
-  return data.posts;
+  return data?.posts ?? { nodes: [], pageInfo: { hasNextPage: false, endCursor: '' } };
 }
 
 async function getNeighborPost(date: string, direction: 'previous' | 'next'): Promise<{ title: string; slug: string } | undefined> {
@@ -307,7 +316,7 @@ async function getNeighborPost(date: string, direction: 'previous' | 'next'): Pr
 
   try {
     const data = await requestWithRetry<{ posts: { nodes: { title: string; slug: string }[] } }>(neighborQuery, dateObj);
-    return data.posts.nodes[0];
+    return data?.posts.nodes[0];
   } catch (err) {
     console.error(`Error fetching ${direction} post:`, err);
     return undefined;
@@ -369,7 +378,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 
   try {
     const data = await requestWithRetry<{ post: Post | null }>(query, { id: slug });
-    const post = data.post;
+    const post = data?.post ?? null;
 
     if (post && post.date) {
       // Fetch neighbors
@@ -419,7 +428,7 @@ export async function getNewestPosts(first = 21, after?: string): Promise<PostCo
     }
   `;
   const data = await requestWithRetry<{ posts: PostConnection }>(query, { first, after });
-  return data.posts;
+  return data?.posts ?? { nodes: [], pageInfo: { hasNextPage: false, endCursor: '' } };
 }
 
 export async function getRelatedPosts(categorySlug: string, currentPostId: string, limit = 6): Promise<Post[]> {
@@ -454,6 +463,8 @@ export async function getRelatedPosts(categorySlug: string, currentPostId: strin
       categoryName: categorySlug,
       first: limit + 1 // Get one extra in case current is included
     });
+
+    if (!data) return [];
 
     let related = data.posts.nodes.filter(post => post.id !== currentPostId).slice(0, limit);
 
@@ -498,6 +509,8 @@ export async function getRandomPostFromCategory(categorySlug: string, excludePos
       first: 20
     });
 
+    if (!data) return null;
+
     const filtered = data.posts.nodes.filter(post => post.id !== excludePostId);
     
     if (filtered.length === 0) return null;
@@ -532,7 +545,12 @@ export async function getAllPostSlugs(): Promise<{ slug: string }[]> {
 
   try {
     while (hasNextPage) {
-      const response: PostSlugsResponse = await requestWithRetry<PostSlugsResponse>(query, { after });
+      const response: PostSlugsResponse | null = await requestWithRetry<PostSlugsResponse>(query, { after });
+
+      if (!response) {
+        hasNextPage = false;
+        continue;
+      }
 
       allSlugs = [...allSlugs, ...response.posts.nodes];
       hasNextPage = response.posts.pageInfo.hasNextPage;
