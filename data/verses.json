@@ -157,8 +157,8 @@
   "2026-03-17": {
     "text": "Do not conform to the pattern of this world, but be transformed by the renewing of your mind.",
     "ref": "Romans 12:2"
-  }
-  ,"2026-03-18": {
+  },
+  "2026-03-18": {
     "text": "Fear thou not; for I am with you: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.",
     "ref": "Isaiah 41:10",
     "translations": {
@@ -189,6 +189,17 @@
       "NLT": "Stop being angry! Turn from your rage! Do not lose your temper—it only leads to harm.",
       "WEB": "Cease from anger, and forsake wrath. Don’t fret, it leads only to evildoing.",
       "NKJV": "Cease from anger, and forsake wrath; Do not fret—it only causes harm."
+    }
+  },
+  "2026-03-21": {
+    "text": "Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.",
+    "ref": "Isaiah 41:10",
+    "translations": {
+      "ESV": "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand.",
+      "NIV": "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
+      "NLT": "Don't be afraid, for I am with you. Don't be discouraged, for I am your God. I will strengthen you and help you. I will hold you up with my victorious right hand.",
+      "WEB": "Don't you be afraid, for I am with you. Don't be dismayed, for I am your God. I will strengthen you. Yes, I will help you. Yes, I will uphold you with the right hand of my righteousness.",
+      "NKJV": "Fear not, for I am with you; Be not dismayed, for I am your God. I will strengthen you, Yes, I will help you, I will uphold you with My righteous right hand."
     }
   }
 }
