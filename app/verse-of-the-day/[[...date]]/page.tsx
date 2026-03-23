@@ -345,8 +345,8 @@ export default async function VerseOfTheDayPage({
                   const devotionals = devotionalsData as Record<string, { title?: string, p1: string, p2: string }>;
                   const devotion = devotionals[displayVerse.ref] || {
                     title: "Embracing a Beautiful Future",
-                    p1: `Our daily scripture provides beautiful hope for every single morning. When we examine the bible verse of today morning from ${displayVerse.ref}, we discover immense joy. Therefore, God's perfect plan acts as a reliable anchor for our soul. The comforting promises found in today's bible quote guarantee prosperity entirely. Consequently, they firmly remind us that your future remains exceptionally bright. You can truly experience this baily verse deeply in your hopeful spirit.`,
-                    p2: `Take a quiet moment to internalize this powerful daily message now. Let God's steady promises speak louder than worldly confusion strictly around you. Furthermore, you must boldly dedicate time for deep reflection and intentional prayer. This verse of the day will surely guide your daily decisions. Ultimately, today's bible text will effectively comfort your weary heart. Your entire life completely transforms through this random verse of the day.`
+                    p1: `This brilliant daily scripture delivers incredible hope for your single morning. When we closely study the bible verse of today morning from ${displayVerse.ref}, we find massive joy. Therefore, God actively pours perfect peace into your trusting soul. These beautiful promises found in today's bible quote absolutely guarantee spiritual abundance entirely. Consequently, they strongly remind us that the Holy Spirit provides endless strength. You can truly embrace this baily verse deeply within your eager heart.`,
+                    p2: `Please take a very quiet moment to internalize this encouraging message specifically right now. Let God's secure joy totally overpower any worldly confusion strictly around you. Furthermore, you must deliberately dedicate precious time for deep reflection and intentional prayer today. A perfect verse of the day will undoubtedly direct your daily decisions successfully. Ultimately, today's bible text will gently comfort your previously weary spirit. Your entire mindset completely transforms through this powerful random verse of the day.`
                   };
                   return (
                     <>
@@ -366,20 +366,20 @@ export default async function VerseOfTheDayPage({
               <div className="prose prose-stone max-w-none dark:prose-invert text-muted-foreground space-y-6">
                 {[
                   {
-                    title: "Trusting the Divine Architect",
-                    content: `God intricately designs every aspect of our entire journey perfectly. This incredible daily scripture commands us to completely trust His flawless blueprints. Therefore, we should purposefully choose faith over our natural human confusion. Proverbs 16:9 promises that God establishes all of our future steps. Furthermore, His sovereign will actively guides us toward abundant blessings forever. You can confidently face any unexpected challenge because God prepares you. As a result, your hopeful spirit will display profound inner confidence.`
+                    title: "Receiving Divine Hope",
+                    content: `God readily provides limitless hope for our entire journey entirely. This incredible daily scripture commands us to completely trust His flawless promises. Therefore, we should purposefully accept His abundant joy without any natural hesitation. Romans 15:13 declares that God fills all of our empty hearts. Furthermore, His holy spirit actively guides us toward total peace forever. You can confidently face any difficult challenge because God empowers you. As a result, your hopeful soul will display profound inner confidence.`
                   },
                   {
-                    title: "Embracing True Prosperity",
-                    content: `God absolutely desires genuine spiritual and emotional prosperity for you always. Today's bible text boldly assures us of His wonderfully generous intentions. 3 John 1:2 strongly expresses God's desire for our holistic health. Consequently, you never merely survive but truly thrive under His care. Our daily morning verse warmly invites us into His limitless abundance. Moreover, acknowledging His generosity entirely transforms our deepest poverty into wealth. God is intimately orchestrating immense favor over your life right now.`
+                    title: "Embracing Total Peace",
+                    content: `Jesus absolutely offers genuine spiritual and emotional peace for you always. Today's bible text boldly guarantees us of His wonderfully calming presence. John 14:27 strongly confirms God's desire for our holistic calmness daily. Consequently, you never merely worry but truly rest inside His loving arms. Our daily morning verse warmly welcomes us into His limitless tranquility. Moreover, acknowledging His sovereignty entirely transforms our deepest fears into courage. God is intimately orchestrating immense comfort over your life right now.`
                   },
                   {
-                    title: "Protection from Utter Harm",
-                    content: `We often feel incredibly vulnerable to the hidden dangers of tomorrow. However, the Lord specializes in actively shielding His deeply beloved children. Psalm 91:11 clearly declares that God assigns angels essentially to protect us. Therefore, your perceived vulnerability is actually a canvas for His safety. This baily verse beautifully invites you to rest entirely in His fortress. Additionally, surrendering our personal anxieties brightly allows His divine peace to shine. You will firmly overcome every single looming threat successfully today.`
+                    title: "Overflowing With Pure Joy",
+                    content: `We frequently feel completely drained by the heavy burdens of tomorrow. However, the Lord specializes in actively reviving His deeply beloved children gladly. Psalm 16:11 perfectly describes that God grants pure joy essentially to satisfy us. Therefore, your current emptiness is actually a prime canvas for His grace. This baily verse beautifully urges you to rejoice entirely in His constant presence. Additionally, surrendering our intense sorrows brightly allows His divine happiness to flourish. You will firmly overcome every solitary sad moment successfully today.`
                   },
                   {
-                    title: "Securing a Bright Future",
-                    content: `A guaranteed future provides unmatched absolute solace during uncertain present times. This verse of today shines a magnificent light on His reliable vision. Romans 8:28 beautifully illustrates how God constantly works everything for good. Consequently, you absolutely do not need to fear whatever comes tomorrow. The bible verse of the day securely provides endless excitement for destiny. Furthermore, resting strictly in His magnificent plan produces a deeply resilient character. Let this glorious truth thoroughly saturate your mind and heart.`
+                    title: "Trusting In His Power",
+                    content: `A guaranteed strength provides unmatched absolute solace during exhausting current times. This verse of today shines a magnificent light on His reliable power perfectly. 2 Timothy 1:7 beautifully demonstrates how God constantly gives courage for good. Consequently, you absolutely do not need to fear whatever totally exhausts tomorrow. The bible verse of the day securely provides endless energy for destiny forever. Furthermore, resting strictly upon His magnificent spirit produces a deeply resilient character. Let this glorious truth thoroughly saturate your busy mind and weary heart.`
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="space-y-3">
@@ -401,19 +401,19 @@ export default async function VerseOfTheDayPage({
                 <div className="p-8 rounded-none bg-primary/5 border border-primary/10 shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-primary">
                     <span className="text-2xl">🙏</span>
-                    <h3>Dawn Prayer for a Bright Future</h3>
+                    <h3>Dawn Prayer for Abounding Hope</h3>
                   </div>
                   <div className="text-muted-foreground leading-relaxed italic"
-                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Heavenly Father, I praise You for this deeply comforting verse of the day. Please completely guide my crucial decisions as my morning begins. I desperately need Your perfect wisdom to navigate the complex opportunities of this day. Furthermore, I deliberately choose to place all my future dreams upon You. This daily scripture clearly reminds me that You uniquely orchestrate my destiny securely. Therefore, I will walk boldly into whatever beautiful path You have created today. Amen.&rdquo;`) }}
+                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Heavenly Father, I praise You for this deeply comforting verse of the day. Please completely fill my empty heart as my new morning finally begins. I desperately need Your perfect joy to navigate the complex struggles of this beautiful day. Furthermore, I deliberately choose to place all my heavy worries upon Your massive shoulders entirely. This daily scripture clearly reminds me that You uniquely orchestrate my true peace securely forever. Therefore, I will walk boldly into whatever hopeful path You have beautifully created today. Amen.&rdquo;`) }}
                   />
                 </div>
                 <div className="p-8 rounded-none bg-secondary/30 border border-border shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-card-foreground">
                     <span className="text-2xl">🙏</span>
-                    <h3>Dusk Prayer for Peaceful Assurance</h3>
+                    <h3>Dusk Prayer for Restful Joy</h3>
                   </div>
                   <div className="text-muted-foreground leading-relaxed italic"
-                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Lord Jesus, I sincerely thank You for intensely blessing me wonderfully throughout this day. I reflect deeply on today's bible quote from ${displayVerse.ref} tonight. Forgive me for the moments when my fragile faith unfortunately wavered under heavy uncertainties. However, Your magnificent plans are remarkably steadfast every single evening. Consequently, I gladly surrender every anxious thought regarding tomorrow into Your loving grip now. Please give me profoundly restful sleep and greatly renew my hoping spirit. Amen.&rdquo;`) }}
+                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Lord Jesus, I sincerely thank You for intensely blessing me wonderfully throughout this entire day. I reflect deeply on today's bible quote from ${displayVerse.ref} quietly tonight. Please forgive me for the specific moments when my fragile joy unfortunately disappeared under heavy stress. However, Your magnificent presence remains remarkably steadfast every single relaxing evening. Consequently, I gladly surrender every anxious fear regarding tomorrow into Your loving hands right now. Please give me incredibly restful peace and greatly renew my hoping spirit completely. Amen.&rdquo;`) }}
                   />
                 </div>
               </div>
@@ -432,12 +432,12 @@ export default async function VerseOfTheDayPage({
                     Extended Scripture Reading on Absolute Hope
                   </h3>
                   <div className="text-muted-foreground leading-relaxed mb-4"
-                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Today's verse from ${displayVerse.ref} uniquely connects with many other Bible passages about maintaining a completely hopeful heart. These closely related scriptures actively help you understand the full biblical picture of spiritual destiny and sheer divine sovereignty.`) }}
+                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Today's verse from ${displayVerse.ref} uniquely connects with many other Bible passages about maintaining a completely joyful heart. These closely related scriptures actively help you totally understand the full biblical picture of overwhelming joy and sheer divine tranquility.`) }}
                   />
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>The incredibly potent bible verse of today morning provides extremely clear guidance concerning our daily uncertainties. This daily morning verse firmly encourages us to reject crippling doubt absolutely without any personal reservations. When we deeply read Romans 8:28, we finally discover the powerful secret to becoming truly secure. We must quickly recognize the Lord as our brilliant architect and our absolute ultimate provider. Therefore, we can confidently navigate deeply confusing situations with His divine and perfect clarity. God simply promises to completely orchestrate the outcome when we totally submit to Him.</p>`) }} />
-                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Transitioning into the busy afternoon, we must urgently remember the powerful and encouraging words of Proverbs 16:9. The Lord strongly commands us to boldly let Him direct our exceptionally chaotic steps today. This specific perspective definitely helps us to stay incredibly peaceful during extremely uncertain times. Your intimate relationship with the loving Father guarantees your absolute spiritual success against every enormous obstacle. Consequently, you can permanently banish deep anxiety and heavy discouragement from your mind completely now. The Almighty God walks faithfully beside you wherever you hopefully go in this beautiful life.</p>`) }} />
-                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Finally, we must critically consider the deeply comforting promise found directly in Philippians 1:6. The eternal God actively desires to beautifully complete His magnificent work within you right now. This bible quote of the day reliably serves as an impenetrable and uniquely powerful spiritual anchor. Please firmly hold tightly to the truth that the Holy Spirit provides abounding inner security forever. Furthermore, the Lord actively works behind the scenes to continually bless your exceedingly faithful personal efforts. You can happily end your busy day with a deeply satisfied and entirely hopeful heart.</p>`) }} />
+                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>The incredibly potent bible verse of today morning provides extremely clear guidance concerning our daily sadness. This daily morning verse firmly encourages us to reject crippling despair absolutely without any personal reservations. When we deeply read Isaiah 26:3, we finally discover the powerful secret to becoming truly peaceful. We must quickly recognize the Lord as our brilliant anchor and our absolute ultimate joy provider. Therefore, we can confidently navigate deeply confusing situations with His divine and perfect calm completely. God simply promises to completely orchestrate the inner gladness when we totally submit to Him.</p>`) }} />
+                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Transitioning into the busy afternoon, we must urgently remember the powerful and encouraging words of Nehemiah 8:10. The Lord strongly commands us to boldly let His pure joy become our exceptionally strong fortress today. This specific perspective definitely helps us to stay incredibly peaceful during extremely stressful modern times. Your intimate relationship with the loving Jesus guarantees your absolute spiritual gladness against every enormous obstacle. Consequently, you can permanently banish deep gloom and heavy discouragement from your mind completely right now. The Almighty God walks faithfully beside you wherever you hopefully go in this beautiful world.</p>`) }} />
+                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Finally, we must critically consider the deeply comforting promise found directly in Romans 15:13 itself. The eternal spirit actively desires to beautifully complete His magnificent work of hope within you right now. This bible quote of the day reliably serves as an impenetrable and uniquely powerful spiritual booster always. Please firmly hold tightly to the truth that the Holy Ghost provides abounding inner security forever. Furthermore, the Lord actively works behind the scenes to continually bless your exceedingly faithful personal prayers. You can happily end your busy day with a deeply satisfied and entirely hopeful joyful heart.</p>`) }} />
                   </div>
                 </div>
                 
@@ -448,7 +448,7 @@ export default async function VerseOfTheDayPage({
                       Key Takeaway
                     </h3>
                     <div className="text-muted-foreground leading-relaxed"
-                      dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Your fragile soul finds absolutely true safety when you choose to decisively surrender your future fully today. This profound bible verse of today morning wonderfully reminds us that He provides inexhaustible divine favor forever. When you boldly realize that the Almighty God securely designs your destiny, your frantic mind finally rests. Consequently, you can confidently move forward with bold assurance and a deeply hopeful spirit now. You will routinely experience profound relational joy and enduring personal success every single day.`) }}
+                      dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Your fragile soul finds absolutely true happiness when you choose to decisively surrender your doubts fully today. This profound bible verse of today morning wonderfully reminds us that He provides inexhaustible divine joy forever. When you boldly realize that the Almighty God securely grants your peace, your frantic anxiety finally rests. Consequently, you can confidently move forward with bold assurance and a deeply hopeful spirit right now. You will routinely experience profound relational joy and enduring personal gladness every single beautiful day.`) }}
                     />
                   </div>
                   
@@ -458,7 +458,7 @@ export default async function VerseOfTheDayPage({
                       Practical Application
                     </h3>
                     <div className="text-muted-foreground leading-relaxed"
-                      dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Please honestly identify one specific problem regarding your future that terribly makes you feel very anxious right now. Then, loudly read ${displayVerse.ref} out loud and consciously decide to aggressively trust His blueprint completely today. You should intentionally visualize yourself handing over this unknown situation to the powerful Lord directly. Furthermore, physically write down this baily verse on a small paper note card right now. Keep this particular card highly visible to frequently remind yourself of His constant and unyielding providence.`) }}
+                      dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Please honestly identify one specific problem regarding your mood that terribly makes you feel very sad right now. Then, loudly read ${displayVerse.ref} out loud and consciously decide to aggressively trust His joy completely today. You should intentionally visualize yourself handing over this unknown sadness to the powerful Lord directly everywhere. Furthermore, physically write down this baily verse on a small paper note card immediately right now. Keep this particular card highly visible to frequently remind yourself of His constant and unyielding peace.`) }}
                     />
                   </div>
                 </div>
@@ -469,7 +469,7 @@ export default async function VerseOfTheDayPage({
                     Community Connection
                   </h3>
                   <div className="text-muted-foreground leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`We are intentionally meant to share God's incredible hope with the tremendously cynical people entirely around us. Please bravely share this random verse of the day with a deeply pessimistic friend locally today. Constantly encouraging another doubting person with today's bible text will instantly uplift your own discouraged spirit. Additionally, frequently discussing related scripture together undoubtedly builds a much stronger and collectively visionary local community overall. Together, we can confidently reflect the incredibly optimistic and unconditionally generous character of Jesus Christ.`) }}
+                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`We are intentionally meant to share God's incredible hope with the tremendously depressed people entirely around us. Please bravely share this random verse of the day with a deeply hurting friend locally today. Constantly encouraging another doubting person with today's bible text will instantly uplift your own discouraged spirit beautifully. Additionally, frequently discussing related scripture together undoubtedly builds a much stronger and collectively joyful local community overall. Together, we can confidently reflect the incredibly optimistic and unconditionally glad character of Jesus Christ entirely.`) }}
                   />
                 </div>
 
@@ -494,53 +494,53 @@ export default async function VerseOfTheDayPage({
                   <TableBody>
                     {[
                       {
-                        cat: "Renewed Minds",
+                        cat: "Perfect Peace",
                         catSub: "",
-                        ref: "Romans 12:2",
-                        text: "And be not conformed to this world: but be ye transformed by the renewing of your mind.",
-                        thought: "Allow God's truth to completely change how you think and act today."
+                        ref: "Isaiah 26:3",
+                        text: "Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.",
+                        thought: "God instantly gives absolutely perfect peace whenever you firmly fix your entire mind upon Him."
                       },
                       {
-                        cat: "Divine Healing",
+                        cat: "Divine Comfort",
                         catSub: "",
-                        ref: "Jeremiah 17:14",
-                        text: "Heal me, O LORD, and I shall be healed; save me, and I shall be saved: for thou art my praise.",
-                        thought: "The Lord is the ultimate source of physical and spiritual restoration."
+                        ref: "Matthew 5:4",
+                        text: "Blessed are they that mourn: for they shall be comforted.",
+                        thought: "The Lord deeply comforts every single broken heart wonderfully during all incredibly difficult earthly trials."
                       },
                       {
-                        cat: "Joyful Hearts",
+                        cat: "Inner Gladness",
                         catSub: "",
-                        ref: "Psalm 28:7",
-                        text: "The LORD is my strength and my shield; my heart trusted in him, and I am helped.",
-                        thought: "Your heart will rejoice when you trust in His unfailing protection absolutely."
+                        ref: "Psalm 16:11",
+                        text: "Thou wilt shew me the path of life: in thy presence is fulness of joy.",
+                        thought: "True joy completely fills your gentle human soul whenever you quietly enter His holy presence absolutely."
                       },
                       {
-                        cat: "Enduring Love",
+                        cat: "Patient Hope",
                         catSub: "",
-                        ref: "1 Corinthians 13:7",
-                        text: "Love beareth all things, believeth all things, hopeth all things, endureth all things.",
-                        thought: "True biblical love perseveres through every single trial and difficult challenge."
+                        ref: "Romans 5:5",
+                        text: "And hope maketh not ashamed; because the love of God is shed abroad in our hearts.",
+                        thought: "Genuine hope continually anchors your very fragile spirit powerfully through the vast love of God."
                       },
                       {
-                        cat: "Unchanging Truth",
+                        cat: "Quiet Stillness",
                         catSub: "",
-                        ref: "Hebrews 13:8",
-                        text: "Jesus Christ the same yesterday, and to day, and for ever.",
-                        thought: "You can rely completely on Jesus because His character never changes ever."
+                        ref: "Psalm 46:10",
+                        text: "Be still, and know that I am God: I will be exalted among the heathen.",
+                        thought: "You can totally relax confidently because the Almighty God effectively controls every single tiny outcome always."
                       },
                       {
-                        cat: "Courageous Living",
+                        cat: "Gentle Rest",
                         catSub: "",
-                        ref: "Psalm 27:1",
-                        text: "The LORD is my light and my salvation; whom shall I fear?",
-                        thought: "Fear loses its power when you recognize God as your bright light."
+                        ref: "Matthew 11:28",
+                        text: "Come unto me, all ye that labour and are heavy laden, and I will give you rest.",
+                        thought: "Jesus freely offers profound rest perfectly when you simply bring your massive burdens toward Him faithfully."
                       },
                       {
-                        cat: "Abundant Giving",
+                        cat: "Holy Strength",
                         catSub: "",
-                        ref: "Luke 6:38",
-                        text: "Give, and it shall be given unto you; good measure, pressed down, and shaken together.",
-                        thought: "A generous heart always receives abundant blessings from the Heavenly Father."
+                        ref: "Nehemiah 8:10",
+                        text: "For the joy of the LORD is your strength.",
+                        thought: "A joyful heart mysteriously creates immense physical strength directly from the incredibly gracious Heavenly Father."
                       }
                     ].map((row, i) => (
                       <TableRow key={i} className="hover:bg-transparent">
@@ -570,10 +570,10 @@ export default async function VerseOfTheDayPage({
                 Final Thought on Today's Bible Text
               </h2>
               <div className="max-w-2xl mx-auto space-y-6 text-muted-foreground leading-relaxed px-6">
-                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Today, the bible verse of today morning gives us a massive reason to profoundly rejoice. We reliably serve an architectural God who perfectly understands our deepest future needs. He lovingly holds our beautiful destiny and skillfully controls every single outcome forever. Therefore, we are never truly lost when facing highly confusing challenges in this modern life.</p>`) }} />
-                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>You can certainly trust Him with your biggest dreams and your absolutely smallest goals today. Please intentionally let the deep truth of our daily scripture permanently transform your perspective. Furthermore, God actively works behind the scenes for your absolute and ultimate prosperity. He will constantly direct your path and never ever let you wander completely astray.</p>`) }} />
+                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Today, the bible verse of today morning gives us a massive reason to profoundly smile warmly. We reliably serve a deeply loving God who perfectly understands our desperate inner emotional needs. Jesus beautifully provides endless hope and skillfully delivers overwhelming joy consistently forever. Therefore, we are never completely abandoned when facing highly depressing challenges in this difficult modern life.</p>`) }} />
+                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>You can certainly trust Him with your biggest worries and your absolutely smallest anxieties today. Please intentionally allow the deep truth of our daily scripture entirely transform your gloomy perspective permanently. Furthermore, God actively works directly inside your spirit specifically for your absolute true happiness. He will constantly supply magnificent peace and certainly never ever leave you totally hopeless.</p>`) }} />
                 <div className="text-xl font-serif italic text-primary pt-4"
-                  dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;When you boldly choose to surrender your future completely, you successfully invite His divine peace into your trusting mind.&rdquo;`) }}
+                  dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;When you boldly choose to embrace His promises completely, you successfully invite His divine joy into your sad heart.&rdquo;`) }}
                 />
               </div>
             </section>
