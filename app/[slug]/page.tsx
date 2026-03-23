@@ -18,6 +18,8 @@ import { getReadingTime, cn } from '@/lib/utils';
 import { rewriteVerseLinks } from '@/lib/link-utils';
 import { PostBodyCleanup } from '@/components/post-body-cleanup';
 
+export const dynamicParams = false;
+
 interface BlogPostPageProps {
    params: Promise<{ slug: string }>;
 }

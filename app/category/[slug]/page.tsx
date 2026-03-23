@@ -5,14 +5,16 @@ import { Breadcrumb } from '@/components/breadcrumb';
 import { linkifyBibleVerses } from '@/lib/bible-links';
 import { PostGrid } from '@/components/post-grid';
 import { rewriteVerseLinks } from '@/lib/link-utils';
+import categorySlugsData from '@/data/category-slugs.json';
+
+export const dynamicParams = false;
 
 interface CategoryPageProps {
     params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-    const categories = await getCategories();
-    return categories.map((category) => ({
+    return categorySlugsData.map((category) => ({
         slug: category.slug,
     }));
 }

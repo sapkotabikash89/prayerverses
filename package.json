@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "fetch-slugs": "node scripts/fetch-post-slugs.js"
+    "fetch-slugs": "node scripts/fetch-post-slugs.js",
+    "fetch-categories": "node scripts/fetch-category-slugs.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
