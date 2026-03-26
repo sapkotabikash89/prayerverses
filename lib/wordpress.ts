@@ -1,5 +1,6 @@
 import { GraphQLClient, gql } from 'graphql-request';
 import { cache } from 'react';
+import categoriesBackup from '@/data/categories-backup.json';
 
 const API_URL = 'https://blog.prayerverses.com/graphql';
 
@@ -7,17 +8,25 @@ const client = new GraphQLClient(API_URL);
 
 // Global cache for categories to survive across multiple requests in the same build process/worker
 let globalCategoriesCache: Category[] | null = null;
+let categoriesPromise: Promise<Category[]> | null = null;
+
+// Circuit breaker: stop trying the API if it's consistently failing to avoid timing out the entire build
+let isWpApiDown = false;
 
 /**
  * Wrapper for GraphQL requests with retry logic and shortened timeout for build safety
  */
 async function requestWithRetry<T>(query: string, variables?: any, retries = 3): Promise<T | null> {
+  if (isWpApiDown) {
+      return null;
+  }
+
   let lastError: any;
   for (let i = 0; i < retries; i++) {
     try {
-      // Use a shorter timeout (10 seconds) during build to ensure retries don't hit the 60s total limit
+      // Use a shorter timeout (8 seconds) to ensure total time with retries stays well under 60s
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000);
+      const timeoutId = setTimeout(() => controller.abort(), 8000);
 
       const result = await client.request<T>(query, variables, {
         signal: controller.signal as any
@@ -36,7 +45,6 @@ async function requestWithRetry<T>(query: string, variables?: any, retries = 3):
         continue;
       }
       
-      // For other errors, we still want to log it but not fail the whole build
       console.error(`Fetch attempt ${i + 1} failed with error:`, err.message);
       if (i < retries - 1) {
           await new Promise(resolve => setTimeout(resolve, 2000));
@@ -45,7 +53,8 @@ async function requestWithRetry<T>(query: string, variables?: any, retries = 3):
     }
   }
   
-  console.error('All fetch attempts failed. Returning null to allow build to proceed.');
+  console.error('All fetch attempts failed. Activating circuit breaker (isWpApiDown = true).');
+  isWpApiDown = true; // Mark as down for the remainder of this worker's life
   return null;
 }
 
@@ -138,8 +147,11 @@ export interface PostSlugsResponse {
 }
 
 export const getCategories = cache(async (): Promise<Category[]> => {
-  // Return from global cache if available (shared across requests in same worker)
+  // Return from global cache if already fetched in this worker
   if (globalCategoriesCache) return globalCategoriesCache;
+  
+  // If a fetch is already in progress, wait for it
+  if (categoriesPromise) return categoriesPromise;
 
   const query = gql`
     query GetCategories {
@@ -153,24 +165,36 @@ export const getCategories = cache(async (): Promise<Category[]> => {
       }
     }
   `;
-  const data = await requestWithRetry<{ categories: { nodes: Category[] } }>(query);
-  if (!data) return [];
-  const categories = data.categories.nodes.filter(cat =>
-    cat.slug !== 'uncategorized' && cat.slug !== 'bible-verses' && cat.slug !== 'blog'
-  );
 
-  // Add Blog category
-  categories.unshift({
-    id: 'blog-category',
-    name: 'Blog',
-    slug: 'blog',
-    description: 'Explore all our spiritual blog posts, prayers, and biblical insights in one place.'
-  });
+  categoriesPromise = (async () => {
+    try {
+      const data = await requestWithRetry<{ categories: { nodes: Category[] } }>(query);
+      if (!data) {
+          console.warn('Using categories backup due to API failure.');
+          return categoriesBackup as Category[];
+      }
+      
+      const categories = data.categories.nodes.filter(cat =>
+        cat.slug !== 'uncategorized' && cat.slug !== 'bible-verses' && cat.slug !== 'blog'
+      );
 
-  // Store in global cache
-  globalCategoriesCache = categories;
+      // Add Blog category
+      categories.unshift({
+        id: 'blog-category',
+        name: 'Blog',
+        slug: 'blog',
+        description: 'Explore all our spiritual blog posts, prayers, and biblical insights in one place.'
+      });
 
-  return categories;
+      globalCategoriesCache = categories;
+      return categories;
+    } catch (err) {
+      console.error('Error in getCategories, using backup:', err);
+      return categoriesBackup as Category[];
+    }
+  })();
+
+  return categoriesPromise;
 });
 
 export const getCategoryBySlug = cache(async (slug: string): Promise<Category | null> => {

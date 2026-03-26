@@ -1,0 +1,32 @@
+[
+  {
+    "id": "blog-category",
+    "name": "Blog",
+    "slug": "blog",
+    "description": "Explore all our spiritual blog posts, prayers, and biblical insights in one place."
+  },
+  {
+    "id": "prayers-cat",
+    "name": "Prayers",
+    "slug": "prayers",
+    "description": "Powerful and inspiring prayers for every situation in life."
+  },
+  {
+    "id": "verses-by-topic-cat",
+    "name": "Verses by Topic",
+    "slug": "verses-by-topic",
+    "description": "Find Bible verses categorized by life topics and spiritual needs."
+  },
+  {
+    "id": "biblical-insights-cat",
+    "name": "Biblical Insights",
+    "slug": "biblical-insights",
+    "description": "Deep dives into scripture and biblical teachings."
+  },
+  {
+    "id": "spiritual-growth-cat",
+    "name": "Spiritual Growth",
+    "slug": "spiritual-growth",
+    "description": "Resources and articles to help you grow in your faith journey."
+  }
+]
