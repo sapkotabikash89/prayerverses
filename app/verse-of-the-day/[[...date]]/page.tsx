@@ -424,7 +424,6 @@ export default async function VerseOfTheDayPage({
              </h2>
              <div className="space-y-6">
                <div className="p-6 rounded-none bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
-                <div className="p-6 rounded-none bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
                   <h3 className="mb-4 flex items-center gap-2">
                     <span className="text-2xl">📖</span>
                     Extended Scripture Reading on Finding Rest
@@ -472,8 +471,7 @@ export default async function VerseOfTheDayPage({
                 </div>
 
                </div>
-             </div>
-           </section>
+            </section>
 
 
             {/* Random Bible Scripture Grid */}
