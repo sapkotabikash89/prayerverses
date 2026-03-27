@@ -364,20 +364,20 @@ export default async function VerseOfTheDayPage({
               <div className="prose prose-stone max-w-none dark:prose-invert text-muted-foreground space-y-6">
                 {[
                   {
-                    title: "Endless Love",
-                    content: `The steadfast love of our Creator remarkably never ceases during our most exhausting daily struggles. This verse of today provides a beautiful reminder that God’s affection for us remains strictly permanent. Therefore, you do not need to perform perfectly to maintain His favor or His divine presence. Our daily morning verse clearly demonstrates that His kindness naturally flows toward every single seeking soul. Furthermore, the Lord actively protects you from being consumed by any overwhelming and heavy worldly pressure.`
+                    title: "Divine Quietness",
+                    content: `The bible verse of today morning from Psalm 46:10 encourages you to find your true center. Life often feels like a loud storm that never seems to stop or slow down. However, the Lord invites you into a holy silence where your heart can finally rest securely. Furthermore, this baily verse teaches us that quietness is not just absence of noise. It is a presence of powerful peace that only the Almighty God provides for us.`
                   },
                   {
-                    title: "Fresh Mercies",
-                    content: `God personally prepares a new supply of incredible mercy for your spirit every single sunrise. Consequently, you can confidently face today without the heavy burden of yesterday’s mistakes or personal failures. The bible verse of today morning encourages us to embrace this refreshing spiritual restart with real joy. This baily verse guarantees that His compassions never fail or grow old under any difficult circumstances. Trusting in His fresh grace allows your heart to remain light and truly hopeful throughout the afternoon.`
+                    title: "Absolute Authority",
+                    content: `Recognizing that the Lord is God transforms how you view every single challenge you face today. This today's bible text reminds us that we are not actually in control of everything. Consequently, we can stop the exhausting struggle to fix every problem in our own limited power. Therefore, you should lean into His infinite wisdom and trust His sovereign authority right now. Your bible verse of the day brings clarity to your confused and weary mind.`
                   },
                   {
-                    title: "Unshakable Faithfulness",
-                    content: `The faithfulness of the Almighty God remains as steady as the most solid rock beneath your feet. Today's bible quote boldly declares that His reliability is truly great and infinitely stable beyond measure. Therefore, you can anchor your entire future securely upon His proven track record of divine goodness. The bible verse of the day serves as an impenetrable shield against doubt and anxious worry. Moreover, God constantly provides exactly what you need to thrive in every situation during this entire day.`
+                    title: "Internal Stillness",
+                    content: `True stillness begins deep within your soul when you choose to trust His perfect promises completely. This bible verse of today morning provides a sanctuary for your racing and anxious thoughts. Consequently, you will find that His peace guards your heart against every single worry today. Moreover, staying quiet allows you to hear the gentle guidance of the Holy Spirit clearly. You will experience a massive shift in your perspective through this simple and daily scripture.`
                   },
                   {
-                    title: "Daily Renewal",
-                    content: `The Lord successfully renews your inner strength through the powerful truth of His living and holy word. This baily verse invites you into a remarkably close walk with your loving and faithful Savior now. Consequently, you will experience His remarkable guidance in every decision you make during this busy morning. Today's bible text emphasizes the importance of recognizing His daily presence in your life specifically. Furthermore, staying connected to Him brings a deep and lasting peace into your previously troubled mind.`
+                    title: "Global Exaltation",
+                    content: `The Almighty God promises to be exalted among all the nations and throughout the entire world. This random verse of the day assures us that His glory will eventually shine everywhere. Therefore, you do not need to fret about the chaos you see in the news. Instead, you can focus on the bible quotes of the day that strengthen your faith. Ultimately, His victory is fully guaranteed and your future remains incredibly secure in His hands.`
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="space-y-3">
@@ -393,25 +393,25 @@ export default async function VerseOfTheDayPage({
             {/* Prayers of the Day Section */}
             <section>
               <h2>
-                Daily Prayers for New Mercies
+                Daily Prayers for Divine Stillness
               </h2>
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="p-8 rounded-none bg-primary/5 border border-primary/10 shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-primary">
                     <span className="text-2xl">🙏</span>
-                    <h3>Morning Prayer for New Mercies</h3>
+                    <h3>Morning Prayer for Spiritual Silence</h3>
                   </div>
                   <div className="text-muted-foreground leading-relaxed italic"
-                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Heavenly Father, I praise You for Your incredible mercies that are new every single morning. Please fill my heart with Your deep love as I embark on this fresh new day. This daily morning verse reminds me that Your compassions never fail or grow old for me. Therefore, I choose to trust Your great faithfulness rather than my own limited human strength. Please guide my steps and protect my family from every anxious thought today. Amen.&rdquo;`) }}
+                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Heavenly Father, I come before You with a heart that seeks Your perfect and divine quietness. Please help me to be still and recognize Your great power during this busy morning. This beautiful verse of today reminds me that You are in complete control of my life. Therefore, I choose to release my anxiety and trust Your loving guidance for every decision. Please fill my soul with Your peace as I walk through this day. Amen.&rdquo;`) }}
                   />
                 </div>
                 <div className="p-8 rounded-none bg-secondary/30 border border-border shadow-sm">
                   <div className="flex items-center gap-3 mb-4 text-card-foreground">
                     <span className="text-2xl">🙏</span>
-                    <h3>Evening Prayer for Constant Faithfulness</h3>
+                    <h3>Evening Prayer for Divine Recognition</h3>
                   </div>
                   <div className="text-muted-foreground leading-relaxed italic"
-                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Lord Jesus, I thank You for Your unshakable faithfulness which sustained me throughout this entire busy day. I reflect deeply on today's bible quote from ${displayVerse.ref} during this quiet and peaceful evening. Please forgive me for any moments when I unfortunately doubted Your constant care or Your perfect plan. However, Your kindness remains remarkably steady as I prepare for a restful sleep tonight. Consequently, I surrender every worry into Your loving and powerful arms right now. Amen.&rdquo;`) }}
+                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Lord Jesus, I thank You for being my steady rock throughout this entire and active day. I reflect on today's bible quote and acknowledge that You are the only true God. Please forgive me for any moments when I tried to carry heavy burdens alone tonight. However, I now rest in the knowledge that You are exalted above every single trial. Consequently, I surrender my worries and prepare for a peaceful and restful sleep. Amen.&rdquo;`) }}
                   />
                 </div>
               </div>
@@ -427,15 +427,15 @@ export default async function VerseOfTheDayPage({
                 <div className="p-6 rounded-none bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
                   <h3 className="mb-4 flex items-center gap-2">
                     <span className="text-2xl">📖</span>
-                    Extended Scripture Reading on Divine Reliability
+                    Extended Scripture Reading on Finding Rest
                   </h3>
                   <div className="text-muted-foreground leading-relaxed mb-4"
-                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Today's verse from ${displayVerse.ref} uniquely connects with many other Bible passages about God's reliability. These scriptures help you understand the full picture of divine faithfulness for your life.`) }}
+                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Today's bible text from ${displayVerse.ref} connects deeply with many other scriptures about finding divine rest. These powerful passages help you understand the full depth of being still before your Creator.`) }}
                   />
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>The incredibly potent bible verse of today morning provides extremely clear guidance for your soul. This daily morning verse firmly encourages us to trust God's mercy absolutely without any personal reservations. When we read Psalm 100:5, we discover a powerful secret about His enduring and eternal character. We must recognize that the Lord is good and His mercy is everlasting for everyone. Therefore, we can navigate confusing situations with His perfect and divine calm during this morning. God simply promises to orchestrate our safety when we totally submit to His loving will.</p>`) }} />
-                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Transitioning into the busy afternoon, we must urgently remember the words of 2 Timothy 2:13. The Lord strongly remains faithful even when we unfortunately feel weak or deeply faithless ourselves. This specific perspective definitely helps us to stay incredibly peaceful during stressful modern times. Your relationship with Jesus guarantees your spiritual gladness against every single obstacle you face today. Consequently, you can permanently banish deep gloom from your mind completely right now. The Almighty God walks faithfully beside you wherever you hopefully go in this world.</p>`) }} />
-                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Finally, we should critically consider the comforting promise found in Lamentations 3:24. Your soul can boldly say that the Lord is my portion and my hope. This bible quote of the day serves as a fortress for your currently weary spirit. Please hold tightly to the truth that the Lord provides abounding inner security forever. Furthermore, God works behind the scenes to continually bless your faithful and sincere personal prayers. You can happily end your busy day with a satisfied and entirely hopeful heart.</p>`) }} />
+                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>The bible verse of today morning from Psalm 46:10 provides extremely clear guidance for your soul. This daily morning verse firmly encourages us to trust God's mercy absolutely without any personal reservations. When we read Psalm 62:5, we find a soul that waits only upon God. We must realize that our expectation comes solely from His incredible and constant mercy. Therefore, you can remain steady even when life feels remarkably unstable and very confusing today. God simply promises to orchestrate our safety when we totally submit to His loving will.</p>`) }} />
+                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Transitioning into the busy afternoon, we should urgently remember the words found in Habakkuk 2:20. The Lord strongly remains in His holy temple so let all the earth keep silence today. This specific perspective definitely helps us to maintain a humble heart while we face difficult challenges. Your relationship with Jesus guarantees your spiritual gladness against every single obstacle you face today. Consequently, you can permanently remove all fear from your mind through this daily morning verse. The Almighty God walks faithfully beside you wherever you hopefully go in this world.</p>`) }} />
+                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Finally, we should critically consider the comforting promise found in Exodus 14:14. The Lord shall fight for you and you shall hold your peace forever. This bible quote of the day serves as a fortress for your currently tired heart. Please hold tightly to the truth that the Lord provides abounding inner security forever. Furthermore, God works behind the scenes to continually bless your faithful and sincere personal prayers. You can happily end your busy day with a satisfied and entirely hopeful heart.</p>`) }} />
                   </div>
                 </div>
                 
@@ -492,53 +492,53 @@ export default async function VerseOfTheDayPage({
                   <TableBody>
                     {[
                       {
-                        cat: "Steady Mercy",
+                        cat: "Storm Calm",
                         catSub: "",
-                        ref: "Psalm 36:5",
-                        text: "Thy mercy, O LORD, is in the heavens; and thy faithfulness reacheth unto the clouds.",
-                        thought: "God's love is higher and bigger than any problem you face today."
+                        ref: "Psalm 107:29",
+                        text: "He maketh the storm a calm, so that the waves thereof are still.",
+                        thought: "The Lord has the power to silence the storms in your life today."
                       },
                       {
-                        cat: "Faithful Keeper",
+                        cat: "Peace Stillness",
                         catSub: "",
-                        ref: "2 Thessalonians 3:3",
-                        text: "But the Lord is faithful, who shall stablish you, and keep you from evil.",
-                        thought: "The Lord promises to strengthen and protect your soul from every spiritual attack."
+                        ref: "Mark 4:39",
+                        text: "And he arose, and rebuked the wind, and said unto the sea, Peace, be still.",
+                        thought: "Jesus speaks peace to your heart even when the waves of worry rise high."
                       },
                       {
-                        cat: "Endless Praise",
+                        cat: "Quiet Voice",
                         catSub: "",
-                        ref: "Psalm 89:1",
-                        text: "I will sing of the mercies of the LORD for ever.",
-                        thought: "Praising God's mercy brings a deep joy that transforms your entire perspective."
+                        ref: "1 Kings 19:12",
+                        text: "And after the earthquake a fire; but the LORD was not in the fire: and after the fire a still small voice.",
+                        thought: "God often speaks to your soul in a gentle and very quiet whisper today."
                       },
                       {
-                        cat: "Gracious Compassion",
+                        cat: "Still Waters",
                         catSub: "",
-                        ref: "Psalm 103:8",
-                        text: "The LORD is merciful and gracious, slow to anger, and plenteous in mercy.",
-                        thought: "God treats you with incredible kindness and patience every single day."
+                        ref: "Psalm 23:2",
+                        text: "He maketh me to lie down in green pastures: he leadeth me beside the still waters.",
+                        thought: "The Good Shepherd leads you to a place of deep rest and quietness."
                       },
                       {
-                        cat: "Eternal Truth",
+                        cat: "Quiet Hope",
                         catSub: "",
-                        ref: "Psalm 119:90",
-                        text: "Thy faithfulness is unto all generations: thou hast established the earth, and it abideth.",
-                        thought: "God's reliability lasts forever and covers your entire family background faithfully."
+                        ref: "Lamentations 3:26",
+                        text: "It is good that a man should both hope and quietly wait for the salvation of the LORD.",
+                        thought: "Waiting quietly for the Lord brings a strength that you cannot find anywhere else."
                       },
                       {
-                        cat: "Joyful Kindess",
+                        cat: "Love Rest",
                         catSub: "",
-                        ref: "Micah 7:18",
-                        text: "He retaineth not his anger for ever, because he delighteth in mercy.",
-                        thought: "The Lord actually finds great joy in showing you His wonderful kindness today."
+                        ref: "Zephaniah 3:17",
+                        text: "The LORD thy God in the midst of thee is mighty... he will rest in his love.",
+                        thought: "You can rest securely in the incredible and unconditional love of your Heavenly Father."
                       },
                       {
-                        cat: "Divine Integrity",
+                        cat: "Quiet Soul",
                         catSub: "",
-                        ref: "Numbers 23:19",
-                        text: "God is not a man, that he should lie; neither the son of man, that he should repent.",
-                        thought: "You can trust every single promise found in today's bible text securely."
+                        ref: "Psalm 131:2",
+                        text: "Surely I have behaved and quieted myself, as a child that is weaned of his mother.",
+                        thought: "Living with a quiet heart allows you to trust God like a peaceful child."
                       }
                     ].map((row, i) => (
                       <TableRow key={i} className="hover:bg-transparent">
@@ -568,10 +568,10 @@ export default async function VerseOfTheDayPage({
                 Final Thought on Today's Bible Text
               </h2>
               <div className="max-w-2xl mx-auto space-y-6 text-muted-foreground leading-relaxed px-6">
-                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Today, the bible verse of today morning gives us a massive reason to profoundly feel hopeful. We represent a faithful God who perfectly understands our deepest emotional needs every single day. Jesus provide dynamic hope and delivers overwhelming mercy consistently today. Furthermore, we are never abandoned when facing difficult challenges in this modern life. You can trust Him with your biggest worries and your smallest anxieties.</p>`) }} />
-                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Please allow the truth of our daily scripture entirely transform your gloomy perspective permanently. God actively works directly inside your spirit specifically for your absolute true happiness. He will constantly supply magnificent peace and certainly never ever leave you alone. Experience His mercies and recognize His faithfulness every single day securely. Your future remains bright and secure within His powerful and gracious hands.</p>`) }} />
+                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Today, the bible verse of today morning gives us a massive reason to profoundly feel peaceful. We represent a faithful God who perfectly understands our deepest emotional needs every single day. Jesus provides dynamic hope and delivers overwhelming peace consistently today. Furthermore, we are never abandoned when facing difficult challenges in this modern life. You can trust Him with your biggest worries and your smallest anxieties.</p>`) }} />
+                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Please allow the truth of our daily scripture entirely transform your gloomy perspective permanently. God actively works directly inside your spirit specifically for your absolute true happiness. He will constantly supply magnificent stillness and certainly never ever leave you alone. Experience His power and recognize His authority every single day securely. Your future remains bright and secure within His powerful and gracious hands.</p>`) }} />
                 <div className="text-xl font-serif italic text-primary pt-4"
-                  dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;When you choose to embrace His faithfulness, you invite His peace into your heart.&rdquo;`) }}
+                  dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;When you choose to be still, you invite His power into your heart.&rdquo;`) }}
                 />
               </div>
             </section>
