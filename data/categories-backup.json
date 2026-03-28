@@ -28,5 +28,11 @@
     "name": "Spiritual Growth",
     "slug": "spiritual-growth",
     "description": "Resources and articles to help you grow in your faith journey."
+  },
+  {
+    "id": "spiritual-meaning-cat",
+    "name": "Spiritual Meaning",
+    "slug": "spiritual-meaning",
+    "description": "Discover the deeper spiritual significance and biblical meaning of symbols, events, and scriptural concepts."
   }
 ]
