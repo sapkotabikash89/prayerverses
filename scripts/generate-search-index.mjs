@@ -106,6 +106,54 @@ async function generateIndex() {
         }
     } catch (e) { console.error("Error loading topics:", e.message); }
 
+    // 4. Blog Posts
+    try {
+        const { GraphQLClient, gql } = await import('graphql-request');
+        const API_URL = 'https://blog.prayerverses.com/graphql';
+        const client = new GraphQLClient(API_URL);
+
+        const query = gql`
+            query GetAllPosts($after: String) {
+                posts(first: 100, after: $after) {
+                    pageInfo {
+                        hasNextPage
+                        endCursor
+                    }
+                    nodes {
+                        title
+                        slug
+                        excerpt
+                    }
+                }
+            }
+        `;
+
+        let hasNextPage = true;
+        let after = null;
+        let postCount = 0;
+
+        while (hasNextPage) {
+            const response = await client.request(query, { after });
+            const posts = response.posts.nodes;
+            
+            for (const post of posts) {
+                results.push({
+                    type: "post",
+                    title: post.title,
+                    text: post.excerpt ? post.excerpt.replace(/<[^>]*>?/gm, '') : "",
+                    href: `/${post.slug}/`,
+                });
+                postCount++;
+            }
+
+            hasNextPage = response.posts.pageInfo.hasNextPage;
+            after = response.posts.pageInfo.endCursor;
+        }
+        console.log(`Indexed ${postCount} blog posts.`);
+    } catch (e) {
+        console.error("Error loading blog posts for search index:", e.message);
+    }
+
     const outputPath = path.join(rootDir, 'public', 'search-index.json');
     fs.writeFileSync(outputPath, JSON.stringify(results));
     console.log(`Search index generated at ${outputPath} (${results.length} items)`);
