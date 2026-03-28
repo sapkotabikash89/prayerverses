@@ -1,4 +1,5 @@
 import { GraphQLClient, gql } from 'graphql-request';
+import { cache } from 'react';
 import categoriesBackup from '@/data/categories-backup.json';
 
 const API_URL = 'https://blog.prayerverses.com/graphql';
@@ -145,7 +146,7 @@ export interface PostSlugsResponse {
   };
 }
 
-export const getCategories = async (): Promise<Category[]> => {
+export const getCategories = cache(async (): Promise<Category[]> => {
   // Return from global cache if already fetched in this worker
   if (globalCategoriesCache) return globalCategoriesCache;
   
@@ -194,9 +195,9 @@ export const getCategories = async (): Promise<Category[]> => {
   })();
 
   return categoriesPromise;
-};
+});
 
-export const getCategoryBySlug = async (slug: string): Promise<Category | null> => {
+export const getCategoryBySlug = cache(async (slug: string): Promise<Category | null> => {
   if (slug === 'blog') {
     return {
       id: 'blog-category',
@@ -242,9 +243,9 @@ export const getCategoryBySlug = async (slug: string): Promise<Category | null> 
   `;
   const data = await requestWithRetry<{ category: Category | null }>(query, { id: slug });
   return data?.category ?? null;
-};
+});
 
-export const getPostsByCategory = async (categorySlug: string, first = 21, after?: string): Promise<PostConnection> => {
+export const getPostsByCategory = cache(async (categorySlug: string, first = 21, after?: string): Promise<PostConnection> => {
   if (categorySlug === 'blog') {
     return getNewestPosts(first, after);
   }
@@ -289,7 +290,7 @@ export const getPostsByCategory = async (categorySlug: string, first = 21, after
     after
   });
   return data?.posts ?? { nodes: [], pageInfo: { hasNextPage: false, endCursor: '' } };
-};
+});
 
 async function getNeighborPost(date: string, direction: 'previous' | 'next'): Promise<{ title: string; slug: string } | undefined> {
   const query = gql`
@@ -357,7 +358,7 @@ async function getNeighborPost(date: string, direction: 'previous' | 'next'): Pr
   }
 }
 
-export const getPostBySlug = async (slug: string): Promise<Post | null> => {
+export const getPostBySlug = cache(async (slug: string): Promise<Post | null> => {
   const query = gql`
     query GetPostBySlug($id: ID!) {
       post(id: $id, idType: SLUG) {
@@ -430,8 +431,8 @@ export const getPostBySlug = async (slug: string): Promise<Post | null> => {
     console.error('Error fetching post by slug:', err);
     return null;
   }
-};
-export const getNewestPosts = async (first = 21, after?: string): Promise<PostConnection> => {
+});
+export const getNewestPosts = cache(async (first = 21, after?: string): Promise<PostConnection> => {
   const query = gql`
     query GetNewestPosts($first: Int!, $after: String) {
       posts(first: $first, after: $after, where: { orderby: { field: DATE, order: DESC } }) {
@@ -463,9 +464,9 @@ export const getNewestPosts = async (first = 21, after?: string): Promise<PostCo
   `;
   const data = await requestWithRetry<{ posts: PostConnection }>(query, { first, after });
   return data?.posts ?? { nodes: [], pageInfo: { hasNextPage: false, endCursor: '' } };
-};
+});
 
-export const getRelatedPosts = async (categorySlug: string, currentPostId: string, limit = 6): Promise<Post[]> => {
+export const getRelatedPosts = cache(async (categorySlug: string, currentPostId: string, limit = 6): Promise<Post[]> => {
   const query = gql`
     query GetRelatedPosts($categoryName: String!, $first: Int!) {
       posts(where: { categoryName: $categoryName }, first: $first) {
@@ -507,9 +508,9 @@ export const getRelatedPosts = async (categorySlug: string, currentPostId: strin
     console.error('Error fetching related posts:', err);
     return [];
   }
-};
+});
 
-export const getRandomPostFromCategory = async (categorySlug: string, excludePostId: string): Promise<Post | null> => {
+export const getRandomPostFromCategory = cache(async (categorySlug: string, excludePostId: string): Promise<Post | null> => {
   const query = gql`
     query GetPostsFromCategory($categoryName: String!, $first: Int!) {
       posts(where: { categoryName: $categoryName }, first: $first) {
@@ -556,9 +557,9 @@ export const getRandomPostFromCategory = async (categorySlug: string, excludePos
     console.error('Error fetching random post from category:', err);
     return null;
   }
-};
+});
 
-export const getAllPostSlugs = async (): Promise<{ slug: string }[]> => {
+export const getAllPostSlugs = cache(async (): Promise<{ slug: string }[]> => {
   const query = gql`
     query GetAllPostSlugs($after: String) {
       posts(first: 100, after: $after) {
@@ -595,4 +596,4 @@ export const getAllPostSlugs = async (): Promise<{ slug: string }[]> => {
     console.error('Error fetching all post slugs:', err);
     return [];
   }
-};
+});

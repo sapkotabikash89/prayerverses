@@ -21,9 +21,10 @@ export function PostGrid({ initialPosts, initialPageInfo, categorySlug }: PostGr
     const handleLoadMore = async () => {
         setIsLoading(true);
         try {
-            const nextData = await fetchMorePosts(categorySlug, pageInfo.endCursor);
-            setPosts([...posts, ...nextData.nodes]);
-            setPageInfo(nextData.pageInfo);
+            // Use the current posts length as the offset for static slicing
+            const { nodes: nextNodes, pageInfo: nextPageInfo } = await fetchMorePosts(categorySlug, posts.length);
+            setPosts([...posts, ...nextNodes]);
+            setPageInfo(nextPageInfo);
         } catch (error) {
             console.error('Error loading more posts:', error);
         } finally {
