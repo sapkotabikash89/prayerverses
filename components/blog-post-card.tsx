@@ -54,13 +54,13 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
                     </span>
                 </div>
 
-                <h3 className="text-xl font-bold font-serif mb-3 text-card-foreground group-hover:text-primary transition-colors mt-0 line-clamp-2 leading-tight">
+                <h3 className="text-xl font-bold font-serif mb-3 text-card-foreground group-hover:text-primary transition-colors mt-0 leading-tight">
                     {post.title}
                 </h3>
 
                 {post.excerpt && (
                     <div
-                        className="text-sm text-muted-foreground line-clamp-2 leading-relaxed"
+                        className="text-sm text-muted-foreground leading-relaxed"
                         dangerouslySetInnerHTML={{ __html: rewriteVerseLinks(linkifyBibleVerses(post.excerpt)) }}
                     />
                 )}

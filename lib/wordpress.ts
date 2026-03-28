@@ -174,7 +174,7 @@ export const getCategories = cache(async (): Promise<Category[]> => {
           return categoriesBackup as Category[];
       }
       
-      const allowedSlugs = ['blog', 'prayers', 'spiritual-meaning', 'verses-by-topic'];
+      const allowedSlugs = ['prayers', 'spiritual-meaning', 'verses-by-topic'];
       const categories = data.categories.nodes.filter(cat =>
         allowedSlugs.includes(cat.slug)
       );
