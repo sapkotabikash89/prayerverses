@@ -85,7 +85,7 @@ export interface SeoMetadata {
 }
 
 export interface Category {
-  id: string;
+  id?: string;
   name: string;
   slug: string;
   description?: string;
@@ -174,8 +174,9 @@ export const getCategories = cache(async (): Promise<Category[]> => {
           return categoriesBackup as Category[];
       }
       
+      const allowedSlugs = ['blog', 'prayers', 'spiritual-meaning', 'verses-by-topic'];
       const categories = data.categories.nodes.filter(cat =>
-        cat.slug !== 'uncategorized' && cat.slug !== 'bible-verses' && cat.slug !== 'blog'
+        allowedSlugs.includes(cat.slug)
       );
 
       // Add Blog category
@@ -241,8 +242,20 @@ export const getCategoryBySlug = cache(async (slug: string): Promise<Category | 
       }
     }
   `;
-  const data = await requestWithRetry<{ category: Category | null }>(query, { id: slug });
-  return data?.category ?? null;
+  try {
+    const data = await requestWithRetry<{ category: Category | null }>(query, { id: slug });
+    let category = data?.category ?? null;
+
+    if (!category) {
+      console.warn(`Falling back to local data for category: ${slug}`);
+      category = (categoriesBackup as Category[]).find(c => c.slug === slug) || null;
+    }
+
+    return category;
+  } catch (err) {
+    console.error('Error in getCategoryBySlug, using backup:', err);
+    return (categoriesBackup as Category[]).find(c => c.slug === slug) || null;
+  }
 });
 
 export const getPostsByCategory = cache(async (categorySlug: string, first = 21, after?: string): Promise<PostConnection> => {
@@ -358,6 +371,9 @@ async function getNeighborPost(date: string, direction: 'previous' | 'next'): Pr
   }
 }
 
+import postsBackupData from '@/data/posts-backup.json';
+const postsBackup = postsBackupData as unknown as Post[];
+
 export const getPostBySlug = cache(async (slug: string): Promise<Post | null> => {
   const query = gql`
     query GetPostBySlug($id: ID!) {
@@ -413,10 +429,15 @@ export const getPostBySlug = cache(async (slug: string): Promise<Post | null> =>
 
   try {
     const data = await requestWithRetry<{ post: Post | null }>(query, { id: slug });
-    const post = data?.post ?? null;
+    let post = data?.post ?? null;
+
+    if (!post) {
+      console.warn(`Falling back to local data for post: ${slug}`);
+      post = postsBackup.find(p => p.slug === slug) || null;
+    }
 
     if (post && post.date) {
-      // Fetch neighbors
+      // Fetch neighbors (only from API, if it fails, it's fine)
       const [prev, next] = await Promise.all([
         getNeighborPost(post.date, 'previous'),
         getNeighborPost(post.date, 'next')
@@ -428,8 +449,8 @@ export const getPostBySlug = cache(async (slug: string): Promise<Post | null> =>
 
     return post;
   } catch (err) {
-    console.error('Error fetching post by slug:', err);
-    return null;
+    console.error('Error fetching post by slug, using fallback:', err);
+    return postsBackup.find(p => p.slug === slug) || null;
   }
 });
 export const getNewestPosts = cache(async (first = 21, after?: string): Promise<PostConnection> => {
