@@ -286,19 +286,19 @@ export default async function VerseOfTheDayPage({
               </h2>
               <div className="space-y-8">
                 {["ESV", "NIV", "NLT", "WEB", "NKJV"].map((version, i) => {
-                  const translations = getTranslations(displayVerse.ref)
-                  const translationText = translations[version as keyof typeof translations] || displayVerse.text
-                  return (
-                    <div key={version} className="space-y-2">
-                      <div className="flex items-center gap-3">
-                        <span className="flex items-center justify-center w-8 h-8 rounded-none bg-primary/10 text-primary font-bold text-sm">
-                          {i + 1}
-                        </span>
-                        <p className="text-sm font-bold text-primary uppercase tracking-widest">{version}</p>
-                      </div>
-                      <p className="text-base text-card-foreground leading-relaxed pl-11">{translationText}</p>
-                    </div>
-                  )
+                   const translations = getTranslations(displayVerse.ref)
+                   const translationText = translations[version] || displayVerse.text
+                   return (
+                     <div key={version} className="space-y-2">
+                       <div className="flex items-center gap-3">
+                         <span className="flex items-center justify-center w-8 h-8 rounded-none bg-primary/10 text-primary font-bold text-sm">
+                           {i + 1}
+                         </span>
+                         <p className="text-sm font-bold text-primary uppercase tracking-widest">{version}</p>
+                       </div>
+                       <p className="text-base text-card-foreground leading-relaxed pl-11">{translationText}</p>
+                     </div>
+                   )
                 })}
                 <p className="text-xs text-muted-foreground italic mt-6">
                   Each translated version is copyrighted by its respective company. All rights reserved.
@@ -356,13 +356,15 @@ export default async function VerseOfTheDayPage({
                   );
                 })()}
               </div>
-            </section>            {/* Devotional Thoughts Section */}
+            </section>
+
+            {/* Devotional Thoughts Section */}
             <section>
               <h2>
                 Devotional Thoughts
               </h2>
               <div className="prose prose-stone max-w-none dark:prose-invert text-muted-foreground space-y-6">
-                {[
+                {( (v as any).devotionalThoughts || [
                   {
                     title: "Divine Calm",
                     content: `The bible verse of today morning from Philippians 4:6 invites you to release all your heavy burdens. Life repeatedly brings various stressful situations that can quickly steal your inner peace and daily joy. However, the Lord strongly encourages you to present every single concern to Him through sincere prayer today. This baily verse reminds us that we never have to carry the weight of the world alone. Furthermore, your trusting heart will find incredible strength in His constant and faithful presence right now.`
@@ -379,7 +381,7 @@ export default async function VerseOfTheDayPage({
                     title: "Guarded Peace",
                     content: `The peace of God promised in scripture remains much bigger and stronger than any possible human understanding. This random verse of the day guarantees that His tranquility will actively guard your vulnerable heart and mind. Therefore, you do not need to struggle for peace when it is a precious gift from above. Instead, allow the Holy Spirit to naturally fill your spirit with a calm that surpasses all global logic. Ultimately, your life will reflect the steady character of Jesus Christ as you trust Him completely.`
                   }
-                ].map((item, idx) => (
+                ]).map((item: any, idx: number) => (
                   <div key={idx} className="space-y-3">
                     <h3>{item.title}</h3>
                     <div dangerouslySetInnerHTML={{
@@ -396,24 +398,26 @@ export default async function VerseOfTheDayPage({
                 Daily Prayers for Trading Worry
               </h2>
               <div className="grid gap-6 md:grid-cols-2">
-                <div className="p-8 rounded-none bg-primary/5 border border-primary/10 shadow-sm">
-                  <div className="flex items-center gap-3 mb-4 text-primary">
-                    <span className="text-2xl">🙏</span>
-                    <h3>Morning Prayer for Trading Anxiety</h3>
+                {((v as any).prayers || [
+                  {
+                    title: "Morning Prayer for Trading Anxiety",
+                    content: `&ldquo;Heavenly Father, I praise You for this beautiful morning and the promise of Your constant and loving care. Please forgive me for any moments when I allowed worry to dominate my thoughts or my daily actions. This daily morning verse reminds me that I can bring every single concern to Your powerful throne. Therefore, I choose to trade my anxiety for Your perfect peace through intense prayer and genuine thanksgiving. Please lead me throughout this entire day with Your divine wisdom and Your steady hand. Amen.&rdquo;`
+                  },
+                  {
+                    title: "Evening Prayer for Constant Peace",
+                    content: `&ldquo;Lord Jesus, I thank You for Your protection and Your grace which sustained me during this busy day. I reflect on today's bible quote and find great comfort in Your promise to guard my mind. Please deliver me from any lingering stresful thoughts as I prepare for a restful and quiet sleep. However, Your peace remains my shield against the shadows of doubt or any fearful and anxious feelings. Consequently, I surrender my future into Your capable hands and trust You for a better tomorrow. Amen.&rdquo;`
+                  }
+                ]).map((prayer: any, idx: number) => (
+                  <div key={idx} className={`p-8 rounded-none border shadow-sm ${idx === 0 ? "bg-primary/5 border-primary/10" : "bg-secondary/30 border-border"}`}>
+                    <div className={`flex items-center gap-3 mb-4 ${idx === 0 ? "text-primary" : "text-card-foreground"}`}>
+                      <span className="text-2xl">🙏</span>
+                      <h3>{prayer.title}</h3>
+                    </div>
+                    <div className="text-muted-foreground leading-relaxed italic"
+                      dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(prayer.content) }}
+                    />
                   </div>
-                  <div className="text-muted-foreground leading-relaxed italic"
-                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Heavenly Father, I praise You for this beautiful morning and the promise of Your constant and loving care. Please forgive me for any moments when I allowed worry to dominate my thoughts or my daily actions. This daily morning verse reminds me that I can bring every single concern to Your powerful throne. Therefore, I choose to trade my anxiety for Your perfect peace through intense prayer and genuine thanksgiving. Please lead me throughout this entire day with Your divine wisdom and Your steady hand. Amen.&rdquo;`) }}
-                  />
-                </div>
-                <div className="p-8 rounded-none bg-secondary/30 border border-border shadow-sm">
-                  <div className="flex items-center gap-3 mb-4 text-card-foreground">
-                    <span className="text-2xl">🙏</span>
-                    <h3>Evening Prayer for Constant Peace</h3>
-                  </div>
-                  <div className="text-muted-foreground leading-relaxed italic"
-                    dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;Lord Jesus, I thank You for Your protection and Your grace which sustained me during this busy day. I reflect on today's bible quote and find great comfort in Your promise to guard my mind. Please deliver me from any lingering stresful thoughts as I prepare for a restful and quiet sleep. However, Your peace remains my shield against the shadows of doubt or any fearful and anxious feelings. Consequently, I surrender my future into Your capable hands and trust You for a better tomorrow. Amen.&rdquo;`) }}
-                  />
-                </div>
+                ))}
               </div>
             </section>
 
@@ -432,9 +436,13 @@ export default async function VerseOfTheDayPage({
                     dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Today's bible text from ${displayVerse.ref} uniquely connects with many other Bible passages about finding spiritual rest. These powerful passages help you understand the full depth of divine peace for your previously weary and tired life.`) }}
                   />
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>The bible verse of today morning from Philippians 4:6 provides extremely clear guidance for your soul. This daily morning verse firmly encourages us to trust God's mercy absolutely without any personal reservations. When we study Matthew 6:34, we discover a powerful secret about living strictly in the present moment. We must realize that every single day has its own grace and its own sufficient strength. Therefore, you can navigate stressful circumstances with His perfect and divine calm during this morning. God simply promises to orchestrate our safety when we totally submit to His loving will.</p>`) }} />
-                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Transitioning into the busy afternoon, we should urgently remember the comforting words found in John 14:27. The Lord Jesus personally promises to leave His incredible peace with us as a permanent and holy gift. This specific perspective definitely helps us to stay remarkably steady during the most difficult of modern times. Your relationship with God guarantees your spiritual stability against every single obstacle you face today. Consequently, you can permanently banish deep worry from your mind completely right now through His powerful help. The Almighty God walks faithfully beside you wherever you hopefully go in this world.</p>`) }} />
-                    <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Finally, we should critically consider the encouraging promise found in 1 Peter 5:7 for our thirsty spirits. The Word of God tells us to cast all our cares upon Him because He cares. This bible quote of the day serves as a rock for your currently heavy and burdened heart. Please hold tightly to the truth that the Lord provides abounding inner security forever and always. Furthermore, God works behind the scenes to continually bless your faithful and sincere personal prayers. You can happily end your busy day with a satisfied and entirely hopeful heart.</p>`) }} />
+                    {((v as any).dailyDevotionalReading || [
+                      `<p>The bible verse of today morning from Philippians 4:6 provides extremely clear guidance for your soul. This daily morning verse firmly encourages us to trust God's mercy absolutely without any personal reservations. When we study Matthew 6:34, we discover a powerful secret about living strictly in the present moment. We must realize that every single day has its own grace and its own sufficient strength. Therefore, you can navigate stressful circumstances with His perfect and divine calm during this morning. God simply promises to orchestrate our safety when we totally submit to His loving will.</p>`,
+                      `<p>Transitioning into the busy afternoon, we should urgently remember the comforting words found in John 14:27. The Lord Jesus personally promises to leave His incredible peace with us as a permanent and holy gift. This specific perspective definitely helps us to stay remarkably steady during the most difficult of modern times. Your relationship with God guarantees your spiritual stability against every single obstacle you face today. Consequently, you can permanently banish deep worry from your mind completely right now through His powerful help. The Almighty God walks faithfully beside you wherever you hopefully go in this world.</p>`,
+                      `<p>Finally, we should critically consider the encouraging promise found in 1 Peter 5:7 for our thirsty spirits. The Word of God tells us to cast all our cares upon Him because He cares. This bible quote of the day serves as a rock for your currently heavy and burdened heart. Please hold tightly to the truth that the Lord provides abounding inner security forever and always. Furthermore, God works behind the scenes to continually bless your faithful and sincere personal prayers. You can happily end your busy day with a satisfied and entirely hopeful heart.</p>`
+                    ]).map((p: string, idx: number) => (
+                      <div key={idx} dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(p) }} />
+                    ))}
                   </div>
                 </div>
                 
@@ -488,7 +496,7 @@ export default async function VerseOfTheDayPage({
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {[
+                    {( (v as any).tableVerses || [
                       {
                         cat: "Thinking about Life",
                         catSub: "",
@@ -538,7 +546,7 @@ export default async function VerseOfTheDayPage({
                         text: "Heaviness in the heart of man maketh it stoop: but a good word maketh it glad.",
                         thought: "A positive and holy word from God can lift your spirit from the deepest of despairs."
                       }
-                    ].map((row, i) => (
+                    ]).map((row: any, i: number) => (
                       <TableRow key={i} className="hover:bg-transparent">
                         <TableCell className="font-bold text-primary align-top pt-4">
                           {row.cat}
@@ -566,8 +574,12 @@ export default async function VerseOfTheDayPage({
                 Final Thought on Today's Bible Text
               </h2>
               <div className="max-w-2xl mx-auto space-y-6 text-muted-foreground leading-relaxed px-6">
-                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Today, the bible verse of today morning gives us a massive reason to profoundly feel peaceful. We represent a faithful God who perfectly understands our deepest emotional needs every single day. Jesus provides dynamic hope and delivers overwhelming stability consistently today. Furthermore, we are never abandoned when facing difficult challenges in this modern life. You can trust Him with your biggest worries and your smallest anxieties.</p>`) }} />
-                <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`<p>Please allow the truth of our daily scripture entirely transform your gloomy perspective permanently. God actively works directly inside your spirit specifically for your absolute true happiness. He will constantly supply magnificent tranquility and certainly never ever leave you alone. Experience His power and recognize His authority every single day securely. Your future remains bright and secure within His powerful and gracious hands.</p>`) }} />
+                {((v as any).finalThoughts || [
+                  `<p>Today, the bible verse of today morning gives us a massive reason to profoundly feel peaceful. We represent a faithful God who perfectly understands our deepest emotional needs every single day. Jesus provides dynamic hope and delivers overwhelming stability consistently today. Furthermore, we are never abandoned when facing difficult challenges in this modern life. You can trust Him with your biggest worries and your smallest anxieties.</p>`,
+                  `<p>Please allow the truth of our daily scripture entirely transform your gloomy perspective permanently. God actively works directly inside your spirit specifically for your absolute true happiness. He will constantly supply magnificent tranquility and certainly never ever leave you alone. Experience His power and recognize His authority every single day securely. Your future remains bright and secure within His powerful and gracious hands.</p>`
+                ]).map((p: string, idx: number) => (
+                  <div key={idx} dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(p) }} />
+                ))}
                 <div className="text-xl font-serif italic text-primary pt-4"
                   dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;When you choose to pray, you invite His peace into your heart.&rdquo;`) }}
                 />
