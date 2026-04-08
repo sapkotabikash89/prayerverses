@@ -6,7 +6,7 @@ import { useEffect } from "react"
  * A lightweight client-side cleanup component that runs only on blog post pages.
  * It scans the .post-article and unwraps unnecessary wrapper <div> elements
  * to ensure that paragraphs and headings are direct children of the article container.
- * This helps ad networks like Journey by Mediavine detect paragraph boundaries for ad insertion.
+ * This helps ad networks like Google AdSense or Journey by Mediavine detect paragraph boundaries for ad insertion.
  */
 export function PostBodyCleanup() {
   useEffect(() => {
