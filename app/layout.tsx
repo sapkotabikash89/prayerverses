@@ -66,11 +66,10 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         {/* Google AdSense */}
-        <Script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8258486511038311"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
       </head>
       <body className={`${inter.variable} ${lora.variable} font-sans antialiased min-h-screen flex flex-col site-body`}>

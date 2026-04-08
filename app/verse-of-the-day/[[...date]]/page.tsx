@@ -348,12 +348,12 @@ export default async function VerseOfTheDayPage({
                     p1: `This brilliant daily scripture delivers incredible hope for your single morning. When we closely study the bible verse of today morning from ${displayVerse.ref}, we find massive joy. Therefore, God actively pours perfect peace into your trusting soul. These beautiful promises found in today's bible quote absolutely guarantee spiritual abundance entirely. Consequently, they strongly remind us that the Holy Spirit provides endless strength. You can truly embrace this baily verse deeply within your eager heart.`,
                     p2: `Please take a very quiet moment to internalize this encouraging message specifically right now. Let God's secure joy totally overpower any worldly confusion strictly around you. Furthermore, you must deliberately dedicate precious time for deep reflection and intentional prayer today. A perfect verse of the day will undoubtedly direct your daily decisions successfully. Ultimately, today's bible text will gently comfort your previously weary spirit. Your entire mindset completely transforms through this powerful random verse of the day.`
                   };
-                  return (
-                    <>
-                      <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(devotion.p1) }} />
-                      <div dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(devotion.p2) }} />
-                    </>
-                  );
+                    return (
+                      <>
+                        <p dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(devotion.p1) }} />
+                        <p dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(devotion.p2) }} />
+                      </>
+                    );
                 })()}
               </div>
             </section>
@@ -384,7 +384,7 @@ export default async function VerseOfTheDayPage({
                 ]).map((item: any, idx: number) => (
                   <div key={idx} className="space-y-3">
                     <h3>{item.title}</h3>
-                    <div dangerouslySetInnerHTML={{
+                    <p dangerouslySetInnerHTML={{
                       __html: linkifyBibleVerses(item.content)
                     }} />
                   </div>
@@ -441,7 +441,7 @@ export default async function VerseOfTheDayPage({
                       `<p>Transitioning into the busy afternoon, we should urgently remember the comforting words found in John 14:27. The Lord Jesus personally promises to leave His incredible peace with us as a permanent and holy gift. This specific perspective definitely helps us to stay remarkably steady during the most difficult of modern times. Your relationship with God guarantees your spiritual stability against every single obstacle you face today. Consequently, you can permanently banish deep worry from your mind completely right now through His powerful help. The Almighty God walks faithfully beside you wherever you hopefully go in this world.</p>`,
                       `<p>Finally, we should critically consider the encouraging promise found in 1 Peter 5:7 for our thirsty spirits. The Word of God tells us to cast all our cares upon Him because He cares. This bible quote of the day serves as a rock for your currently heavy and burdened heart. Please hold tightly to the truth that the Lord provides abounding inner security forever and always. Furthermore, God works behind the scenes to continually bless your faithful and sincere personal prayers. You can happily end your busy day with a satisfied and entirely hopeful heart.</p>`
                     ]).map((p: string, idx: number) => (
-                      <div key={idx} dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(p) }} />
+                      <p key={idx} dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(p) }} />
                     ))}
                   </div>
                 </div>
@@ -452,7 +452,7 @@ export default async function VerseOfTheDayPage({
                       <span className="text-xl">💡</span>
                       Key Takeaway
                     </h3>
-                    <div className="text-muted-foreground leading-relaxed"
+                    <p className="text-muted-foreground leading-relaxed"
                       dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Your soul finds true safety when you choose to trust His reliability. This profound bible verse of today morning reminds us of His power. He provides inexhaustible divine strength for your heavy and weary heart always. When you realize that God grants your peace, anxiety finally rests today. Consequently, you can move forward with bold assurance and a hopeful spirit. You will experience profound spiritual joy every single beautiful day securely.`) }}
                     />
                   </div>
@@ -462,7 +462,7 @@ export default async function VerseOfTheDayPage({
                       <span className="text-xl">🎯</span>
                       Practical Application
                     </h3>
-                    <div className="text-muted-foreground leading-relaxed"
+                    <p className="text-muted-foreground leading-relaxed"
                       dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`Please honestly identify one specific problem regarding your current mood right now. Then, read ${displayVerse.ref} out loud and decide to trust Him completely. You should visualize yourself handing over this sadness to the Lord directly. Furthermore, write down this baily verse on a small note card immediately. Keep this card highly visible to remind yourself of His divine peace. This simple act will change your entire perspective on every single challenge.`) }}
                     />
                   </div>
@@ -473,7 +473,7 @@ export default async function VerseOfTheDayPage({
                     <span className="text-xl">🤝</span>
                     Community Connection
                   </h3>
-                  <div className="text-muted-foreground leading-relaxed"
+                  <p className="text-muted-foreground leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`We are intentionally meant to share God's incredible hope with others. Please share this random verse of the day with friends today. Encouraging another person with today's bible text will uplift your own spirit. Additionally, discussing related scripture together undoubtedly builds a much stronger community overall. Together, we can reflect the joyful character of Jesus Christ entirely. Your kindness will witness to the power of the holy gospel.`) }}
                   />
                 </div>
@@ -553,10 +553,10 @@ export default async function VerseOfTheDayPage({
                           {row.catSub && <span className="block text-[10px] text-muted-foreground uppercase tracking-widest">{row.catSub}</span>}
                         </TableCell>
                         <TableCell className="space-y-2 py-4">
-                          <div className="text-card-foreground font-medium"
+                          <p className="text-card-foreground font-medium"
                             dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`${row.ref}: &ldquo;${row.text}&rdquo;`) }}
                           />
-                          <div className="text-sm text-muted-foreground leading-relaxed"
+                          <p className="text-sm text-muted-foreground leading-relaxed"
                             dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(row.thought) }}
                           />
                         </TableCell>
@@ -578,9 +578,9 @@ export default async function VerseOfTheDayPage({
                   `<p>Today, the bible verse of today morning gives us a massive reason to profoundly feel peaceful. We represent a faithful God who perfectly understands our deepest emotional needs every single day. Jesus provides dynamic hope and delivers overwhelming stability consistently today. Furthermore, we are never abandoned when facing difficult challenges in this modern life. You can trust Him with your biggest worries and your smallest anxieties.</p>`,
                   `<p>Please allow the truth of our daily scripture entirely transform your gloomy perspective permanently. God actively works directly inside your spirit specifically for your absolute true happiness. He will constantly supply magnificent tranquility and certainly never ever leave you alone. Experience His power and recognize His authority every single day securely. Your future remains bright and secure within His powerful and gracious hands.</p>`
                 ]).map((p: string, idx: number) => (
-                  <div key={idx} dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(p) }} />
+                  <p key={idx} dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(p) }} />
                 ))}
-                <div className="text-xl font-serif italic text-primary pt-4"
+                <p className="text-xl font-serif italic text-primary pt-4"
                   dangerouslySetInnerHTML={{ __html: linkifyBibleVerses(`&ldquo;When you choose to pray, you invite His peace into your heart.&rdquo;`) }}
                 />
               </div>
